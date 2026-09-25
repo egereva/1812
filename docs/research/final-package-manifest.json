@@ -1,0 +1,13 @@
+{
+  "version": "final-ru-audited-2026-09-25",
+  "counts": {
+    "places": 13,
+    "dictionary": 29,
+    "timeline": 20,
+    "sources": 25
+  },
+  "integrity": "passed",
+  "historicalAudit": "final RU pass",
+  "media": "manifest only; image binaries intentionally not bundled",
+  "en": "pending"
+}

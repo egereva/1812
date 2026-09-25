@@ -1,0 +1,28 @@
+# Dependencies and generated output
+node_modules/
+.nuxt/
+.nuxt-dev/
+.output/
+dist/
+.data/
+.cache/
+.npm-cache/
+coverage/
+*.tsbuildinfo
+.eslintcache
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+
+# Editor and OS files
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*

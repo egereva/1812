@@ -1,0 +1,202 @@
+[
+  {
+    "id": "src-bre-war",
+    "title": "Отечественная война 1812",
+    "type": "encyclopedia",
+    "publisher": "Большая российская энциклопедия",
+    "url": "https://bigenc.ru/c/otechestvennaia-voina-1812-30a318",
+    "accessedAt": "2026-09-25"
+  },
+  {
+    "id": "src-panorama-west",
+    "title": "Западное Подмосковье в период Отечественной войны 1812 года",
+    "type": "museum",
+    "publisher": "Музей-панорама «Бородинская битва»",
+    "url": "https://www.1812panorama.ru/node/1223",
+    "accessedAt": "2026-09-25"
+  },
+  {
+    "id": "src-panorama-hut",
+    "title": "Изба Военного Совета",
+    "type": "museum",
+    "publisher": "Музей-панорама «Бородинская битва»",
+    "url": "https://1812panorama.ru/visitors/thematic-tours/izba-voennogo-soveta-0",
+    "accessedAt": "2026-09-25"
+  },
+  {
+    "id": "src-panorama-history",
+    "title": "История музея",
+    "type": "museum",
+    "publisher": "Музей-панорама «Бородинская битва»",
+    "url": "https://www.1812panorama.ru/museum/history",
+    "accessedAt": "2026-09-25"
+  },
+  {
+    "id": "src-prlib-fili",
+    "title": "Состоялся Военный совет в Филях",
+    "type": "library",
+    "publisher": "Президентская библиотека",
+    "url": "https://www.prlib.ru/node/619536",
+    "accessedAt": "2026-09-25"
+  },
+  {
+    "id": "src-mos-kuntsevo",
+    "title": "ГИКЭ усадьбы Фили-Кунцево",
+    "type": "official-document",
+    "publisher": "Мосгорнаследие",
+    "url": "https://www.mos.ru/upload/documents/files/7805/GIKE_YsadbaFili-Kyncevo.pdf",
+    "accessedAt": "2026-09-25"
+  },
+  {
+    "id": "src-mos-kuntsevo-road",
+    "title": "ГИКЭ Фили-Кунцево",
+    "type": "official-document",
+    "publisher": "Мосгорнаследие",
+    "url": "https://www.mos.ru/upload/documents/files/9971/Fili-Kyncevo%28doroga%29.pdf",
+    "accessedAt": "2026-09-25"
+  },
+  {
+    "id": "src-mos-atlas",
+    "title": "Атлас объектов культурного наследия Москвы",
+    "type": "official-publication",
+    "publisher": "Правительство Москвы",
+    "url": "https://www.mos.ru/upload/documents/files/2158/ATLASOBEKTOVKYLTYRNOGONASLEDIYa.pdf",
+    "accessedAt": "2026-09-25"
+  },
+  {
+    "id": "src-mos-cemetery",
+    "title": "Объекты охраны Москвы: Дорогомиловское кладбище",
+    "type": "official-publication",
+    "publisher": "Правительство Москвы",
+    "url": "https://um.mos.ru/upload/iblock/3b1/OBEKTOHRANIMOSKVA.pdf",
+    "accessedAt": "2026-09-25"
+  },
+  {
+    "id": "src-garant-obelisk",
+    "title": "ГИКЭ обелиска на братской могиле",
+    "type": "official-document",
+    "publisher": "Департамент культурного наследия Москвы",
+    "url": "https://base.garant.ru/70753490/",
+    "accessedAt": "2026-09-25"
+  },
+  {
+    "id": "src-bre-davydov",
+    "title": "Давыдов Денис Васильевич",
+    "type": "encyclopedia",
+    "publisher": "Большая российская энциклопедия",
+    "url": "https://old.bigenc.ru/literature/text/2627091",
+    "accessedAt": "2026-09-25"
+  },
+  {
+    "id": "src-bre-platov",
+    "title": "Платов Матвей Иванович",
+    "type": "encyclopedia",
+    "publisher": "Большая российская энциклопедия",
+    "url": "https://old.bigenc.ru/military_science/text/3144308",
+    "accessedAt": "2026-09-25"
+  },
+  {
+    "id": "src-bre-raevsky",
+    "title": "Раевский Николай Николаевич",
+    "type": "encyclopedia",
+    "publisher": "Большая российская энциклопедия",
+    "url": "https://old.bigenc.ru/military_science/text/3490357",
+    "accessedAt": "2026-09-25"
+  },
+  {
+    "id": "src-mos-kievskaya-gike",
+    "title": "Государственная историко-культурная экспертиза территории Киевской площади и Дорогомилова",
+    "type": "official-document",
+    "publisher": "Правительство Москвы / Мосгорнаследие",
+    "url": "https://www.mos.ru/upload/documents/files/6080/AktKievskayapl%28Moyaylica%29.pdf",
+    "accessedAt": "2026-09-25"
+  },
+  {
+    "id": "src-mos-dorogomilovo-gike",
+    "title": "Государственная историко-культурная экспертиза: Дорогомилово и Кутузовский проспект",
+    "type": "official-document",
+    "publisher": "Правительство Москвы / Мосгорнаследие",
+    "url": "https://www.mos.ru/upload/documents/files/4498/AktGIKEKytyzovskii14.pdf",
+    "accessedAt": "2026-09-25"
+  },
+  {
+    "id": "src-mos-dorogomilovo-protection",
+    "title": "Дорогомиловское кладбище: историческая справка",
+    "type": "official-publication",
+    "publisher": "Правительство Москвы / Узнай Москву",
+    "url": "https://um.mos.ru/upload/iblock/3b1/OBEKTOHRANIMOSKVA.pdf",
+    "accessedAt": "2026-09-25"
+  },
+  {
+    "id": "src-cbr-smolensk",
+    "title": "Смоленское сражение",
+    "type": "official-reference",
+    "publisher": "Банк России",
+    "url": "https://www.cbr.ru/cash_circulation/memorable_coins/coins_base/ShowCoins/?cat_num=5712-0002",
+    "accessedAt": "2026-09-25"
+  },
+  {
+    "id": "src-cbr-borodino",
+    "title": "Бородинское сражение",
+    "type": "official-reference",
+    "publisher": "Банк России",
+    "url": "https://cbr.ru/cash_circulation/memorable_coins/coins_base/ShowCoins/?cat_num=5712-0003",
+    "accessedAt": "2026-09-25"
+  },
+  {
+    "id": "src-cbr-tarutino",
+    "title": "Тарутинское сражение",
+    "type": "official-reference",
+    "publisher": "Банк России",
+    "url": "https://www.cbr.ru/cash_circulation/memorable_coins/coins_base/ShowCoins/?cat_num=5712-0006",
+    "accessedAt": "2026-09-25"
+  },
+  {
+    "id": "src-cbr-maloyaroslavets",
+    "title": "Малоярославецкое сражение",
+    "type": "official-reference",
+    "publisher": "Банк России",
+    "url": "https://cbr.ru/cash_circulation/memorable_coins/coins_base/ShowCoins/?cat_num=5712-0005",
+    "accessedAt": "2026-09-25"
+  },
+  {
+    "id": "src-cbr-vyazma",
+    "title": "Бой при Вязьме",
+    "type": "official-reference",
+    "publisher": "Банк России",
+    "url": "https://cbr.ru/cash_circulation/memorable_coins/coins_base/ShowCoins/?cat_num=5712-0004",
+    "accessedAt": "2026-09-25"
+  },
+  {
+    "id": "src-cbr-krasny",
+    "title": "Сражение при Красном",
+    "type": "official-reference",
+    "publisher": "Банк России",
+    "url": "https://www.cbr.ru/cash_circulation/memorable_coins/coins_base/showcoins/?cat_num=5712-0001",
+    "accessedAt": "2026-09-25"
+  },
+  {
+    "id": "src-cbr-berezina",
+    "title": "Сражение при Березине",
+    "type": "official-reference",
+    "publisher": "Банк России",
+    "url": "https://www.cbr.ru/cash_circulation/memorable_coins/coins_base/ShowCoins/?cat_num=5712-0007",
+    "accessedAt": "2026-09-25"
+  },
+  {
+    "id": "src-shm-krasny",
+    "title": "Второе сражение при Красном 1812 года",
+    "type": "museum",
+    "publisher": "Государственный исторический музей",
+    "url": "https://rm.shm.ru/core/event/65",
+    "accessedAt": "2026-09-25"
+  },
+  {
+    "id": "src-shm-smolensk",
+    "title": "Смоленское сражение 1812 года",
+    "type": "museum",
+    "publisher": "Государственный исторический музей",
+    "url": "https://rm.shm.ru/core/event/60",
+    "accessedAt": "2026-09-25"
+  }
+]

@@ -1,0 +1,340 @@
+[
+  {
+    "id": "fili-village",
+    "slug": "fili-village",
+    "title": "Fili Village and the Site of the Military Council",
+    "shortDescription": "The historic area of the former village of Fili, where the Russian army held its Military Council on 1 (13) September 1812.",
+    "content": [
+      "In the early nineteenth century, Fili was a small village outside Moscow, about two versts west of the city.",
+      "On 1 (13) September 1812, a Military Council was held in the hut of the peasant Mikhail Frolov. Mikhail Kutuzov decided to abandon Moscow without fighting another general battle.",
+      "After Napoleon’s troops occupied the area, Fili housed a military unit and a Württemberg hospital."
+    ],
+    "sourceIds": ["src-panorama-west", "src-prlib-fili", "src-bre-war"],
+    "coordinates": {
+      "lat": 55.7397,
+      "lon": 37.5231
+    },
+    "category": "historical-place",
+    "historicalStatus": "event-site",
+    "locationPrecision": "approximate",
+    "relatedPlaceIds": ["kutuzov-hut", "intercession-church-fili"],
+    "relatedDictionaryIds": ["military-council-fili", "kutuzov", "fili"],
+    "relatedTimelineIds": ["council-fili", "moscow-abandoned"],
+    "locationNote": "The marker indicates the general area of the historic site; the village occupied a larger territory.",
+    "historicalNote": "The present Kutuzov Hut is an 1887 reconstruction."
+  },
+  {
+    "id": "kutuzov-hut",
+    "slug": "kutuzov-hut",
+    "title": "Kutuzov Hut",
+    "shortDescription": "An 1887 museum building on the site of the hut where the Military Council was held.",
+    "content": [
+      "The Military Council of 1 (13) September 1812 took place in the hut of the peasant Mikhail Frolov. The original hut was preserved as a historic monument, but in 1868 it was almost completely destroyed by fire.",
+      "In 1883, the site of the hut was marked with a memorial. In 1887, a new wooden building was reconstructed from plans and drawings of the former hut; it housed a museum devoted to the events of 1812.",
+      "The Kutuzov Hut became the nucleus of a historical and memorial complex that was later expanded with a chapel, memorials, and the Battle of Borodino Panorama Museum."
+    ],
+    "sourceIds": [
+      "src-panorama-hut",
+      "src-panorama-history",
+      "src-mos-atlas",
+      "src-prlib-fili"
+    ],
+    "coordinates": {
+      "lat": 55.73972,
+      "lon": 37.52306
+    },
+    "category": "museum",
+    "historicalStatus": "reconstruction",
+    "locationPrecision": "exact",
+    "relatedPlaceIds": [
+      "fili-village",
+      "milepost-fili",
+      "archangel-michael-chapel",
+      "borodino-panorama-museum"
+    ],
+    "relatedDictionaryIds": ["kutuzov", "military-council-fili", "fili"],
+    "relatedTimelineIds": ["council-fili"],
+    "address": "38 Kutuzovsky Prospekt, Building 2",
+    "historicalNote": "The existing building is not the original hut of 1812."
+  },
+  {
+    "id": "intercession-church-fili",
+    "slug": "intercession-church-fili",
+    "title": "Church of the Intercession at Fili",
+    "shortDescription": "A surviving late-seventeenth-century church that suffered during the presence of French troops.",
+    "content": [
+      "The church already existed in 1812.",
+      "According to documents of the Moscow Department of Cultural Heritage, part of Fili burned during the presence of enemy troops, and French soldiers kept horses inside the Church of the Intercession.",
+      "It is one of the clearest surviving physical witnesses to the landscape of 1812."
+    ],
+    "sourceIds": ["src-mos-kuntsevo", "src-mos-kuntsevo-road", "src-mos-atlas"],
+    "coordinates": {
+      "lat": 55.75083,
+      "lon": 37.51
+    },
+    "category": "historic-building",
+    "historicalStatus": "surviving-witness",
+    "locationPrecision": "exact",
+    "relatedPlaceIds": ["fili-village", "kuntsevo-estate"],
+    "relatedDictionaryIds": ["fili"],
+    "relatedTimelineIds": ["moscow-abandoned"],
+    "address": "6 Novozavodskaya Street"
+  },
+  {
+    "id": "kuntsevo-estate",
+    "slug": "kuntsevo-estate",
+    "title": "Kuntsevo Estate",
+    "shortDescription": "The historic site of the Naryshkin estate, whose main house burned in 1812.",
+    "content": [
+      "Kuntsevo formed part of the Naryshkins’ Fili-Kuntsevo estate west of Moscow.",
+      "According to the state historical and cultural assessment, the Kuntsevo house burned during the presence of enemy troops in 1812. By 1818 it had been rebuilt; the assessment considers it more likely that a new house was erected on the old site.",
+      "The present main house therefore should not be described as an unchanged building that directly survived the events of 1812. For this project, the important elements are the historic estate grounds and the history of its post-war reconstruction."
+    ],
+    "sourceIds": ["src-mos-kuntsevo", "src-mos-kuntsevo-road"],
+    "coordinates": {
+      "lat": 55.73917,
+      "lon": 37.46139
+    },
+    "category": "historic-estate",
+    "historicalStatus": "event-site",
+    "locationPrecision": "exact",
+    "relatedPlaceIds": ["intercession-church-fili"],
+    "relatedDictionaryIds": ["fili"],
+    "relatedTimelineIds": [],
+    "address": "22 Bolshaya Filyovskaya Street",
+    "historicalNote": "The present main house should not be described as a house that “survived Napoleon.”"
+  },
+  {
+    "id": "poklonnaya-hill",
+    "slug": "poklonnaya-hill",
+    "title": "Poklonnaya Hill",
+    "shortDescription": "A historic area on the western approach to Moscow associated with the advance of Napoleon’s army.",
+    "content": [
+      "Poklonnaya Hill is traditionally associated with Napoleon waiting for a Moscow delegation before entering the city.",
+      "The modern terrain has been substantially altered by later urban development.",
+      "The map marks the historic area, not an exact point where Napoleon stood."
+    ],
+    "sourceIds": ["src-garant-obelisk", "src-bre-war"],
+    "coordinates": {
+      "lat": 55.7317,
+      "lon": 37.5067
+    },
+    "category": "historical-place",
+    "historicalStatus": "event-site",
+    "locationPrecision": "approximate",
+    "relatedPlaceIds": ["dorogomilovskaya-gate", "triumphal-arch"],
+    "relatedDictionaryIds": ["napoleon", "poklonnaya-hill", "smolensk-road"],
+    "relatedTimelineIds": ["moscow-abandoned"],
+    "locationNote": "The coordinate marks the modern historic area.",
+    "historicalNote": "The story of the “keys to Moscow” should be presented as a historical tradition."
+  },
+  {
+    "id": "dorogomilovskaya-gate",
+    "slug": "dorogomilovskaya-gate",
+    "title": "Dorogomilovskaya Gate",
+    "shortDescription": "A lost gate on the western boundary of old Moscow.",
+    "content": [
+      "The Dorogomilovskaya Gate stood on the Kamer-Kollezhsky Val at the western entrance to Moscow.",
+      "Dorogomilovo lay on the route taken by Napoleon’s troops as they entered Moscow from the west.",
+      "The historic gate has not survived; the modern square is situated somewhat differently."
+    ],
+    "sourceIds": [
+      "src-mos-cemetery",
+      "src-garant-obelisk",
+      "src-mos-kievskaya-gike",
+      "src-mos-dorogomilovo-gike"
+    ],
+    "coordinates": {
+      "lat": 55.7467,
+      "lon": 37.5547
+    },
+    "category": "lost-site",
+    "historicalStatus": "lost-site",
+    "locationPrecision": "approximate",
+    "relatedPlaceIds": ["poklonnaya-hill", "dorogomilovskoe-cemetery"],
+    "relatedDictionaryIds": ["dorogomilovo", "smolensk-road", "napoleon"],
+    "relatedTimelineIds": ["moscow-abandoned"],
+    "locationNote": "The modern square does not fully coincide with the location of the historic gate."
+  },
+  {
+    "id": "dorogomilovskoe-cemetery",
+    "slug": "dorogomilovskoe-cemetery",
+    "title": "Dorogomilovskoye Cemetery and Mass Grave",
+    "shortDescription": "A lost cemetery where Russian soldiers who died of wounds after Borodino were buried.",
+    "content": [
+      "After the Battle of Borodino, Russian soldiers who died of their wounds were buried here.",
+      "Near the church walls was a burial place for several hundred participants in the Battle of Borodino; in 1849 a memorial was erected over the mass grave.",
+      "The cemetery was destroyed in the twentieth century."
+    ],
+    "sourceIds": [
+      "src-mos-cemetery",
+      "src-garant-obelisk",
+      "src-mos-kievskaya-gike",
+      "src-mos-dorogomilovo-gike"
+    ],
+    "coordinates": {
+      "lat": 55.7439,
+      "lon": 37.5411
+    },
+    "category": "lost-site",
+    "historicalStatus": "lost-site",
+    "locationPrecision": "approximate",
+    "relatedPlaceIds": ["brotherhood-grave-obelisk"],
+    "relatedDictionaryIds": ["borodino-battle", "dorogomilovo"],
+    "relatedTimelineIds": ["borodino"],
+    "locationNote": "The marker indicates the approximate centre of a large historic area."
+  },
+  {
+    "id": "brotherhood-grave-obelisk",
+    "slug": "brotherhood-grave-obelisk",
+    "title": "Obelisk in Memory of the Soldiers of the Battle of Borodino",
+    "shortDescription": "A granite obelisk erected in 1940, originally placed over a mass grave at Dorogomilovskoye Cemetery and later moved to the Kutuzov Hut.",
+    "content": [
+      "At Dorogomilovskoye Cemetery, near the church walls, was a mass grave containing several hundred Russian soldiers who died of wounds after the Battle of Borodino. In 1849, with funding from the Prokhorov family, a memorial in the form of a brick tent-roofed chapel was erected over it.",
+      "By 1940 the earlier memorial had deteriorated. The Moscow authorities replaced it with a new granite obelisk. It is this 1940 monument that now stands by the Kutuzov Hut.",
+      "The Panorama Museum dates the transfer of the obelisk to the Kutuzov Hut to 1953. Some official historical references give 1948, so any exact transfer year in the main public-facing text should be accompanied by a reference to the museum chronology."
+    ],
+    "sourceIds": [
+      "src-panorama-history",
+      "src-garant-obelisk",
+      "src-mos-cemetery",
+      "src-mos-dorogomilovo-protection"
+    ],
+    "coordinates": {
+      "lat": 55.7398,
+      "lon": 37.5228
+    },
+    "category": "memorial",
+    "historicalStatus": "memorial",
+    "locationPrecision": "exact",
+    "relatedPlaceIds": ["dorogomilovskoe-cemetery", "kutuzov-hut"],
+    "relatedDictionaryIds": ["borodino-battle"],
+    "relatedTimelineIds": ["borodino"],
+    "address": "38 Kutuzovsky Prospekt",
+    "historicalNote": "The present granite obelisk was created in 1940 to replace the deteriorated 1849 memorial; they are not the same physical object."
+  },
+  {
+    "id": "milepost-fili",
+    "slug": "milepost-fili",
+    "title": "Memorial Milepost at Fili",
+    "shortDescription": "An 1883 memorial marking the site of the hut where the Military Council was held.",
+    "content": [
+      "In 1883, officers of the Grenadier Corps marked the site of the Military Council hut with a memorial.",
+      "It became one of the first elements of the future memorial complex at Fili."
+    ],
+    "sourceIds": ["src-panorama-hut", "src-panorama-history"],
+    "coordinates": {
+      "lat": 55.73972,
+      "lon": 37.52306
+    },
+    "category": "memorial",
+    "historicalStatus": "memorial",
+    "locationPrecision": "exact",
+    "relatedPlaceIds": ["kutuzov-hut"],
+    "relatedDictionaryIds": ["military-council-fili", "fili"],
+    "relatedTimelineIds": ["council-fili"],
+    "address": "38 Kutuzovsky Prospekt, Building 2"
+  },
+  {
+    "id": "archangel-michael-chapel",
+    "slug": "archangel-michael-chapel",
+    "title": "Chapel of the Archangel Michael",
+    "shortDescription": "A memorial chapel by the Kutuzov Hut, consecrated in 1912.",
+    "content": [
+      "The chapel was built beside the Kutuzov Hut as part of the memorial space dedicated to the War of 1812.",
+      "It was consecrated in the centenary year of 1912; the museum associates the design with M. N. Litvinov."
+    ],
+    "sourceIds": ["src-panorama-hut", "src-panorama-history"],
+    "coordinates": {
+      "lat": 55.73972,
+      "lon": 37.52361
+    },
+    "category": "memorial",
+    "historicalStatus": "memorial",
+    "locationPrecision": "exact",
+    "relatedPlaceIds": ["kutuzov-hut"],
+    "relatedDictionaryIds": ["fili"],
+    "relatedTimelineIds": [],
+    "address": "Kutuzovsky Prospekt, by the Kutuzov Hut"
+  },
+  {
+    "id": "borodino-panorama-museum",
+    "slug": "borodino-panorama-museum",
+    "title": "Battle of Borodino Panorama Museum",
+    "shortDescription": "Moscow’s principal museum devoted to the War of 1812; its present building opened in 1962.",
+    "content": [
+      "The new museum building on Kutuzovsky Prospekt opened on 18 October 1962.",
+      "Its central exhibit is Franz Roubaud’s Borodino panorama, created for the centenary of the battle and first opened at Chistye Prudy on 11 September 1912.",
+      "The museum stands near the site of the former village of Fili."
+    ],
+    "sourceIds": ["src-panorama-history"],
+    "coordinates": {
+      "lat": 55.73877,
+      "lon": 37.52297
+    },
+    "category": "museum",
+    "historicalStatus": "museum",
+    "locationPrecision": "exact",
+    "relatedPlaceIds": [
+      "kutuzov-hut",
+      "fili-village",
+      "triumphal-arch",
+      "kutuzov-monument"
+    ],
+    "relatedDictionaryIds": ["borodino-panorama", "roubaud", "borodino-battle"],
+    "relatedTimelineIds": ["borodino"],
+    "address": "38 Kutuzovsky Prospekt, Building 1"
+  },
+  {
+    "id": "kutuzov-monument",
+    "slug": "kutuzov-monument",
+    "title": "Monument to Mikhail Kutuzov and the Participants in the War of 1812",
+    "shortDescription": "A 1973 monument beside the Panorama Museum.",
+    "content": [
+      "The monument was unveiled in 1973; the central figure was created by N. V. Tomsky.",
+      "The composition combines the figure of Kutuzov with figures of military commanders, soldiers, and partisans."
+    ],
+    "sourceIds": ["src-panorama-history", "src-mos-atlas"],
+    "coordinates": {
+      "lat": 55.7386,
+      "lon": 37.5237
+    },
+    "category": "monument",
+    "historicalStatus": "memorial",
+    "locationPrecision": "exact",
+    "relatedPlaceIds": ["borodino-panorama-museum"],
+    "relatedDictionaryIds": [
+      "kutuzov",
+      "bagration",
+      "barclay-de-tolly",
+      "platov",
+      "raevsky",
+      "davydov"
+    ],
+    "relatedTimelineIds": ["borodino", "council-fili"],
+    "address": "38 Kutuzovsky Prospekt"
+  },
+  {
+    "id": "triumphal-arch",
+    "slug": "triumphal-arch",
+    "title": "Triumphal Arch",
+    "shortDescription": "A monument to Russia’s victory in the War of 1812, reconstructed on Kutuzovsky Prospekt.",
+    "content": [
+      "The original stone arch, designed by O. I. Bove, was built in the nineteenth century at Tverskaya Zastava.",
+      "It was dismantled in the twentieth century; the monument was reconstructed at its present location and opened in 1968.",
+      "The modern arch is a monument of historical memory, not a structure that stood here in 1812."
+    ],
+    "sourceIds": ["src-panorama-history", "src-garant-obelisk"],
+    "coordinates": {
+      "lat": 55.73675,
+      "lon": 37.51992
+    },
+    "category": "monument",
+    "historicalStatus": "memorial",
+    "locationPrecision": "exact",
+    "relatedPlaceIds": ["poklonnaya-hill", "borodino-panorama-museum"],
+    "relatedDictionaryIds": ["triumphal-arch", "patriotic-war-1812"],
+    "relatedTimelineIds": [],
+    "address": "Victory Square, Kutuzovsky Prospekt"
+  }
+]

@@ -1,0 +1,55 @@
+{
+  "accessibility": { "skip": "Skip to content" },
+  "navigation": {
+    "home": "Home",
+    "dictionary": "Dictionary",
+    "timeline": "Timeline",
+    "map": "Map",
+    "about": "About",
+    "sources": "Sources",
+    "primary": "Primary navigation",
+    "footer": "Footer navigation",
+    "language": "Site language",
+    "menu": "Menu",
+    "close": "Close"
+  },
+  "language": { "ru": "Русская версия", "en": "English version" },
+  "home": {
+    "eyebrow": "Historical guide",
+    "issue": "Western Moscow",
+    "slider": {
+      "label": "Homepage images",
+      "previous": "Previous",
+      "next": "Next",
+      "source": "Image source"
+    },
+    "dictionary": {
+      "kicker": "Names and ideas",
+      "description": "An alphabetical way into the history of the war: people, events and places.",
+      "cta": "Explore the dictionary"
+    },
+    "timeline": {
+      "kicker": "Course of events",
+      "description": "From the first days of the invasion to the liberation of the Russian Empire’s territory.",
+      "oldStyle": "Dates are shown in the Old Style calendar.",
+      "cta": "Explore the timeline"
+    },
+    "map": {
+      "kicker": "Places of memory",
+      "description": "Places in today’s Western Administrative Okrug of Moscow associated with the history of 1812.",
+      "cta": "Explore the map"
+    }
+  },
+  "sections": {
+    "eyebrow": "Guide section",
+    "preview": "This section’s materials will appear here.",
+    "place": "Place",
+    "dictionaryEntry": "Dictionary entry",
+    "timelineEvent": "Event"
+  },
+  "footer": {
+    "description": "Historical guide",
+    "edition": "The War of 1812",
+    "languages": "Русский / English"
+  }
+}

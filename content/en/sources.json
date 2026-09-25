@@ -1,0 +1,202 @@
+[
+  {
+    "id": "src-bre-war",
+    "title": "Patriotic War of 1812",
+    "type": "encyclopedia",
+    "publisher": "Great Russian Encyclopedia",
+    "url": "https://bigenc.ru/c/otechestvennaia-voina-1812-30a318",
+    "accessedAt": "2026-09-25"
+  },
+  {
+    "id": "src-panorama-west",
+    "title": "Western Moscow Region during the Patriotic War of 1812",
+    "type": "museum",
+    "publisher": "Battle of Borodino Panorama Museum",
+    "url": "https://www.1812panorama.ru/node/1223",
+    "accessedAt": "2026-09-25"
+  },
+  {
+    "id": "src-panorama-hut",
+    "title": "The Military Council Hut",
+    "type": "museum",
+    "publisher": "Battle of Borodino Panorama Museum",
+    "url": "https://1812panorama.ru/visitors/thematic-tours/izba-voennogo-soveta-0",
+    "accessedAt": "2026-09-25"
+  },
+  {
+    "id": "src-panorama-history",
+    "title": "History of the Museum",
+    "type": "museum",
+    "publisher": "Battle of Borodino Panorama Museum",
+    "url": "https://www.1812panorama.ru/museum/history",
+    "accessedAt": "2026-09-25"
+  },
+  {
+    "id": "src-prlib-fili",
+    "title": "The Military Council at Fili Took Place",
+    "type": "library",
+    "publisher": "Presidential Library",
+    "url": "https://www.prlib.ru/node/619536",
+    "accessedAt": "2026-09-25"
+  },
+  {
+    "id": "src-mos-kuntsevo",
+    "title": "State Historical and Cultural Assessment of the Fili-Kuntsevo Estate",
+    "type": "official-document",
+    "publisher": "Moscow Department of Cultural Heritage",
+    "url": "https://www.mos.ru/upload/documents/files/7805/GIKE_YsadbaFili-Kyncevo.pdf",
+    "accessedAt": "2026-09-25"
+  },
+  {
+    "id": "src-mos-kuntsevo-road",
+    "title": "State Historical and Cultural Assessment: Fili-Kuntsevo",
+    "type": "official-document",
+    "publisher": "Moscow Department of Cultural Heritage",
+    "url": "https://www.mos.ru/upload/documents/files/9971/Fili-Kyncevo%28doroga%29.pdf",
+    "accessedAt": "2026-09-25"
+  },
+  {
+    "id": "src-mos-atlas",
+    "title": "Atlas of Moscow Cultural Heritage Sites",
+    "type": "official-publication",
+    "publisher": "Government of Moscow",
+    "url": "https://www.mos.ru/upload/documents/files/2158/ATLASOBEKTOVKYLTYRNOGONASLEDIYa.pdf",
+    "accessedAt": "2026-09-25"
+  },
+  {
+    "id": "src-mos-cemetery",
+    "title": "Moscow Heritage Sites: Dorogomilovskoye Cemetery",
+    "type": "official-publication",
+    "publisher": "Government of Moscow",
+    "url": "https://um.mos.ru/upload/iblock/3b1/OBEKTOHRANIMOSKVA.pdf",
+    "accessedAt": "2026-09-25"
+  },
+  {
+    "id": "src-garant-obelisk",
+    "title": "State Historical and Cultural Assessment of the Obelisk at the Mass Grave",
+    "type": "official-document",
+    "publisher": "Moscow Department of Cultural Heritage",
+    "url": "https://base.garant.ru/70753490/",
+    "accessedAt": "2026-09-25"
+  },
+  {
+    "id": "src-bre-davydov",
+    "title": "Denis Vasilyevich Davydov",
+    "type": "encyclopedia",
+    "publisher": "Great Russian Encyclopedia",
+    "url": "https://old.bigenc.ru/literature/text/2627091",
+    "accessedAt": "2026-09-25"
+  },
+  {
+    "id": "src-bre-platov",
+    "title": "Matvey Ivanovich Platov",
+    "type": "encyclopedia",
+    "publisher": "Great Russian Encyclopedia",
+    "url": "https://old.bigenc.ru/military_science/text/3144308",
+    "accessedAt": "2026-09-25"
+  },
+  {
+    "id": "src-bre-raevsky",
+    "title": "Nikolay Nikolayevich Raevsky",
+    "type": "encyclopedia",
+    "publisher": "Great Russian Encyclopedia",
+    "url": "https://old.bigenc.ru/military_science/text/3490357",
+    "accessedAt": "2026-09-25"
+  },
+  {
+    "id": "src-mos-kievskaya-gike",
+    "title": "State Historical and Cultural Assessment of Kievskaya Square and Dorogomilovo",
+    "type": "official-document",
+    "publisher": "Government of Moscow / Moscow Department of Cultural Heritage",
+    "url": "https://www.mos.ru/upload/documents/files/6080/AktKievskayapl%28Moyaylica%29.pdf",
+    "accessedAt": "2026-09-25"
+  },
+  {
+    "id": "src-mos-dorogomilovo-gike",
+    "title": "State Historical and Cultural Assessment: Dorogomilovo and Kutuzovsky Prospekt",
+    "type": "official-document",
+    "publisher": "Government of Moscow / Moscow Department of Cultural Heritage",
+    "url": "https://www.mos.ru/upload/documents/files/4498/AktGIKEKytyzovskii14.pdf",
+    "accessedAt": "2026-09-25"
+  },
+  {
+    "id": "src-mos-dorogomilovo-protection",
+    "title": "Dorogomilovskoye Cemetery: Historical Reference",
+    "type": "official-publication",
+    "publisher": "Government of Moscow / Discover Moscow",
+    "url": "https://um.mos.ru/upload/iblock/3b1/OBEKTOHRANIMOSKVA.pdf",
+    "accessedAt": "2026-09-25"
+  },
+  {
+    "id": "src-cbr-smolensk",
+    "title": "Battle of Smolensk",
+    "type": "official-reference",
+    "publisher": "Bank of Russia",
+    "url": "https://www.cbr.ru/cash_circulation/memorable_coins/coins_base/ShowCoins/?cat_num=5712-0002",
+    "accessedAt": "2026-09-25"
+  },
+  {
+    "id": "src-cbr-borodino",
+    "title": "Battle of Borodino",
+    "type": "official-reference",
+    "publisher": "Bank of Russia",
+    "url": "https://cbr.ru/cash_circulation/memorable_coins/coins_base/ShowCoins/?cat_num=5712-0003",
+    "accessedAt": "2026-09-25"
+  },
+  {
+    "id": "src-cbr-tarutino",
+    "title": "Battle of Tarutino",
+    "type": "official-reference",
+    "publisher": "Bank of Russia",
+    "url": "https://www.cbr.ru/cash_circulation/memorable_coins/coins_base/ShowCoins/?cat_num=5712-0006",
+    "accessedAt": "2026-09-25"
+  },
+  {
+    "id": "src-cbr-maloyaroslavets",
+    "title": "Battle of Maloyaroslavets",
+    "type": "official-reference",
+    "publisher": "Bank of Russia",
+    "url": "https://cbr.ru/cash_circulation/memorable_coins/coins_base/ShowCoins/?cat_num=5712-0005",
+    "accessedAt": "2026-09-25"
+  },
+  {
+    "id": "src-cbr-vyazma",
+    "title": "Battle of Vyazma",
+    "type": "official-reference",
+    "publisher": "Bank of Russia",
+    "url": "https://cbr.ru/cash_circulation/memorable_coins/coins_base/ShowCoins/?cat_num=5712-0004",
+    "accessedAt": "2026-09-25"
+  },
+  {
+    "id": "src-cbr-krasny",
+    "title": "Battle of Krasny",
+    "type": "official-reference",
+    "publisher": "Bank of Russia",
+    "url": "https://www.cbr.ru/cash_circulation/memorable_coins/coins_base/showcoins/?cat_num=5712-0001",
+    "accessedAt": "2026-09-25"
+  },
+  {
+    "id": "src-cbr-berezina",
+    "title": "Battle of the Berezina",
+    "type": "official-reference",
+    "publisher": "Bank of Russia",
+    "url": "https://www.cbr.ru/cash_circulation/memorable_coins/coins_base/ShowCoins/?cat_num=5712-0007",
+    "accessedAt": "2026-09-25"
+  },
+  {
+    "id": "src-shm-krasny",
+    "title": "Second Battle of Krasny, 1812",
+    "type": "museum",
+    "publisher": "State Historical Museum",
+    "url": "https://rm.shm.ru/core/event/65",
+    "accessedAt": "2026-09-25"
+  },
+  {
+    "id": "src-shm-smolensk",
+    "title": "Battle of Smolensk, 1812",
+    "type": "museum",
+    "publisher": "State Historical Museum",
+    "url": "https://rm.shm.ru/core/event/60",
+    "accessedAt": "2026-09-25"
+  }
+]

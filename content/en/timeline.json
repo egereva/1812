@@ -1,0 +1,355 @@
+[
+  {
+    "id": "invasion-neman",
+    "slug": "invasion-neman",
+    "dateOldStyle": "1812-06-12",
+    "dateNewStyle": "1812-06-24",
+    "sortDate": "1812-06-12",
+    "title": "Beginning of the Invasion: Crossing the Neman",
+    "shortDescription": "Advance units of the Grande Armée crossed the Neman; the Patriotic War of 1812 began.",
+    "content": [
+      "Advance units of the Grande Armée crossed the Neman; the Patriotic War of 1812 began."
+    ],
+    "featured": true,
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": ["patriotic-war-1812"],
+    "sourceIds": ["src-bre-war"]
+  },
+  {
+    "id": "vilna",
+    "slug": "vilna",
+    "dateOldStyle": "1812-06-16",
+    "dateNewStyle": "1812-06-28",
+    "sortDate": "1812-06-16",
+    "title": "Occupation of Vilna",
+    "shortDescription": "Napoleon’s troops occupied Vilna; the Russian armies continued their retreat.",
+    "content": [
+      "Napoleon’s troops occupied Vilna; the Russian armies continued their retreat."
+    ],
+    "featured": false,
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": ["patriotic-war-1812"],
+    "sourceIds": ["src-bre-war"]
+  },
+  {
+    "id": "armies-unite-smolensk",
+    "slug": "armies-unite-smolensk",
+    "dateOldStyle": "1812-07-22",
+    "dateNewStyle": "1812-08-03",
+    "sortDate": "1812-07-22",
+    "title": "1st and 2nd Western Armies Unite",
+    "shortDescription": "The main forces of Barclay de Tolly and Bagration united near Smolensk.",
+    "content": [
+      "The main forces of Barclay de Tolly and Bagration united near Smolensk."
+    ],
+    "featured": true,
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": ["patriotic-war-1812"],
+    "sourceIds": ["src-bre-war"]
+  },
+  {
+    "id": "smolensk",
+    "slug": "smolensk",
+    "dateOldStyle": "1812-08-04",
+    "dateNewStyle": "1812-08-16",
+    "sortDate": "1812-08-04",
+    "title": "Battle of Smolensk",
+    "shortDescription": "Russian troops defended Smolensk on 4–6 (16–18) August and then continued their retreat.",
+    "content": [
+      "Russian troops defended Smolensk on 4–6 (16–18) August and then continued their retreat."
+    ],
+    "featured": true,
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": ["patriotic-war-1812"],
+    "sourceIds": ["src-bre-war", "src-cbr-smolensk", "src-shm-smolensk"],
+    "dateEndOldStyle": "1812-08-06",
+    "dateEndNewStyle": "1812-08-18"
+  },
+  {
+    "id": "kutuzov-command",
+    "slug": "kutuzov-command",
+    "dateOldStyle": "1812-08-17",
+    "dateNewStyle": "1812-08-29",
+    "sortDate": "1812-08-17",
+    "title": "Kutuzov Assumes Supreme Command",
+    "shortDescription": "Kutuzov arrived with the army and assumed supreme command.",
+    "content": ["Kutuzov arrived with the army and assumed supreme command."],
+    "featured": true,
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": ["patriotic-war-1812"],
+    "sourceIds": ["src-bre-war"]
+  },
+  {
+    "id": "shevardino",
+    "slug": "shevardino",
+    "dateOldStyle": "1812-08-24",
+    "dateNewStyle": "1812-09-05",
+    "sortDate": "1812-08-24",
+    "title": "Battle for the Shevardino Redoubt",
+    "shortDescription": "The fighting was the immediate prelude to the Battle of Borodino.",
+    "content": [
+      "The fighting was the immediate prelude to the Battle of Borodino."
+    ],
+    "featured": false,
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": ["patriotic-war-1812"],
+    "sourceIds": ["src-bre-war"]
+  },
+  {
+    "id": "borodino",
+    "slug": "borodino",
+    "dateOldStyle": "1812-08-26",
+    "dateNewStyle": "1812-09-07",
+    "sortDate": "1812-08-26",
+    "title": "Battle of Borodino",
+    "shortDescription": "A general battle was fought near Borodino; after heavy losses, the Russian army withdrew in good order.",
+    "content": [
+      "A general battle was fought near Borodino; after heavy losses, the Russian army withdrew in good order."
+    ],
+    "featured": true,
+    "relatedPlaceIds": [
+      "dorogomilovskoe-cemetery",
+      "brotherhood-grave-obelisk",
+      "borodino-panorama-museum"
+    ],
+    "relatedDictionaryIds": [
+      "patriotic-war-1812",
+      "borodino-battle",
+      "kutuzov",
+      "bagration",
+      "barclay-de-tolly",
+      "raevsky",
+      "platov"
+    ],
+    "sourceIds": ["src-bre-war", "src-cbr-borodino"]
+  },
+  {
+    "id": "council-fili",
+    "slug": "council-fili",
+    "dateOldStyle": "1812-09-01",
+    "dateNewStyle": "1812-09-13",
+    "sortDate": "1812-09-01",
+    "title": "Military Council at Fili",
+    "shortDescription": "Kutuzov decided to abandon Moscow without fighting another general battle.",
+    "content": [
+      "Kutuzov decided to abandon Moscow without fighting another general battle."
+    ],
+    "featured": true,
+    "relatedPlaceIds": ["fili-village", "kutuzov-hut", "milepost-fili"],
+    "relatedDictionaryIds": [
+      "patriotic-war-1812",
+      "military-council-fili",
+      "kutuzov",
+      "fili",
+      "bennigsen"
+    ],
+    "sourceIds": ["src-bre-war", "src-prlib-fili"]
+  },
+  {
+    "id": "moscow-abandoned",
+    "slug": "moscow-abandoned",
+    "dateOldStyle": "1812-09-02",
+    "dateNewStyle": "1812-09-14",
+    "sortDate": "1812-09-02",
+    "title": "Moscow Abandoned and Napoleon’s Army Enters",
+    "shortDescription": "The Russian army abandoned Moscow; Napoleon’s troops entered the city.",
+    "content": [
+      "The Russian army abandoned Moscow; Napoleon’s troops entered the city."
+    ],
+    "featured": true,
+    "relatedPlaceIds": [
+      "fili-village",
+      "poklonnaya-hill",
+      "dorogomilovskaya-gate",
+      "intercession-church-fili"
+    ],
+    "relatedDictionaryIds": [
+      "patriotic-war-1812",
+      "napoleon",
+      "kutuzov",
+      "dorogomilovo",
+      "poklonnaya-hill",
+      "smolensk-road"
+    ],
+    "sourceIds": ["src-bre-war"]
+  },
+  {
+    "id": "moscow-fire",
+    "slug": "moscow-fire",
+    "dateOldStyle": "1812-09-02",
+    "dateNewStyle": "1812-09-14",
+    "sortDate": "1812-09-02",
+    "title": "Fire of Moscow",
+    "shortDescription": "After the French army entered the city, numerous fires swept through Moscow.",
+    "content": [
+      "After the French army entered the city, numerous fires swept through Moscow."
+    ],
+    "featured": true,
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": ["patriotic-war-1812"],
+    "sourceIds": ["src-bre-war"],
+    "dateEndOldStyle": "1812-09-08",
+    "dateEndNewStyle": "1812-09-20"
+  },
+  {
+    "id": "tarutino-march",
+    "slug": "tarutino-march",
+    "dateOldStyle": "1812-09-05",
+    "dateNewStyle": "1812-09-17",
+    "sortDate": "1812-09-05",
+    "title": "Tarutino March Manoeuvre",
+    "shortDescription": "The Russian army broke contact with the enemy and took up an advantageous position near Tarutino.",
+    "content": [
+      "The Russian army broke contact with the enemy and took up an advantageous position near Tarutino."
+    ],
+    "featured": true,
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": ["patriotic-war-1812"],
+    "sourceIds": ["src-bre-war"]
+  },
+  {
+    "id": "tarutino-battle",
+    "slug": "tarutino-battle",
+    "dateOldStyle": "1812-10-06",
+    "dateNewStyle": "1812-10-18",
+    "sortDate": "1812-10-06",
+    "title": "Battle of Tarutino",
+    "shortDescription": "Russian troops attacked the advance guard of Napoleon’s army, beginning a period of active counteroffensive operations.",
+    "content": [
+      "Russian troops attacked the advance guard of Napoleon’s army, beginning a period of active counteroffensive operations."
+    ],
+    "featured": true,
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": ["patriotic-war-1812"],
+    "sourceIds": ["src-bre-war", "src-cbr-tarutino"]
+  },
+  {
+    "id": "napoleon-leaves-moscow",
+    "slug": "napoleon-leaves-moscow",
+    "dateOldStyle": "1812-10-07",
+    "dateNewStyle": "1812-10-19",
+    "sortDate": "1812-10-07",
+    "title": "Napoleon Leaves Moscow",
+    "shortDescription": "The main forces of the Grande Armée left Moscow.",
+    "content": ["The main forces of the Grande Armée left Moscow."],
+    "featured": true,
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": ["patriotic-war-1812"],
+    "sourceIds": ["src-bre-war"]
+  },
+  {
+    "id": "maloyaroslavets",
+    "slug": "maloyaroslavets",
+    "dateOldStyle": "1812-10-12",
+    "dateNewStyle": "1812-10-24",
+    "sortDate": "1812-10-12",
+    "title": "Battle of Maloyaroslavets",
+    "shortDescription": "After the battle, Napoleon abandoned the advance along the Kaluga route and turned toward the Smolensk Road.",
+    "content": [
+      "After the battle, Napoleon abandoned the advance along the Kaluga route and turned toward the Smolensk Road."
+    ],
+    "featured": true,
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": ["patriotic-war-1812"],
+    "sourceIds": ["src-bre-war", "src-cbr-maloyaroslavets"]
+  },
+  {
+    "id": "vyazma",
+    "slug": "vyazma",
+    "dateOldStyle": "1812-10-22",
+    "dateNewStyle": "1812-11-03",
+    "sortDate": "1812-10-22",
+    "title": "Battle of Vyazma",
+    "shortDescription": "Russian troops attacked the retreating French corps.",
+    "content": ["Russian troops attacked the retreating French corps."],
+    "featured": false,
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": ["patriotic-war-1812"],
+    "sourceIds": ["src-bre-war", "src-cbr-vyazma"]
+  },
+  {
+    "id": "krasny",
+    "slug": "krasny",
+    "dateOldStyle": "1812-11-03",
+    "dateNewStyle": "1812-11-15",
+    "sortDate": "1812-11-03",
+    "title": "Battles of Krasny",
+    "shortDescription": "Fighting near Krasny took place on 3–6 (15–18) November; the most intense clashes are dated 4–6 (16–18) November in the Bank of Russia’s official reference.",
+    "content": [
+      "Fighting near Krasny took place on 3–6 (15–18) November; the most intense clashes are dated 4–6 (16–18) November in the Bank of Russia’s official reference.",
+      "The timeline uses the broader 3–6 November interval given by the State Historical Museum; the difference reflects which episodes are included within the boundaries of the battle."
+    ],
+    "featured": true,
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": ["patriotic-war-1812"],
+    "sourceIds": ["src-bre-war", "src-cbr-krasny", "src-shm-krasny"],
+    "dateEndOldStyle": "1812-11-06",
+    "dateEndNewStyle": "1812-11-18"
+  },
+  {
+    "id": "berezina",
+    "slug": "berezina",
+    "dateOldStyle": "1812-11-14",
+    "dateNewStyle": "1812-11-26",
+    "sortDate": "1812-11-14",
+    "title": "Crossing of the Berezina",
+    "shortDescription": "Napoleon’s army crossed the Berezina amid heavy fighting and major losses.",
+    "content": [
+      "The main crossing of the Grande Armée over the Berezina took place on 14–16 (26–28) November 1812 under attacks by Russian forces. Fighting around the crossing continued on 17 (29) November, when the bridges were burned on Napoleon’s orders."
+    ],
+    "featured": true,
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": ["patriotic-war-1812"],
+    "sourceIds": ["src-bre-war", "src-cbr-berezina"],
+    "dateEndOldStyle": "1812-11-16",
+    "dateEndNewStyle": "1812-11-28"
+  },
+  {
+    "id": "napoleon-leaves-army",
+    "slug": "napoleon-leaves-army",
+    "dateOldStyle": "1812-11-23",
+    "dateNewStyle": "1812-12-05",
+    "sortDate": "1812-11-23",
+    "title": "Napoleon Leaves the Army",
+    "shortDescription": "Napoleon left the remnants of the army and departed for Paris.",
+    "content": [
+      "Napoleon left the remnants of the army and departed for Paris."
+    ],
+    "featured": false,
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": ["patriotic-war-1812"],
+    "sourceIds": ["src-bre-war"]
+  },
+  {
+    "id": "liberation-russia",
+    "slug": "liberation-russia",
+    "dateOldStyle": "1812-12-14",
+    "dateNewStyle": "1812-12-26",
+    "sortDate": "1812-12-14",
+    "title": "Liberation of the Russian Empire",
+    "shortDescription": "By the end of December, the main enemy forces had been driven beyond the borders of the Russian Empire.",
+    "content": [
+      "By the end of December, the main enemy forces had been driven beyond the borders of the Russian Empire."
+    ],
+    "featured": true,
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": ["patriotic-war-1812"],
+    "sourceIds": ["src-bre-war"]
+  },
+  {
+    "id": "manifest-end-war",
+    "slug": "manifest-end-war",
+    "dateOldStyle": "1812-12-25",
+    "dateNewStyle": "1813-01-06",
+    "sortDate": "1812-12-25",
+    "title": "Manifesto Marking the End of the War",
+    "shortDescription": "Alexander I issued a manifesto associated with the conclusion of the Patriotic War.",
+    "content": [
+      "Alexander I issued a manifesto associated with the conclusion of the Patriotic War."
+    ],
+    "featured": true,
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": ["patriotic-war-1812"],
+    "sourceIds": ["src-bre-war"]
+  }
+]

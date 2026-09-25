@@ -1,0 +1,419 @@
+[
+  {
+    "id": "alexander-i",
+    "slug": "alexander-i",
+    "letter": "А",
+    "title": "Александр I",
+    "shortDescription": "Российский император в годы войны 1812 года.",
+    "content": ["Российский император в годы войны 1812 года."],
+    "category": "person",
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [],
+    "sourceIds": ["src-bre-war"]
+  },
+  {
+    "id": "bagration",
+    "slug": "bagration",
+    "letter": "Б",
+    "title": "Багратион, Пётр Иванович",
+    "shortDescription": "Командующий 2-й Западной армией; тяжело ранен при Бородине.",
+    "content": ["Командующий 2-й Западной армией; тяжело ранен при Бородине."],
+    "category": "person",
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [],
+    "sourceIds": ["src-bre-war"]
+  },
+  {
+    "id": "barclay-de-tolly",
+    "slug": "barclay-de-tolly",
+    "letter": "Б",
+    "title": "Барклай-де-Толли, Михаил Богданович",
+    "shortDescription": "Военный министр и командующий 1-й Западной армией в начале кампании.",
+    "content": [
+      "Военный министр и командующий 1-й Западной армией в начале кампании."
+    ],
+    "category": "person",
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [],
+    "sourceIds": ["src-bre-war"]
+  },
+  {
+    "id": "bennigsen",
+    "slug": "bennigsen",
+    "letter": "Б",
+    "title": "Беннигсен, Леонтий Леонтьевич",
+    "shortDescription": "Русский генерал, участник Военного совета в Филях.",
+    "content": ["Русский генерал, участник Военного совета в Филях."],
+    "category": "person",
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [],
+    "sourceIds": ["src-bre-war"]
+  },
+  {
+    "id": "berezina",
+    "slug": "berezina",
+    "letter": "Б",
+    "title": "Березина",
+    "shortDescription": "Ключевой эпизод отступления Великой армии в ноябре 1812 года.",
+    "content": [
+      "Ключевой эпизод отступления Великой армии в ноябре 1812 года."
+    ],
+    "category": "event",
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [],
+    "sourceIds": ["src-bre-war"]
+  },
+  {
+    "id": "borodino-battle",
+    "slug": "borodino-battle",
+    "letter": "Б",
+    "title": "Бородинское сражение",
+    "shortDescription": "Генеральное сражение 26 августа (7 сентября) 1812 года.",
+    "content": ["Генеральное сражение 26 августа (7 сентября) 1812 года."],
+    "category": "event",
+    "relatedPlaceIds": [
+      "borodino-panorama-museum",
+      "dorogomilovskoe-cemetery",
+      "brotherhood-grave-obelisk"
+    ],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": ["borodino"],
+    "sourceIds": ["src-bre-war"]
+  },
+  {
+    "id": "borodino-panorama",
+    "slug": "borodino-panorama",
+    "letter": "Б",
+    "title": "Бородинская панорама",
+    "shortDescription": "Панорама Франца Рубо, созданная к столетию Бородинского сражения.",
+    "content": [
+      "Панорама Франца Рубо, созданная к столетию Бородинского сражения."
+    ],
+    "category": "artwork",
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [],
+    "sourceIds": ["src-panorama-history"]
+  },
+  {
+    "id": "grand-army",
+    "slug": "grand-army",
+    "letter": "В",
+    "title": "Великая армия",
+    "shortDescription": "Многонациональная армия Наполеона, вторгшаяся в Российскую империю.",
+    "content": [
+      "Многонациональная армия Наполеона, вторгшаяся в Российскую империю."
+    ],
+    "category": "term",
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [],
+    "sourceIds": ["src-bre-war"]
+  },
+  {
+    "id": "military-council-fili",
+    "slug": "military-council-fili",
+    "letter": "В",
+    "title": "Военный совет в Филях",
+    "shortDescription": "Совещание 1 (13) сентября 1812 года, после которого Москва была оставлена.",
+    "content": [
+      "Совещание 1 (13) сентября 1812 года, после которого Москва была оставлена."
+    ],
+    "category": "event",
+    "relatedPlaceIds": ["fili-village", "kutuzov-hut"],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": ["council-fili"],
+    "sourceIds": ["src-prlib-fili", "src-bre-war"]
+  },
+  {
+    "id": "davydov",
+    "slug": "davydov",
+    "letter": "Д",
+    "title": "Давыдов, Денис Васильевич",
+    "shortDescription": "Офицер и один из известных организаторов армейских партизанских действий.",
+    "content": [
+      "Офицер и один из известных организаторов армейских партизанских действий."
+    ],
+    "category": "person",
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [],
+    "sourceIds": ["src-bre-davydov"]
+  },
+  {
+    "id": "dorogomilovo",
+    "slug": "dorogomilovo",
+    "letter": "Д",
+    "title": "Дорогомилово",
+    "shortDescription": "Историческая местность на западном въезде в Москву.",
+    "content": ["Историческая местность на западном въезде в Москву."],
+    "category": "place",
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [],
+    "sourceIds": ["src-mos-cemetery"]
+  },
+  {
+    "id": "kutuzov",
+    "slug": "kutuzov",
+    "letter": "К",
+    "title": "Кутузов, Михаил Илларионович",
+    "shortDescription": "Главнокомандующий российскими армиями в решающий период войны.",
+    "content": [
+      "Главнокомандующий российскими армиями в решающий период войны."
+    ],
+    "category": "person",
+    "relatedPlaceIds": ["fili-village", "kutuzov-hut", "kutuzov-monument"],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": ["kutuzov-command", "borodino", "council-fili"],
+    "sourceIds": ["src-bre-war"]
+  },
+  {
+    "id": "kutuzov-hut-term",
+    "slug": "kutuzov-hut-term",
+    "letter": "К",
+    "title": "Кутузовская изба",
+    "shortDescription": "Музей на месте избы Военного совета; нынешнее здание создано в 1887 году.",
+    "content": [
+      "Музей на месте избы Военного совета; нынешнее здание создано в 1887 году."
+    ],
+    "category": "place",
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [],
+    "sourceIds": ["src-bre-war"]
+  },
+  {
+    "id": "maloyaroslavets",
+    "slug": "maloyaroslavets",
+    "letter": "М",
+    "title": "Малоярославец",
+    "shortDescription": "Сражение 12 (24) октября, повлиявшее на направление отступления Наполеона.",
+    "content": [
+      "Сражение 12 (24) октября, повлиявшее на направление отступления Наполеона."
+    ],
+    "category": "event",
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [],
+    "sourceIds": ["src-bre-war"]
+  },
+  {
+    "id": "moscow-militia",
+    "slug": "moscow-militia",
+    "letter": "М",
+    "title": "Московское ополчение",
+    "shortDescription": "Ополчение Московской губернии; среди участников были жители Филей.",
+    "content": [
+      "Ополчение Московской губернии; среди участников были жители Филей."
+    ],
+    "category": "term",
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [],
+    "sourceIds": ["src-bre-war"]
+  },
+  {
+    "id": "moscow-fire",
+    "slug": "moscow-fire",
+    "letter": "М",
+    "title": "Московский пожар 1812 года",
+    "shortDescription": "Масштабные пожары после вступления армии Наполеона в Москву.",
+    "content": ["Масштабные пожары после вступления армии Наполеона в Москву."],
+    "category": "event",
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [],
+    "sourceIds": ["src-bre-war"]
+  },
+  {
+    "id": "napoleon",
+    "slug": "napoleon",
+    "letter": "Н",
+    "title": "Наполеон I",
+    "shortDescription": "Император французов и главнокомандующий Великой армией.",
+    "content": ["Император французов и главнокомандующий Великой армией."],
+    "category": "person",
+    "relatedPlaceIds": ["poklonnaya-hill", "dorogomilovskaya-gate"],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [
+      "invasion-neman",
+      "moscow-abandoned",
+      "napoleon-leaves-moscow"
+    ],
+    "sourceIds": ["src-bre-war"]
+  },
+  {
+    "id": "patriotic-war-1812",
+    "slug": "patriotic-war-1812",
+    "letter": "О",
+    "title": "Отечественная война 1812 года",
+    "shortDescription": "Война Российской империи против вторжения Великой армии Наполеона.",
+    "content": [
+      "Война Российской империи против вторжения Великой армии Наполеона."
+    ],
+    "category": "term",
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [],
+    "sourceIds": ["src-bre-war"]
+  },
+  {
+    "id": "partisan-movement",
+    "slug": "partisan-movement",
+    "letter": "П",
+    "title": "Партизанские действия 1812 года",
+    "shortDescription": "Действия армейских летучих отрядов и сопротивление населения.",
+    "content": [
+      "Действия армейских летучих отрядов и сопротивление населения."
+    ],
+    "category": "term",
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [],
+    "sourceIds": ["src-bre-war"]
+  },
+  {
+    "id": "platov",
+    "slug": "platov",
+    "letter": "П",
+    "title": "Платов, Матвей Иванович",
+    "shortDescription": "Атаман Войска Донского, командовавший казачьими силами.",
+    "content": ["Атаман Войска Донского, командовавший казачьими силами."],
+    "category": "person",
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [],
+    "sourceIds": ["src-bre-platov"]
+  },
+  {
+    "id": "poklonnaya-hill",
+    "slug": "poklonnaya-hill",
+    "letter": "П",
+    "title": "Поклонная гора",
+    "shortDescription": "Историческая местность на западном подступе к Москве.",
+    "content": ["Историческая местность на западном подступе к Москве."],
+    "category": "place",
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [],
+    "sourceIds": ["src-bre-war"]
+  },
+  {
+    "id": "raevsky",
+    "slug": "raevsky",
+    "letter": "Р",
+    "title": "Раевский, Николай Николаевич",
+    "shortDescription": "Командир 7-го пехотного корпуса, герой кампании 1812 года.",
+    "content": ["Командир 7-го пехотного корпуса, герой кампании 1812 года."],
+    "category": "person",
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [],
+    "sourceIds": ["src-bre-raevsky"]
+  },
+  {
+    "id": "roubaud",
+    "slug": "roubaud",
+    "letter": "Р",
+    "title": "Рубо, Франц Алексеевич",
+    "shortDescription": "Художник-баталист, автор панорамы «Бородино».",
+    "content": ["Художник-баталист, автор панорамы «Бородино»."],
+    "category": "person",
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [],
+    "sourceIds": ["src-panorama-history"]
+  },
+  {
+    "id": "smolensk-battle",
+    "slug": "smolensk-battle",
+    "letter": "С",
+    "title": "Смоленское сражение",
+    "shortDescription": "Сражение 4–6 (16–18) августа 1812 года.",
+    "content": ["Сражение 4–6 (16–18) августа 1812 года."],
+    "category": "event",
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [],
+    "sourceIds": ["src-bre-war"]
+  },
+  {
+    "id": "smolensk-road",
+    "slug": "smolensk-road",
+    "letter": "С",
+    "title": "Смоленская дорога",
+    "shortDescription": "Историческое западное направление из Москвы через Можайск и Смоленск.",
+    "content": [
+      "Историческое западное направление из Москвы через Можайск и Смоленск."
+    ],
+    "category": "term",
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [],
+    "sourceIds": ["src-bre-war"]
+  },
+  {
+    "id": "tarutino-maneuver",
+    "slug": "tarutino-maneuver",
+    "letter": "Т",
+    "title": "Тарутинский марш-манёвр",
+    "shortDescription": "Манёвр русской армии после оставления Москвы.",
+    "content": ["Манёвр русской армии после оставления Москвы."],
+    "category": "event",
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [],
+    "sourceIds": ["src-bre-war"]
+  },
+  {
+    "id": "triumphal-arch",
+    "slug": "triumphal-arch",
+    "letter": "Т",
+    "title": "Триумфальная арка",
+    "shortDescription": "Памятник победе в войне 1812 года, воссозданный на Кутузовском проспекте.",
+    "content": [
+      "Памятник победе в войне 1812 года, воссозданный на Кутузовском проспекте."
+    ],
+    "category": "monument",
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [],
+    "sourceIds": ["src-panorama-history"]
+  },
+  {
+    "id": "fili",
+    "slug": "fili",
+    "letter": "Ф",
+    "title": "Фили",
+    "shortDescription": "Бывшая подмосковная деревня — место Военного совета.",
+    "content": ["Бывшая подмосковная деревня — место Военного совета."],
+    "category": "place",
+    "relatedPlaceIds": [
+      "fili-village",
+      "kutuzov-hut",
+      "intercession-church-fili"
+    ],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [],
+    "sourceIds": ["src-panorama-west", "src-prlib-fili"]
+  },
+  {
+    "id": "shevardino-redoubt",
+    "slug": "shevardino-redoubt",
+    "letter": "Ш",
+    "title": "Шевардинский редут",
+    "shortDescription": "Передовое укрепление русской позиции на Бородинском поле.",
+    "content": ["Передовое укрепление русской позиции на Бородинском поле."],
+    "category": "term",
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [],
+    "sourceIds": ["src-bre-war"]
+  }
+]

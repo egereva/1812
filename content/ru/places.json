@@ -1,0 +1,340 @@
+[
+  {
+    "id": "fili-village",
+    "slug": "fili-village",
+    "title": "Деревня Фили и место Военного совета",
+    "shortDescription": "Историческая территория бывшей деревни Фили, где 1 (13) сентября 1812 года состоялся Военный совет русской армии.",
+    "content": [
+      "В начале XIX века Фили были небольшой подмосковной деревней примерно в двух верстах к западу от Москвы.",
+      "1 (13) сентября 1812 года в избе крестьянина Михаила Фролова состоялся Военный совет. Михаил Кутузов принял решение оставить Москву без нового генерального сражения.",
+      "После занятия местности войсками Наполеона в Филях размещались воинское подразделение и вюртембергский госпиталь."
+    ],
+    "sourceIds": ["src-panorama-west", "src-prlib-fili", "src-bre-war"],
+    "coordinates": {
+      "lat": 55.7397,
+      "lon": 37.5231
+    },
+    "category": "historical-place",
+    "historicalStatus": "event-site",
+    "locationPrecision": "approximate",
+    "relatedPlaceIds": ["kutuzov-hut", "intercession-church-fili"],
+    "relatedDictionaryIds": ["military-council-fili", "kutuzov", "fili"],
+    "relatedTimelineIds": ["council-fili", "moscow-abandoned"],
+    "locationNote": "Маркер обозначает район исторического места; деревня занимала более широкую территорию.",
+    "historicalNote": "Современная Кутузовская изба — реконструкция 1887 года."
+  },
+  {
+    "id": "kutuzov-hut",
+    "slug": "kutuzov-hut",
+    "title": "Кутузовская изба",
+    "shortDescription": "Музейное здание 1887 года на месте избы Военного совета.",
+    "content": [
+      "Военный совет 1 (13) сентября 1812 года проходил в избе крестьянина Михаила Фролова. Первоначальную избу сохраняли как исторический памятник, однако в 1868 году она была почти полностью уничтожена пожаром.",
+      "В 1883 году место избы отметили памятным знаком. В 1887 году по планам и чертежам прежней избы было воссоздано новое деревянное здание; в нём разместили музей, посвящённый событиям 1812 года.",
+      "Кутузовская изба стала ядром историко-мемориального комплекса, который позднее пополнили часовня, памятные знаки и Музей-панорама «Бородинская битва»."
+    ],
+    "sourceIds": [
+      "src-panorama-hut",
+      "src-panorama-history",
+      "src-mos-atlas",
+      "src-prlib-fili"
+    ],
+    "coordinates": {
+      "lat": 55.73972,
+      "lon": 37.52306
+    },
+    "category": "museum",
+    "historicalStatus": "reconstruction",
+    "locationPrecision": "exact",
+    "relatedPlaceIds": [
+      "fili-village",
+      "milepost-fili",
+      "archangel-michael-chapel",
+      "borodino-panorama-museum"
+    ],
+    "relatedDictionaryIds": ["kutuzov", "military-council-fili", "fili"],
+    "relatedTimelineIds": ["council-fili"],
+    "address": "Кутузовский проспект, 38, стр. 2",
+    "historicalNote": "Существующее здание не является подлинной избой 1812 года."
+  },
+  {
+    "id": "intercession-church-fili",
+    "slug": "intercession-church-fili",
+    "title": "Церковь Покрова в Филях",
+    "shortDescription": "Сохранившийся храм конца XVII века, пострадавший во время пребывания французских войск.",
+    "content": [
+      "Храм уже существовал в 1812 году.",
+      "По документам Мосгорнаследия, во время пребывания неприятельских войск часть Филей сгорела, а в Покровской церкви французские солдаты держали лошадей.",
+      "Это один из наиболее наглядных сохранившихся материальных свидетелей местности 1812 года."
+    ],
+    "sourceIds": ["src-mos-kuntsevo", "src-mos-kuntsevo-road", "src-mos-atlas"],
+    "coordinates": {
+      "lat": 55.75083,
+      "lon": 37.51
+    },
+    "category": "historic-building",
+    "historicalStatus": "surviving-witness",
+    "locationPrecision": "exact",
+    "relatedPlaceIds": ["fili-village", "kuntsevo-estate"],
+    "relatedDictionaryIds": ["fili"],
+    "relatedTimelineIds": ["moscow-abandoned"],
+    "address": "Новозаводская улица, 6"
+  },
+  {
+    "id": "kuntsevo-estate",
+    "slug": "kuntsevo-estate",
+    "title": "Усадьба Кунцево",
+    "shortDescription": "Историческое место усадьбы Нарышкиных, главный дом которой горел в 1812 году.",
+    "content": [
+      "Кунцево входило в Филевско-Кунцевскую вотчину Нарышкиных к западу от Москвы.",
+      "По данным государственной историко-культурной экспертизы, во время пребывания неприятельских войск в 1812 году Кунцевский дом горел. К 1818 году его перестроили; экспертиза считает более вероятным, что дом был выстроен заново на старом месте.",
+      "Поэтому современный главный дом нельзя описывать как неизменившееся здание, непосредственно пережившее события 1812 года: для проекта важны историческая территория усадьбы и история её послевоенного восстановления."
+    ],
+    "sourceIds": ["src-mos-kuntsevo", "src-mos-kuntsevo-road"],
+    "coordinates": {
+      "lat": 55.73917,
+      "lon": 37.46139
+    },
+    "category": "historic-estate",
+    "historicalStatus": "event-site",
+    "locationPrecision": "exact",
+    "relatedPlaceIds": ["intercession-church-fili"],
+    "relatedDictionaryIds": ["fili"],
+    "relatedTimelineIds": [],
+    "address": "Большая Филёвская улица, 22",
+    "historicalNote": "Нынешний главный дом не следует называть домом, «пережившим Наполеона»."
+  },
+  {
+    "id": "poklonnaya-hill",
+    "slug": "poklonnaya-hill",
+    "title": "Поклонная гора",
+    "shortDescription": "Историческая местность на западном подступе к Москве, связанная с подходом армии Наполеона.",
+    "content": [
+      "С Поклонной горой традиционно связывают ожидание Наполеоном московской делегации перед вступлением в город.",
+      "Современный рельеф местности значительно изменён позднейшей городской застройкой.",
+      "Карта показывает историческую местность, а не точную точку нахождения Наполеона."
+    ],
+    "sourceIds": ["src-garant-obelisk", "src-bre-war"],
+    "coordinates": {
+      "lat": 55.7317,
+      "lon": 37.5067
+    },
+    "category": "historical-place",
+    "historicalStatus": "event-site",
+    "locationPrecision": "approximate",
+    "relatedPlaceIds": ["dorogomilovskaya-gate", "triumphal-arch"],
+    "relatedDictionaryIds": ["napoleon", "poklonnaya-hill", "smolensk-road"],
+    "relatedTimelineIds": ["moscow-abandoned"],
+    "locationNote": "Координата обозначает современную историческую местность.",
+    "historicalNote": "Сюжет о «ключах от Москвы» следует подавать как историческую традицию."
+  },
+  {
+    "id": "dorogomilovskaya-gate",
+    "slug": "dorogomilovskaya-gate",
+    "title": "Дорогомиловская застава",
+    "shortDescription": "Утраченная застава на западной границе старой Москвы.",
+    "content": [
+      "Дорогомиловская застава находилась на Камер-Коллежском валу у западного въезда в Москву.",
+      "Дорогомилово оказалось на пути войск Наполеона, вступавших в Москву с запада.",
+      "Историческая застава не сохранилась; современная площадь расположена несколько иначе."
+    ],
+    "sourceIds": [
+      "src-mos-cemetery",
+      "src-garant-obelisk",
+      "src-mos-kievskaya-gike",
+      "src-mos-dorogomilovo-gike"
+    ],
+    "coordinates": {
+      "lat": 55.7467,
+      "lon": 37.5547
+    },
+    "category": "lost-site",
+    "historicalStatus": "lost-site",
+    "locationPrecision": "approximate",
+    "relatedPlaceIds": ["poklonnaya-hill", "dorogomilovskoe-cemetery"],
+    "relatedDictionaryIds": ["dorogomilovo", "smolensk-road", "napoleon"],
+    "relatedTimelineIds": ["moscow-abandoned"],
+    "locationNote": "Современная площадь не полностью совпадает с положением исторической заставы."
+  },
+  {
+    "id": "dorogomilovskoe-cemetery",
+    "slug": "dorogomilovskoe-cemetery",
+    "title": "Дорогомиловское кладбище и братская могила",
+    "shortDescription": "Утраченное кладбище, где хоронили русских воинов, умерших от ран после Бородина.",
+    "content": [
+      "После Бородинского сражения здесь хоронили русских воинов, умерших от ран.",
+      "У стен храма находилось захоронение нескольких сот участников Бородинского сражения; в 1849 году над братской могилой поставили памятный обелиск.",
+      "В XX веке кладбище было ликвидировано."
+    ],
+    "sourceIds": [
+      "src-mos-cemetery",
+      "src-garant-obelisk",
+      "src-mos-kievskaya-gike",
+      "src-mos-dorogomilovo-gike"
+    ],
+    "coordinates": {
+      "lat": 55.7439,
+      "lon": 37.5411
+    },
+    "category": "lost-site",
+    "historicalStatus": "lost-site",
+    "locationPrecision": "approximate",
+    "relatedPlaceIds": ["brotherhood-grave-obelisk"],
+    "relatedDictionaryIds": ["borodino-battle", "dorogomilovo"],
+    "relatedTimelineIds": ["borodino"],
+    "locationNote": "Маркер обозначает ориентировочный центр большой исторической территории."
+  },
+  {
+    "id": "brotherhood-grave-obelisk",
+    "slug": "brotherhood-grave-obelisk",
+    "title": "Обелиск в память воинов Бородинского сражения",
+    "shortDescription": "Гранитный обелиск 1940 года, первоначально установленный над братской могилой на Дорогомиловском кладбище и позднее перенесённый к Кутузовской избе.",
+    "content": [
+      "На Дорогомиловском кладбище у стен храма находилась братская могила нескольких сот русских воинов, умерших от ран после Бородинского сражения. В 1849 году над ней на средства Прохоровых поставили памятный обелиск в виде кирпичной шатровой часовни.",
+      "К 1940 году прежний памятник обветшал. Власти Москвы заменили его новым гранитным обелиском. Именно этот объект 1940 года находится сегодня у Кутузовской избы.",
+      "Музей-панорама датирует перенос обелиска к Кутузовской избе 1953 годом. В отдельных официальных исторических справках встречается 1948 год, поэтому в основном пользовательском тексте точный год переноса лучше сопровождать ссылкой на музейную хронику."
+    ],
+    "sourceIds": [
+      "src-panorama-history",
+      "src-garant-obelisk",
+      "src-mos-cemetery",
+      "src-mos-dorogomilovo-protection"
+    ],
+    "coordinates": {
+      "lat": 55.7398,
+      "lon": 37.5228
+    },
+    "category": "memorial",
+    "historicalStatus": "memorial",
+    "locationPrecision": "exact",
+    "relatedPlaceIds": ["dorogomilovskoe-cemetery", "kutuzov-hut"],
+    "relatedDictionaryIds": ["borodino-battle"],
+    "relatedTimelineIds": ["borodino"],
+    "address": "Кутузовский проспект, 38",
+    "historicalNote": "Нынешний гранитный обелиск создан в 1940 году вместо обветшавшего памятника 1849 года; это не один и тот же физический объект."
+  },
+  {
+    "id": "milepost-fili",
+    "slug": "milepost-fili",
+    "title": "Памятный верстовой столб в Филях",
+    "shortDescription": "Памятный знак 1883 года на месте избы Военного совета.",
+    "content": [
+      "В 1883 году офицеры Гренадерского корпуса отметили место избы Военного совета памятным знаком.",
+      "Он стал одним из первых элементов будущего мемориального комплекса в Филях."
+    ],
+    "sourceIds": ["src-panorama-hut", "src-panorama-history"],
+    "coordinates": {
+      "lat": 55.73972,
+      "lon": 37.52306
+    },
+    "category": "memorial",
+    "historicalStatus": "memorial",
+    "locationPrecision": "exact",
+    "relatedPlaceIds": ["kutuzov-hut"],
+    "relatedDictionaryIds": ["military-council-fili", "fili"],
+    "relatedTimelineIds": ["council-fili"],
+    "address": "Кутузовский проспект, 38, стр. 2"
+  },
+  {
+    "id": "archangel-michael-chapel",
+    "slug": "archangel-michael-chapel",
+    "title": "Часовня Архангела Михаила",
+    "shortDescription": "Мемориальная часовня у Кутузовской избы, освящённая в 1912 году.",
+    "content": [
+      "Часовня была построена возле Кутузовской избы как часть мемориального пространства, посвящённого войне 1812 года.",
+      "Её освятили в юбилейном 1912 году; музей связывает проект с М. Н. Литвиновым."
+    ],
+    "sourceIds": ["src-panorama-hut", "src-panorama-history"],
+    "coordinates": {
+      "lat": 55.73972,
+      "lon": 37.52361
+    },
+    "category": "memorial",
+    "historicalStatus": "memorial",
+    "locationPrecision": "exact",
+    "relatedPlaceIds": ["kutuzov-hut"],
+    "relatedDictionaryIds": ["fili"],
+    "relatedTimelineIds": [],
+    "address": "Кутузовский проспект, у Кутузовской избы"
+  },
+  {
+    "id": "borodino-panorama-museum",
+    "slug": "borodino-panorama-museum",
+    "title": "Музей-панорама «Бородинская битва»",
+    "shortDescription": "Главный московский музей войны 1812 года; современное здание открыто в 1962 году.",
+    "content": [
+      "Новое здание музея на Кутузовском проспекте открылось 18 октября 1962 года.",
+      "Центральный экспонат — панорама Франца Рубо «Бородино», созданная к столетию сражения и впервые открытая на Чистых прудах 11 сентября 1912 года.",
+      "Музей расположен рядом с местом бывшей деревни Фили."
+    ],
+    "sourceIds": ["src-panorama-history"],
+    "coordinates": {
+      "lat": 55.73877,
+      "lon": 37.52297
+    },
+    "category": "museum",
+    "historicalStatus": "museum",
+    "locationPrecision": "exact",
+    "relatedPlaceIds": [
+      "kutuzov-hut",
+      "fili-village",
+      "triumphal-arch",
+      "kutuzov-monument"
+    ],
+    "relatedDictionaryIds": ["borodino-panorama", "roubaud", "borodino-battle"],
+    "relatedTimelineIds": ["borodino"],
+    "address": "Кутузовский проспект, 38, стр. 1"
+  },
+  {
+    "id": "kutuzov-monument",
+    "slug": "kutuzov-monument",
+    "title": "Памятник М. И. Кутузову и участникам войны 1812 года",
+    "shortDescription": "Монумент 1973 года у музея-панорамы.",
+    "content": [
+      "Памятник открыт в 1973 году; автор центральной фигуры — Н. В. Томский.",
+      "Композиция объединяет образ Кутузова с фигурами военачальников, солдат и партизан."
+    ],
+    "sourceIds": ["src-panorama-history", "src-mos-atlas"],
+    "coordinates": {
+      "lat": 55.7386,
+      "lon": 37.5237
+    },
+    "category": "monument",
+    "historicalStatus": "memorial",
+    "locationPrecision": "exact",
+    "relatedPlaceIds": ["borodino-panorama-museum"],
+    "relatedDictionaryIds": [
+      "kutuzov",
+      "bagration",
+      "barclay-de-tolly",
+      "platov",
+      "raevsky",
+      "davydov"
+    ],
+    "relatedTimelineIds": ["borodino", "council-fili"],
+    "address": "Кутузовский проспект, 38"
+  },
+  {
+    "id": "triumphal-arch",
+    "slug": "triumphal-arch",
+    "title": "Триумфальная арка",
+    "shortDescription": "Воссозданный на Кутузовском проспекте памятник победе России в войне 1812 года.",
+    "content": [
+      "Первоначальная каменная арка по проекту О. И. Бове была сооружена в XIX веке у Тверской заставы.",
+      "В XX веке её разобрали; на нынешнем месте памятник был воссоздан и открыт в 1968 году.",
+      "Современная арка — памятник исторической памяти, а не сооружение, стоявшее здесь в 1812 году."
+    ],
+    "sourceIds": ["src-panorama-history", "src-garant-obelisk"],
+    "coordinates": {
+      "lat": 55.73675,
+      "lon": 37.51992
+    },
+    "category": "monument",
+    "historicalStatus": "memorial",
+    "locationPrecision": "exact",
+    "relatedPlaceIds": ["poklonnaya-hill", "borodino-panorama-museum"],
+    "relatedDictionaryIds": ["triumphal-arch", "patriotic-war-1812"],
+    "relatedTimelineIds": [],
+    "address": "Площадь Победы, Кутузовский проспект"
+  }
+]

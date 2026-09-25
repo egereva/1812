@@ -1,0 +1,200 @@
+{
+  "version": "media-audit-final-ru-1",
+  "auditedAt": "2026-09-25",
+  "items": [
+    {
+      "id": "fili-council-kivshenko-1882",
+      "target": "public/images/timeline/fili-council-kivshenko-1882.jpg",
+      "entities": [
+        "timeline:council-fili",
+        "dictionary:military-council-fili",
+        "place:fili-village"
+      ],
+      "title": "Военный совет в Филях в 1812 году",
+      "creator": "Алексей Кившенко",
+      "date": "1882",
+      "kind": "later-artistic-depiction",
+      "license": "Public domain / PD-Art",
+      "licenseStatus": "approved",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Военный_совет_в_Филях_в_1812_году.jpg",
+      "originalDimensions": "2048×1105",
+      "caption": "Алексей Кившенко. «Военный совет в Филях в 1812 году», 1882. Художественное изображение, созданное спустя 70 лет после события.",
+      "alt": "Военный совет в Филях на картине Алексея Кившенко"
+    },
+    {
+      "id": "kutuzov-hut-modern-2015",
+      "target": "public/images/places/kutuzov-hut-modern-2015.jpg",
+      "entities": [
+        "place:kutuzov-hut"
+      ],
+      "title": "Кутузовская изба",
+      "creator": "Dmitry Markevich",
+      "date": "2015-07-23",
+      "kind": "modern-documentary-photo",
+      "license": "CC BY-SA 4.0",
+      "licenseStatus": "approved",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Изба3.jpg",
+      "originalDimensions": "768×1024",
+      "caption": "Кутузовская изба — реконструкция 1887 года. Фото: Dmitry Markevich, 2015, CC BY-SA 4.0.",
+      "alt": "Современный вид Кутузовской избы"
+    },
+    {
+      "id": "kutuzov-hut-savrasov-1884",
+      "target": "public/images/places/kutuzov-hut-savrasov-1884.jpg",
+      "entities": [
+        "place:kutuzov-hut",
+        "place:fili-village"
+      ],
+      "title": "Изба совета в Филях",
+      "creator": "Алексей Саврасов",
+      "date": "1884",
+      "kind": "later-artistic-depiction",
+      "license": "Public domain / PD-Art",
+      "licenseStatus": "approved",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Изба_совета_в_Филях.jpg",
+      "originalDimensions": "1215×747",
+      "caption": "Алексей Саврасов. «Изба совета в Филях», 1884. Художественное изображение; не фотография избы 1812 года.",
+      "alt": "Кутузовская изба в Филях на картине Алексея Саврасова"
+    },
+    {
+      "id": "fili-church-modern-2012",
+      "target": "public/images/places/fili-church-modern-2012.jpg",
+      "entities": [
+        "place:intercession-church-fili"
+      ],
+      "title": "Церковь Покрова в Филях",
+      "creator": "Алексей Васин",
+      "date": "2012-09-23",
+      "kind": "modern-documentary-photo",
+      "license": "CC BY-SA 3.0",
+      "licenseStatus": "approved",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Церковь_Покрова_в_Филях.jpg",
+      "originalDimensions": "3590×2403",
+      "caption": "Церковь Покрова Пресвятой Богородицы в Филях. Фото: Алексей Васин, 2012, CC BY-SA 3.0.",
+      "alt": "Современный вид церкви Покрова в Филях"
+    },
+    {
+      "id": "kuntsevo-estate-ca1910",
+      "target": "public/images/places/kuntsevo-estate-ca1910.jpg",
+      "entities": [
+        "place:kuntsevo-estate"
+      ],
+      "title": "Главный дом усадьбы Кунцево",
+      "creator": "автор неизвестен",
+      "date": "ок. 1910",
+      "kind": "historical-documentary-photo",
+      "license": "Public domain / PD-RusEmpire",
+      "licenseStatus": "approved",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Kuntsevo_Estate.jpg",
+      "originalDimensions": "1280×792",
+      "caption": "Главный дом усадьбы Кунцево, около 1910 года. Автор фотографии неизвестен.",
+      "alt": "Историческая фотография главного дома усадьбы Кунцево"
+    },
+    {
+      "id": "archangel-chapel-2008",
+      "target": "public/images/places/archangel-michael-chapel-2008.jpg",
+      "entities": [
+        "place:archangel-michael-chapel"
+      ],
+      "title": "Храм Архангела Михаила при Кутузовской избе",
+      "creator": "NVO",
+      "date": "2008-08-31",
+      "kind": "modern-documentary-photo",
+      "license": "CC BY-SA 3.0",
+      "licenseStatus": "approved",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Moscow,_Archangel_Michael_at_Kutuzov%27s_Hut_(1).jpg",
+      "originalDimensions": "1500×1161",
+      "caption": "Храм Архангела Михаила при Кутузовской избе. Фото: NVO, 2008, CC BY-SA 3.0.",
+      "alt": "Храм Архангела Михаила при Кутузовской избе"
+    },
+    {
+      "id": "triumphal-arch-1934",
+      "target": "public/images/places/triumphal-arch-1934.jpg",
+      "entities": [
+        "place:triumphal-arch",
+        "dictionary:triumphal-arch"
+      ],
+      "title": "Триумфальная арка в Москве",
+      "creator": "Соломон Тулес",
+      "date": "1934",
+      "kind": "historical-documentary-photo",
+      "license": "Public domain (PD-Russia)",
+      "licenseStatus": "approved",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Triumphal_Arch_of_Moscow_1934.jpg",
+      "originalDimensions": "900×600",
+      "caption": "Триумфальная арка у Тверской заставы, 1934 год. Фото: Соломон Тулес.",
+      "alt": "Триумфальная арка в Москве на фотографии 1934 года"
+    },
+    {
+      "id": "borodino-hess-1843",
+      "target": "public/images/timeline/borodino-hess-1843.jpg",
+      "entities": [
+        "timeline:borodino",
+        "dictionary:borodino-battle"
+      ],
+      "title": "Бородинское сражение 26 августа (7 сентября) 1812 года",
+      "creator": "Петер фон Гесс",
+      "date": "1843",
+      "kind": "later-artistic-depiction",
+      "license": "Public domain / PD-Art",
+      "licenseStatus": "approved",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Battle_of_Borodino_on_26_August_(7_September)_1812_(by_Peter_von_Hess,_original_colors_version).jpg",
+      "originalDimensions": "1919×1210",
+      "caption": "Петер фон Гесс. «Бородинское сражение 26 августа (7 сентября) 1812 года», 1843. Художественное изображение, созданное после войны.",
+      "alt": "Бородинское сражение на картине Петера фон Гесса"
+    },
+    {
+      "id": "roubaud-borodino-panorama-1912",
+      "target": "public/images/dictionary/roubaud-borodino-panorama-1912.jpg",
+      "entities": [
+        "dictionary:borodino-panorama",
+        "dictionary:roubaud",
+        "place:borodino-panorama-museum"
+      ],
+      "title": "Фрагмент панорамы «Бородинская битва»",
+      "creator": "Франц Рубо",
+      "date": "1912",
+      "kind": "artwork-documentation",
+      "license": "Public domain / PD-Art",
+      "licenseStatus": "approved",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Battle_of_Borodino_part_of_panorama_by_Franz_Roubaud.jpg",
+      "originalDimensions": "3764×340",
+      "caption": "Франц Рубо. Фрагмент панорамы «Бородинская битва», 1912.",
+      "alt": "Фрагмент панорамы Франца Рубо Бородинская битва"
+    },
+    {
+      "id": "retreat-moscow-suchodolski-1853",
+      "target": "public/images/timeline/retreat-moscow-suchodolski-1853.jpg",
+      "entities": [
+        "timeline:napoleon-leaves-moscow"
+      ],
+      "title": "Отступление из Москвы в 1812 году",
+      "creator": "Януарий Суходольский",
+      "date": "1853",
+      "kind": "later-artistic-depiction",
+      "license": "Public domain / PD-Art",
+      "licenseStatus": "approved",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:January_Suchodolski_-_Retreat_from_Moscow_in_1812_-_MP_2605_-_National_Museum_in_Warsaw.jpg",
+      "originalDimensions": "2500×1738",
+      "caption": "Януарий Суходольский. «Отступление из Москвы в 1812 году», 1853. Художественное изображение, созданное позднее события.",
+      "alt": "Отступление Великой армии из Москвы на картине Януария Суходольского"
+    },
+    {
+      "id": "berezina-hess",
+      "target": "public/images/timeline/berezina-hess.jpg",
+      "entities": [
+        "timeline:berezina"
+      ],
+      "title": "Переправа через Березину",
+      "creator": "Петер фон Гесс",
+      "date": "XIX век",
+      "kind": "later-artistic-depiction",
+      "license": "Public domain / PD-Art",
+      "licenseStatus": "approved",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Hess_Berezina.jpg",
+      "originalDimensions": "800×519",
+      "caption": "Петер фон Гесс. «Переправа через Березину». Художественное изображение события.",
+      "alt": "Переправа через Березину на картине Петера фон Гесса"
+    }
+  ]
+}

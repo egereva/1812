@@ -1,0 +1,435 @@
+[
+  {
+    "id": "alexander-i",
+    "slug": "alexander-i",
+    "letter": "A",
+    "title": "Alexander I",
+    "shortDescription": "Russian emperor during the War of 1812.",
+    "content": ["Russian emperor during the War of 1812."],
+    "category": "person",
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [],
+    "sourceIds": ["src-bre-war"]
+  },
+  {
+    "id": "bagration",
+    "slug": "bagration",
+    "letter": "P",
+    "title": "Pyotr Bagration",
+    "shortDescription": "Commander of the 2nd Western Army; severely wounded at Borodino.",
+    "content": [
+      "Commander of the 2nd Western Army; severely wounded at Borodino."
+    ],
+    "category": "person",
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [],
+    "sourceIds": ["src-bre-war"]
+  },
+  {
+    "id": "barclay-de-tolly",
+    "slug": "barclay-de-tolly",
+    "letter": "M",
+    "title": "Mikhail Barclay de Tolly",
+    "shortDescription": "Minister of War and commander of the 1st Western Army at the beginning of the campaign.",
+    "content": [
+      "Minister of War and commander of the 1st Western Army at the beginning of the campaign."
+    ],
+    "category": "person",
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [],
+    "sourceIds": ["src-bre-war"]
+  },
+  {
+    "id": "bennigsen",
+    "slug": "bennigsen",
+    "letter": "L",
+    "title": "Levin August von Bennigsen",
+    "shortDescription": "Russian general and participant in the Military Council at Fili.",
+    "content": [
+      "Russian general and participant in the Military Council at Fili."
+    ],
+    "category": "person",
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [],
+    "sourceIds": ["src-bre-war"]
+  },
+  {
+    "id": "berezina",
+    "slug": "berezina",
+    "letter": "B",
+    "title": "Berezina",
+    "shortDescription": "A key episode in the retreat of the Grande Armée in November 1812.",
+    "content": [
+      "A key episode in the retreat of the Grande Armée in November 1812."
+    ],
+    "category": "event",
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [],
+    "sourceIds": ["src-bre-war"]
+  },
+  {
+    "id": "borodino-battle",
+    "slug": "borodino-battle",
+    "letter": "B",
+    "title": "Battle of Borodino",
+    "shortDescription": "The general battle of 26 August (7 September) 1812.",
+    "content": ["The general battle of 26 August (7 September) 1812."],
+    "category": "event",
+    "relatedPlaceIds": [
+      "borodino-panorama-museum",
+      "dorogomilovskoe-cemetery",
+      "brotherhood-grave-obelisk"
+    ],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": ["borodino"],
+    "sourceIds": ["src-bre-war"]
+  },
+  {
+    "id": "borodino-panorama",
+    "slug": "borodino-panorama",
+    "letter": "B",
+    "title": "Borodino Panorama",
+    "shortDescription": "Franz Roubaud’s panorama created for the centenary of the Battle of Borodino.",
+    "content": [
+      "Franz Roubaud’s panorama created for the centenary of the Battle of Borodino."
+    ],
+    "category": "artwork",
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [],
+    "sourceIds": ["src-panorama-history"]
+  },
+  {
+    "id": "grand-army",
+    "slug": "grand-army",
+    "letter": "G",
+    "title": "Grande Armée",
+    "shortDescription": "Napoleon’s multinational army that invaded the Russian Empire.",
+    "content": [
+      "Napoleon’s multinational army that invaded the Russian Empire."
+    ],
+    "category": "term",
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [],
+    "sourceIds": ["src-bre-war"]
+  },
+  {
+    "id": "military-council-fili",
+    "slug": "military-council-fili",
+    "letter": "M",
+    "title": "Military Council at Fili",
+    "shortDescription": "The meeting of 1 (13) September 1812 after which Moscow was abandoned.",
+    "content": [
+      "The meeting of 1 (13) September 1812 after which Moscow was abandoned."
+    ],
+    "category": "event",
+    "relatedPlaceIds": ["fili-village", "kutuzov-hut"],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": ["council-fili"],
+    "sourceIds": ["src-prlib-fili", "src-bre-war"]
+  },
+  {
+    "id": "davydov",
+    "slug": "davydov",
+    "letter": "D",
+    "title": "Denis Davydov",
+    "shortDescription": "Officer and one of the best-known organisers of army partisan operations.",
+    "content": [
+      "Officer and one of the best-known organisers of army partisan operations."
+    ],
+    "category": "person",
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [],
+    "sourceIds": ["src-bre-davydov"]
+  },
+  {
+    "id": "dorogomilovo",
+    "slug": "dorogomilovo",
+    "letter": "D",
+    "title": "Dorogomilovo",
+    "shortDescription": "A historic area at the western entrance to Moscow.",
+    "content": ["A historic area at the western entrance to Moscow."],
+    "category": "place",
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [],
+    "sourceIds": ["src-mos-cemetery"]
+  },
+  {
+    "id": "kutuzov",
+    "slug": "kutuzov",
+    "letter": "M",
+    "title": "Mikhail Kutuzov",
+    "shortDescription": "Commander-in-chief of the Russian armies during the decisive period of the war.",
+    "content": [
+      "Commander-in-chief of the Russian armies during the decisive period of the war."
+    ],
+    "category": "person",
+    "relatedPlaceIds": ["fili-village", "kutuzov-hut", "kutuzov-monument"],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": ["kutuzov-command", "borodino", "council-fili"],
+    "sourceIds": ["src-bre-war"]
+  },
+  {
+    "id": "kutuzov-hut-term",
+    "slug": "kutuzov-hut-term",
+    "letter": "K",
+    "title": "Kutuzov Hut",
+    "shortDescription": "A museum on the site of the Military Council hut; the present building was constructed in 1887.",
+    "content": [
+      "A museum on the site of the Military Council hut; the present building was constructed in 1887."
+    ],
+    "category": "place",
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [],
+    "sourceIds": ["src-bre-war"]
+  },
+  {
+    "id": "maloyaroslavets",
+    "slug": "maloyaroslavets",
+    "letter": "M",
+    "title": "Maloyaroslavets",
+    "shortDescription": "The battle of 12 (24) October that influenced the direction of Napoleon’s retreat.",
+    "content": [
+      "The battle of 12 (24) October that influenced the direction of Napoleon’s retreat."
+    ],
+    "category": "event",
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [],
+    "sourceIds": ["src-bre-war"]
+  },
+  {
+    "id": "moscow-militia",
+    "slug": "moscow-militia",
+    "letter": "M",
+    "title": "Moscow Militia",
+    "shortDescription": "The militia of Moscow Governorate; residents of Fili were among its members.",
+    "content": [
+      "The militia of Moscow Governorate; residents of Fili were among its members."
+    ],
+    "category": "term",
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [],
+    "sourceIds": ["src-bre-war"]
+  },
+  {
+    "id": "moscow-fire",
+    "slug": "moscow-fire",
+    "letter": "F",
+    "title": "Fire of Moscow, 1812",
+    "shortDescription": "Large-scale fires that broke out after Napoleon’s army entered Moscow.",
+    "content": [
+      "Large-scale fires that broke out after Napoleon’s army entered Moscow."
+    ],
+    "category": "event",
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [],
+    "sourceIds": ["src-bre-war"]
+  },
+  {
+    "id": "napoleon",
+    "slug": "napoleon",
+    "letter": "N",
+    "title": "Napoleon I",
+    "shortDescription": "Emperor of the French and commander-in-chief of the Grande Armée.",
+    "content": [
+      "Emperor of the French and commander-in-chief of the Grande Armée."
+    ],
+    "category": "person",
+    "relatedPlaceIds": ["poklonnaya-hill", "dorogomilovskaya-gate"],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [
+      "invasion-neman",
+      "moscow-abandoned",
+      "napoleon-leaves-moscow"
+    ],
+    "sourceIds": ["src-bre-war"]
+  },
+  {
+    "id": "patriotic-war-1812",
+    "slug": "patriotic-war-1812",
+    "letter": "P",
+    "title": "Patriotic War of 1812",
+    "shortDescription": "The Russian Empire’s war against the invasion by Napoleon’s Grande Armée.",
+    "content": [
+      "The Russian Empire’s war against the invasion by Napoleon’s Grande Armée."
+    ],
+    "category": "term",
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [],
+    "sourceIds": ["src-bre-war"]
+  },
+  {
+    "id": "partisan-movement",
+    "slug": "partisan-movement",
+    "letter": "P",
+    "title": "Partisan Operations of 1812",
+    "shortDescription": "Operations by army flying detachments and resistance by the population.",
+    "content": [
+      "Operations by army flying detachments and resistance by the population."
+    ],
+    "category": "term",
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [],
+    "sourceIds": ["src-bre-war"]
+  },
+  {
+    "id": "platov",
+    "slug": "platov",
+    "letter": "M",
+    "title": "Matvey Platov",
+    "shortDescription": "Ataman of the Don Cossack Host who commanded Cossack forces.",
+    "content": ["Ataman of the Don Cossack Host who commanded Cossack forces."],
+    "category": "person",
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [],
+    "sourceIds": ["src-bre-platov"]
+  },
+  {
+    "id": "poklonnaya-hill",
+    "slug": "poklonnaya-hill",
+    "letter": "P",
+    "title": "Poklonnaya Hill",
+    "shortDescription": "A historic area on the western approach to Moscow.",
+    "content": ["A historic area on the western approach to Moscow."],
+    "category": "place",
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [],
+    "sourceIds": ["src-bre-war"]
+  },
+  {
+    "id": "raevsky",
+    "slug": "raevsky",
+    "letter": "N",
+    "title": "Nikolay Raevsky",
+    "shortDescription": "Commander of the 7th Infantry Corps and a prominent figure of the 1812 campaign.",
+    "content": [
+      "Commander of the 7th Infantry Corps and a prominent figure of the 1812 campaign."
+    ],
+    "category": "person",
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [],
+    "sourceIds": ["src-bre-raevsky"]
+  },
+  {
+    "id": "roubaud",
+    "slug": "roubaud",
+    "letter": "F",
+    "title": "Franz Roubaud",
+    "shortDescription": "Battle painter and creator of the Borodino panorama.",
+    "content": ["Battle painter and creator of the Borodino panorama."],
+    "category": "person",
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [],
+    "sourceIds": ["src-panorama-history"]
+  },
+  {
+    "id": "smolensk-battle",
+    "slug": "smolensk-battle",
+    "letter": "B",
+    "title": "Battle of Smolensk",
+    "shortDescription": "The battle of 4–6 (16–18) August 1812.",
+    "content": ["The battle of 4–6 (16–18) August 1812."],
+    "category": "event",
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [],
+    "sourceIds": ["src-bre-war"]
+  },
+  {
+    "id": "smolensk-road",
+    "slug": "smolensk-road",
+    "letter": "S",
+    "title": "Smolensk Road",
+    "shortDescription": "The historic western route from Moscow via Mozhaysk and Smolensk.",
+    "content": [
+      "The historic western route from Moscow via Mozhaysk and Smolensk."
+    ],
+    "category": "term",
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [],
+    "sourceIds": ["src-bre-war"]
+  },
+  {
+    "id": "tarutino-maneuver",
+    "slug": "tarutino-maneuver",
+    "letter": "T",
+    "title": "Tarutino March Manoeuvre",
+    "shortDescription": "The Russian army’s manoeuvre after the abandonment of Moscow.",
+    "content": [
+      "The Russian army’s manoeuvre after the abandonment of Moscow."
+    ],
+    "category": "event",
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [],
+    "sourceIds": ["src-bre-war"]
+  },
+  {
+    "id": "triumphal-arch",
+    "slug": "triumphal-arch",
+    "letter": "T",
+    "title": "Triumphal Arch",
+    "shortDescription": "A monument to victory in the War of 1812, reconstructed on Kutuzovsky Prospekt.",
+    "content": [
+      "A monument to victory in the War of 1812, reconstructed on Kutuzovsky Prospekt."
+    ],
+    "category": "monument",
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [],
+    "sourceIds": ["src-panorama-history"]
+  },
+  {
+    "id": "fili",
+    "slug": "fili",
+    "letter": "F",
+    "title": "Fili",
+    "shortDescription": "A former village outside Moscow and the site of the Military Council.",
+    "content": [
+      "A former village outside Moscow and the site of the Military Council."
+    ],
+    "category": "place",
+    "relatedPlaceIds": [
+      "fili-village",
+      "kutuzov-hut",
+      "intercession-church-fili"
+    ],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [],
+    "sourceIds": ["src-panorama-west", "src-prlib-fili"]
+  },
+  {
+    "id": "shevardino-redoubt",
+    "slug": "shevardino-redoubt",
+    "letter": "S",
+    "title": "Shevardino Redoubt",
+    "shortDescription": "An advanced fortification of the Russian position on the Borodino battlefield.",
+    "content": [
+      "An advanced fortification of the Russian position on the Borodino battlefield."
+    ],
+    "category": "term",
+    "relatedPlaceIds": [],
+    "relatedDictionaryIds": [],
+    "relatedTimelineIds": [],
+    "sourceIds": ["src-bre-war"]
+  }
+]
