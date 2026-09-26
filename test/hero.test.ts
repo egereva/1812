@@ -1,12 +1,7 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
 import manifest from '../docs/research/media-manifest.json' with { type: 'json' }
-import {
-  getHeroArrowDirection,
-  getReadyHeroSlides,
-  heroSlides,
-  stepHeroSlide,
-} from '../app/data/heroSlides.ts'
+import { getReadyHeroSlides, heroSlides } from '../app/data/heroSlides.ts'
 
 test('all three hero slides match approved media metadata', () => {
   assert.equal(heroSlides.length, 3)
@@ -36,24 +31,4 @@ test('hero media stays hidden until all three binaries are available', () => {
   assert.equal(getReadyHeroSlides([]).length, 0)
   assert.equal(getReadyHeroSlides(ids.slice(0, 2)).length, 0)
   assert.deepEqual(getReadyHeroSlides(ids), heroSlides)
-})
-
-test('manual slide navigation wraps in both directions', () => {
-  assert.equal(stepHeroSlide(0, -1, 3), 2)
-  assert.equal(stepHeroSlide(2, 1, 3), 0)
-  assert.equal(stepHeroSlide(1, 1, 3), 2)
-})
-
-test('unmodified arrow keys navigate while other keys keep their default action', () => {
-  const key = (value: string, altKey = false) =>
-    getHeroArrowDirection({
-      key: value,
-      altKey,
-      ctrlKey: false,
-      metaKey: false,
-    })
-  assert.equal(key('ArrowLeft'), -1)
-  assert.equal(key('ArrowRight'), 1)
-  assert.equal(key('ArrowRight', true), null)
-  assert.equal(key('Tab'), null)
 })

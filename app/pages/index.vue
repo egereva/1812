@@ -69,18 +69,12 @@ useSeoMeta({ description: () => site.value.siteDescription })
           :slides="readyHeroSlides"
         />
       </div>
-      <div class="home-hero__foot page-container" aria-hidden="true">
-        <span>01 / 04</span><span />
-      </div>
     </section>
 
     <section
       class="home-dictionary page-container"
       aria-labelledby="dictionary-title"
     >
-      <div class="home-rule" aria-hidden="true">
-        <span>02 / 04</span>
-      </div>
       <div class="home-dictionary__layout">
         <div class="home-dictionary__intro">
           <p class="eyebrow">{{ t('home.dictionary.kicker') }}</p>
@@ -91,17 +85,22 @@ useSeoMeta({ description: () => site.value.siteDescription })
           </NuxtLink>
         </div>
         <div class="home-dictionary__specimen">
-          <div class="home-dictionary__alphabet" aria-hidden="true">
-            <span v-for="entry in dictionary" :key="entry.id">{{
-              entry.letter
-            }}</span>
+          <div class="home-dictionary__alphabet">
+            <NuxtLink
+              v-for="entry in dictionary"
+              :key="entry.id"
+              :to="`${localePath('/dictionary')}#dictionary-letter-${entry.letter.codePointAt(0)}`"
+              >{{ entry.letter }}</NuxtLink
+            >
           </div>
           <ol class="home-dictionary__entries">
             <li v-for="entry in dictionary" :key="entry.id">
               <span class="home-dictionary__letter" aria-hidden="true">{{
                 entry.letter
               }}</span>
-              <span>{{ entry.title }}</span>
+              <NuxtLink :to="localePath(`/dictionary/${entry.slug}`)">{{
+                entry.title
+              }}</NuxtLink>
             </li>
           </ol>
         </div>
@@ -168,8 +167,7 @@ useSeoMeta({ description: () => site.value.siteDescription })
 .home {
   overflow: hidden;
 }
-.home-rule,
-.home-hero__foot {
+.home-rule {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -195,16 +193,16 @@ useSeoMeta({ description: () => site.value.siteDescription })
 .home-hero--with-media .home-hero__body::after {
   position: absolute;
   z-index: 1;
-  top: 50%;
+  top: 0;
   left: 0;
-  width: min(56rem, 76vw);
-  height: min(42rem, 84%);
-  transform: translateY(-50%);
+  width: min(65rem, 80vw);
+  height: 100%;
   background: radial-gradient(
-    ellipse at 20% 50%,
-    rgb(243 240 232 / 78%),
-    rgb(243 240 232 / 54%) 42%,
-    transparent 78%
+    ellipse 50% 47% at 38% 49%,
+    rgb(243 240 232 / 68%),
+    rgb(243 240 232 / 56%) 40%,
+    rgb(243 240 232 / 30%) 70%,
+    transparent 100%
   );
   content: '';
   pointer-events: none;
@@ -225,7 +223,7 @@ useSeoMeta({ description: () => site.value.siteDescription })
 }
 .home-hero__year {
   color: var(--color-accent);
-  font-size: clamp(6rem, 10vw, 9rem);
+  font-size: clamp(7rem, 13vw, 12rem);
   line-height: 0.9;
 }
 .home-hero__title {
@@ -233,41 +231,24 @@ useSeoMeta({ description: () => site.value.siteDescription })
   line-height: 1.08;
 }
 .home-hero__description {
-  max-width: 31rem;
+  max-width: 30rem;
   margin-bottom: 0;
-  font-size: var(--text-body-lg);
-  line-height: 1.5;
-}
-.home-hero__foot {
-  position: absolute;
-  z-index: 2;
-  right: 0;
-  bottom: var(--space-6);
-  left: 0;
-  border-top: 0;
-  padding-top: 0;
-  color: #fff;
-  text-shadow: 0 1px 5px rgb(0 0 0 / 80%);
-  pointer-events: none;
-}
-.home-hero__foot span:nth-child(2) {
-  display: none;
-}
-.home-hero:not(.home-hero--with-media) .home-hero__foot {
-  color: var(--color-muted);
-  text-shadow: none;
+  font-size: clamp(1.125rem, 1.4vw, 1.375rem);
+  line-height: 1.55;
 }
 .home-hero--with-media .home-hero__identity {
   position: absolute;
-  top: 50%;
+  top: 49%;
   right: 0;
   left: 0;
   transform: translateY(-50%);
+  padding-left: clamp(2.5rem, 13vw, 12rem);
   padding-block: 0;
   pointer-events: none;
 }
 .home-hero--with-media .home-hero__slider {
   position: relative;
+  height: 100svh;
 }
 .home-dictionary,
 .home-timeline .page-container,
@@ -278,6 +259,7 @@ useSeoMeta({ description: () => site.value.siteDescription })
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
   gap: clamp(2rem, 8vw, 9rem);
+  border-top: var(--border-rule);
   padding-top: var(--space-16);
 }
 .home-dictionary h2,
@@ -322,6 +304,16 @@ useSeoMeta({ description: () => site.value.siteDescription })
   font-size: clamp(2.5rem, 5vw, 5rem);
   line-height: 1;
 }
+.home-dictionary__alphabet a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+.home-dictionary__alphabet a:hover,
+.home-dictionary__alphabet a:focus-visible {
+  color: var(--color-accent-hover);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
 .home-dictionary__entries {
   margin: 0;
   padding: 0;
@@ -336,6 +328,17 @@ useSeoMeta({ description: () => site.value.siteDescription })
   font-family: var(--font-display);
   font-size: clamp(1.15rem, 2vw, 1.75rem);
   line-height: 1.2;
+}
+.home-dictionary__entries a {
+  width: fit-content;
+  color: var(--color-ink);
+  text-decoration: none;
+}
+.home-dictionary__entries a:hover,
+.home-dictionary__entries a:focus-visible {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
 }
 .home-dictionary__letter {
   color: var(--color-accent);
@@ -500,14 +503,13 @@ useSeoMeta({ description: () => site.value.siteDescription })
 }
 @media (max-width: 56.25rem) {
   .home-hero--with-media .home-hero__body::after {
-    width: min(45rem, 100%);
-    height: min(37rem, 88%);
+    width: min(46rem, 90vw);
   }
   .home-hero__identity {
     padding-top: calc(4.75rem + var(--space-12));
   }
   .home-hero__year {
-    font-size: clamp(5.5rem, 12vw, 7rem);
+    font-size: clamp(6rem, 14vw, 8rem);
   }
   .home-hero__title {
     font-size: clamp(2.75rem, 6vw, 4rem);
@@ -522,21 +524,21 @@ useSeoMeta({ description: () => site.value.siteDescription })
 }
 @media (max-width: 37.5rem) {
   .home-hero--with-media .home-hero__body::after {
-    top: 42%;
     width: 100%;
-    height: 30rem;
     background: radial-gradient(
-      ellipse at 18% 45%,
-      rgb(243 240 232 / 93%),
-      rgb(243 240 232 / 76%) 48%,
-      transparent 84%
+      ellipse 72% 37% at 36% 44%,
+      rgb(243 240 232 / 74%),
+      rgb(243 240 232 / 60%) 45%,
+      rgb(243 240 232 / 35%) 72%,
+      transparent 100%
     );
   }
   .home-hero__identity {
     padding-top: calc(4.75rem + var(--space-8));
   }
   .home-hero--with-media .home-hero__identity {
-    top: 42%;
+    top: 44%;
+    padding-left: var(--gutter);
   }
   .home-hero h1 {
     max-width: 15ch;
@@ -550,7 +552,7 @@ useSeoMeta({ description: () => site.value.siteDescription })
   }
   .home-hero__description {
     max-width: 33ch;
-    font-size: var(--text-body-sm);
+    font-size: 1rem;
     line-height: 1.45;
   }
   .home-dictionary,

@@ -82,19 +82,3 @@ export function getReadyHeroSlides(availableIds: readonly string[]) {
     ? heroSlides
     : []
 }
-
-export function stepHeroSlide(index: number, direction: -1 | 1, count: number) {
-  return (index + direction + count) % count
-}
-
-export function getHeroArrowDirection(event: {
-  key: string
-  altKey: boolean
-  ctrlKey: boolean
-  metaKey: boolean
-}): -1 | 1 | null {
-  if (event.altKey || event.ctrlKey || event.metaKey) return null
-  if (event.key === 'ArrowLeft') return -1
-  if (event.key === 'ArrowRight') return 1
-  return null
-}

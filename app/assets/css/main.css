@@ -164,8 +164,13 @@ h3 {
 .site-shell--home .site-header {
   position: absolute;
   inset: 0 0 auto;
-  background: rgb(243 240 232 / 72%);
-  backdrop-filter: blur(10px);
+  border-bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgb(243 240 232 / 72%),
+    rgb(243 240 232 / 54%) 55%,
+    transparent
+  );
 }
 
 .site-header__inner {
