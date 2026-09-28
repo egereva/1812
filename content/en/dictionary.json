@@ -4,13 +4,24 @@
     "slug": "alexander-i",
     "letter": "A",
     "title": "Alexander I",
-    "shortDescription": "Russian emperor during the War of 1812.",
-    "content": ["Russian emperor during the War of 1812."],
+    "shortDescription": "Russian emperor during the war of 1812.",
+    "content": [
+      "Alexander I was the Russian emperor during the Patriotic War of 1812 and determined the state's overall foreign policy. By the beginning of the campaign, relations between Russia and Napoleonic France had deteriorated sharply, partly because of disagreements over the Continental Blockade of Great Britain.",
+      "After the invasion by the Grande Armée, Alexander I was with the troops at the beginning of the campaign, but later left the army in the field. The emperor took part in key decisions on appointments and strategy: in August 1812, Mikhail Kutuzov was appointed commander-in-chief of the combined Russian armies.",
+      "After Moscow was abandoned, Alexander I refused to make peace on Napoleon's terms. The defeat of the Grande Armée in Russia made the Russian army's campaigns abroad in 1813–1814 possible and marked an important stage in the downfall of Napoleonic dominance in Europe."
+    ],
     "category": "person",
     "relatedPlaceIds": [],
     "relatedDictionaryIds": [],
     "relatedTimelineIds": [],
-    "sourceIds": ["src-bre-war"]
+    "sourceIds": ["src-bre-war"],
+    "image": {
+      "src": "/images/dictionary/alexander-i-dawe.jpg",
+      "alt": "Portrait of Emperor Alexander I by George Dawe.",
+      "caption": "George Dawe. Portrait of Emperor Alexander I, 1817.",
+      "credit": "George Dawe · Royal Collection · Public domain / PD-Art",
+      "sourceId": "src-media-dict-alexander-i-dawe"
+    }
   },
   {
     "id": "bagration",
@@ -19,13 +30,22 @@
     "title": "Pyotr Bagration",
     "shortDescription": "Commander of the 2nd Western Army; severely wounded at Borodino.",
     "content": [
-      "Commander of the 2nd Western Army; severely wounded at Borodino."
+      "Pyotr Ivanovich Bagration was a Russian military commander who led the 2nd Western Army in 1812. At the beginning of the war, his army operated south of Mikhail Barclay de Tolly's 1st Western Army and retreated under pressure from superior enemy forces, seeking to avoid encirclement and join the main Russian forces.",
+      "After arduous marches and fighting, the 1st and 2nd Western Armies joined forces near Smolensk. At the Battle of Borodino, Bagration's troops defended the left flank of the Russian position, where particularly fierce fighting took place for the Semyonovskoye, or Bagration, flèches.",
+      "Bagration was severely wounded during the Battle of Borodino. His wounding became one of the best-known episodes of the battle; the commander died a few weeks later. In historical memory, his name is closely associated with the Russian army's resistance during the campaign of 1812."
     ],
     "category": "person",
     "relatedPlaceIds": [],
     "relatedDictionaryIds": [],
     "relatedTimelineIds": [],
-    "sourceIds": ["src-bre-war"]
+    "sourceIds": ["src-bre-war"],
+    "image": {
+      "src": "/images/dictionary/bagration-dawe.jpg",
+      "alt": "Portrait of Pyotr Ivanovich Bagration.",
+      "caption": "George Dawe (workshop). Portrait of Pyotr Bagration, 1820s.",
+      "credit": "George Dawe / workshop · State Hermitage Museum · Public Domain / PD-Art",
+      "sourceId": "src-media-dict-bagration-dawe"
+    }
   },
   {
     "id": "barclay-de-tolly",
@@ -34,28 +54,46 @@
     "title": "Mikhail Barclay de Tolly",
     "shortDescription": "Minister of War and commander of the 1st Western Army at the beginning of the campaign.",
     "content": [
-      "Minister of War and commander of the 1st Western Army at the beginning of the campaign."
+      "At the beginning of the war of 1812, Mikhail Bogdanovich Barclay de Tolly held the post of Minister of War while commanding the 1st Western Army. Even before the invasion, he had taken part in reforms of army administration, the creation of reserves, and the strengthening of intelligence and field command systems.",
+      "After the Grande Armée crossed the Neman, Barclay withdrew the 1st Western Army into the interior of the country, seeking to preserve it and unite with Pyotr Bagration's 2nd Western Army. The retreat drew sharp criticism from contemporaries, but prevented the Russian armies from being defeated separately; on 22 July (3 August), they joined forces near Smolensk.",
+      "After Mikhail Kutuzov was appointed commander-in-chief, Barclay continued to command the 1st Western Army and took part in the Battle of Borodino. He subsequently remained one of the leading Russian commanders of the Napoleonic Wars and participated in the Russian army's campaigns abroad."
     ],
     "category": "person",
     "relatedPlaceIds": [],
     "relatedDictionaryIds": [],
     "relatedTimelineIds": [],
-    "sourceIds": ["src-bre-war"]
+    "sourceIds": ["src-bre-war"],
+    "image": {
+      "src": "/images/dictionary/barclay-de-tolly-dawe.jpg",
+      "alt": "Portrait of Mikhail Bogdanovich Barclay de Tolly.",
+      "caption": "George Dawe. Portrait of Mikhail Barclay de Tolly, 1820s.",
+      "credit": "George Dawe · State Hermitage Museum / Military Gallery · Public Domain / PD-Art",
+      "sourceId": "src-media-dict-barclay-dawe"
+    }
   },
   {
     "id": "bennigsen",
     "slug": "bennigsen",
     "letter": "L",
     "title": "Levin August von Bennigsen",
-    "shortDescription": "Russian general and participant in the Military Council at Fili.",
+    "shortDescription": "Russian general who took part in the Military Council at Fili.",
     "content": [
-      "Russian general and participant in the Military Council at Fili."
+      "Leonty Leontyevich Bennigsen was a Russian general with extensive experience of wars against Napoleonic France even before the campaign of 1812. During the Patriotic War, he was at the Russian army's headquarters and took part in discussions of major operational decisions.",
+      "Bennigsen participated in the Battle of Borodino. After the Russian army withdrew towards Moscow, he was among the generals who assembled on 1 (13) September for the Military Council at Fili, where they discussed whether to fight another battle near Moscow or abandon the city.",
+      "At the council, Bennigsen advocated fighting a battle, but Mikhail Kutuzov decided to preserve the army and abandon Moscow. Bennigsen subsequently continued to serve with the army in the field and took part in the events of the autumn campaign of 1812."
     ],
     "category": "person",
     "relatedPlaceIds": [],
     "relatedDictionaryIds": [],
     "relatedTimelineIds": [],
-    "sourceIds": ["src-bre-war"]
+    "sourceIds": ["src-bre-war"],
+    "image": {
+      "src": "/images/dictionary/bennigsen-dawe.jpg",
+      "alt": "Portrait of Leonty Leontyevich Bennigsen.",
+      "caption": "George Dawe. Portrait of Leonty Bennigsen, 1820s.",
+      "credit": "George Dawe · State Hermitage Museum / Military Gallery · Public Domain / PD-Art",
+      "sourceId": "src-media-dict-bennigsen-dawe"
+    }
   },
   {
     "id": "berezina",
@@ -64,21 +102,36 @@
     "title": "Berezina",
     "shortDescription": "A key episode in the retreat of the Grande Armée in November 1812.",
     "content": [
-      "A key episode in the retreat of the Grande Armée in November 1812."
+      "The crossing of the Berezina became one of the most dramatic episodes in the Grande Armée's retreat from Russia. By late November 1812, Napoleon's troops, which had already suffered enormous losses, sought to cross the river and avoid encirclement by the Russian armies.",
+      "The main crossing took place on 14–16 (26–28) November near the village of Studyonka. French engineers built bridges used by combat units, baggage trains and numerous stragglers. Heavy fighting took place on both banks, while the congestion of people and transport intensified the chaos.",
+      "Napoleon managed to bring some combat-ready forces across the Berezina, so the Grande Armée was not completely encircled. Nevertheless, losses of men, artillery and baggage were enormous, and the Berezina itself became a symbol of the catastrophic outcome of the campaign of 1812."
     ],
     "category": "event",
     "relatedPlaceIds": [],
     "relatedDictionaryIds": [],
     "relatedTimelineIds": [],
-    "sourceIds": ["src-bre-war"]
+    "sourceIds": ["src-bre-war"],
+    "image": {
+      "src": "/images/dictionary/berezina-hess.jpg",
+      "alt": "Later artistic depiction of Napoleon's army crossing the Berezina.",
+      "caption": "Peter von Hess. Crossing of the Berezina on 17 (29) November 1812.",
+      "description": "A later artistic depiction.",
+      "credit": "Peter von Hess · Public Domain / PD-Art",
+      "sourceId": "src-media-berezina-hess"
+    }
   },
   {
     "id": "borodino-battle",
     "slug": "borodino-battle",
     "letter": "B",
     "title": "Battle of Borodino",
-    "shortDescription": "The general battle of 26 August (7 September) 1812.",
-    "content": ["The general battle of 26 August (7 September) 1812."],
+    "shortDescription": "The major battle fought on 26 August (7 September) 1812.",
+    "content": [
+      "The Battle of Borodino took place on 26 August (7 September) 1812 near the village of Borodino. Mikhail Kutuzov sought to halt the enemy's advance towards Moscow, while Napoleon hoped to defeat the main Russian forces in a decisive battle.",
+      "Fighting took place along the entire Russian line. Attacks on the Semyonovskoye, or Bagration, flèches and the Raevsky Battery were particularly fierce. The battle lasted many hours and caused exceptionally heavy losses on both sides.",
+      "Neither side fully achieved its objective: Napoleon did not destroy the Russian army, and Kutuzov was unable to block the French route to Moscow conclusively. After the battle, the Russian army withdrew, preserving a substantial part of its forces, while the Grande Armée had been seriously weakened.",
+      "Borodino became a central event in the historical memory of the war of 1812. Its image was repeatedly reproduced in painting, literature and commemorative culture, and for the battle's centenary Franz Roubaud created the celebrated Borodino panorama."
+    ],
     "category": "event",
     "relatedPlaceIds": [
       "borodino-panorama-museum",
@@ -87,67 +140,111 @@
     ],
     "relatedDictionaryIds": [],
     "relatedTimelineIds": ["borodino"],
-    "sourceIds": ["src-bre-war"]
+    "sourceIds": ["src-bre-war"],
+    "image": {
+      "src": "/images/timeline/borodino-hess-1843.jpg",
+      "alt": "The Battle of Borodino in a painting by Peter von Hess",
+      "caption": "Peter von Hess. “The Battle of Borodino on 26 August (7 September) 1812,” 1843. An artistic depiction created after the war.",
+      "credit": "Петер фон Гесс · Public domain / PD-Art",
+      "sourceId": "src-media-borodino-hess-1843"
+    }
   },
   {
     "id": "borodino-panorama",
     "slug": "borodino-panorama",
     "letter": "B",
     "title": "Borodino Panorama",
-    "shortDescription": "Franz Roubaud’s panorama created for the centenary of the Battle of Borodino.",
+    "shortDescription": "Franz Roubaud's panorama, created for the centenary of the Battle of Borodino.",
     "content": [
-      "Franz Roubaud’s panorama created for the centenary of the Battle of Borodino."
+      "The Borodino panorama is a monumental work by the battle painter Franz Roubaud, created for the centenary of the Battle of Borodino. The artist conceived the panorama as a large-scale reconstruction of an episode of the battle, combining the painted canvas with a foreground of physical objects before the viewer.",
+      "The panorama was ceremonially opened in Moscow on 11 September 1912 in a purpose-built pavilion at Chistye Prudy. After the revolution, the original pavilion was lost, and the canvas itself went through a complicated history of storage and restoration.",
+      "In 1962, the restored panorama received a new building on Kutuzovsky Prospekt. On 18 October that year, the Borodino Battle Panorama Museum opened there, with Roubaud's work as its central exhibit."
     ],
     "category": "artwork",
     "relatedPlaceIds": [],
     "relatedDictionaryIds": [],
     "relatedTimelineIds": [],
-    "sourceIds": ["src-panorama-history"]
+    "sourceIds": ["src-panorama-history"],
+    "image": {
+      "src": "/images/dictionary/roubaud-borodino-panorama-1912.jpg",
+      "alt": "Fragment of Franz Roubaud's Battle of Borodino panorama.",
+      "caption": "Franz Roubaud. Fragment of the Battle of Borodino panorama, 1912.",
+      "credit": "Franz Roubaud · Public Domain / PD-Art",
+      "sourceId": "src-media-roubaud-borodino-panorama-1912"
+    }
   },
   {
     "id": "grand-army",
     "slug": "grand-army",
     "letter": "G",
     "title": "Grande Armée",
-    "shortDescription": "Napoleon’s multinational army that invaded the Russian Empire.",
+    "shortDescription": "Napoleon's multinational army that invaded the Russian Empire.",
     "content": [
-      "Napoleon’s multinational army that invaded the Russian Empire."
+      "The Grande Armée was Napoleon's armed force with which he began his campaign against the Russian Empire in 1812. It was a multinational army: alongside French units, it included contingents from European states allied with or dependent on France.",
+      "Napoleon assembled enormous forces for the invasion of Russia. On 12 (24) June 1812, advance units of the Grande Armée crossed the Neman. The French command hoped to force a decisive battle on the Russian armies and secure a political peace after a swift campaign.",
+      "As it advanced into Russia, the army lost men through fighting, disease, desertion and supply problems. After Borodino, the occupation of Moscow and the beginning of the retreat, its condition deteriorated rapidly. By the end of the campaign, the Grande Armée had lost most of its original forces, cavalry and artillery."
     ],
     "category": "term",
     "relatedPlaceIds": [],
     "relatedDictionaryIds": [],
     "relatedTimelineIds": [],
-    "sourceIds": ["src-bre-war"]
+    "sourceIds": ["src-bre-war"],
+    "image": {
+      "src": "/images/dictionary/grand-army-vernet-1812.jpg",
+      "alt": "Depiction of infantrymen of Napoleon's Grande Armée in the uniforms of 1812.",
+      "caption": "Carle Vernet. Infantry of the Grande Armée. From the series La Grande Armée de 1812, 1812.",
+      "credit": "Carle Vernet · Public Domain / PD-Art",
+      "sourceId": "src-media-dict-grand-army-vernet"
+    }
   },
   {
     "id": "military-council-fili",
     "slug": "military-council-fili",
     "letter": "M",
     "title": "Military Council at Fili",
-    "shortDescription": "The meeting of 1 (13) September 1812 after which Moscow was abandoned.",
+    "shortDescription": "The council held on 1 (13) September 1812, after which Moscow was abandoned.",
     "content": [
-      "The meeting of 1 (13) September 1812 after which Moscow was abandoned."
+      "The Military Council at Fili took place on 1 (13) September 1812 after the Battle of Borodino, when the Russian army had withdrawn towards Moscow. The generals gathered in a peasant hut in the village of Fili to decide whether to fight another major battle outside the city.",
+      "The participants were divided. Some generals advocated a battle, but the army's condition and the risk of its defeat made such a decision extremely dangerous. Commander-in-chief Mikhail Kutuzov assumed responsibility for retreating and preserving the army.",
+      "After the council, Russian troops abandoned Moscow, and on 2 (14) September Napoleon's army entered the city. The decision at Fili became a key episode of the campaign: by preserving the army, the Russian command gained the opportunity to continue the war and launch a counteroffensive.",
+      "The original hut in which the council took place was later destroyed in the fire of 1868. Today's Kutuzov Hut is a building reconstructed in 1887 on the historic site."
     ],
     "category": "event",
     "relatedPlaceIds": ["fili-village", "kutuzov-hut"],
     "relatedDictionaryIds": [],
     "relatedTimelineIds": ["council-fili"],
-    "sourceIds": ["src-prlib-fili", "src-bre-war"]
+    "sourceIds": ["src-prlib-fili", "src-panorama-hut", "src-bre-war"],
+    "image": {
+      "src": "/images/timeline/fili-council-kivshenko-1882.jpg",
+      "alt": "The Military Council at Fili in a painting by Alexey Kivshenko",
+      "caption": "Alexey Kivshenko. “The Military Council at Fili in 1812,” 1882. An artistic depiction created 70 years after the event.",
+      "credit": "Алексей Кившенко · Public domain / PD-Art",
+      "sourceId": "src-media-fili-council-kivshenko-1882"
+    }
   },
   {
     "id": "davydov",
     "slug": "davydov",
     "letter": "D",
     "title": "Denis Davydov",
-    "shortDescription": "Officer and one of the best-known organisers of army partisan operations.",
+    "shortDescription": "An officer and one of the best-known organizers of army partisan operations.",
     "content": [
-      "Officer and one of the best-known organisers of army partisan operations."
+      "Denis Vasilyevich Davydov was a Russian officer, poet and memoirist, and one of the best-known participants in the war of 1812. By the beginning of the campaign, he already had combat experience and served in the cavalry.",
+      "In 1812, Davydov's name became closely associated with the operations of army partisan, or flying, detachments. These mobile units operated along the Grande Armée's lines of communication, attacked transports and small units, took prisoners and disrupted enemy supplies.",
+      "After the war, Davydov described his experiences in memoirs and military historical prose. The combination of his military career and literary reputation made him one of the most recognizable figures in the cultural memory of the Patriotic War of 1812."
     ],
     "category": "person",
     "relatedPlaceIds": [],
     "relatedDictionaryIds": [],
     "relatedTimelineIds": [],
-    "sourceIds": ["src-bre-davydov"]
+    "sourceIds": ["src-bre-davydov"],
+    "image": {
+      "src": "/images/dictionary/davydov-dawe.jpg",
+      "alt": "Portrait of Denis Vasilyevich Davydov.",
+      "caption": "George Dawe. Portrait of Denis Davydov, before 1828.",
+      "credit": "George Dawe · State Hermitage Museum / Military Gallery · Public Domain / PD-Art",
+      "sourceId": "src-media-dict-davydov-dawe"
+    }
   },
   {
     "id": "dorogomilovo",
@@ -155,7 +252,11 @@
     "letter": "D",
     "title": "Dorogomilovo",
     "shortDescription": "A historic area at the western entrance to Moscow.",
-    "content": ["A historic area at the western entrance to Moscow."],
+    "content": [
+      "Dorogomilovo is a historic area on the western side of Moscow, associated with the Smolensk Road and the entrance to the city from the west. In the early nineteenth century, this territory lay at the city boundary and was directly linked to the route taken by the armies in September 1812.",
+      "After the Battle of Borodino, Russian troops withdrew through the western approaches to Moscow. Napoleon's Grande Armée then approached the city along the Smolensk Road. The historic Dorogomilovskaya Gate marked one of Moscow's important entrances.",
+      "The lost Dorogomilovo Cemetery, where Russian soldiers who died of wounds after Borodino were buried, is also associated with the memory of the war. Later development greatly changed the area, so many locations connected with 1812 can be identified only approximately."
+    ],
     "category": "place",
     "relatedPlaceIds": [],
     "relatedDictionaryIds": [],
@@ -169,13 +270,23 @@
     "title": "Mikhail Kutuzov",
     "shortDescription": "Commander-in-chief of the Russian armies during the decisive period of the war.",
     "content": [
-      "Commander-in-chief of the Russian armies during the decisive period of the war."
+      "Mikhail Illarionovich Kutuzov was a Russian commander appointed commander-in-chief of the Russian armies in August 1812. By then, he had many years of military and diplomatic experience and enjoyed considerable prestige in the army and society.",
+      "After taking command, Kutuzov decided to fight a major battle against Napoleon at Borodino. The battle on 26 August (7 September) destroyed neither army, but inflicted enormous losses on both sides. Russian troops then withdrew towards Moscow.",
+      "At the Military Council at Fili on 1 (13) September, Kutuzov decided to abandon Moscow without another major battle in order to preserve the army. The withdrawal was followed by the Tarutino march manoeuvre, which enabled the army to break away from the enemy and take up a favourable position south of Moscow.",
+      "During the Grande Armée's retreat, Russian troops pursued the enemy and attacked its units. Victory in the campaign of 1812 made Kutuzov one of the central figures in the nation's memory of the war."
     ],
     "category": "person",
     "relatedPlaceIds": ["fili-village", "kutuzov-hut", "kutuzov-monument"],
     "relatedDictionaryIds": [],
     "relatedTimelineIds": ["kutuzov-command", "borodino", "council-fili"],
-    "sourceIds": ["src-bre-war"]
+    "sourceIds": ["src-bre-war"],
+    "image": {
+      "src": "/images/dictionary/kutuzov-basin.jpg",
+      "alt": "Portrait of Mikhail Illarionovich Kutuzov.",
+      "caption": "Pyotr Basin. Portrait of Field Marshal Mikhail Kutuzov.",
+      "credit": "Pyotr Basin · State Hermitage Museum · Public Domain / PD-Art",
+      "sourceId": "src-media-dict-kutuzov-basin"
+    }
   },
   {
     "id": "kutuzov-hut-term",
@@ -184,37 +295,59 @@
     "title": "Kutuzov Hut",
     "shortDescription": "A museum on the site of the Military Council hut; the present building was constructed in 1887.",
     "content": [
-      "A museum on the site of the Military Council hut; the present building was constructed in 1887."
+      "Kutuzov Hut is a memorial site at Fili associated with the Military Council of 1 (13) September 1812. The council took place in the peasant hut of the Frolov family, where Russian generals discussed Moscow's fate after the Battle of Borodino.",
+      "The original building has not survived: in 1868, the hut was almost completely destroyed by fire. The memory of the site continued to be preserved, and in 1883 the plot was marked by a memorial in the form of a verst post.",
+      "In 1887, a new wooden building designed by the architect D. M. Strukov was erected on the site of the earlier hut, and a museum was opened. It is therefore important to understand today's Kutuzov Hut as a historical reconstruction and one of Russia's early memorial museums, rather than an original building from 1812.",
+      "Today, Kutuzov Hut forms part of the historical and memorial complex dedicated to the Patriotic War of 1812 on Kutuzovsky Prospekt, next to the Borodino Battle Panorama Museum."
     ],
     "category": "place",
     "relatedPlaceIds": [],
     "relatedDictionaryIds": [],
     "relatedTimelineIds": [],
-    "sourceIds": ["src-bre-war"]
+    "sourceIds": ["src-panorama-hut", "src-panorama-history"],
+    "image": {
+      "src": "/images/dictionary/kutuzov-hut-savrasov-1884.jpg",
+      "alt": "Alexei Savrasov's 1884 painting Kutuzov's Hut at Fili.",
+      "caption": "Alexei Savrasov. Kutuzov's Hut at Fili, 1884. A later artistic depiction.",
+      "credit": "Alexei Savrasov · Leo Tolstoy State Museum · Public Domain / PD-Art",
+      "sourceId": "src-media-kutuzov-hut-savrasov-1884"
+    }
   },
   {
     "id": "maloyaroslavets",
     "slug": "maloyaroslavets",
     "letter": "M",
     "title": "Maloyaroslavets",
-    "shortDescription": "The battle of 12 (24) October that influenced the direction of Napoleon’s retreat.",
+    "shortDescription": "The battle on 12 (24) October that influenced the direction of Napoleon's retreat.",
     "content": [
-      "The battle of 12 (24) October that influenced the direction of Napoleon’s retreat."
+      "The Battle of Maloyaroslavets took place on 12 (24) October 1812 after Napoleon left Moscow. The French army sought to advance southwest towards areas less devastated by earlier military operations.",
+      "The town changed hands several times, and the fighting was extremely fierce. Russian troops blocked the route towards Kaluga, where important supplies and lines of communication were located.",
+      "After the battle, Napoleon abandoned further movement along the Kaluga Road and turned towards the devastated Smolensk Road. Maloyaroslavets thus became an important turning point in the autumn campaign and the retreat of the Grande Armée."
     ],
     "category": "event",
     "relatedPlaceIds": [],
     "relatedDictionaryIds": [],
     "relatedTimelineIds": [],
-    "sourceIds": ["src-bre-war"]
+    "sourceIds": ["src-bre-war"],
+    "image": {
+      "src": "/images/dictionary/maloyaroslavets-samokish.jpg",
+      "alt": "Artistic depiction of the fighting at Maloyaroslavets.",
+      "caption": "Nikolai Samokish. Fighting at Maloyaroslavets on 12 October 1812, 1912.",
+      "description": "A later artistic depiction.",
+      "credit": "Nikolai Samokish · Public Domain",
+      "sourceId": "src-media-dict-maloyaroslavets-samokish"
+    }
   },
   {
     "id": "moscow-militia",
     "slug": "moscow-militia",
     "letter": "M",
     "title": "Moscow Militia",
-    "shortDescription": "The militia of Moscow Governorate; residents of Fili were among its members.",
+    "shortDescription": "The militia of Moscow Governorate; residents of Fili were among its participants.",
     "content": [
-      "The militia of Moscow Governorate; residents of Fili were among its members."
+      "The Moscow militia was created in the summer of 1812 in response to the Grande Armée's invasion. It formed part of the widespread creation of temporary militia forces in Russian governorates and was intended to support the regular army.",
+      "Residents of Moscow Governorate from different social estates joined the militia. The militia had to be organized, armed and supplied within a short time, and its members' military training differed considerably from that of regular units.",
+      "Moscow militiamen took part in the campaign of 1812 and reinforced the Russian army. The militia was also present among the Russian forces on the field of Borodino. For the history of Moscow's western surroundings, this subject is also important as an account of local residents' participation in the general mobilization against the invasion."
     ],
     "category": "term",
     "relatedPlaceIds": [],
@@ -227,15 +360,25 @@
     "slug": "moscow-fire",
     "letter": "F",
     "title": "Fire of Moscow, 1812",
-    "shortDescription": "Large-scale fires that broke out after Napoleon’s army entered Moscow.",
+    "shortDescription": "Large-scale fires after Napoleon's army entered Moscow.",
     "content": [
-      "Large-scale fires that broke out after Napoleon’s army entered Moscow."
+      "Fires in Moscow began on 2 (14) September 1812, the day Napoleon's army entered the city, and continued for several days. Fire engulfed a substantial part of the city, which the Russian army and most residents had already left.",
+      "The causes and precise circumstances of the numerous outbreaks of fire were debated by contemporaries and historians, but the scale of the destruction is beyond doubt: the fires destroyed more than two-thirds of the city's buildings.",
+      "The fire greatly complicated the Grande Armée's position. Moscow did not become the convenient base for winter quarters and supplies that the French command had expected. The prolonged stay in the devastated city also failed to produce peace with Alexander I.",
+      "In October, Napoleon abandoned Moscow. The fire became one of the most powerful images of the war of 1812 and a central part of historical memory of the French occupation of the city."
     ],
     "category": "event",
     "relatedPlaceIds": [],
     "relatedDictionaryIds": [],
     "relatedTimelineIds": [],
-    "sourceIds": ["src-bre-war"]
+    "sourceIds": ["src-bre-war"],
+    "image": {
+      "src": "/images/dictionary/moscow-fire-smirnov-1813.jpg",
+      "alt": "Artistic depiction of the fire of Moscow after Napoleon's army entered the city.",
+      "caption": "A. F. Smirnov. The Fire of Moscow in 1812, 1813.",
+      "credit": "A. F. Smirnov · Public Domain / PD-Art",
+      "sourceId": "src-media-dict-moscow-fire-smirnov"
+    }
   },
   {
     "id": "napoleon",
@@ -244,7 +387,10 @@
     "title": "Napoleon I",
     "shortDescription": "Emperor of the French and commander-in-chief of the Grande Armée.",
     "content": [
-      "Emperor of the French and commander-in-chief of the Grande Armée."
+      "Napoleon I was Emperor of the French and commander-in-chief of the Grande Armée. By 1812, the political system he had created encompassed much of continental Europe, but relations with the Russian Empire had gradually deteriorated after the Peace of Tilsit.",
+      "On 12 (24) June 1812, the Grande Armée began crossing the Neman. Napoleon sought to defeat the main Russian forces in a decisive battle and secure peace on terms favourable to France. The Russian armies retreated and joined forces near Smolensk, preventing their separate destruction.",
+      "After the Battle of Borodino, Napoleon occupied Moscow, but did not obtain the peace he expected. Fires and supply problems worsened the army's position. In October, French troops left the city and began an arduous retreat westwards.",
+      "The campaign ended with catastrophic losses for the Grande Armée. Defeat in Russia sharply changed the military and political situation in Europe and marked the beginning of a new stage in the European powers' struggle against Napoleon."
     ],
     "category": "person",
     "relatedPlaceIds": ["poklonnaya-hill", "dorogomilovskaya-gate"],
@@ -254,22 +400,39 @@
       "moscow-abandoned",
       "napoleon-leaves-moscow"
     ],
-    "sourceIds": ["src-bre-war"]
+    "sourceIds": ["src-bre-war"],
+    "image": {
+      "src": "/images/dictionary/napoleon-1812.jpg",
+      "alt": "Napoleon I in his study at the Tuileries in a portrait by Jacques-Louis David.",
+      "caption": "Jacques-Louis David. The Emperor Napoleon in His Study at the Tuileries, 1812.",
+      "credit": "Jacques-Louis David · National Gallery of Art · Public domain / PD-Art",
+      "sourceId": "src-media-dict-napoleon-1812"
+    }
   },
   {
     "id": "patriotic-war-1812",
     "slug": "patriotic-war-1812",
     "letter": "P",
     "title": "Patriotic War of 1812",
-    "shortDescription": "The Russian Empire’s war against the invasion by Napoleon’s Grande Armée.",
+    "shortDescription": "The Russian Empire's war against the invasion by Napoleon's Grande Armée.",
     "content": [
-      "The Russian Empire’s war against the invasion by Napoleon’s Grande Armée."
+      "The Patriotic War of 1812 was the Russian Empire's war against the invasion by Napoleon's Grande Armée. It began on 12 (24) June 1812 with the crossing of the Neman by Napoleonic troops. The French command hoped to defeat the Russian armies quickly and force Alexander I to make peace.",
+      "The Russian 1st and 2nd Western Armies retreated, avoiding separate destruction, and joined forces near Smolensk. Borodino on 26 August (7 September) became the central battle of the campaign. Afterwards, the Russian army abandoned Moscow, but retained its fighting capability.",
+      "The Grande Armée's stay in Moscow did not lead to peace. After the Tarutino march manoeuvre, the Russian army took up a favourable position, while French troops began to retreat in October. Regular units, Cossacks, army flying detachments and groups of local inhabitants operated along their lines of communication.",
+      "By the end of 1812, the Grande Armée had been defeated and driven out of Russia. Victory preserved the independence of the Russian Empire and created the conditions for the Russian army's campaigns abroad in 1813–1814."
     ],
     "category": "term",
     "relatedPlaceIds": [],
     "relatedDictionaryIds": [],
     "relatedTimelineIds": [],
-    "sourceIds": ["src-bre-war"]
+    "sourceIds": ["src-bre-war"],
+    "image": {
+      "src": "/images/timeline/retreat-moscow-suchodolski-1853.jpg",
+      "alt": "The Grande Armée retreating from Moscow in a painting by January Suchodolski",
+      "caption": "January Suchodolski. “Retreat from Moscow in 1812,” 1853. An artistic depiction created after the event.",
+      "credit": "Януарий Суходольский · Public domain / PD-Art",
+      "sourceId": "src-media-retreat-moscow-suchodolski-1853"
+    }
   },
   {
     "id": "partisan-movement",
@@ -278,7 +441,9 @@
     "title": "Partisan Operations of 1812",
     "shortDescription": "Operations by army flying detachments and resistance by the population.",
     "content": [
-      "Operations by army flying detachments and resistance by the population."
+      "Partisan operations in 1812 included different forms of fighting in the Grande Armée's rear and along its lines of communication. It is important to distinguish army flying detachments created by the Russian command from spontaneous or organized resistance by local inhabitants.",
+      "Flying detachments consisted mainly of cavalry and Cossacks. They attacked transports, small garrisons and individual units, took prisoners, gathered intelligence and disrupted communication between parts of the French army. Denis Davydov became one of their best-known commanders.",
+      "Peasant resistance took its own forms and became particularly strong in areas where Napoleon's army faced shortages of food and fodder. The combined operations of regular mobile units and the population increased pressure on the Grande Armée during its stay in Russia and subsequent retreat."
     ],
     "category": "term",
     "relatedPlaceIds": [],
@@ -291,13 +456,24 @@
     "slug": "platov",
     "letter": "M",
     "title": "Matvey Platov",
-    "shortDescription": "Ataman of the Don Cossack Host who commanded Cossack forces.",
-    "content": ["Ataman of the Don Cossack Host who commanded Cossack forces."],
+    "shortDescription": "Ataman of the Don Host, who commanded Cossack forces.",
+    "content": [
+      "Matvey Ivanovich Platov was Ataman of the Don Host and one of the best-known cavalry commanders of the Russian army during the Napoleonic Wars. By 1812, he had many years of combat experience and commanded Cossack forces in the western theatre of operations.",
+      "Cossack units were used for reconnaissance, screening, operations on the flanks and pursuit of the enemy. At the Battle of Borodino, Platov's cavalry, together with F. P. Uvarov's corps, carried out a raid against the Grande Armée's left flank.",
+      "The Cossacks' role became particularly prominent during Napoleon's retreat. They constantly harassed French columns, operated along lines of communication and took part in the pursuit. His skilful command of Cossack units brought Platov widespread fame in Russia and Europe."
+    ],
     "category": "person",
     "relatedPlaceIds": [],
     "relatedDictionaryIds": [],
     "relatedTimelineIds": [],
-    "sourceIds": ["src-bre-platov"]
+    "sourceIds": ["src-bre-platov"],
+    "image": {
+      "src": "/images/dictionary/platov-orlowski-1812-13.jpg",
+      "alt": "Portrait of Matvey Ivanovich Platov.",
+      "caption": "Aleksander Orłowski. Portrait of Matvey Platov, 1812–1813.",
+      "credit": "Aleksander Orłowski · State Historical Museum · Public Domain / PD-Art",
+      "sourceId": "src-media-dict-platov-orlowski"
+    }
   },
   {
     "id": "poklonnaya-hill",
@@ -305,62 +481,100 @@
     "letter": "P",
     "title": "Poklonnaya Hill",
     "shortDescription": "A historic area on the western approach to Moscow.",
-    "content": ["A historic area on the western approach to Moscow."],
+    "content": [
+      "Poklonnaya Hill is a historic area on the western approach to Moscow, beside the old Smolensk Road. The route by which the Grande Armée approached Moscow in September 1812 passed through this area.",
+      "Poklonnaya Hill is traditionally associated with the story that Napoleon waited there for representatives of Moscow and the symbolic keys to the city. This narrative became firmly established in historical and literary memory, but it cannot be treated as identifying a precisely established modern location of the event.",
+      "Over two centuries, the terrain and development of western Moscow have changed considerably. Today, the name Poklonnaya Hill is chiefly associated with a large memorial space. For a project about 1812, it is important as the historic western approach to Moscow and a place surrounded by an enduring tradition about Napoleon's entry into the city."
+    ],
     "category": "place",
     "relatedPlaceIds": [],
     "relatedDictionaryIds": [],
     "relatedTimelineIds": [],
-    "sourceIds": ["src-bre-war"]
+    "sourceIds": ["src-panorama-west", "src-bre-war"]
   },
   {
     "id": "raevsky",
     "slug": "raevsky",
     "letter": "N",
     "title": "Nikolay Raevsky",
-    "shortDescription": "Commander of the 7th Infantry Corps and a prominent figure of the 1812 campaign.",
+    "shortDescription": "Commander of the 7th Infantry Corps and a hero of the campaign of 1812.",
     "content": [
-      "Commander of the 7th Infantry Corps and a prominent figure of the 1812 campaign."
+      "Nikolai Nikolayevich Raevsky was a Russian military commander who led the 7th Infantry Corps in 1812. At the beginning of the campaign, his units formed part of Pyotr Bagration's 2nd Western Army.",
+      "In July 1812, Raevsky's corps fought at Dashkovka near Mogilev, delaying French forces and helping the main body of the 2nd Army continue its movement. Raevsky later took part in the fighting for Smolensk.",
+      "At the Battle of Borodino, his name became associated with the central height of the Russian position and its battery, later known as the Raevsky Battery. Fierce fighting for it continued throughout the day. His participation in the campaign of 1812 established Raevsky's reputation as one of the best-known Russian generals of the era."
     ],
     "category": "person",
     "relatedPlaceIds": [],
     "relatedDictionaryIds": [],
     "relatedTimelineIds": [],
-    "sourceIds": ["src-bre-raevsky"]
+    "sourceIds": ["src-bre-raevsky"],
+    "image": {
+      "src": "/images/dictionary/raevsky-dawe.jpg",
+      "alt": "Portrait of Nikolai Nikolayevich Raevsky.",
+      "caption": "George Dawe. Portrait of Nikolai Raevsky, 1820s.",
+      "credit": "George Dawe · State Hermitage Museum / Military Gallery · Public Domain / PD-Art",
+      "sourceId": "src-media-dict-raevsky-dawe"
+    }
   },
   {
     "id": "roubaud",
     "slug": "roubaud",
     "letter": "F",
     "title": "Franz Roubaud",
-    "shortDescription": "Battle painter and creator of the Borodino panorama.",
-    "content": ["Battle painter and creator of the Borodino panorama."],
+    "shortDescription": "A battle painter and the creator of the Borodino panorama.",
+    "content": [
+      "Franz Alexeyevich Roubaud was a battle painter and one of the founders of the Russian school of panorama painting. He created large-scale works that combined a painted canvas with a foreground of physical objects and a specially designed viewing space.",
+      "For the centenary of the Patriotic War of 1812, Roubaud created the Borodino panorama. He sought to combine artistic expression with a historical reconstruction of the battle; specialists in military history were involved in preparing the subject.",
+      "The panorama opened in Moscow in 1912 and became Roubaud's principal work on the war against Napoleon. Following restoration, it has been exhibited since 1962 in the purpose-built Borodino Battle Panorama Museum on Kutuzovsky Prospekt."
+    ],
     "category": "person",
     "relatedPlaceIds": [],
     "relatedDictionaryIds": [],
     "relatedTimelineIds": [],
-    "sourceIds": ["src-panorama-history"]
+    "sourceIds": ["src-panorama-history"],
+    "image": {
+      "src": "/images/dictionary/roubaud-photo.jpg",
+      "alt": "Historical photograph of the artist Franz Roubaud.",
+      "caption": "Franz Roubaud. Photograph from the second half of the nineteenth century.",
+      "credit": "Unknown · Public Domain",
+      "sourceId": "src-media-dict-roubaud-photo"
+    }
   },
   {
     "id": "smolensk-battle",
     "slug": "smolensk-battle",
     "letter": "B",
     "title": "Battle of Smolensk",
-    "shortDescription": "The battle of 4–6 (16–18) August 1812.",
-    "content": ["The battle of 4–6 (16–18) August 1812."],
+    "shortDescription": "The battle fought on 4–6 (16–18) August 1812.",
+    "content": [
+      "The Battle of Smolensk on 4–6 (16–18) August 1812 was one of the largest engagements of the campaign's opening phase. By then, the 1st and 2nd Western Armies had joined forces, and Napoleon sought to force a decisive confrontation upon them.",
+      "French troops attacked the positions near Smolensk and the city itself. Russian units defended stubbornly, covering the withdrawal of the main forces. The city suffered severe damage from artillery fire and fires.",
+      "The Russian army abandoned Smolensk and continued to retreat eastwards, preserving its main forces. Napoleon once again failed to secure the rapid destruction of the Russian army, and the campaign continued towards Moscow."
+    ],
     "category": "event",
     "relatedPlaceIds": [],
     "relatedDictionaryIds": [],
     "relatedTimelineIds": [],
-    "sourceIds": ["src-bre-war"]
+    "sourceIds": ["src-bre-war"],
+    "image": {
+      "src": "/images/dictionary/smolensk-langlois-1839.png",
+      "alt": "Artistic depiction of the Battle of Smolensk in 1812.",
+      "caption": "Jean-Charles Langlois. The Battle of Smolensk on 17 August 1812, 1839.",
+      "description": "A later artistic depiction.",
+      "credit": "Jean-Charles Langlois · Palace of Versailles · Public Domain / PD-Art",
+      "sourceId": "src-media-dict-smolensk-langlois"
+    }
   },
   {
     "id": "smolensk-road",
     "slug": "smolensk-road",
     "letter": "S",
     "title": "Smolensk Road",
-    "shortDescription": "The historic western route from Moscow via Mozhaysk and Smolensk.",
+    "shortDescription": "The historic westward route from Moscow through Mozhaysk and Smolensk.",
     "content": [
-      "The historic western route from Moscow via Mozhaysk and Smolensk."
+      "The Smolensk Road was the principal historic route connecting Moscow with Mozhaysk, Smolensk and the lands further west. In 1812, this route acquired crucial military importance.",
+      "The Grande Armée advanced along it towards Moscow after the fighting near Smolensk and Borodino. The western approaches to the capital—Fili, Poklonnaya Hill and Dorogomilovo—were directly linked to this road and therefore occupy a special place in the project's geography.",
+      "In the autumn of 1812, after failing on the Kaluga route, Napoleon was forced to return to the already devastated corridor of the Smolensk Road. Retreating through territory depleted by the earlier advance worsened the Grande Armée's supply problems."
     ],
     "category": "term",
     "relatedPlaceIds": [],
@@ -373,24 +587,36 @@
     "slug": "tarutino-maneuver",
     "letter": "T",
     "title": "Tarutino March Manoeuvre",
-    "shortDescription": "The Russian army’s manoeuvre after the abandonment of Moscow.",
+    "shortDescription": "The Russian army's manoeuvre after abandoning Moscow.",
     "content": [
-      "The Russian army’s manoeuvre after the abandonment of Moscow."
+      "The Russian army's Tarutino march manoeuvre was carried out after Moscow was abandoned in September 1812. At first, the troops moved along the Ryazan Road, giving the French command the impression of a continued retreat eastwards.",
+      "The army then changed direction, moved onto the Kaluga Road and occupied the area around Tarutino south of Moscow. The manoeuvre enabled it to break away from immediate enemy pursuit and protect important southern regions containing supplies and centres of arms production.",
+      "The position at Tarutino gave the army time to receive reinforcements and prepare for active operations. At the same time, Russian forces threatened Napoleon's lines of communication and limited his options for moving south from Moscow."
     ],
     "category": "event",
     "relatedPlaceIds": [],
     "relatedDictionaryIds": [],
     "relatedTimelineIds": [],
-    "sourceIds": ["src-bre-war"]
+    "sourceIds": ["src-bre-war"],
+    "image": {
+      "src": "/images/dictionary/tarutino-hess-1847.jpg",
+      "alt": "Artistic depiction of the Battle of Tarutino.",
+      "caption": "Peter von Hess. The Battle of Tarutino on 6 (18) October 1812, 1847.",
+      "description": "A later artistic depiction.",
+      "credit": "Peter von Hess · Public Domain / PD-Art",
+      "sourceId": "src-media-dict-tarutino-hess"
+    }
   },
   {
     "id": "triumphal-arch",
     "slug": "triumphal-arch",
     "letter": "T",
     "title": "Triumphal Arch",
-    "shortDescription": "A monument to victory in the War of 1812, reconstructed on Kutuzovsky Prospekt.",
+    "shortDescription": "A monument to victory in the war of 1812, reconstructed on Kutuzovsky Prospekt.",
     "content": [
-      "A monument to victory in the War of 1812, reconstructed on Kutuzovsky Prospekt."
+      "The Triumphal Arch in Moscow is a monument to Russia's victory in the war against Napoleon. The original wooden triumphal gates were erected for the ceremonial welcome of Russian troops returning from campaigns abroad.",
+      "A stone Triumphal Arch designed by the architect Osip Bove was later built at the Tverskaya Gate. It became one of Moscow's principal monuments to victory in the Patriotic War of 1812 and the subsequent campaigns of 1813–1814.",
+      "In 1936, the arch was dismantled during the reconstruction of the square. In the 1960s, the monument was recreated at a new location on Kutuzovsky Prospekt, near the Borodino Battle Panorama Museum. Today's arch is therefore a reconstructed memorial, rather than a nineteenth-century structure surviving in its original location."
     ],
     "category": "monument",
     "relatedPlaceIds": [],
@@ -403,9 +629,12 @@
     "slug": "fili",
     "letter": "F",
     "title": "Fili",
-    "shortDescription": "A former village outside Moscow and the site of the Military Council.",
+    "shortDescription": "A former village near Moscow and the site of the Military Council.",
     "content": [
-      "A former village outside Moscow and the site of the Military Council."
+      "Fili is a former village on the western approach to Moscow that entered the history of the Patriotic War of 1812 through the Military Council of Russian generals. After the Battle of Borodino, the Russian army withdrew towards Moscow and took up positions near the city's western outskirts.",
+      "On 1 (13) September 1812, the Military Council met in a peasant hut in Fili. It discussed whether to fight another battle near Moscow. Mikhail Kutuzov decided to abandon the city, preserving the army to continue the war.",
+      "The historical landscape of Fili later changed radically and became part of Moscow's urban development. Nevertheless, a memorial complex gradually took shape here: Kutuzov Hut, memorial markers, a chapel and, in the twentieth century, the Borodino Battle Panorama Museum.",
+      "Fili is especially important for a project about western Moscow: in one place, it brings together the actual geography of the events of 1812 and more than two centuries of their commemoration."
     ],
     "category": "place",
     "relatedPlaceIds": [
@@ -415,21 +644,42 @@
     ],
     "relatedDictionaryIds": [],
     "relatedTimelineIds": [],
-    "sourceIds": ["src-panorama-west", "src-prlib-fili"]
+    "sourceIds": [
+      "src-panorama-west",
+      "src-prlib-fili",
+      "src-panorama-history"
+    ],
+    "image": {
+      "src": "/images/timeline/fili-council-kivshenko-1882.jpg",
+      "alt": "The Military Council at Fili in a painting by Alexey Kivshenko",
+      "caption": "Alexey Kivshenko. “The Military Council at Fili in 1812,” 1882. An artistic depiction created 70 years after the event.",
+      "credit": "Алексей Кившенко · Public domain / PD-Art",
+      "sourceId": "src-media-fili-council-kivshenko-1882"
+    }
   },
   {
     "id": "shevardino-redoubt",
     "slug": "shevardino-redoubt",
     "letter": "S",
     "title": "Shevardino Redoubt",
-    "shortDescription": "An advanced fortification of the Russian position on the Borodino battlefield.",
+    "shortDescription": "An advanced fortification of the Russian position on the Borodino field.",
     "content": [
-      "An advanced fortification of the Russian position on the Borodino battlefield."
+      "The Shevardino Redoubt was an advanced field fortification on the left flank of the Russian position before the Battle of Borodino. It stood near the village of Shevardino and protected the approaches to the Russian army's main positions.",
+      "On 24 August (5 September) 1812, fierce fighting broke out for the redoubt. A Russian detachment under A. I. Gorchakov held off superior enemy forces for a prolonged period before withdrawing to the main position.",
+      "The fighting at Shevardino enabled the Russian command to gain time and clarify the direction of the French army's main attack. Two days later, the Battle of Borodino began, and the focus of the heaviest attacks shifted to the Semyonovskoye flèches and the Raevsky Battery."
     ],
     "category": "term",
     "relatedPlaceIds": [],
     "relatedDictionaryIds": [],
     "relatedTimelineIds": [],
-    "sourceIds": ["src-bre-war"]
+    "sourceIds": ["src-bre-war"],
+    "image": {
+      "src": "/images/timeline/borodino-hess-1843.jpg",
+      "alt": "The Battle of Borodino in a painting by Peter von Hess",
+      "caption": "Peter von Hess. “The Battle of Borodino on 26 August (7 September) 1812,” 1843. An artistic depiction created after the war.",
+      "description": "Context for the Battle of Borodino; not a depiction of the Shevardino Redoubt itself.",
+      "credit": "Петер фон Гесс · Public domain / PD-Art",
+      "sourceId": "src-media-borodino-hess-1843"
+    }
   }
 ]

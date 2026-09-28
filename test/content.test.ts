@@ -1,5 +1,8 @@
 import assert from 'node:assert/strict'
+import { existsSync, readFileSync } from 'node:fs'
 import test from 'node:test'
+import { normalizeMediaCaption } from '../app/utils/mediaCaption.ts'
+import { formatTimelineDates } from '../app/utils/timelineDates.ts'
 import {
   contentRelease,
   getCatalog,
@@ -40,7 +43,7 @@ test('loads both final production catalogs with expected entity counts', () => {
         catalog.places.length,
         catalog.dictionary.length,
         catalog.timeline.length,
-        catalog.sources.length,
+        catalog.sources.filter((source) => source.type !== 'media').length,
       ],
       [13, 29, 20, 25],
     )
@@ -52,6 +55,63 @@ test('loads both final production catalogs with expected entity counts', () => {
         ...catalog.sources,
       ].every((item) => !item.id.startsWith('test-')),
     )
+  }
+})
+
+test('dictionary localization preserves paragraphs and verified media identity', () => {
+  const manifest = JSON.parse(
+    readFileSync(
+      new URL(
+        '../docs/research/dictionary-media-manifest.parity.json',
+        import.meta.url,
+      ),
+      'utf8',
+    ),
+  ) as { entries: { dictionaryId: string; status: string }[] }
+  assert.equal(
+    ru.dictionary.reduce((count, entry) => count + entry.content.length, 0),
+    95,
+  )
+  assert.equal(
+    en.dictionary.reduce((count, entry) => count + entry.content.length, 0),
+    95,
+  )
+  for (const entry of ru.dictionary) {
+    const translated = getDictionaryEntryById('en', entry.id)!
+    assert.equal(translated.content.length, entry.content.length)
+    assert.ok(
+      !/[А-Яа-яЁё]/.test(
+        translated.shortDescription + translated.content.join(' '),
+      ),
+    )
+    const status = manifest.entries.find(
+      (item) => item.dictionaryId === entry.id,
+    )?.status
+    assert.ok(status)
+    if (status === 'no-image-yet') {
+      assert.equal(entry.image, undefined)
+      assert.equal(translated.image, undefined)
+    }
+    if (!entry.image) continue
+    assert.equal(translated.image?.src, entry.image.src)
+    assert.equal(translated.image?.sourceId, entry.image.sourceId)
+    assert.ok(entry.image.src.startsWith('/images/'))
+    assert.ok(
+      existsSync(new URL(`../public${entry.image.src}`, import.meta.url)),
+    )
+    assert.ok(entry.image.alt && entry.image.caption && entry.image.credit)
+    assert.ok(
+      translated.image?.alt &&
+        translated.image.caption &&
+        translated.image.credit,
+    )
+    assert.ok(
+      !/[А-Яа-яЁё]/.test(translated.image!.alt + translated.image!.caption),
+    )
+    for (const locale of ['ru', 'en'] as const) {
+      const source = getSourceById(locale, entry.image.sourceId!)
+      assert.ok(source?.url?.startsWith('https://commons.wikimedia.org/wiki/'))
+    }
   }
 })
 
@@ -228,6 +288,40 @@ test('timeline dates are explicit and sorting is deterministic', () => {
   )
 })
 
+test('timeline display preserves supplied dates, complete range labels, and year boundaries', () => {
+  for (const locale of ['ru', 'en'] as const) {
+    const range = formatTimelineDates('1812-08-04', '1812-08-06', locale)
+    assert.equal(range.startText, '4')
+    assert.ok(range.startLabel.includes('1812'))
+    assert.ok(range.endLabel?.includes('1812'))
+    assert.ok(range.startLabel.includes(locale === 'ru' ? 'августа' : 'August'))
+    const crossing = formatTimelineDates('1812-12-25', '1813-01-06', locale)
+    assert.ok(crossing.startText.includes('1812'))
+    assert.ok(crossing.endText?.includes('1813'))
+    const single = formatTimelineDates('1813-01-06', undefined, locale)
+    assert.equal(single.endText, undefined)
+    assert.ok(single.startText.includes('6'))
+    assert.ok(single.startText.includes(locale === 'ru' ? 'января' : 'January'))
+    for (const event of getTimelineEvents(locale)) {
+      const old = formatTimelineDates(
+        event.dateOldStyle,
+        event.dateEndOldStyle,
+        locale,
+      )
+      assert.ok(old.startLabel.includes(event.dateOldStyle.slice(0, 4)))
+      if (event.dateEndOldStyle) assert.ok(old.endLabel)
+      if (event.dateNewStyle) {
+        const modern = formatTimelineDates(
+          event.dateNewStyle,
+          event.dateEndNewStyle,
+          locale,
+        )
+        assert.ok(modern.startLabel.includes(event.dateNewStyle.slice(0, 4)))
+      }
+    }
+  }
+})
+
 test('both production locales generate detail routes from catalog data', () => {
   const routes = getDynamicPrerenderRoutes()
   const expected = (['ru', 'en'] as const)
@@ -289,4 +383,87 @@ test('integrity checks reject broken sources, relations, and invalid Place value
   assert.ok(issues.some((issue) => issue.includes('unresolved relation')))
   assert.ok(issues.some((issue) => issue.includes('invalid historicalStatus')))
   assert.ok(issues.some((issue) => issue.includes('invalid locationPrecision')))
+})
+
+test('media captions preserve localized captions and remove repeated authors in both locales', () => {
+  for (const locale of ['ru', 'en'] as const) {
+    for (const entry of getDictionaryEntries(locale).filter(
+      (entry) => entry.image,
+    )) {
+      const asset = entry.image!
+      const before = JSON.stringify(asset)
+      const source = getSourceById(locale, asset.sourceId!)
+      const translated = getSourceById(
+        locale === 'ru' ? 'en' : 'ru',
+        asset.sourceId!,
+      )
+      const presentation = normalizeMediaCaption(asset, source, translated)
+      assert.ok(presentation.caption.startsWith(asset.caption!))
+      if (asset.description)
+        assert.ok(presentation.caption.includes(asset.description))
+      const credit = asset.credit!.split(' · ')
+      // The photo's unknown photographer is distinct from its depicted subject.
+      assert.equal(
+        presentation.attribution,
+        (entry.id === 'roubaud' ? credit : credit.slice(1)).join(' · '),
+      )
+      assert.equal(presentation.sourceLabel, 'Wikimedia Commons')
+      assert.equal(presentation.sourceUrl, source?.url)
+      assert.equal(JSON.stringify(asset), before)
+    }
+  }
+})
+
+test('media presentation retains incomplete metadata and never invents attribution', () => {
+  const asset = { src: '/image.jpg', alt: 'Artwork' }
+  assert.equal(
+    normalizeMediaCaption({
+      ...asset,
+      caption: 'Artwork — George Dawe, 1817.',
+      credit: 'George Dawe · Collection · PD-Art',
+    }).attribution,
+    'Collection · PD-Art',
+  )
+  assert.deepEqual(normalizeMediaCaption(asset), {
+    caption: '',
+    attribution: '',
+    sourceLabel: '',
+    sourceUrl: undefined,
+  })
+  assert.equal(
+    normalizeMediaCaption({ ...asset, credit: 'Artist · Collection · CC BY' })
+      .attribution,
+    'Artist · Collection · CC BY',
+  )
+  assert.equal(
+    normalizeMediaCaption({
+      ...asset,
+      caption: 'Artwork, 1812.',
+      credit: 'Artist · CC BY',
+    }).attribution,
+    'Artist · CC BY',
+  )
+  assert.equal(
+    normalizeMediaCaption({ ...asset, caption: 'Artist. Artwork, 1812.' })
+      .caption,
+    'Artist. Artwork, 1812.',
+  )
+  const source = {
+    id: 'media',
+    title: 'Archive record',
+    type: 'media',
+    url: 'https://example.org/artwork',
+  }
+  const presentation = normalizeMediaCaption(
+    {
+      ...asset,
+      description: 'Context only.',
+      credit: 'Collection · CC BY · Archive record',
+    },
+    source,
+  )
+  assert.equal(presentation.caption, 'Context only.')
+  assert.equal(presentation.attribution, 'Collection · CC BY')
+  assert.equal(presentation.sourceLabel, 'Archive record')
+  assert.equal(presentation.sourceUrl, source.url)
 })

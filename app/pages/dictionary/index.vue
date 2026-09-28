@@ -215,12 +215,8 @@ useSeoMeta({ description: () => t('home.dictionary.description') })
   min-width: 0;
 }
 
-.dictionary-group__entries li {
+.dictionary-group__entries li:not(:last-child) {
   border-bottom: var(--border-rule);
-}
-
-.dictionary-group__entries li:first-child {
-  border-top: var(--border-rule);
 }
 
 .dictionary-entry {

@@ -198,5 +198,196 @@
     "publisher": "Государственный исторический музей",
     "url": "https://rm.shm.ru/core/event/60",
     "accessedAt": "2026-09-25"
+  },
+  {
+    "id": "src-media-dict-bagration-dawe",
+    "title": "Джордж Доу (мастерская). Портрет П. И. Багратиона, 1820-е годы.",
+    "type": "media",
+    "author": "George Dawe / workshop",
+    "publisher": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:George_Dawe_-_Portrait_of_General_Pyotr_Bagration_(1765-1812)_-_Google_Art_Project.jpg",
+    "accessedAt": "2026-09-28"
+  },
+  {
+    "id": "src-media-dict-barclay-dawe",
+    "title": "Джордж Доу. Портрет М. Б. Барклая-де-Толли, 1820-е годы.",
+    "type": "media",
+    "author": "George Dawe",
+    "publisher": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Barclay_de_Tolly_(Dawe).jpg",
+    "accessedAt": "2026-09-28"
+  },
+  {
+    "id": "src-media-dict-bennigsen-dawe",
+    "title": "Джордж Доу. Портрет Л. Л. Беннигсена, 1820-е годы.",
+    "type": "media",
+    "author": "George Dawe",
+    "publisher": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Bennigsen.jpg",
+    "accessedAt": "2026-09-28"
+  },
+  {
+    "id": "src-media-berezina-hess",
+    "title": "Петер фон Гесс. Переправа через Березину 17 (29) ноября 1812 года.",
+    "type": "media",
+    "author": "Peter von Hess",
+    "publisher": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Hess_Berezina.jpg",
+    "accessedAt": "2026-09-28"
+  },
+  {
+    "id": "src-media-borodino-hess-1843",
+    "title": "Петер фон Гесс. «Бородинское сражение 26 августа (7 сентября) 1812 года», 1843. Художественное изображение, созданное после войны.",
+    "type": "media",
+    "author": "Петер фон Гесс",
+    "publisher": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Battle_of_Borodino_on_26_August_(7_September)_1812_(by_Peter_von_Hess,_original_colors_version).jpg",
+    "accessedAt": "2026-09-28"
+  },
+  {
+    "id": "src-media-roubaud-borodino-panorama-1912",
+    "title": "Франц Рубо. Фрагмент панорамы «Бородинская битва», 1912.",
+    "type": "media",
+    "author": "Franz Roubaud",
+    "publisher": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Battle_of_Borodino_part_of_panorama_by_Franz_Roubaud.jpg",
+    "accessedAt": "2026-09-28"
+  },
+  {
+    "id": "src-media-dict-grand-army-vernet",
+    "title": "Карл Верне. Пехота Великой армии. Из серии «La Grande Armée de 1812», 1812.",
+    "type": "media",
+    "author": "Carle Vernet",
+    "publisher": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Grande_Arm%C3%A9e_-_Infantry.jpg",
+    "accessedAt": "2026-09-28"
+  },
+  {
+    "id": "src-media-fili-council-kivshenko-1882",
+    "title": "Алексей Кившенко. «Военный совет в Филях в 1812 году», 1882. Художественное изображение, созданное спустя 70 лет после события.",
+    "type": "media",
+    "author": "Алексей Кившенко",
+    "publisher": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Военный_совет_в_Филях_в_1812_году.jpg",
+    "accessedAt": "2026-09-28"
+  },
+  {
+    "id": "src-media-dict-davydov-dawe",
+    "title": "Джордж Доу. Портрет Д. В. Давыдова, до 1828 года.",
+    "type": "media",
+    "author": "George Dawe",
+    "publisher": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Denisdavydov.jpg",
+    "accessedAt": "2026-09-28"
+  },
+  {
+    "id": "src-media-dict-kutuzov-basin",
+    "title": "Пётр Басин. Портрет генерал-фельдмаршала М. И. Кутузова.",
+    "type": "media",
+    "author": "Pyotr Basin",
+    "publisher": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Kutuzow-by-Basin.jpg",
+    "accessedAt": "2026-09-28"
+  },
+  {
+    "id": "src-media-kutuzov-hut-savrasov-1884",
+    "title": "Алексей Саврасов. «Кутузовская изба в Филях», 1884. Позднейшее художественное изображение.",
+    "type": "media",
+    "author": "Alexei Savrasov",
+    "publisher": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:%D0%98%D0%B7%D0%B1%D0%B0_%D1%81%D0%BE%D0%B2%D0%B5%D1%82%D0%B0_%D0%B2_%D0%A4%D0%B8%D0%BB%D1%8F%D1%85.jpg",
+    "accessedAt": "2026-09-28"
+  },
+  {
+    "id": "src-media-dict-maloyaroslavets-samokish",
+    "title": "Николай Самокиш. Бой под Малоярославцем 12 октября 1812 года, 1912.",
+    "type": "media",
+    "author": "Nikolai Samokish",
+    "publisher": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:%D0%91%D0%BE%D0%B9_%D0%BF%D0%BE%D0%B4_%D0%9C%D0%B0%D0%BB%D0%BE%D1%8F%D1%80%D0%BE%D1%81%D0%BB%D0%B0%D0%B2%D1%86%D0%B5%D0%BC_12_%D0%BE%D0%BA%D1%82%D1%8F%D0%B1%D1%80%D1%8F_1812_%D0%B3%D0%BE%D0%B4%D0%B0_(%D0%B3%D1%80%D0%B0%D0%B2%D1%8E%D1%80%D0%B0_%D0%9D.%D0%A1._%D0%A1%D0%B0%D0%BC%D0%BE%D0%BA%D0%B8%D1%88%D0%B0).jpg",
+    "accessedAt": "2026-09-28"
+  },
+  {
+    "id": "src-media-dict-moscow-fire-smirnov",
+    "title": "А. Ф. Смирнов. Пожар Москвы 1812 года, 1813.",
+    "type": "media",
+    "author": "A. F. Smirnov",
+    "publisher": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Fire_of_Moscow_1812.jpg",
+    "accessedAt": "2026-09-28"
+  },
+  {
+    "id": "src-media-retreat-moscow-suchodolski-1853",
+    "title": "Януарий Суходольский. «Отступление из Москвы в 1812 году», 1853. Художественное изображение, созданное позднее события.",
+    "type": "media",
+    "author": "Януарий Суходольский",
+    "publisher": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:January_Suchodolski_-_Retreat_from_Moscow_in_1812_-_MP_2605_-_National_Museum_in_Warsaw.jpg",
+    "accessedAt": "2026-09-28"
+  },
+  {
+    "id": "src-media-dict-platov-orlowski",
+    "title": "Александр Орловский. Портрет М. И. Платова, 1812–1813.",
+    "type": "media",
+    "author": "Aleksander Orłowski",
+    "publisher": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Portrait_of_Matvey_Platov_by_Aleksander_Or%C5%82owski,_1812-13.jpg",
+    "accessedAt": "2026-09-28"
+  },
+  {
+    "id": "src-media-dict-raevsky-dawe",
+    "title": "Джордж Доу. Портрет Н. Н. Раевского, 1820-е годы.",
+    "type": "media",
+    "author": "George Dawe",
+    "publisher": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Rajevskij_N_N.jpg",
+    "accessedAt": "2026-09-28"
+  },
+  {
+    "id": "src-media-dict-roubaud-photo",
+    "title": "Франц Рубо. Фотография второй половины XIX века.",
+    "type": "media",
+    "author": "Unknown",
+    "publisher": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:%D0%A4%D0%BE%D1%82%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%8F_%D0%A4%D1%80%D0%B0%D0%BD%D1%86_%D0%A0%D1%83%D0%B1%D0%BE,_19_%D0%B2%D0%B5%D0%BA.jpg",
+    "accessedAt": "2026-09-28"
+  },
+  {
+    "id": "src-media-dict-smolensk-langlois",
+    "title": "Жан-Шарль Ланглуа. Сражение при Смоленске 17 августа 1812 года, 1839.",
+    "type": "media",
+    "author": "Jean-Charles Langlois",
+    "publisher": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Battle_of_Smolensk_1812.png",
+    "accessedAt": "2026-09-28"
+  },
+  {
+    "id": "src-media-dict-tarutino-hess",
+    "title": "Петер фон Гесс. Сражение при Тарутине 6 (18) октября 1812 года, 1847.",
+    "type": "media",
+    "author": "Peter von Hess",
+    "publisher": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Tarutino.jpg",
+    "accessedAt": "2026-09-28"
+  },
+  {
+    "id": "src-media-dict-alexander-i-dawe",
+    "title": "Джордж Доу. Портрет императора Александра I, 1817.",
+    "type": "media",
+    "author": "Джордж Доу",
+    "publisher": "Wikimedia Commons",
+    "year": 1817,
+    "url": "https://commons.wikimedia.org/wiki/File:George_Dawe_(1781-1829)_-_Alexander_I,_Emperor_of_Russia_(1777-1825)_-_RCIN_400570_-_Royal_Collection.jpg",
+    "accessedAt": "2026-09-28"
+  },
+  {
+    "id": "src-media-dict-napoleon-1812",
+    "title": "Жак-Луи Давид. «Наполеон в своём кабинете в Тюильри», 1812.",
+    "type": "media",
+    "author": "Жак-Луи Давид",
+    "publisher": "Wikimedia Commons",
+    "year": 1812,
+    "url": "https://commons.wikimedia.org/wiki/File:Napoleon_Bonaparte_gg.jpg",
+    "accessedAt": "2026-09-28"
   }
 ]

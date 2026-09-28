@@ -5,6 +5,7 @@ import {
   getCatalogProblems,
   getDanglingRelations,
   getDynamicPrerenderRoutes,
+  getTimelineEvents,
 } from './shared/content/index.ts'
 
 const contentProblems = getCatalogProblems()
@@ -18,12 +19,27 @@ export default defineNuxtConfig({
   buildDir: process.env.npm_lifecycle_event === 'dev' ? '.nuxt-dev' : '.nuxt',
   ssr: true,
   modules: ['@nuxtjs/i18n', '@nuxt/eslint'],
-  css: ['~/assets/css/main.css'],
+  css: ['~/assets/css/main.css', '~/assets/css/museum-viewer.css'],
   app: {
     baseURL: process.env.NUXT_APP_BASE_URL || '/',
   },
   runtimeConfig: {
     public: {
+      timelineMediaAvailableSrcs: [
+        ...new Set(
+          [...getTimelineEvents('ru'), ...getTimelineEvents('en')]
+            .filter(
+              (event) =>
+                event.featured && event.image?.src.startsWith('/images/'),
+            )
+            .map((event) => event.image!.src)
+            .filter(
+              (src) =>
+                !src.includes('..') &&
+                existsSync(resolve('public', src.slice(1))),
+            ),
+        ),
+      ],
       heroMediaAvailableIds: heroSlides
         .filter((slide) =>
           existsSync(resolve('public', slide.publicPath.slice(1))),

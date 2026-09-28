@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import {
   getDictionaryEntryBySlug,
+  getSourceById,
   resolveRelatedContent,
 } from '#shared/content/index'
+import { normalizeMediaCaption } from '~/utils/mediaCaption'
 
 const route = useRoute()
 const { locale, t } = useI18n()
@@ -20,6 +22,25 @@ const record = computed(() => {
 const sources = computed(
   () =>
     resolveRelatedContent(locale.value, 'dictionary', record.value.id).sources,
+)
+const imageSource = computed(() =>
+  record.value.image?.sourceId
+    ? getSourceById(locale.value, record.value.image.sourceId)
+    : undefined,
+)
+const imageCaption = computed(() =>
+  record.value.image
+    ? normalizeMediaCaption(
+        record.value.image,
+        imageSource.value,
+        record.value.image.sourceId
+          ? getSourceById(
+              locale.value === 'ru' ? 'en' : 'ru',
+              record.value.image.sourceId,
+            )
+          : undefined,
+      )
+    : undefined,
 )
 
 useHead(() => ({ title: record.value.seo?.title ?? record.value.title }))
@@ -40,29 +61,58 @@ useSeoMeta({
       </NuxtLink>
     </nav>
 
-    <header class="dictionary-detail__intro">
-      <p class="eyebrow">
-        {{ t('sections.dictionaryEntry') }} <span aria-hidden="true">/</span>
-        {{ record.letter }}
-      </p>
-      <h1>{{ record.title }}</h1>
-    </header>
+    <div class="dictionary-detail__composition">
+      <header class="dictionary-detail__intro">
+        <p class="eyebrow">
+          {{ t('sections.dictionaryEntry') }} <span aria-hidden="true">/</span>
+          {{ record.letter }}
+        </p>
+        <h1>{{ record.title }}</h1>
+        <p class="dictionary-detail__description lead">
+          {{ record.shortDescription }}
+        </p>
+      </header>
+    </div>
 
-    <div class="dictionary-detail__story">
+    <div
+      class="dictionary-detail__article"
+      :class="{ 'dictionary-detail__article--with-image': record.image }"
+    >
+      <figure v-if="record.image" class="dictionary-detail__figure">
+        <MuseumImage :image="record.image" />
+        <figcaption
+          v-if="
+            imageCaption &&
+            (imageCaption.caption ||
+              imageCaption.attribution ||
+              imageCaption.sourceLabel)
+          "
+        >
+          <span v-if="imageCaption.caption" class="media-caption__text">{{
+            imageCaption.caption
+          }}</span>
+          <span
+            v-if="imageCaption.attribution || imageCaption.sourceLabel"
+            class="media-caption__attribution"
+          >
+            {{ imageCaption.attribution
+            }}<template
+              v-if="imageCaption.attribution && imageCaption.sourceLabel"
+            >
+              ·
+            </template>
+            <a v-if="imageCaption.sourceUrl" :href="imageCaption.sourceUrl">{{
+              imageCaption.sourceLabel
+            }}</a>
+            <template v-else>{{ imageCaption.sourceLabel }}</template>
+          </span>
+        </figcaption>
+      </figure>
       <div class="dictionary-detail__body">
         <p v-for="(paragraph, index) in record.content" :key="index">
           {{ paragraph }}
         </p>
       </div>
-      <figure v-if="record.image" class="dictionary-detail__figure">
-        <!-- eslint-disable vue/html-self-closing -->
-        <img :src="record.image.src" :alt="record.image.alt" />
-        <!-- eslint-enable vue/html-self-closing -->
-        <figcaption v-if="record.image.caption || record.image.credit">
-          <span v-if="record.image.caption">{{ record.image.caption }}</span>
-          <span v-if="record.image.credit">{{ record.image.credit }}</span>
-        </figcaption>
-      </figure>
     </div>
 
     <section
@@ -116,8 +166,34 @@ useSeoMeta({
   text-decoration: underline;
 }
 
-.dictionary-detail__intro {
+.dictionary-detail__composition {
   padding-block: var(--space-16) var(--space-12);
+}
+
+.dictionary-detail__article {
+  border-top: var(--border-rule);
+  padding-top: var(--space-12);
+}
+
+.dictionary-detail__article--with-image {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(2rem, 4vw, 4rem);
+}
+
+.dictionary-detail__article--with-image .dictionary-detail__body {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.dictionary-detail__article--with-image .dictionary-detail__figure {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.dictionary-detail__intro {
+  min-width: 0;
 }
 
 .dictionary-detail__intro .eyebrow {
@@ -130,23 +206,22 @@ useSeoMeta({
 }
 
 .dictionary-detail__intro h1 {
-  max-width: 19ch;
+  max-width: 21ch;
   margin: 0;
-  font-size: clamp(3.5rem, 7vw, 6.5rem);
+  font-size: clamp(2.625rem, 4.8vw, 5.25rem);
   letter-spacing: -0.045em;
   overflow-wrap: break-word;
 }
 
-.dictionary-detail__story {
-  display: grid;
-  grid-template-columns: minmax(0, 42rem) minmax(0, 1fr);
-  gap: clamp(3rem, 8vw, 9rem);
-  border-top: var(--border-rule);
-  padding-top: var(--space-12);
+.dictionary-detail__description {
+  max-width: 36rem;
+  margin-block: var(--space-8) 0;
+  color: var(--color-muted);
 }
 
 .dictionary-detail__body {
   min-width: 0;
+  max-width: var(--container-text);
   font-size: var(--text-body-lg);
   line-height: 1.7;
 }
@@ -160,21 +235,24 @@ useSeoMeta({
   margin: 0;
 }
 
-.dictionary-detail__figure img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
 .dictionary-detail__figure figcaption {
   display: grid;
   gap: var(--space-1);
-  border-top: var(--border-rule);
   margin-top: var(--space-3);
   padding-top: var(--space-3);
   color: var(--color-muted);
   font-size: var(--text-caption);
   line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.dictionary-detail__figure .media-caption__text {
+  color: var(--color-ink);
+  font-size: var(--text-body-sm);
+}
+
+.dictionary-detail__figure .media-caption__attribution a {
+  color: inherit;
 }
 
 .dictionary-detail__sources {
@@ -228,9 +306,14 @@ useSeoMeta({
 }
 
 @media (max-width: 56.25rem) {
-  .dictionary-detail__story {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
+  .dictionary-detail__article--with-image {
+    display: flex;
+    flex-direction: column;
     gap: var(--space-8);
+  }
+
+  .dictionary-detail__figure {
+    max-width: var(--container-text);
   }
 }
 
@@ -239,7 +322,7 @@ useSeoMeta({
     padding-block: var(--space-6) var(--space-16);
   }
 
-  .dictionary-detail__intro {
+  .dictionary-detail__composition {
     padding-block: var(--space-12) var(--space-8);
   }
 
@@ -247,17 +330,16 @@ useSeoMeta({
     font-size: clamp(2.8rem, 12vw, 4rem);
   }
 
-  .dictionary-detail__story,
   .dictionary-detail__sources {
     display: block;
   }
 
-  .dictionary-detail__story {
+  .dictionary-detail__article {
     padding-top: var(--space-8);
   }
 
   .dictionary-detail__figure {
-    margin-top: var(--space-8);
+    margin: 0;
   }
 
   .dictionary-detail__sources {

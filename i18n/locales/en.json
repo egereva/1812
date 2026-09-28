@@ -15,6 +15,20 @@
   },
   "language": { "ru": "Русская версия", "en": "English version" },
   "dictionary": { "alphabet": "Alphabet" },
+  "timeline": {
+    "oldStyle": "Old Style",
+    "newStyle": "New Style",
+    "until": "to"
+  },
+  "imageViewer": {
+    "open": "View image: {title}",
+    "label": "Artwork viewer",
+    "zoomIn": "Zoom in",
+    "zoomOut": "Zoom out",
+    "previous": "Previous image",
+    "next": "Next image",
+    "error": "The image could not be opened. Please try again."
+  },
   "home": {
     "eyebrow": "Historical guide",
     "issue": "Western Moscow",
