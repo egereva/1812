@@ -1,5 +1,7 @@
 {
-  "accessibility": { "skip": "Skip to content" },
+  "accessibility": {
+    "skip": "Skip to content"
+  },
   "navigation": {
     "home": "Home",
     "dictionary": "Dictionary",
@@ -13,12 +15,26 @@
     "menu": "Menu",
     "close": "Close"
   },
-  "language": { "ru": "Русская версия", "en": "English version" },
-  "dictionary": { "alphabet": "Alphabet" },
+  "language": {
+    "ru": "Русская версия",
+    "en": "English version"
+  },
+  "dictionary": {
+    "alphabet": "Alphabet"
+  },
   "timeline": {
     "oldStyle": "Old Style",
     "newStyle": "New Style",
-    "until": "to"
+    "until": "to",
+    "detail": {
+      "back": "Full timeline",
+      "related": "Related materials",
+      "places": "Places",
+      "sources": "Historical sources",
+      "chronology": "Chronological navigation",
+      "previous": "Previous event",
+      "next": "Next event"
+    }
   },
   "imageViewer": {
     "open": "View image: {title}",

@@ -389,5 +389,81 @@
     "year": 1812,
     "url": "https://commons.wikimedia.org/wiki/File:Napoleon_Bonaparte_gg.jpg",
     "accessedAt": "2026-09-28"
+  },
+  {
+    "id": "src-media-neman-clark-1816",
+    "title": "Джон Хивисайд Кларк и М. Дюбург. Переход Великой армии через Неман, 1816.",
+    "type": "media",
+    "author": "Джон Хивисайд Кларк и М. Дюбург",
+    "publisher": "Wikimedia Commons",
+    "year": 1816,
+    "url": "https://commons.wikimedia.org/wiki/File:Crossing_the_Neman_in_Russia_1812_by_Clark.jpg",
+    "accessedAt": "2026-09-29"
+  },
+  {
+    "id": "src-media-timeline-vilna",
+    "title": "Вильна в 1812 году. Вид Людвисарской улицы со стороны Дворцовой площади; авторство предположительно Наполеона Кюи.",
+    "type": "media",
+    "author": "Attributed to Napoleon Cui (uncertain attribution on Commons)",
+    "publisher": "National Museum in Kraków; MNK III-ryc.-41734",
+    "url": "https://commons.wikimedia.org/wiki/File:Vilnia%2C_Pa%C5%82acavy-Ludvisarskaja._%D0%92%D1%96%D0%BB%D1%8C%D0%BD%D1%8F%2C_%D0%9F%D0%B0%D0%BB%D0%B0%D1%86%D0%B0%D0%B2%D1%8B-%D0%9B%D1%8E%D0%B4%D0%B2%D1%96%D1%81%D0%B0%D1%80%D1%81%D0%BA%D0%B0%D1%8F_%28N._Cui%2C_1812%29.jpg",
+    "accessedAt": "2026-09-29"
+  },
+  {
+    "id": "src-media-timeline-shevardino",
+    "title": "Современный вид Шевардинского редута с тыльной стороны. Фото: Tuzanna, 25 июля 2020 года.",
+    "type": "media",
+    "author": "Tuzanna",
+    "publisher": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Shevardino_Redoubt_1.jpg",
+    "accessedAt": "2026-09-29"
+  },
+  {
+    "id": "src-media-timeline-moscow-abandoned",
+    "title": "Вступление французской армии Наполеона в Москву 14 сентября 1812 года. Раскрашенная гравюра, издание Basset, 1812.",
+    "type": "media",
+    "author": "Artist unidentified; published by Basset",
+    "publisher": "Bibliothèque nationale de France; De Vinck 8764",
+    "year": 1812,
+    "url": "https://commons.wikimedia.org/wiki/File:Entr%C3%A9e_de_l%27Arm%C3%A9e_fran%C3%A7aise_command%C3%A9e_par_S._M._l%27Empereur_Napol%C3%A9on_dans_la_Ville_de_Moscou_le_14_septembre_1812_-_estampe_-_btv1b69538762.jpg",
+    "accessedAt": "2026-09-29"
+  },
+  {
+    "id": "src-media-timeline-tarutino-march",
+    "title": "Кaidor. Схема Тарутинского марш-манёвра 1812 года, 2018; редакция 2019 года. Подписи на карте — на русском языке.",
+    "type": "media",
+    "author": "Kaidor; OpenStreetMap contributors",
+    "publisher": "Wikimedia Commons",
+    "year": 2018,
+    "url": "https://commons.wikimedia.org/wiki/File:Manoeuvre_of_Tarutino_-_ru.svg",
+    "accessedAt": "2026-09-29"
+  },
+  {
+    "id": "src-media-timeline-vyazma",
+    "title": "Петер фон Гесс. Сражение под Вязьмой 22 октября (3 ноября) 1812 года. XIX век, из серии, созданной в 1842–1856 годах.",
+    "type": "media",
+    "author": "Peter von Hess",
+    "publisher": "State Hermitage Museum; ГЭ-5920",
+    "url": "https://commons.wikimedia.org/wiki/File:Battle_vyazma.jpg",
+    "accessedAt": "2026-09-29"
+  },
+  {
+    "id": "src-media-timeline-krasny",
+    "title": "Петер фон Гесс. Бой у Лосмина 6 (18) ноября 1812 года — эпизод ноябрьских боёв под Красным. XIX век, из серии 1842–1856 годов.",
+    "type": "media",
+    "author": "Peter von Hess",
+    "publisher": "Wikimedia Commons",
+    "url": "https://commons.wikimedia.org/wiki/File:Hess-1812losmina.jpg",
+    "accessedAt": "2026-09-29"
+  },
+  {
+    "id": "src-media-timeline-napoleon-leaves-army",
+    "title": "Николай Самокиш. Наполеон покидает армию в Сморгони. Гравюра, около 1912 года; журнал «Нива», № 2, 1912.",
+    "type": "media",
+    "author": "Nikolai Samokish",
+    "publisher": "Wikimedia Commons",
+    "year": 1912,
+    "url": "https://commons.wikimedia.org/wiki/File:%D0%9D%D0%B0%D0%BF%D0%BE%D0%BB%D0%B5%D0%BE%D0%BD_%D0%BF%D0%BE%D0%BA%D0%B8%D0%B4%D0%B0%D0%B5%D1%82_%D0%B0%D1%80%D0%BC%D0%B8%D1%8E_%D0%B2_%D0%A1%D0%BC%D0%BE%D1%80%D0%B3%D0%BE%D0%BD%D0%B8_%28%D0%B3%D1%80%D0%B0%D0%B2%D1%8E%D1%80%D0%B0_%D0%9D.%D0%A1._%D0%A1%D0%B0%D0%BC%D0%BE%D0%BA%D0%B8%D1%88%D0%B0%29.jpg",
+    "accessedAt": "2026-09-29"
   }
 ]

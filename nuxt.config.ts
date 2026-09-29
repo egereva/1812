@@ -1,11 +1,16 @@
 import { existsSync } from 'node:fs'
 import { resolve } from 'node:path'
-import { heroSlides } from './app/data/heroSlides'
 import {
+  getTimelineArtwork,
+  timelineArtworkDictionaryIds,
+} from './app/data/timelinePresentation'
+import { heroSlides } from './app/data/heroSlides'
+import { homepageTimelineArtworkSlots } from './app/data/homepageTimelineMedia'
+import {
+  getDictionaryEntries,
   getCatalogProblems,
   getDanglingRelations,
   getDynamicPrerenderRoutes,
-  getTimelineEvents,
 } from './shared/content/index.ts'
 
 const contentProblems = getCatalogProblems()
@@ -27,17 +32,26 @@ export default defineNuxtConfig({
     public: {
       timelineMediaAvailableSrcs: [
         ...new Set(
-          [...getTimelineEvents('ru'), ...getTimelineEvents('en')]
-            .filter(
-              (event) =>
-                event.featured && event.image?.src.startsWith('/images/'),
-            )
-            .map((event) => event.image!.src)
-            .filter(
-              (src) =>
-                !src.includes('..') &&
-                existsSync(resolve('public', src.slice(1))),
+          [
+            ...Object.values(homepageTimelineArtworkSlots)
+              .flatMap((slot) => Object.values(slot))
+              .map((image) => image.src),
+            ...['ru', 'en'].flatMap((locale) =>
+              Object.keys(timelineArtworkDictionaryIds).map(
+                (id) =>
+                  getTimelineArtwork(
+                    getDictionaryEntries(locale as 'ru' | 'en'),
+                    id,
+                  )?.src,
+              ),
             ),
+          ].filter(
+            (src): src is string =>
+              !!src &&
+              src.startsWith('/images/') &&
+              !src.includes('..') &&
+              existsSync(resolve('public', src.slice(1))),
+          ),
         ),
       ],
       heroMediaAvailableIds: heroSlides
@@ -54,10 +68,7 @@ export default defineNuxtConfig({
       { code: 'ru', language: 'ru-RU', file: 'ru.json' },
       { code: 'en', language: 'en-US', file: 'en.json' },
     ],
-    detectBrowserLanguage: {
-      useCookie: true,
-      redirectOn: 'root',
-    },
+    detectBrowserLanguage: false,
   },
   nitro: {
     prerender: {

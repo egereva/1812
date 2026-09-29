@@ -1,54 +1,33 @@
 <script setup lang="ts">
-import { getTimelineEvents, getSourceById } from '#shared/content/index'
+import { getTimelineEvents, getDictionaryEntries } from '#shared/content/index'
+import { getPresentedTimelineEvents } from '~/data/timelinePresentation'
 import { formatTimelineDates } from '~/utils/timelineDates'
-import { normalizeMediaCaption } from '~/utils/mediaCaption'
 
 const { locale, t } = useI18n()
 const localePath = useLocalePath()
 const config = useRuntimeConfig()
 const events = computed(() =>
-  getTimelineEvents(locale.value).map((event) => {
-    const image =
-      event.featured &&
-      event.image &&
-      config.public.timelineMediaAvailableSrcs.includes(event.image.src)
-        ? event.image
-        : undefined
-    return {
-      ...event,
-      image,
-      oldDates: formatTimelineDates(
-        event.dateOldStyle,
-        event.dateEndOldStyle,
-        locale.value,
-      ),
-      newDates: event.dateNewStyle
-        ? formatTimelineDates(
-            event.dateNewStyle,
-            event.dateEndNewStyle,
-            locale.value,
-          )
-        : undefined,
-      imageCaption: image
-        ? normalizeMediaCaption(
-            image,
-            image.sourceId
-              ? getSourceById(locale.value, image.sourceId)
-              : undefined,
-            image.sourceId
-              ? getSourceById(
-                  locale.value === 'ru' ? 'en' : 'ru',
-                  image.sourceId,
-                )
-              : undefined,
-          )
-        : undefined,
-    }
-  }),
+  getPresentedTimelineEvents(
+    getTimelineEvents(locale.value),
+    getDictionaryEntries(locale.value),
+    locale.value,
+    config.public.timelineMediaAvailableSrcs,
+  ).map((event) => ({
+    ...event,
+    oldDates: formatTimelineDates(
+      event.dateOldStyle,
+      event.dateEndOldStyle,
+      locale.value,
+    ),
+    newDates: event.dateNewStyle
+      ? formatTimelineDates(
+          event.dateNewStyle,
+          event.dateEndNewStyle,
+          locale.value,
+        )
+      : undefined,
+  })),
 )
-const imageUrl = (src: string) =>
-  `${config.app.baseURL.replace(/\/$/, '')}${src}`
-
 useHead(() => ({ title: t('navigation.timeline') }))
 useSeoMeta({ description: () => t('home.timeline.description') })
 </script>
@@ -68,94 +47,68 @@ useSeoMeta({ description: () => t('home.timeline.description') })
         :key="event.id"
         :data-event-id="event.id"
         class="timeline-event"
-        :class="{ 'timeline-event--featured': event.featured }"
+        :class="[
+          `timeline-event--${event.tier}`,
+          event.variant && `timeline-event--${event.variant}`,
+        ]"
       >
         <article
           class="timeline-event__body"
           :aria-labelledby="`timeline-title-${event.id}`"
         >
-          <div class="timeline-event__date">
-            <span class="sr-only">{{ t('timeline.oldStyle') }}: </span>
-            <time
-              :datetime="event.dateOldStyle"
-              :aria-label="event.oldDates.startLabel"
-              >{{ event.oldDates.startText }}</time
-            ><template v-if="event.dateEndOldStyle"
-              ><span aria-hidden="true">–</span
-              ><span class="sr-only"> {{ t('timeline.until') }} </span
-              ><time
-                :datetime="event.dateEndOldStyle"
-                :aria-label="event.oldDates.endLabel"
-                >{{ event.oldDates.endText }}</time
-              ></template
+          <div class="timeline-event__text">
+            <div class="timeline-event__date">
+              <span class="sr-only">{{ t('timeline.oldStyle') }}: </span>
+              <time
+                :datetime="event.dateOldStyle"
+                :aria-label="event.oldDates.startLabel"
+                >{{ event.oldDates.startText }}</time
+              ><template v-if="event.dateEndOldStyle"
+                ><span aria-hidden="true">–</span
+                ><span class="sr-only"> {{ t('timeline.until') }} </span
+                ><time
+                  :datetime="event.dateEndOldStyle"
+                  :aria-label="event.oldDates.endLabel"
+                  >{{ event.oldDates.endText }}</time
+                ></template
+              >
+            </div>
+            <p v-if="event.newDates" class="timeline-event__new-date">
+              <time
+                :datetime="event.dateNewStyle"
+                :aria-label="event.newDates.startLabel"
+                >{{ event.newDates.startText }}</time
+              ><template v-if="event.dateEndNewStyle"
+                ><span aria-hidden="true">–</span
+                ><span class="sr-only"> {{ t('timeline.until') }} </span
+                ><time
+                  :datetime="event.dateEndNewStyle"
+                  :aria-label="event.newDates.endLabel"
+                  >{{ event.newDates.endText }}</time
+                ></template
+              >
+              <span> · {{ t('timeline.newStyle') }}</span>
+            </p>
+            <h2
+              :id="`timeline-title-${event.id}`"
+              class="timeline-event__title"
             >
+              <NuxtLink :to="localePath(`/timeline/${event.slug}`)"
+                >{{ event.title }}
+                <span class="timeline-event__arrow" aria-hidden="true"
+                  >↗</span
+                ></NuxtLink
+              >
+            </h2>
+            <p class="timeline-event__description">
+              {{ event.shortDescription }}
+            </p>
           </div>
-          <p v-if="event.newDates" class="timeline-event__new-date">
-            <time
-              :datetime="event.dateNewStyle"
-              :aria-label="event.newDates.startLabel"
-              >{{ event.newDates.startText }}</time
-            ><template v-if="event.dateEndNewStyle"
-              ><span aria-hidden="true">–</span
-              ><span class="sr-only"> {{ t('timeline.until') }} </span
-              ><time
-                :datetime="event.dateEndNewStyle"
-                :aria-label="event.newDates.endLabel"
-                >{{ event.newDates.endText }}</time
-              ></template
-            >
-            <span> · {{ t('timeline.newStyle') }}</span>
-          </p>
-          <h2 :id="`timeline-title-${event.id}`" class="timeline-event__title">
-            <NuxtLink :to="localePath(`/timeline/${event.slug}`)"
-              >{{ event.title }}
-              <span class="timeline-event__arrow" aria-hidden="true"
-                >↗</span
-              ></NuxtLink
-            >
-          </h2>
-          <p class="timeline-event__description">
-            {{ event.shortDescription }}
-          </p>
-          <figure v-if="event.image" class="timeline-event__figure">
-            <!-- eslint-disable vue/html-self-closing -->
-            <img
-              :src="imageUrl(event.image.src)"
-              :alt="event.image.alt"
-              loading="lazy"
-            />
-            <!-- eslint-enable vue/html-self-closing -->
-            <figcaption v-if="event.imageCaption">
-              <span
-                v-if="event.imageCaption.caption"
-                class="timeline-event__caption"
-                >{{ event.imageCaption.caption }}</span
-              >
-              <span
-                v-if="
-                  event.imageCaption.attribution ||
-                  event.imageCaption.sourceLabel
-                "
-              >
-                {{ event.imageCaption.attribution
-                }}<template
-                  v-if="
-                    event.imageCaption.attribution &&
-                    event.imageCaption.sourceLabel
-                  "
-                >
-                  ·
-                </template>
-                <a
-                  v-if="event.imageCaption.sourceUrl"
-                  :href="event.imageCaption.sourceUrl"
-                  >{{ event.imageCaption.sourceLabel }}</a
-                ><template v-else>{{
-                  event.imageCaption.sourceLabel
-                }}</template>
-              </span>
-            </figcaption>
-          </figure>
+          <TimelineArtwork
+            v-if="event.artwork"
+            class="timeline-event__figure"
+            :image="event.artwork"
+          />
         </article>
       </li>
     </ol>
@@ -212,7 +165,7 @@ useSeoMeta({ description: () => t('home.timeline.description') })
   content: '';
 }
 .timeline-event {
-  --event-space: var(--space-12);
+  --event-space: var(--space-8);
   position: relative;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -272,12 +225,12 @@ useSeoMeta({ description: () => t('home.timeline.description') })
 }
 .timeline-event__title {
   margin-bottom: var(--space-4);
-  font-size: clamp(1.6rem, 2.25vw, 2.25rem);
+  font-size: clamp(1.5rem, 2vw, 1.8rem);
   line-height: 1.15;
   text-wrap: pretty;
 }
 .timeline-event--featured .timeline-event__title {
-  font-size: clamp(2rem, 3.4vw, 3.25rem);
+  font-size: clamp(2rem, 2.8vw, 2.75rem);
 }
 .timeline-event__title a {
   display: inline-block;
@@ -302,27 +255,6 @@ useSeoMeta({ description: () => t('home.timeline.description') })
 }
 .timeline-event--featured .timeline-event__description {
   font-size: var(--text-body-lg);
-}
-.timeline-event__figure {
-  margin: var(--space-8) 0 0;
-}
-.timeline-event__figure img {
-  display: block;
-  width: auto;
-  max-height: 28rem;
-  object-fit: contain;
-}
-.timeline-event__figure figcaption {
-  display: grid;
-  gap: var(--space-1);
-  margin-top: var(--space-3);
-  color: var(--color-muted);
-  font-size: var(--text-caption);
-  overflow-wrap: anywhere;
-}
-.timeline-event__caption {
-  color: var(--color-ink);
-  font-size: var(--text-body-sm);
 }
 @media (max-width: 64rem) {
   .campaign-timeline::before {
@@ -378,6 +310,128 @@ useSeoMeta({ description: () => t('home.timeline.description') })
   }
   .timeline-event--featured .timeline-event__title {
     font-size: 2rem;
+  }
+}
+
+.timeline-event__figure {
+  margin-top: var(--space-8);
+}
+.timeline-event--landmark {
+  display: block;
+  margin-block: var(--space-24);
+  padding-block: var(--space-8);
+}
+.timeline-event--landmark::before {
+  display: none;
+}
+.timeline-event--landmark::after {
+  top: 0;
+  width: 1rem;
+  height: 1rem;
+  background: var(--color-accent);
+}
+.timeline-event--landmark .timeline-event__body {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  align-items: center;
+  gap: var(--space-12);
+  max-width: none;
+  padding: clamp(2rem, 4vw, 4rem);
+  background: var(--color-bg);
+}
+.timeline-event--landmark .timeline-event__date {
+  font-size: clamp(2.25rem, 4.3vw, 4rem);
+  letter-spacing: -0.035em;
+}
+.timeline-event--landmark .timeline-event__title {
+  font-size: clamp(2.5rem, 4.5vw, 4.5rem);
+  letter-spacing: -0.035em;
+}
+.timeline-event--landmark .timeline-event__description {
+  font-size: var(--text-body-lg);
+}
+.timeline-event--landmark .timeline-event__figure {
+  margin-top: 0;
+}
+.timeline-event--wide .timeline-event__body {
+  grid-template-columns: 1fr;
+  padding-inline: 0;
+}
+.timeline-event--wide .timeline-event__text {
+  max-width: 55rem;
+}
+.timeline-event--burgundy .timeline-event__body,
+.timeline-event--graphite .timeline-event__body {
+  color: var(--color-footer-text);
+  background: var(--color-accent);
+  --artwork-muted: #d8ccd0;
+}
+.timeline-event--burgundy .timeline-event__body {
+  grid-template-columns: 1fr;
+  padding-block: clamp(3rem, 7vw, 7rem);
+}
+.timeline-event--graphite .timeline-event__body {
+  background: #252628;
+  --artwork-muted: #c9c4ba;
+}
+.timeline-event--burgundy .timeline-event__text {
+  max-width: 55rem;
+}
+.timeline-event--burgundy .timeline-event__date {
+  font-size: clamp(2.5rem, 5vw, 5rem);
+}
+.timeline-event--burgundy .timeline-event__new-date,
+.timeline-event--burgundy .timeline-event__description,
+.timeline-event--graphite .timeline-event__new-date,
+.timeline-event--graphite .timeline-event__description {
+  color: var(--artwork-muted);
+}
+.timeline-event--burgundy .timeline-event__arrow,
+.timeline-event--graphite .timeline-event__arrow {
+  color: inherit;
+}
+.timeline-event--burgundy a:hover,
+.timeline-event--graphite a:hover,
+.timeline-event--burgundy a:focus-visible,
+.timeline-event--graphite a:focus-visible {
+  color: #fff;
+}
+.timeline-event--burgundy :deep(:focus-visible),
+.timeline-event--graphite :deep(:focus-visible) {
+  outline-color: var(--color-footer-text);
+}
+@media (max-width: 64rem) {
+  .timeline-event--landmark {
+    margin-block: var(--space-16);
+    padding-left: var(--space-8);
+  }
+  .timeline-event--landmark .timeline-event__body {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+  .timeline-event--landmark .timeline-event__title {
+    font-size: clamp(2.25rem, 6vw, 3.5rem);
+  }
+}
+@media (max-width: 37.5rem) {
+  .timeline-event--landmark {
+    padding-left: var(--space-6);
+  }
+  .timeline-event--landmark .timeline-event__body {
+    padding: var(--space-6);
+  }
+  .timeline-event--wide .timeline-event__body {
+    padding-inline: 0;
+  }
+  .timeline-event--landmark .timeline-event__date {
+    font-size: 2rem;
+  }
+  .timeline-event--landmark .timeline-event__title {
+    font-size: 2.25rem;
+  }
+  .timeline-event--landmark .timeline-event__description {
+    font-size: 1rem;
   }
 }
 </style>

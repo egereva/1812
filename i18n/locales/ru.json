@@ -1,5 +1,7 @@
 {
-  "accessibility": { "skip": "Перейти к содержанию" },
+  "accessibility": {
+    "skip": "Перейти к содержанию"
+  },
   "navigation": {
     "home": "Главная",
     "dictionary": "Словарь",
@@ -13,12 +15,26 @@
     "menu": "Меню",
     "close": "Закрыть"
   },
-  "language": { "ru": "Русская версия", "en": "English version" },
-  "dictionary": { "alphabet": "Алфавит" },
+  "language": {
+    "ru": "Русская версия",
+    "en": "English version"
+  },
+  "dictionary": {
+    "alphabet": "Алфавит"
+  },
   "timeline": {
     "oldStyle": "По старому стилю",
     "newStyle": "по новому стилю",
-    "until": "до"
+    "until": "до",
+    "detail": {
+      "back": "Вся хронология",
+      "related": "Связанные материалы",
+      "places": "Места",
+      "sources": "Исторические источники",
+      "chronology": "Навигация по хронологии",
+      "previous": "Предыдущее событие",
+      "next": "Следующее событие"
+    }
   },
   "imageViewer": {
     "open": "Открыть изображение: {title}",

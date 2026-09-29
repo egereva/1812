@@ -3,7 +3,6 @@ import {
   getDictionaryEntries,
   getPlaces,
   getSiteContent,
-  getTimelineEvents,
 } from '#shared/content/index'
 import { getReadyHeroSlides } from '../data/heroSlides'
 
@@ -24,26 +23,7 @@ const dictionary = computed(() =>
     ].includes(entry.id),
   ),
 )
-const timeline = computed(() =>
-  getTimelineEvents(locale.value).filter((event) =>
-    [
-      'invasion-neman',
-      'borodino',
-      'council-fili',
-      'liberation-russia',
-    ].includes(event.id),
-  ),
-)
 const places = computed(() => getPlaces(locale.value).slice(0, 3))
-const formatDate = (date: string) => {
-  const [year, month, day] = date.split('-').map(Number)
-  return new Intl.DateTimeFormat(locale.value === 'en' ? 'en-GB' : 'ru-RU', {
-    day: 'numeric',
-    month: 'long',
-    timeZone: 'UTC',
-  }).format(new Date(Date.UTC(year!, month! - 1, day!)))
-}
-
 useHead(() => ({ title: site.value.siteTitle }))
 useSeoMeta({ description: () => site.value.siteDescription })
 </script>
@@ -107,34 +87,7 @@ useSeoMeta({ description: () => site.value.siteDescription })
       </div>
     </section>
 
-    <section class="home-timeline" aria-labelledby="timeline-title">
-      <div class="page-container">
-        <div class="home-rule" aria-hidden="true">
-          <span>03 / 04</span>
-        </div>
-        <div class="home-timeline__heading">
-          <div>
-            <p class="eyebrow">{{ t('home.timeline.kicker') }}</p>
-            <h2 id="timeline-title">{{ t('navigation.timeline') }}</h2>
-          </div>
-          <p>{{ t('home.timeline.description') }}</p>
-        </div>
-        <ol class="home-timeline__events">
-          <li v-for="event in timeline" :key="event.id">
-            <time :datetime="event.dateOldStyle">{{
-              formatDate(event.dateOldStyle)
-            }}</time>
-            <span>{{ event.title }}</span>
-          </li>
-        </ol>
-        <div class="home-timeline__bottom">
-          <p>{{ t('home.timeline.oldStyle') }}</p>
-          <NuxtLink class="home-link" :to="localePath('/timeline')">
-            {{ t('home.timeline.cta') }} <span aria-hidden="true">↗</span>
-          </NuxtLink>
-        </div>
-      </div>
-    </section>
+    <HomepageTimeline />
 
     <section class="home-map page-container" aria-labelledby="map-title">
       <div class="home-rule" aria-hidden="true">
@@ -251,7 +204,6 @@ useSeoMeta({ description: () => site.value.siteDescription })
   height: 100svh;
 }
 .home-dictionary,
-.home-timeline .page-container,
 .home-map {
   padding-block: var(--space-16) var(--space-24);
 }
@@ -263,13 +215,11 @@ useSeoMeta({ description: () => site.value.siteDescription })
   padding-top: var(--space-16);
 }
 .home-dictionary h2,
-.home-timeline h2,
 .home-map h2 {
   margin-bottom: var(--space-8);
   letter-spacing: -0.04em;
 }
 .home-dictionary__intro > p:not(.eyebrow),
-.home-timeline__heading > p,
 .home-map__content > p:not(.eyebrow) {
   max-width: 30rem;
   color: var(--color-muted);
@@ -345,89 +295,6 @@ useSeoMeta({ description: () => site.value.siteDescription })
   font-family: var(--font-body);
   font-size: var(--text-caption);
   font-weight: 700;
-}
-.home-timeline {
-  color: var(--color-footer-text);
-  background: var(--color-footer);
-}
-.home-timeline .home-rule,
-.home-timeline__events li {
-  border-color: #6c6760;
-}
-.home-timeline .home-rule,
-.home-timeline .eyebrow,
-.home-timeline__heading > p,
-.home-timeline__bottom p {
-  color: #c9c4ba;
-}
-.home-timeline__heading {
-  display: grid;
-  grid-template-columns: 1fr minmax(14rem, 25rem);
-  align-items: end;
-  gap: var(--grid-gap);
-  padding-block: var(--space-16) var(--space-8);
-}
-.home-timeline h2,
-.home-timeline__heading > p {
-  margin-bottom: 0;
-}
-.home-timeline__events {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: var(--space-6);
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.home-timeline__events li {
-  position: relative;
-  display: flex;
-  min-height: 12rem;
-  flex-direction: column;
-  gap: var(--space-8);
-  border-top: 1px solid #6c6760;
-  padding-top: var(--space-6);
-}
-.home-timeline__events li::before {
-  position: absolute;
-  top: -4px;
-  left: 0;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #e3c6c4;
-  content: '';
-}
-.home-timeline__events time {
-  color: #e3c6c4;
-  font-family: var(--font-display);
-  font-size: clamp(1.35rem, 2.2vw, 2rem);
-  line-height: 1.1;
-}
-.home-timeline__events li span {
-  max-width: 16rem;
-  font-size: var(--text-body-sm);
-  line-height: 1.4;
-}
-.home-timeline__bottom {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: var(--space-6);
-}
-.home-timeline__bottom p {
-  margin-bottom: 0;
-  font-size: var(--text-caption);
-}
-.home-timeline .home-link {
-  border-color: #e3c6c4;
-  color: #eee9df;
-}
-.home-timeline .home-link:hover {
-  color: #fff;
-}
-.home-timeline :focus-visible {
-  outline-color: #eee9df;
 }
 .home-map__layout {
   display: grid;
@@ -556,12 +423,10 @@ useSeoMeta({ description: () => site.value.siteDescription })
     line-height: 1.45;
   }
   .home-dictionary,
-  .home-timeline .page-container,
   .home-map {
     padding-block: var(--space-12) var(--space-16);
   }
   .home-dictionary__layout,
-  .home-timeline__heading,
   .home-map__layout {
     grid-template-columns: 1fr;
     gap: var(--space-12);
@@ -569,21 +434,6 @@ useSeoMeta({ description: () => site.value.siteDescription })
   }
   .home-dictionary__alphabet {
     font-size: clamp(2.5rem, 12vw, 4rem);
-  }
-  .home-timeline__heading {
-    padding-bottom: var(--space-8);
-  }
-  .home-timeline__events {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: var(--space-8) var(--space-4);
-  }
-  .home-timeline__events li {
-    min-height: 10rem;
-    gap: var(--space-4);
-  }
-  .home-timeline__bottom {
-    align-items: start;
-    flex-direction: column;
   }
   .home-map__diagram {
     min-height: 15rem;

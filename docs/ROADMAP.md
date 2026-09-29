@@ -15,7 +15,7 @@
 | 2 — дизайн и каркас          | CSS токены и шрифтовые стеки, общий layout, header/footer, RU/EN переключатель, адаптивная основа и временные страницы разделов | 10 content tests, typecheck, lint, format, build и generate; Playwright: 320/390/768/1440 px, RU/EN, меню и смена локали; 62 RU + 62 EN detail HTML                  |
 | 3 — главная                  | Hero и три содержательные секции                                                                                                | RU/EN, production данные, адаптивность, доступные ссылки и порядок разделов; три approved изображения интегрированы, ручное управление и безмедийный fallback готовы |
 | 4 — словарь                  | COMPLETE: алфавит, index, detail, image viewer                                                                                  | 29/95 RU и EN; 58 detail URL; keyboard/focus, media, responsive и все quality gates PASS; modal preview исключён намеренно                                           |
-| 5 — хронология               | IN PROGRESS: Timeline index visual/layout pass; detail и home — далее                                                           | Порядок независимо от JSON, desktop/mobile, featured и события без фото                                                                                              |
+| 5 — хронология               | IN PROGRESS: Timeline index, Homepage и detail redesign; final audit — далее                                                    | Хронология, date ranges, responsive article/media, viewer, sources и previous/next                                                                                   |
 | 6 — места и карта            | Общая карта, маркеры/balloon, detail с одним маркером                                                                           | Нет ключа/сети — страница жива; координаты из JSON; прямые ссылки                                                                                                    |
 | 7 — медиа                    | Галерея и несколько before/after пар                                                                                            | Mouse, touch, keyboard, подписи и атрибуции                                                                                                                          |
 | 8 — связи и справка          | «О проекте», источники, полные related sections                                                                                 | Нет фиктивных источников; битые связи выявляются; текст о теме проекта                                                                                               |
@@ -57,6 +57,8 @@ Dictionary detail размещает eyebrow, H1 и shortDescription над divi
 
 ## Stage 5 — первый Timeline visual/layout pass
 
+Историческая запись первого pass: технические проверки PASS, но визуальная концепция не утверждена. Второй art-direction pass описан ниже; ограничения первого pass по Homepage и mapping artwork заменены новым согласованным scope.
+
 **Stage 5 IN PROGRESS. Stage 4 COMPLETE. Stage 6 NOT STARTED.** `/timeline` и `/en/timeline` показывают все 20 production TimelineEvent через `getTimelineEvents`: порядок `sortDate → id`, без изменения JSON или календарных преобразований. Homepage Timeline preview и Timeline detail pages сохранены; detail redesign и homepage pass остаются отдельными следующими задачами.
 
 Фактический порядок ID: `invasion-neman`, `vilna`, `armies-unite-smolensk`, `smolensk`, `kutuzov-command`, `shevardino`, `borodino`, `council-fili`, `moscow-abandoned`, `moscow-fire`, `tarutino-march`, `tarutino-battle`, `napoleon-leaves-moscow`, `maloyaroslavets`, `vyazma`, `krasny`, `berezina`, `napoleon-leaves-army`, `liberation-russia`, `manifest-end-war`. `featured: true` имеют 16 записей — все перечисленные, кроме `vilna`, `shevardino`, `vyazma`, `napoleon-leaves-army`. Это единственный источник visual hierarchy.
@@ -68,3 +70,45 @@ Desktop 1440: обычный vertical scroll, одна непрерывная ц
 Visual/accessibility audit PASS: RU 390/768/1440, EN 390/1440; все 20 events, first/last, все 16 featured, 4 regular, диапазоны `smolensk`, `moscow-fire`, `krasny`, `berezina`, длинные EN titles. Keyboard focus проверен на каждой title link; Enter открывает detail, back возвращает в index. Один H1, события — H2 в ordered list, decorative axis/lines не добавляют accessibility noise. Reduced motion, horizontal overflow 0, runtime errors 0. Проверено также на локально обслуживаемом static output: оба index и все 40 detail links отвечают HTTP 200.
 
 Quality gates: tests **16/16**, typecheck, lint, Prettier изменённых файлов, build и generate **PASS**; 277 generated routes. SSR обоих Timeline index содержит по 20 событий в точном порядке, по 16 featured и все 48 supplied date fields на локаль. SHA-256 production Timeline/source JSON, homepage и Timeline detail template до/после pass совпадают. Неблокирующие диагностические warnings таймеров Nuxt сохраняются; unrelated issues не исправлялись.
+
+## Stage 5 — второй Timeline visual/art-direction pass
+
+Направление второго visual pass принято. Targeted Homepage refinement описан ниже; curated subset теперь независим от full Timeline landmarks. [Mapping и аудит](research/homepage-timeline-stage5-refinement.md).
+
+**Stage 5 IN PROGRESS. Stage 4 COMPLETE. Stage 6 NOT STARTED.** Реализованы Timeline index и Homepage Timeline preview; Timeline detail redesign остаётся отдельной задачей. Визуальное утверждение редактором не подменяется техническим PASS.
+
+Presentation hierarchy: 4 regular, 10 featured, 6 landmark. Production featured (16 true / 4 false) не изменён. Stable landmark IDs и причины: invasion-neman (начало), borodino (генеральное сражение), council-fili (решение оставить Москву), napoleon-leaves-moscow (начало отступления), maloyaroslavets (направление отступления), manifest-end-war (завершение). Desktop сохраняет хронологическую ось и чередование между крупными landmark зонами: burgundy typography, ivory split/wide artwork, graphite composition. Tablet/mobile — одна колонка.
+
+Инвентаризация и точный approved local mapping: [Stage 5 art-direction](research/timeline-stage5-art-direction.md). Artwork переиспользованы для восьми events; 12 без image, placeholders или invented src. Caption честно обозначает artwork и его дату, attribution/source используют существующие localized metadata. MuseumImageViewer переиспользован без новой зависимости.
+
+Homepage: шесть landmark точек на горизонтальной оси, default active borodino; hover/focus/tap и ArrowLeft/Right/Home/End, active не зависит только от цвета. Крупные date/title/description, artwork при наличии и постоянная CTA. Номер 03/04 и прежние четыре колонки удалены. Sequence на mobile прокручивается внутри секции. Autoplay нет; artwork fade 160 ms, reduced motion instant.
+
+Проверка второго pass: RU 390/768/1440 и EN 390/1440 для index и Homepage, dev и static; chronology, date ranges, caption/source, keyboard/touch, viewer focus return/zoom/pan, reduced motion и overflow PASS. Tests 17/17, typecheck, lint, format changed files, build/generate PASS; 277 routes. SHA-256 production Timeline/Dictionary/source JSON и detail template совпадает. Подробности и существующий favicon 404: [аудит art-direction](research/timeline-stage5-art-direction.md#проверка-второго-pass).
+
+## Stage 5 — Homepage targeted refinement, 2026-09-29
+
+Homepage curated six: invasion-neman → borodino → council-fili → napoleon-leaves-moscow → maloyaroslavets → berezina. Только Homepage заменяет manifest-end-war на berezina; полный index сохраняет все 20 events, прежнюю hierarchy и mapping. **Homepage image coverage 6/6.** Commons original Кларка/Дюбурга (1816, 978×709) проверен и интегрирован локально; source metadata RU/EN и manifest дополнены. Existing assets переиспользованы без дубликатов. Historical entity JSON, production featured, Hero, Dictionary и detail templates не изменены.
+
+Desktop: horizontal axis и split 52/48 с contain artwork, quiet normalized captions/source, viewer и мягкий fade. Диапазон даты Березины выводится полностью. Mobile/tablet ≤1024 px: semantic native horizontal strip, scroll snap, next-item peek, прямые detail links и отдельная CTA. Номер секции не возвращён. Locale contract: URL определяет язык, detectBrowserLanguage выключен; unprefixed routes всегда RU, /en — EN, ручной switch сохраняет detail route.
+
+Проверки и quality gates зафиксированы в [refinement audit](research/homepage-timeline-stage5-refinement.md). **Stage 5 IN PROGRESS / Stage 6 NOT STARTED.** Timeline detail redesign остаётся за границей этого pass.
+
+Targeted bugfix: initial Homepage event теперь invasion-neman, единый Homepage resolver не отбрасывает approved artwork по второму runtime whitelist. Tests проверяют actual resolved state; отдельный post-generate test проверяет initial active img и все шесть strip img в RU/EN HTML. Direct open, hard reload, SSR без JS и hydration, RU/EN 390/768/1440 и все шесть desktop active artworks PASS: actual visible coverage 6/6. Tests 18/18 + generated render 2/2, typecheck/lint/format/build/generate PASS (277 routes). Stage 5 IN PROGRESS; Stage 6 NOT STARTED.
+
+## Stage 5 — Timeline editorial content enrichment
+
+Approved пакет `1812-timeline-detail-enrichment.zip` интегрирован в обычные `content/ru/timeline.json` и `content/en/timeline.json`: **20 events × 3 paragraphs = 60 paragraphs на локаль**. Overlay объединён только по stable id; перенесён только content, дословное совпадение всех 40 мини-статей с input проверено после форматирования. Все остальные production fields и порядок сохранены, включая даты/диапазоны/sortDate, featured, image metadata, relations и sourceIds. Overlay не становится runtime dependency; media-plan не интегрирован.
+
+Существующий content integrity test расширен проверками трёх непустых абзацев, RU/EN id/slug parity, lookup по slug и SHA-256 всех non-content fields с baseline до merge. Spot-check девяти указанных событий в обеих локалях PASS. Проверены все 40 generated detail файлов; Borodino, council-fili, Berezina и manifest-end-war RU/EN отвечают HTTP 200. Homepage/index сохраняют shortDescription/preview semantics без expanded prose. Detail template пока выводит только title и shortDescription; три абзаца доступны через существующий content layer для будущего отдельного detail pass.
+
+Quality gates: tests **18/18**, generated Homepage regression **2/2**, typecheck, lint, format changed files, build/generate PASS; **277 routes**. Homepage, full Timeline presentation, detail layout, Dictionary, Hero и media не менялись. **Stage 5 IN PROGRESS / Stage 6 NOT STARTED.** Timeline detail redesign не выполнен в этом pass.
+
+## Stage 5 — Timeline detail media integration
+
+Production TimelineEvent.image: RU/EN 17/20; 10 existing binaries reused and 7 verified originals added. Localized captions distinguish city view, portrait, modern photograph/map and later artwork. Historical fields and approved editorial paragraphs are unchanged. Three candidates remain unresolved: armies-unite-smolensk and liberation-russia (original delivery blocked), manifest-end-war (exact reusable scan not verified). No substitute imagery. Detail template, Homepage/full Timeline presentation, Dictionary and Hero are unchanged; detail media rendering belongs to a separate pass. Verification and the factual 20-event table: [media audit](research/timeline-stage5-detail-media.md). Stage 5 IN PROGRESS; Stage 6 NOT STARTED.
+
+## Stage 5 — Timeline detail redesign
+
+Detail pages теперь показывают primary old-style date/range и quiet supplied new-style date/range, H1/lead, три production абзаца, contain artwork, связанные материалы, исторические источники и chronological previous/next. Desktop article/media — 58/42; mobile/tablet — media/caption перед статьёй. Все 17 image pages на локаль имеют видимый artwork; три no-image pages сохраняют читаемую текстовую композицию без пустого slot. Даты не конвертируются; история и media metadata не менялись. Общий viewer переиспользован без изменения реализации.
+
+RU visual audit выполнен первым: основные cases на 390/768/1440, portrait/photo/SVG/no-image и Fili дополнительно проверены. EN parity — 390/1440. Все 40 generated detail routes и 120 абзацев проверены, SSR без JS работает; runtime/hydration errors — 0. Tests 19/19 + generated detail 40/40 + Homepage 2/2, typecheck/lint/format/build/generate PASS (277 routes). Homepage 6/6 и full Timeline сохранены. [Detail UI audit](research/timeline-stage5-detail-ui-audit.md). **Stage 5 IN PROGRESS / Stage 6 NOT STARTED**; final Stage 5 audit остаётся отдельным pass.

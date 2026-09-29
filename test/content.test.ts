@@ -1,8 +1,21 @@
 import assert from 'node:assert/strict'
 import { existsSync, readFileSync } from 'node:fs'
+import { createHash } from 'node:crypto'
 import test from 'node:test'
+import {
+  homepageTimelineEventIds,
+  homepageTimelineArtworkSlots,
+  getHomepageTimelineEvents,
+  homepageTimelineInitialEventId,
+} from '../app/data/homepageTimelineMedia.ts'
 import { normalizeMediaCaption } from '../app/utils/mediaCaption.ts'
 import { formatTimelineDates } from '../app/utils/timelineDates.ts'
+import {
+  getPresentedTimelineEvents,
+  getTimelineArtwork,
+  timelineLandmarks,
+  timelineArtworkDictionaryIds,
+} from '../app/data/timelinePresentation.ts'
 import {
   contentRelease,
   getCatalog,
@@ -31,6 +44,56 @@ import type { ContentCatalog, TimelineEvent } from '../shared/types/content.ts'
 
 const ru = getCatalog('ru')
 const en = getCatalog('en')
+
+test('Homepage curation has six approved local artworks without changing the full Timeline', () => {
+  const expected = [
+    'invasion-neman',
+    'borodino',
+    'council-fili',
+    'napoleon-leaves-moscow',
+    'maloyaroslavets',
+    'berezina',
+  ]
+  assert.deepEqual([...homepageTimelineEventIds], expected)
+  assert.ok(timelineLandmarks.some((event) => event.id === 'manifest-end-war'))
+  for (const locale of ['ru', 'en'] as const) {
+    const production = getTimelineEvents(locale)
+    const before = JSON.stringify(production)
+    const curated = getHomepageTimelineEvents(
+      production,
+      getDictionaryEntries(locale),
+      locale,
+    )
+    assert.equal(homepageTimelineInitialEventId, 'invasion-neman')
+    assert.equal(curated[0]!.id, homepageTimelineInitialEventId)
+    assert.equal(
+      curated[0]!.artwork?.src,
+      '/images/timeline/crossing-neman-clark-1816.jpg',
+    )
+    assert.deepEqual(
+      curated.map((event) => event.id),
+      expected,
+    )
+    assert.equal(production.length, 20)
+    for (const event of curated) {
+      const artwork = event.artwork
+      assert.ok(artwork)
+      assert.ok(existsSync(`public${artwork.src}`))
+      assert.ok(artwork.alt && artwork.caption && artwork.credit)
+      assert.ok(getSourceById(locale, artwork.sourceId!))
+    }
+    assert.equal(JSON.stringify(production), before)
+  }
+  const asset = homepageTimelineArtworkSlots['invasion-neman']
+  assert.equal(asset.ru.src, asset.en.src)
+  assert.equal(asset.ru.sourceId, asset.en.sourceId)
+  const original = readFileSync(`public${asset.ru.src}`)
+  assert.equal(original.length, 198303)
+  assert.equal(
+    createHash('sha1').update(original).digest('hex'),
+    '41c427a2e78712ebd514be06bacfde10b70100bb',
+  )
+})
 
 test('loads both final production catalogs with expected entity counts', () => {
   assert.equal(contentRelease.ru, 'production')
@@ -243,11 +306,56 @@ test('Place supports required status and precision and optional address', () => 
   }
 })
 
-test('timeline dates are explicit and sorting is deterministic', () => {
+test('Timeline enrichment preserves metadata and chronology with three paragraphs per event', () => {
+  // Baseline before the approved content and media passes. Protect historical
+  // fields, including entity order, dates, flags, relations and sourceIds.
+  const metadataHashes = {
+    ru: '3a1798963459d8ca05c98666964397024660e0b4d5d61b66f598f4bc9469850c',
+    en: '11d812dd5f53d08c9c5420248e04eff3cb814ec6595e98fc328bf5b5cea1b582',
+  }
+  const contentHashes = {
+    ru: 'e8fb28bd49b661457d40c93647b5069d351dcf8c7a77f70daa072695ff171830',
+    en: 'aba7a3f7c9c5d3f6693dabfd5a59538b36f5463d79b4b31392fb59450c0ec645',
+  }
+  assert.deepEqual(
+    ru.timeline.map((event) => [event.id, event.slug]),
+    en.timeline.map((event) => [event.id, event.slug]),
+  )
   for (const locale of ['ru', 'en'] as const) {
     const catalog = getCatalog(locale)
+    assert.equal(catalog.timeline.length, 20)
+    assert.equal(
+      catalog.timeline.reduce(
+        (count, event) => count + event.content.length,
+        0,
+      ),
+      60,
+    )
+    const metadata = catalog.timeline.map((event) =>
+      Object.fromEntries(
+        Object.entries(event).filter(
+          ([field]) => field !== 'content' && field !== 'image',
+        ),
+      ),
+    )
+    assert.equal(
+      createHash('sha256').update(JSON.stringify(metadata)).digest('hex'),
+      metadataHashes[locale],
+    )
+    assert.equal(
+      createHash('sha256')
+        .update(JSON.stringify(catalog.timeline.map((event) => event.content)))
+        .digest('hex'),
+      contentHashes[locale],
+    )
     let ranges = 0
     for (const event of catalog.timeline) {
+      assert.equal(event.content.length, 3, `${locale}/${event.id}`)
+      assert.ok(event.content.every((paragraph) => paragraph.trim().length > 0))
+      assert.deepEqual(
+        getTimelineEventBySlug(locale, event.slug)?.content,
+        event.content,
+      )
       assert.match(event.dateOldStyle, /^\d{4}-\d{2}-\d{2}$/)
       assert.match(event.sortDate, /^\d{4}-\d{2}-\d{2}$/)
       for (const date of [
@@ -286,6 +394,118 @@ test('timeline dates are explicit and sorting is deterministic', () => {
     sortTimelineEvents(tied).map((item) => item.id),
     ['test-a', 'test-b'],
   )
+})
+
+test('Timeline production media has local files, localized parity and approved source references', () => {
+  const unresolved = [
+    'armies-unite-smolensk',
+    'liberation-russia',
+    'manifest-end-war',
+  ]
+  const reused = {
+    smolensk: 'smolensk-battle',
+    'kutuzov-command': 'kutuzov',
+    borodino: 'borodino-battle',
+    'council-fili': 'military-council-fili',
+    'moscow-fire': 'moscow-fire',
+    'tarutino-battle': 'tarutino-maneuver',
+    'napoleon-leaves-moscow': 'patriotic-war-1812',
+    maloyaroslavets: 'maloyaroslavets',
+    berezina: 'berezina',
+  }
+  const manifest = JSON.parse(
+    readFileSync('docs/research/media-manifest.json', 'utf8'),
+  ) as {
+    items: {
+      target: string
+      licenseStatus: string
+      sourcePage: string
+      originalSha1?: string
+    }[]
+  }
+  for (const locale of ['ru', 'en'] as const) {
+    const events = getTimelineEvents(locale)
+    assert.equal(events.filter((event) => event.image).length, 17)
+    assert.deepEqual(
+      events.filter((event) => !event.image).map((event) => event.id),
+      unresolved,
+    )
+    const binaries = new Set<string>()
+    for (const event of events) {
+      const image = event.image
+      const counterpart = getTimelineEventById(
+        locale === 'ru' ? 'en' : 'ru',
+        event.id,
+      )?.image
+      assert.equal(image?.src, counterpart?.src, event.id)
+      assert.equal(image?.sourceId, counterpart?.sourceId, event.id)
+      if (!image) continue
+      assert.match(
+        image.src,
+        /^\/images\/(timeline|dictionary)\/[a-z0-9-]+\.(jpg|png|svg)$/,
+      )
+      const path = `public${image.src}`
+      assert.ok(existsSync(path), path)
+      for (const field of ['alt', 'caption', 'description', 'credit'] as const)
+        assert.ok(image[field]?.trim(), `${locale}/${event.id}/${field}`)
+      assert.ok(image.sourceId)
+      const source = getSourceById(locale, image.sourceId)
+      assert.equal(source?.type, 'media')
+      assert.ok(source?.url?.startsWith('https://'))
+      const approved = manifest.items.find((item) => item.target === path)
+      assert.equal(approved?.licenseStatus, 'approved', event.id)
+      assert.ok(approved.sourcePage)
+      const binary = readFileSync(path)
+      const hash = createHash('sha1').update(binary).digest('hex')
+      assert.ok(!binaries.has(hash), `Duplicate Timeline binary: ${event.id}`)
+      binaries.add(hash)
+      if (approved.originalSha1) assert.equal(hash, approved.originalSha1)
+      const dictionaryId = reused[event.id as keyof typeof reused]
+      if (dictionaryId) {
+        const reusedImage = getDictionaryEntryById(locale, dictionaryId)?.image
+        assert.equal(image.src, reusedImage?.src, event.id)
+        assert.equal(image.sourceId, reusedImage?.sourceId, event.id)
+      }
+    }
+    const home = getHomepageTimelineEvents(
+      events,
+      getDictionaryEntries(locale),
+      locale,
+    )
+    assert.equal(home.filter((event) => event.artwork).length, 6)
+    for (const event of home) {
+      const image = getTimelineEventById(locale, event.id)?.image
+      assert.equal(event.artwork?.src, image?.src, event.id)
+      assert.equal(event.artwork?.sourceId, image?.sourceId, event.id)
+    }
+    const krasny = getTimelineEventById(locale, 'krasny')!
+    assert.equal(krasny.dateOldStyle, '1812-11-03')
+    assert.equal(krasny.dateEndOldStyle, '1812-11-06')
+    assert.equal(krasny.image?.src, '/images/timeline/krasny-losmina-hess.jpg')
+    assert.equal(krasny.image?.sourceId, 'src-media-timeline-krasny')
+    assert.ok(
+      getSourceById(locale, krasny.image!.sourceId!)?.url?.endsWith(
+        'File%3AHess-1812losmina.jpg',
+      ) ||
+        getSourceById(locale, krasny.image!.sourceId!)?.url?.endsWith(
+          'File:Hess-1812losmina.jpg',
+        ),
+    )
+    assert.match(krasny.image!.caption!, /6 \(18\) (ноября|November)/)
+    assert.ok(!krasny.image!.src.includes('Krasnoy1812'))
+    assert.match(
+      getTimelineEventById(locale, 'kutuzov-command')!.image!.description!,
+      /Контекстуальный портрет|Contextual portrait/,
+    )
+    assert.match(
+      getTimelineEventById(locale, 'shevardino')!.image!.credit!,
+      /Tuzanna.*CC BY-SA 4\.0/,
+    )
+    assert.match(
+      getTimelineEventById(locale, 'tarutino-march')!.image!.credit!,
+      /Kaidor.*OpenStreetMap contributors.*ODbL/,
+    )
+  }
 })
 
 test('timeline display preserves supplied dates, complete range labels, and year boundaries', () => {
@@ -466,4 +686,66 @@ test('media presentation retains incomplete metadata and never invents attributi
   assert.equal(presentation.attribution, 'Collection · CC BY')
   assert.equal(presentation.sourceLabel, 'Archive record')
   assert.equal(presentation.sourceUrl, source.url)
+})
+
+test('Timeline presentation preserves chronology and flags, and reuses sourced local artwork', () => {
+  assert.equal(timelineLandmarks.length, 6)
+  const available = Object.keys(timelineArtworkDictionaryIds).map(
+    (id) => getTimelineArtwork(getDictionaryEntries('ru'), id)!.src,
+  )
+  for (const locale of ['ru', 'en'] as const) {
+    const production = getTimelineEvents(locale)
+    const before = JSON.stringify(production)
+    const presented = getPresentedTimelineEvents(
+      production,
+      getDictionaryEntries(locale),
+      locale,
+      available,
+    )
+    assert.deepEqual(
+      presented.map((event) => event.id),
+      production.map((event) => event.id),
+    )
+    assert.deepEqual(
+      presented.map((event) => event.featured),
+      production.map((event) => event.featured),
+    )
+    assert.equal(
+      presented.filter((event) => event.tier === 'landmark').length,
+      6,
+    )
+    assert.equal(
+      presented.filter((event) => event.tier === 'featured').length,
+      10,
+    )
+    assert.equal(
+      presented.filter((event) => event.tier === 'regular').length,
+      4,
+    )
+    assert.equal(presented.filter((event) => event.artwork).length, 8)
+    for (const event of presented.filter((event) => event.artwork)) {
+      assert.ok(existsSync(`public${event.artwork!.src}`))
+      assert.ok(event.artwork!.caption)
+      assert.ok(event.artwork!.credit)
+      assert.ok(getSourceById(locale, event.artwork!.sourceId!))
+    }
+    assert.equal(
+      getPresentedTimelineEvents(
+        production,
+        getDictionaryEntries(locale),
+        locale,
+        [],
+      ).filter((event) => event.artwork).length,
+      0,
+    )
+    assert.equal(JSON.stringify(production), before)
+  }
+  assert.equal(
+    getTimelineArtwork(getDictionaryEntries('ru'), 'tarutino-march'),
+    undefined,
+  )
+  assert.equal(
+    getTimelineArtwork(getDictionaryEntries('ru'), 'shevardino'),
+    undefined,
+  )
 })

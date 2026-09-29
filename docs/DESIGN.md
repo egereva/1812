@@ -1,8 +1,16 @@
 # Визуальная система
 
+## Stage 5 — Timeline presentation hierarchy
+
+Regular компактен, featured усиливает существующий production flag, landmark определяется шестью stable IDs в отдельном presentation config. Landmark разрывают alternating rhythm: burgundy типографические паузы, ivory artwork/text и wide artwork, graphite artwork/text. Между ними сохраняется chronological axis; DOM всегда следует sortDate → id. Tablet/mobile — одна колонка. Все artwork показываются целиком, с читаемой caption и тихой attribution/source; используется общий MuseumImageViewer. Отсутствующее artwork не создаёт placeholder. Полный mapping и причины landmark: [Stage 5 art-direction](research/timeline-stage5-art-direction.md).
+
+Homepage Timeline не использует номер секции. Desktop >1024 px: шесть curated landmark точек образуют горизонтальную ось; hover/focus/tap выбирает editorial split примерно 52% text / 48% contain artwork с quiet caption/attribution. Active отмечен размером точки, подчёркиванием и aria-pressed. Text/artwork получают мягкий fade; reduced motion отключает переход. Mobile/tablet ≤1024 px: отдельная native horizontal strip со scroll snap, скрытым scrollbar и частично видимым следующим item. Каждый event — прямая detail link с artwork при наличии, date и short title; Tab/focus прокручивает ссылку в видимую область. CTA отдельно под strip, page overflow и autoplay отсутствуют. Curated subset теперь независим от полной Timeline: Неман → Бородино → Фили → выход из Москвы → Малоярославец → Березина. Coverage **6/6**, включая approved original Кларка/Дюбурга 1816 года; mapping описан в [refinement audit](research/homepage-timeline-stage5-refinement.md). Это заменяет прежний preview из четырёх колонок с номером 03/04.
+
 Stage 2: современный цифровой музей в редакционной манере. Характер создают крупная типографика, простор, датировка, тонкие линии и точные подписи. Сайт должен оставаться цельным без фотографий. Пергаментные текстуры, золото, декоративная «старина», имитации карт и военный плакатный стиль не используются.
 
 ## Где находится реализация
+
+Timeline detail имеет собственную временную идентичность: primary old-style date/range, quiet supplied new-style date/range, H1 и lead над divider. Desktop article/media — сетка 58/42; artwork целиком через общий viewer, высота ограничена 32rem. На ≤900 px media/caption предшествуют статье; без image остаётся текстовая колонка до 46rem. Related, historical sources и chronological previous/next — текстовые ссылки и тонкие линии, без карточек. Пустой media slot и искусственная минимальная высота отсутствуют.
 
 - `app/assets/css/tokens.css` — единый источник значений CSS custom properties.
 - `app/assets/css/main.css` — небольшой reset, типографика, контейнеры, оболочка и адаптивные правила.

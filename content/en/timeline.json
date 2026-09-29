@@ -8,12 +8,22 @@
     "title": "Beginning of the Invasion: Crossing the Neman",
     "shortDescription": "Advance units of the Grande Armée crossed the Neman; the Patriotic War of 1812 began.",
     "content": [
-      "Advance units of the Grande Armée crossed the Neman; the Patriotic War of 1812 began."
+      "On 12 (24) June 1812, the leading units of Napoleon’s Grande Armée crossed the Niemen and entered the Russian Empire. This crossing is conventionally regarded as the beginning of the Patriotic War of 1812.",
+      "Napoleon intended to force the Russian armies into a major battle near the western frontier and defeat them separately. The 1st and 2nd Western Armies instead withdrew deeper into the country, preserving their main forces and avoiding encirclement.",
+      "The crossing opened a campaign planned as a short war but transformed into a months-long struggle. The first weeks already showed that the French command had failed to achieve its original plan of rapidly destroying the Russian armies."
     ],
     "featured": true,
     "relatedPlaceIds": [],
     "relatedDictionaryIds": ["patriotic-war-1812"],
-    "sourceIds": ["src-bre-war"]
+    "sourceIds": ["src-bre-war"],
+    "image": {
+      "src": "/images/timeline/crossing-neman-clark-1816.jpg",
+      "alt": "Later artistic depiction of Napoleon's Grande Armée crossing the Niemen.",
+      "caption": "John Heaviside Clark and M. Dubourg. The Grande Armée crossing the Niemen, 1816.",
+      "description": "A later artistic depiction of the beginning of the 1812 campaign.",
+      "credit": "John Heaviside Clark and M. Dubourg · Public domain / PD-Art · Public Domain Mark 1.0",
+      "sourceId": "src-media-neman-clark-1816"
+    }
   },
   {
     "id": "vilna",
@@ -24,12 +34,22 @@
     "title": "Occupation of Vilna",
     "shortDescription": "Napoleon’s troops occupied Vilna; the Russian armies continued their retreat.",
     "content": [
-      "Napoleon’s troops occupied Vilna; the Russian armies continued their retreat."
+      "On 16 (28) June 1812 Napoleon occupied Vilna, which had been abandoned by the 1st Western Army. The French command hoped to seize the initiative and prevent the Russian armies from joining.",
+      "The Russian forces continued their withdrawal eastward. A considerable gap remained between Barclay de Tolly’s 1st Army and Bagration’s 2nd Army, while French corps attempted to drive between them.",
+      "The occupation of Vilna was the Grande Armée’s first major territorial success, but it did not solve Napoleon’s principal strategic problem: the Russian armies had not been destroyed and continued their organized retreat."
     ],
     "featured": false,
     "relatedPlaceIds": [],
     "relatedDictionaryIds": ["patriotic-war-1812"],
-    "sourceIds": ["src-bre-war"]
+    "sourceIds": ["src-bre-war"],
+    "image": {
+      "src": "/images/timeline/vilna-cui-attributed-1812.jpg",
+      "alt": "Historical view of Ludwisarska Street in Vilna from Palace Square.",
+      "caption": "Vilna in 1812. Ludwisarska Street seen from Palace Square; tentatively attributed to Napoleon Cui.",
+      "description": "Historical city view; not a depiction of the Grande Armée entering Vilna. Dating and tentative attribution follow the source.",
+      "credit": "Tentatively attributed to Napoleon Cui · National Museum in Kraków · Public domain / Public Domain Mark 1.0",
+      "sourceId": "src-media-timeline-vilna"
+    }
   },
   {
     "id": "armies-unite-smolensk",
@@ -40,7 +60,9 @@
     "title": "1st and 2nd Western Armies Unite",
     "shortDescription": "The main forces of Barclay de Tolly and Bagration united near Smolensk.",
     "content": [
-      "The main forces of Barclay de Tolly and Bagration united near Smolensk."
+      "On 22 July (3 August) 1812 the 1st and 2nd Western Armies joined in the Smolensk area. This frustrated one of Napoleon’s principal aims: to separate the Russian forces and defeat them one at a time.",
+      "The junction strengthened expectations of more active operations. Disagreement over strategy nevertheless remained: some commanders favoured an offensive, while Barclay de Tolly considered it essential to preserve the army and avoid an unfavourable general battle.",
+      "Smolensk now became the next crucial point of the campaign. Napoleon soon manoeuvred across the Dnieper, creating a direct threat to the city and the road to Moscow."
     ],
     "featured": true,
     "relatedPlaceIds": [],
@@ -56,14 +78,24 @@
     "title": "Battle of Smolensk",
     "shortDescription": "Russian troops defended Smolensk on 4–6 (16–18) August and then continued their retreat.",
     "content": [
-      "Russian troops defended Smolensk on 4–6 (16–18) August and then continued their retreat."
+      "From 4–6 (16–18) August 1812 the Battle of Smolensk was fought. Napoleon sought to force a general engagement there, but Russian forces defended the city and prevented the French from achieving a rapid decisive result.",
+      "After heavy fighting and artillery bombardment, the Russian command decided to continue the retreat. The main forces left Smolensk and moved farther east.",
+      "The French army gained Smolensk but once again failed to destroy the principal Russian forces. The campaign continued toward Moscow, while pressure for a general battle became increasingly intense."
     ],
     "featured": true,
     "relatedPlaceIds": [],
     "relatedDictionaryIds": ["patriotic-war-1812"],
     "sourceIds": ["src-bre-war", "src-cbr-smolensk", "src-shm-smolensk"],
     "dateEndOldStyle": "1812-08-06",
-    "dateEndNewStyle": "1812-08-18"
+    "dateEndNewStyle": "1812-08-18",
+    "image": {
+      "src": "/images/dictionary/smolensk-langlois-1839.png",
+      "alt": "Artistic depiction of the Battle of Smolensk in 1812.",
+      "caption": "Jean-Charles Langlois. The Battle of Smolensk on 17 August 1812, 1839.",
+      "description": "A later artistic depiction.",
+      "credit": "Jean-Charles Langlois · Palace of Versailles · Public Domain / PD-Art",
+      "sourceId": "src-media-dict-smolensk-langlois"
+    }
   },
   {
     "id": "kutuzov-command",
@@ -73,11 +105,23 @@
     "sortDate": "1812-08-17",
     "title": "Kutuzov Assumes Supreme Command",
     "shortDescription": "Kutuzov arrived with the army and assumed supreme command.",
-    "content": ["Kutuzov arrived with the army and assumed supreme command."],
+    "content": [
+      "On 8 (20) August 1812 Alexander I appointed Mikhail Kutuzov commander-in-chief of all active Russian armies. The appointment came amid the prolonged retreat and growing dissatisfaction in both the army and society.",
+      "Kutuzov reached the army on 17 (29) August and assumed overall command. He continued the withdrawal, judging the previously prepared position at Tsaryovo-Zaymishche unsuitable for a general battle.",
+      "A new position was chosen near the village of Borodino on the approaches to Moscow. There the Russian army would soon fight Napoleon in the largest battle of the campaign."
+    ],
     "featured": true,
     "relatedPlaceIds": [],
     "relatedDictionaryIds": ["patriotic-war-1812"],
-    "sourceIds": ["src-bre-war"]
+    "sourceIds": ["src-bre-war"],
+    "image": {
+      "src": "/images/dictionary/kutuzov-basin.jpg",
+      "alt": "Portrait of Mikhail Illarionovich Kutuzov.",
+      "caption": "Pyotr Basin. Portrait of Field Marshal Mikhail Kutuzov. Nineteenth century.",
+      "credit": "Pyotr Basin · State Hermitage Museum · Public Domain / PD-Art",
+      "sourceId": "src-media-dict-kutuzov-basin",
+      "description": "Contextual portrait of the commander; not a scene of his appointment or assumption of command."
+    }
   },
   {
     "id": "shevardino",
@@ -88,12 +132,22 @@
     "title": "Battle for the Shevardino Redoubt",
     "shortDescription": "The fighting was the immediate prelude to the Battle of Borodino.",
     "content": [
-      "The fighting was the immediate prelude to the Battle of Borodino."
+      "On 24 August (5 September) 1812, two days before the Battle of Borodino, fighting took place for the Shevardino Redoubt. The fortification stood on the left of the Russian position and became the scene of a fierce engagement.",
+      "French troops eventually captured the redoubt after determined Russian resistance. The fighting gave the Russian command additional time to refine the deployment of its forces before the general battle.",
+      "The action at Shevardino was the immediate prelude to Borodino. On 26 August (7 September) the main forces of both armies entered battle on the Borodino field."
     ],
     "featured": false,
     "relatedPlaceIds": [],
     "relatedDictionaryIds": ["patriotic-war-1812"],
-    "sourceIds": ["src-bre-war"]
+    "sourceIds": ["src-bre-war"],
+    "image": {
+      "src": "/images/timeline/shevardino-redoubt-tuzanna-2020.jpg",
+      "alt": "Modern rear view of the Shevardino Redoubt on the Borodino battlefield.",
+      "caption": "Modern rear view of the Shevardino Redoubt. Photograph: Tuzanna, 25 July 2020.",
+      "description": "Documentary photograph of the historical location; not a depiction of the 1812 battle. Unmodified original.",
+      "credit": "Tuzanna · Wikimedia Commons · CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)",
+      "sourceId": "src-media-timeline-shevardino"
+    }
   },
   {
     "id": "borodino",
@@ -104,7 +158,9 @@
     "title": "Battle of Borodino",
     "shortDescription": "A general battle was fought near Borodino; after heavy losses, the Russian army withdrew in good order.",
     "content": [
-      "A general battle was fought near Borodino; after heavy losses, the Russian army withdrew in good order."
+      "On 26 August (7 September) 1812 the Russian and French armies fought their general battle near Borodino. The fiercest fighting centred on the Bagration flèches and the Raevsky Redoubt.",
+      "The battle lasted throughout the day and caused enormous losses on both sides. French troops captured several key positions, but Napoleon failed in his principal objective: the destruction of the Russian army.",
+      "After Borodino Kutuzov withdrew toward Moscow. Preserving the army proved decisive for the rest of the campaign: within weeks the strategic initiative began to pass to the Russian command."
     ],
     "featured": true,
     "relatedPlaceIds": [
@@ -121,7 +177,15 @@
       "raevsky",
       "platov"
     ],
-    "sourceIds": ["src-bre-war", "src-cbr-borodino"]
+    "sourceIds": ["src-bre-war", "src-cbr-borodino"],
+    "image": {
+      "src": "/images/timeline/borodino-hess-1843.jpg",
+      "alt": "The Battle of Borodino in a painting by Peter von Hess",
+      "caption": "Peter von Hess. “The Battle of Borodino on 26 August (7 September) 1812,” 1843. An artistic depiction created after the war.",
+      "credit": "Петер фон Гесс · Public domain / PD-Art",
+      "sourceId": "src-media-borodino-hess-1843",
+      "description": "A later artistic depiction."
+    }
   },
   {
     "id": "council-fili",
@@ -132,7 +196,9 @@
     "title": "Military Council at Fili",
     "shortDescription": "Kutuzov decided to abandon Moscow without fighting another general battle.",
     "content": [
-      "Kutuzov decided to abandon Moscow without fighting another general battle."
+      "On 1 (13) September 1812 Kutuzov convened a council of war in the village of Fili, in the house of the peasant Frolov. The central question was whether to fight another battle before Moscow or abandon the city.",
+      "The generals were divided. After hearing the participants, Kutuzov decided not to risk another battle and to leave Moscow without fighting, preserving the army.",
+      "The decision at Fili became one of the campaign’s pivotal episodes. The following day Russian troops passed through Moscow and withdrew, while the Grande Armée entered the city."
     ],
     "featured": true,
     "relatedPlaceIds": ["fili-village", "kutuzov-hut", "milepost-fili"],
@@ -143,7 +209,15 @@
       "fili",
       "bennigsen"
     ],
-    "sourceIds": ["src-bre-war", "src-prlib-fili"]
+    "sourceIds": ["src-bre-war", "src-prlib-fili"],
+    "image": {
+      "src": "/images/timeline/fili-council-kivshenko-1882.jpg",
+      "alt": "The Military Council at Fili in a painting by Alexey Kivshenko",
+      "caption": "Alexey Kivshenko. “The Military Council at Fili in 1812,” 1882. An artistic depiction created 70 years after the event.",
+      "credit": "Алексей Кившенко · Public domain / PD-Art",
+      "sourceId": "src-media-fili-council-kivshenko-1882",
+      "description": "A later artistic depiction."
+    }
   },
   {
     "id": "moscow-abandoned",
@@ -154,7 +228,9 @@
     "title": "Moscow Abandoned and Napoleon’s Army Enters",
     "shortDescription": "The Russian army abandoned Moscow; Napoleon’s troops entered the city.",
     "content": [
-      "The Russian army abandoned Moscow; Napoleon’s troops entered the city."
+      "Early on 2 (14) September 1812 the Russian army abandoned Moscow in accordance with the decision taken at the Council of War at Fili. A large part of the city’s population also departed.",
+      "During the second half of the day units of the Grande Armée entered Moscow. Napoleon gained the ancient capital but achieved neither the destruction of the Russian army nor the peace settlement he expected from Alexander I.",
+      "Abandoning Moscow appeared a severe concession, yet the Russian army remained intact. Its withdrawal soon developed into the Tarutino manoeuvre, which altered the strategic position of the two sides."
     ],
     "featured": true,
     "relatedPlaceIds": [
@@ -171,7 +247,15 @@
       "poklonnaya-hill",
       "smolensk-road"
     ],
-    "sourceIds": ["src-bre-war"]
+    "sourceIds": ["src-bre-war"],
+    "image": {
+      "src": "/images/timeline/moscow-entry-basset-1812.jpg",
+      "alt": "Historical print of Napoleon's French army entering Moscow on 14 September 1812.",
+      "caption": "Napoleon's French army entering Moscow on 14 September 1812. Coloured etching, published by Basset, 1812.",
+      "description": "The print depicts the French entry after Moscow was abandoned, rather than the departure of Russian troops. An artistic representation of the event.",
+      "credit": "Artist unidentified · Publisher Basset · Bibliothèque nationale de France · Public domain / PD-France",
+      "sourceId": "src-media-timeline-moscow-abandoned"
+    }
   },
   {
     "id": "moscow-fire",
@@ -182,14 +266,24 @@
     "title": "Fire of Moscow",
     "shortDescription": "After the French army entered the city, numerous fires swept through Moscow.",
     "content": [
-      "After the French army entered the city, numerous fires swept through Moscow."
+      "After the Grande Armée entered Moscow on 2 (14) September, numerous fires broke out across the city. The flames spread rapidly and over the following days destroyed a large part of Moscow’s built-up area.",
+      "The fire sharply worsened the French army’s position. Moscow could not serve as a comfortable winter base: housing, supplies and urban infrastructure on which Napoleon’s troops had counted were badly damaged or destroyed.",
+      "The causes of individual outbreaks and responsibility for the fire have long been debated. For the course of the war, its consequence was more important: occupation of the devastated city produced neither peace nor a solution to the army’s supply problems."
     ],
     "featured": true,
     "relatedPlaceIds": [],
     "relatedDictionaryIds": ["patriotic-war-1812"],
     "sourceIds": ["src-bre-war"],
     "dateEndOldStyle": "1812-09-08",
-    "dateEndNewStyle": "1812-09-20"
+    "dateEndNewStyle": "1812-09-20",
+    "image": {
+      "src": "/images/dictionary/moscow-fire-smirnov-1813.jpg",
+      "alt": "Artistic depiction of the fire of Moscow after Napoleon's army entered the city.",
+      "caption": "A. F. Smirnov. The Fire of Moscow in 1812, 1813.",
+      "credit": "A. F. Smirnov · Public Domain / PD-Art",
+      "sourceId": "src-media-dict-moscow-fire-smirnov",
+      "description": "A later artistic depiction."
+    }
   },
   {
     "id": "tarutino-march",
@@ -200,12 +294,22 @@
     "title": "Tarutino March Manoeuvre",
     "shortDescription": "The Russian army broke contact with the enemy and took up an advantageous position near Tarutino.",
     "content": [
-      "The Russian army broke contact with the enemy and took up an advantageous position near Tarutino."
+      "After leaving Moscow Kutuzov’s army initially moved along the Ryazan road and then secretly turned west and south-west. This movement became known as the Tarutino march-manoeuvre.",
+      "The manoeuvre allowed the Russian army to break away from immediate pursuit and take up a position south of Moscow. By late September the main forces were established in a fortified camp near Tarutino.",
+      "From the Tarutino area the Russian army covered important southern routes and supply regions while threatening Napoleon’s communications. The troops gained time to rest, receive reinforcements and prepare to resume offensive operations."
     ],
     "featured": true,
     "relatedPlaceIds": [],
     "relatedDictionaryIds": ["patriotic-war-1812"],
-    "sourceIds": ["src-bre-war"]
+    "sourceIds": ["src-bre-war"],
+    "image": {
+      "src": "/images/timeline/tarutino-maneuver-kaidor-2018.svg",
+      "alt": "Map of the Tarutino flanking manoeuvre showing the Russian army route from Moscow to Tarutino.",
+      "caption": "Kaidor. Map of the Tarutino flanking manoeuvre of 1812, 2018; revised in 2019. Map labels are in Russian.",
+      "description": "Modern historical diagram based on the Great Soviet Encyclopedia (1976), with OpenStreetMap data; not an eyewitness depiction. Unmodified original SVG.",
+      "credit": "Kaidor · CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/) · © OpenStreetMap contributors · ODbL (https://opendatacommons.org/licenses/odbl/1-0/)",
+      "sourceId": "src-media-timeline-tarutino-march"
+    }
   },
   {
     "id": "tarutino-battle",
@@ -216,12 +320,22 @@
     "title": "Battle of Tarutino",
     "shortDescription": "Russian troops attacked the advance guard of Napoleon’s army, beginning a period of active counteroffensive operations.",
     "content": [
-      "Russian troops attacked the advance guard of Napoleon’s army, beginning a period of active counteroffensive operations."
+      "On 6 (18) October 1812 Russian troops attacked Marshal Joachim Murat’s French advance guard on the Chernishnya River near Tarutino. The battle was the first major offensive engagement after the long period of withdrawal.",
+      "Because of poor coordination, the original plan to envelop the French advance guard was not fully carried out. Murat’s forces nevertheless suffered substantial losses and withdrew.",
+      "The Battle of Tarutino demonstrated that the Russian army was again prepared to act offensively. The following day Napoleon left Moscow and the campaign entered a new phase."
     ],
     "featured": true,
     "relatedPlaceIds": [],
     "relatedDictionaryIds": ["patriotic-war-1812"],
-    "sourceIds": ["src-bre-war", "src-cbr-tarutino"]
+    "sourceIds": ["src-bre-war", "src-cbr-tarutino"],
+    "image": {
+      "src": "/images/dictionary/tarutino-hess-1847.jpg",
+      "alt": "Artistic depiction of the Battle of Tarutino.",
+      "caption": "Peter von Hess. The Battle of Tarutino on 6 (18) October 1812, 1847.",
+      "description": "A later artistic depiction.",
+      "credit": "Peter von Hess · Public Domain / PD-Art",
+      "sourceId": "src-media-dict-tarutino-hess"
+    }
   },
   {
     "id": "napoleon-leaves-moscow",
@@ -231,11 +345,23 @@
     "sortDate": "1812-10-07",
     "title": "Napoleon Leaves Moscow",
     "shortDescription": "The main forces of the Grande Armée left Moscow.",
-    "content": ["The main forces of the Grande Armée left Moscow."],
+    "content": [
+      "On 7 (19) October 1812 Napoleon left Moscow. No peace proposal had come from Alexander I, while the Grande Armée’s position in the devastated city was becoming increasingly unsustainable.",
+      "The French command attempted to move south-west toward Kaluga, where it hoped to obtain food and forage. This route was intended to avoid the already devastated Smolensk road.",
+      "The Russian army blocked the way at Maloyaroslavets. After the ensuing battle Napoleon abandoned the advance toward Kaluga and began withdrawing westward through territory already exhausted during the earlier advance."
+    ],
     "featured": true,
     "relatedPlaceIds": [],
     "relatedDictionaryIds": ["patriotic-war-1812"],
-    "sourceIds": ["src-bre-war"]
+    "sourceIds": ["src-bre-war"],
+    "image": {
+      "src": "/images/timeline/retreat-moscow-suchodolski-1853.jpg",
+      "alt": "The Grande Armée retreating from Moscow in a painting by January Suchodolski",
+      "caption": "January Suchodolski. “Retreat from Moscow in 1812,” 1853. An artistic depiction created after the event.",
+      "credit": "Януарий Суходольский · Public domain / PD-Art",
+      "sourceId": "src-media-retreat-moscow-suchodolski-1853",
+      "description": "A later artistic depiction."
+    }
   },
   {
     "id": "maloyaroslavets",
@@ -246,12 +372,22 @@
     "title": "Battle of Maloyaroslavets",
     "shortDescription": "After the battle, Napoleon abandoned the advance along the Kaluga route and turned toward the Smolensk Road.",
     "content": [
-      "After the battle, Napoleon abandoned the advance along the Kaluga route and turned toward the Smolensk Road."
+      "On 12 (24) October 1812 a fierce battle was fought at Maloyaroslavets. The French army was attempting to break through toward Kaluga and reach regions that had not yet been devastated by the war.",
+      "The town changed hands repeatedly. Russian forces held the direction toward Kaluga, and Napoleon abandoned any further advance to the south.",
+      "After Maloyaroslavets the Grande Armée turned toward the devastated Smolensk road. This decision became a major turning point in the retreat, as the strategic initiative passed decisively to the Russian command."
     ],
     "featured": true,
     "relatedPlaceIds": [],
     "relatedDictionaryIds": ["patriotic-war-1812"],
-    "sourceIds": ["src-bre-war", "src-cbr-maloyaroslavets"]
+    "sourceIds": ["src-bre-war", "src-cbr-maloyaroslavets"],
+    "image": {
+      "src": "/images/dictionary/maloyaroslavets-samokish.jpg",
+      "alt": "Artistic depiction of the fighting at Maloyaroslavets.",
+      "caption": "Nikolai Samokish. Fighting at Maloyaroslavets on 12 October 1812, 1912.",
+      "description": "A later artistic depiction.",
+      "credit": "Nikolai Samokish · Public Domain",
+      "sourceId": "src-media-dict-maloyaroslavets-samokish"
+    }
   },
   {
     "id": "vyazma",
@@ -261,11 +397,23 @@
     "sortDate": "1812-10-22",
     "title": "Battle of Vyazma",
     "shortDescription": "Russian troops attacked the retreating French corps.",
-    "content": ["Russian troops attacked the retreating French corps."],
+    "content": [
+      "On 22 October (3 November) 1812 Russian troops attacked elements of the retreating Grande Armée near Vyazma. Forces under Mikhail Miloradovich and Matvei Platov took part in the action.",
+      "The Russians struck the stretched-out French corps and forced them to continue their retreat with losses. An attempt to cut off Davout’s corps completely did not succeed, but the French were driven from Vyazma.",
+      "The battle demonstrated the growing vulnerability of Napoleon’s retreating army. The pursuit continued along the Smolensk road as the condition of the French forces deteriorated."
+    ],
     "featured": false,
     "relatedPlaceIds": [],
     "relatedDictionaryIds": ["patriotic-war-1812"],
-    "sourceIds": ["src-bre-war", "src-cbr-vyazma"]
+    "sourceIds": ["src-bre-war", "src-cbr-vyazma"],
+    "image": {
+      "src": "/images/timeline/vyazma-hess.jpg",
+      "alt": "The Battle of Vyazma on 22 October (3 November) 1812 in a painting by Peter von Hess.",
+      "caption": "Peter von Hess. Battle of Vyazma on 22 October (3 November) 1812. Nineteenth century, from the series painted in 1842–1856.",
+      "description": "A later artistic depiction. The exact creation date of this canvas is unconfirmed; 1812 is the year of the depicted event.",
+      "credit": "Peter von Hess · State Hermitage Museum · Public domain / PD-Art / Public Domain Mark 1.0",
+      "sourceId": "src-media-timeline-vyazma"
+    }
   },
   {
     "id": "krasny",
@@ -276,15 +424,24 @@
     "title": "Battles of Krasny",
     "shortDescription": "Fighting near Krasny took place on 3–6 (15–18) November; the most intense clashes are dated 4–6 (16–18) November in the Bank of Russia’s official reference.",
     "content": [
-      "Fighting near Krasny took place on 3–6 (15–18) November; the most intense clashes are dated 4–6 (16–18) November in the Bank of Russia’s official reference.",
-      "The timeline uses the broader 3–6 November interval given by the State Historical Museum; the difference reflects which episodes are included within the boundaries of the battle."
+      "From 3–6 (15–18) November 1812 a series of engagements took place near Krasny between Russian forces and the Grande Armée’s corps withdrawing from Smolensk. The French units were moving in separate columns and were vulnerable to attack.",
+      "Russian troops struck individual corps and captured prisoners and artillery. Marshal Ney’s corps found itself in particularly serious danger and had to break out of encirclement.",
+      "The fighting at Krasny further weakened the Grande Armée, although its remaining forces continued the retreat. The next critical obstacle was the Berezina River."
     ],
     "featured": true,
     "relatedPlaceIds": [],
     "relatedDictionaryIds": ["patriotic-war-1812"],
     "sourceIds": ["src-bre-war", "src-cbr-krasny", "src-shm-krasny"],
     "dateEndOldStyle": "1812-11-06",
-    "dateEndNewStyle": "1812-11-18"
+    "dateEndNewStyle": "1812-11-18",
+    "image": {
+      "src": "/images/timeline/krasny-losmina-hess.jpg",
+      "alt": "The fighting at Losmina on 6 (18) November 1812, part of the November battles at Krasny, painted by Peter von Hess.",
+      "caption": "Peter von Hess. Fighting at Losmina on 6 (18) November 1812, an episode of the November battles at Krasny. Nineteenth century, from the 1842–1856 series.",
+      "description": "A later artistic depiction. The exact creation date is unconfirmed. This depicts the November fighting, rather than the first battle at Krasny on 2 (14) August.",
+      "credit": "Peter von Hess · Wikimedia Commons · Public domain / PD-Art / Public Domain Mark 1.0",
+      "sourceId": "src-media-timeline-krasny"
+    }
   },
   {
     "id": "berezina",
@@ -295,14 +452,24 @@
     "title": "Crossing of the Berezina",
     "shortDescription": "Napoleon’s army crossed the Berezina amid heavy fighting and major losses.",
     "content": [
-      "The main crossing of the Grande Armée over the Berezina took place on 14–16 (26–28) November 1812 under attacks by Russian forces. Fighting around the crossing continued on 17 (29) November, when the bridges were burned on Napoleon’s orders."
+      "From 14–16 (26–28) November 1812 the main action centred on the crossings of the Berezina near Studianka. Napoleon needed to move the remnants of his army across the river while Russian forces attempted to close the routes of retreat.",
+      "French engineers constructed two bridges over which combat units, artillery, wagons and large numbers of stragglers crossed. Heavy fighting took place on both banks at the same time.",
+      "Napoleon avoided complete encirclement and succeeded in taking part of his army across, but the crossing involved enormous losses and chaos. The Berezina became one of the defining symbols of the Grande Armée’s catastrophe in Russia."
     ],
     "featured": true,
     "relatedPlaceIds": [],
     "relatedDictionaryIds": ["patriotic-war-1812"],
     "sourceIds": ["src-bre-war", "src-cbr-berezina"],
     "dateEndOldStyle": "1812-11-16",
-    "dateEndNewStyle": "1812-11-28"
+    "dateEndNewStyle": "1812-11-28",
+    "image": {
+      "src": "/images/dictionary/berezina-hess.jpg",
+      "alt": "Later artistic depiction of Napoleon's army crossing the Berezina.",
+      "caption": "Peter von Hess. Crossing of the Berezina on 17 (29) November 1812.",
+      "description": "A later artistic depiction.",
+      "credit": "Peter von Hess · Public Domain / PD-Art",
+      "sourceId": "src-media-berezina-hess"
+    }
   },
   {
     "id": "napoleon-leaves-army",
@@ -313,12 +480,22 @@
     "title": "Napoleon Leaves the Army",
     "shortDescription": "Napoleon left the remnants of the army and departed for Paris.",
     "content": [
-      "Napoleon left the remnants of the army and departed for Paris."
+      "On 23 November (5 December) 1812 at Smorgoni, Napoleon left the remnants of the Grande Armée and departed for Paris. He transferred command of the troops to Marshal Joachim Murat.",
+      "The emperor sought to return to France quickly amid the military catastrophe and a worsening political situation in Europe. His departure took place while the French forces were still retreating.",
+      "After Napoleon’s departure the army continued toward the western frontier in extremely poor condition. Russian forces maintained the pursuit and completed the liberation of imperial territory."
     ],
     "featured": false,
     "relatedPlaceIds": [],
     "relatedDictionaryIds": ["patriotic-war-1812"],
-    "sourceIds": ["src-bre-war"]
+    "sourceIds": ["src-bre-war"],
+    "image": {
+      "src": "/images/timeline/smorgoni-samokish-1912.jpg",
+      "alt": "Napoleon leaving his army at Smorgoni in an engraving by Nikolai Samokish.",
+      "caption": "Nikolai Samokish. Napoleon leaves his army at Smorgoni. Engraving, circa 1912; Niva magazine, no. 2, 1912.",
+      "description": "A later artistic depiction of Napoleon leaving his army at Smorgoni.",
+      "credit": "Nikolai Samokish · Public domain / PD-old-80-expired / Public Domain Mark 1.0",
+      "sourceId": "src-media-timeline-napoleon-leaves-army"
+    }
   },
   {
     "id": "liberation-russia",
@@ -329,7 +506,9 @@
     "title": "Liberation of the Russian Empire",
     "shortDescription": "By the end of December, the main enemy forces had been driven beyond the borders of the Russian Empire.",
     "content": [
-      "By the end of December, the main enemy forces had been driven beyond the borders of the Russian Empire."
+      "By mid-December 1812 the remnants of the Grande Armée had been driven beyond the western limits of the Russian Empire. The campaign on Russian territory was drawing to a close.",
+      "Only a fraction of the effective forces that had crossed the Niemen in summer remained by the end of the campaign. The Grande Armée’s catastrophe resulted from a combination of combat losses, retreat through devastated regions, supply problems, disease and severe weather.",
+      "The expulsion of the enemy ended the 1812 campaign on Russian territory. The Russian command now prepared to carry the struggle beyond the empire and continue the war in Europe."
     ],
     "featured": true,
     "relatedPlaceIds": [],
@@ -345,7 +524,9 @@
     "title": "Manifesto Marking the End of the War",
     "shortDescription": "Alexander I issued a manifesto associated with the conclusion of the Patriotic War.",
     "content": [
-      "Alexander I issued a manifesto associated with the conclusion of the Patriotic War."
+      "On 25 December 1812 (6 January 1813) Alexander I issued the Imperial Manifesto announcing the end of the Patriotic War. The document formally marked the conclusion of the campaign after Napoleon’s army had been expelled from the Russian Empire.",
+      "On the same day manifestos were also issued ordering the construction in Moscow of the Cathedral of Christ the Saviour as a memorial to the victory and establishing a silver medal for participants in the war.",
+      "The end of the Patriotic War did not mean the end of the struggle against Napoleon. In 1813 the Russian army continued operations beyond the empire as part of a new anti-Napoleonic coalition."
     ],
     "featured": true,
     "relatedPlaceIds": [],
