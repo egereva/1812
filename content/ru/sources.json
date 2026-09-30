@@ -16,6 +16,13 @@
     "accessedAt": "2026-09-25"
   },
   {
+    "id": "src-panorama-poklonnaya",
+    "title": "Эпоха 1812 года глазами актрисы французской труппы московского театра — раздел «Французы в Москве»",
+    "type": "museum",
+    "publisher": "Музей-панорама «Бородинская битва»",
+    "url": "https://www.1812panorama.ru/lemus/aktrisa4.html"
+  },
+  {
     "id": "src-panorama-hut",
     "title": "Изба Военного Совета",
     "type": "museum",
@@ -465,5 +472,105 @@
     "year": 1912,
     "url": "https://commons.wikimedia.org/wiki/File:%D0%9D%D0%B0%D0%BF%D0%BE%D0%BB%D0%B5%D0%BE%D0%BD_%D0%BF%D0%BE%D0%BA%D0%B8%D0%B4%D0%B0%D0%B5%D1%82_%D0%B0%D1%80%D0%BC%D0%B8%D1%8E_%D0%B2_%D0%A1%D0%BC%D0%BE%D1%80%D0%B3%D0%BE%D0%BD%D0%B8_%28%D0%B3%D1%80%D0%B0%D0%B2%D1%8E%D1%80%D0%B0_%D0%9D.%D0%A1._%D0%A1%D0%B0%D0%BC%D0%BE%D0%BA%D0%B8%D1%88%D0%B0%29.jpg",
     "accessedAt": "2026-09-29"
+  },
+  {
+    "id": "src-media-place-kutuzov-hut-modern-2015",
+    "title": "Дмитрий Маркевич. Современная Кутузовская изба, 23 июля 2015 года. CC BY-SA 4.0.",
+    "type": "media",
+    "author": "Dmitry Markevich",
+    "publisher": "Wikimedia Commons",
+    "year": 2015,
+    "url": "https://commons.wikimedia.org/wiki/File:Изба3.jpg",
+    "accessedAt": "2026-09-30"
+  },
+  {
+    "id": "src-media-place-intercession-church-fili-2019",
+    "title": "A.Savin. Церковь Покрова в Филях, 4 июня 2019 года. Free Art License.",
+    "type": "media",
+    "author": "A.Savin",
+    "publisher": "Wikimedia Commons",
+    "year": 2019,
+    "url": "https://commons.wikimedia.org/wiki/File:Moscow_Fili_Intercession_Church_asv2019-06.jpg",
+    "accessedAt": "2026-09-30"
+  },
+  {
+    "id": "src-media-place-kuntsevo-estate-ca1910",
+    "title": "Неизвестный автор. Главный дом усадьбы Кунцево, около 1910 года. PD-RusEmpire.",
+    "type": "media",
+    "author": "Unknown",
+    "publisher": "Wikimedia Commons",
+    "year": 1910,
+    "url": "https://commons.wikimedia.org/wiki/File:Kuntsevo_Estate.jpg",
+    "accessedAt": "2026-09-30"
+  },
+  {
+    "id": "src-media-place-brotherhood-grave-obelisk-2023",
+    "title": "Александр Сигачёв. Нынешний гранитный обелиск у Кутузовской избы, 9 апреля 2023 года. CC BY-SA 4.0.",
+    "type": "media",
+    "author": "Александр Сигачёв",
+    "publisher": "Wikimedia Commons",
+    "year": 2023,
+    "url": "https://commons.wikimedia.org/wiki/File:Kutuzovskaya_Izba_obelisk_-_2023-04-09_-_p2.jpg",
+    "accessedAt": "2026-09-30"
+  },
+  {
+    "id": "src-media-place-archangel-michael-chapel-2008",
+    "title": "NVO. Часовня Архангела Михаила у Кутузовской избы, 31 августа 2008 года. CC BY-SA 3.0.",
+    "type": "media",
+    "author": "NVO",
+    "publisher": "Wikimedia Commons",
+    "year": 2008,
+    "url": "https://commons.wikimedia.org/wiki/File:Moscow,_Archangel_Michael_at_Kutuzov%27s_Hut_(1).jpg",
+    "accessedAt": "2026-09-30"
+  },
+  {
+    "id": "src-media-place-borodino-panorama-museum-2007",
+    "title": "A.Savin. Здание Музея-панорамы «Бородинская битва», 13 мая 2007 года. Free Art License.",
+    "type": "media",
+    "author": "A.Savin",
+    "publisher": "Wikimedia Commons",
+    "year": 2007,
+    "url": "https://commons.wikimedia.org/wiki/File:Borodino-panorama-museum.jpg",
+    "accessedAt": "2026-09-30"
+  },
+  {
+    "id": "src-media-place-kutuzov-monument-2016",
+    "title": "Gennady Grachev. Памятник М. И. Кутузову на Кутузовском проспекте, 3 июня 2016 года. CC BY 2.0.",
+    "type": "media",
+    "author": "Gennady Grachev",
+    "publisher": "Wikimedia Commons",
+    "year": 2016,
+    "url": "https://commons.wikimedia.org/wiki/File:Moscow,_Kutuzovsky_Prospect,_Kutuzov_monument_(30576246874).jpg",
+    "accessedAt": "2026-09-30"
+  },
+  {
+    "id": "src-media-place-triumphal-arch-modern-2015",
+    "title": "Gennady Grachev. Воссозданная Триумфальная арка на Кутузовском проспекте, 9 июня 2015 года. CC BY 2.0.",
+    "type": "media",
+    "author": "Gennady Grachev",
+    "publisher": "Wikimedia Commons",
+    "year": 2015,
+    "url": "https://commons.wikimedia.org/wiki/File:Moscow,_Kutuzovsky_Prospect,_Triumphal_Arch_(18561501554).jpg",
+    "accessedAt": "2026-09-30"
+  },
+  {
+    "id": "src-media-place-triumphal-arch-1934",
+    "title": "Соломон Тулес. Подлинные Триумфальные ворота у Тверской заставы, 1934 год. PD-Russia.",
+    "type": "media",
+    "author": "Solomon Tules",
+    "publisher": "Wikimedia Commons",
+    "year": 1934,
+    "url": "https://commons.wikimedia.org/wiki/File:Triumphal_Arch_of_Moscow_1934.jpg",
+    "accessedAt": "2026-09-30"
+  },
+  {
+    "id": "src-media-place-milepost-fili-2023",
+    "title": "Александр Сигачёв. Памятный верстовой столб у Кутузовской избы, 9 апреля 2023 года. CC BY-SA 4.0.",
+    "type": "media",
+    "author": "Александр Сигачёв",
+    "publisher": "Wikimedia Commons",
+    "year": 2023,
+    "url": "https://commons.wikimedia.org/wiki/File:Kutuzovskaya_Izba_milestone_-_2023-04-09_-_p4.jpg",
+    "accessedAt": "2026-09-30"
   }
 ]

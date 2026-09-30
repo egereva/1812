@@ -30,6 +30,7 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
+      yandexMapsApiKey: '',
       timelineMediaAvailableSrcs: [
         ...new Set(
           [

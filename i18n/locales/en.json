@@ -22,6 +22,37 @@
   "dictionary": {
     "alphabet": "Alphabet"
   },
+  "map": {
+    "kicker": "Western Moscow · 1812",
+    "intro": "13 places: the geography of 1812 and the memory of the war.",
+    "count": "{count} places",
+    "layers": "Historical layers",
+    "currentLayer": "Layer:",
+    "layer": { "all": "All", "1812": "1812", "memory": "Memory" },
+    "layerAnnouncement": "Showing layer: {layer}",
+    "loading": "Loading the map…",
+    "unavailable": "The map is unavailable. All places remain accessible in the list below.",
+    "noScript": "The interactive map requires JavaScript. All places are listed below.",
+    "placesIndex": "Places · {count}",
+    "canvas": "Interactive map of places",
+    "readMore": "Read more",
+    "showOnMap": "Show on map",
+    "nearby": "Nearby places",
+    "overlapLabel": "Nearby places: {titles}. Open choices",
+    "markerLabel": "{title}. {status}. {precision}",
+    "precision": {
+      "exact": "exact location",
+      "approximate": "approximate area"
+    },
+    "status": {
+      "event-site": "Event site",
+      "surviving-witness": "Surviving witness",
+      "lost-site": "Lost site",
+      "reconstruction": "Reconstruction",
+      "memorial": "Memorial",
+      "museum": "Museum"
+    }
+  },
   "timeline": {
     "oldStyle": "Old Style",
     "newStyle": "New Style",

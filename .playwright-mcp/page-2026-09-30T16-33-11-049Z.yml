@@ -1,0 +1,111 @@
+- generic [ref=f1e3]:
+  - link "Перейти к содержанию" [ref=f1e4] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=f1e5]:
+    - generic [ref=f1e6]:
+      - link "Главная" [ref=f1e7] [cursor=pointer]:
+        - /url: /
+        - text: "1812."
+      - navigation "Основная навигация" [ref=f1e8]:
+        - link "Главная" [ref=f1e9] [cursor=pointer]:
+          - /url: /
+        - link "Словарь" [ref=f1e10] [cursor=pointer]:
+          - /url: /dictionary
+        - link "Хронология" [ref=f1e11] [cursor=pointer]:
+          - /url: /timeline
+        - link "Карта" [ref=f1e12] [cursor=pointer]:
+          - /url: /map
+        - link "О проекте" [ref=f1e13] [cursor=pointer]:
+          - /url: /about
+      - group "Язык сайта" [ref=f1e15]:
+        - link "Русская версия" [ref=f1e16] [cursor=pointer]:
+          - /url: /map
+          - text: RU
+        - link "English version" [ref=f1e17] [cursor=pointer]:
+          - /url: /en/map
+          - text: EN
+  - main [ref=f1e18]:
+    - article [ref=f1e19]:
+      - generic [ref=f1e20]:
+        - generic [ref=f1e21]:
+          - paragraph [ref=f1e22]: Запад Москвы · 1812
+          - heading "Карта" [level=1] [ref=f1e23]
+          - paragraph [ref=f1e24]: "13 мест: историческая география 1812 года и память о войне."
+        - paragraph [ref=f1e25]: 13 мест
+      - generic [ref=f1e26]:
+        - group "Исторические слои" [ref=f1e27]:
+          - button "Все" [pressed] [ref=f1e28] [cursor=pointer]: Все 13
+          - button "1812" [ref=f1e29] [cursor=pointer]: 1812 6
+          - button "Память" [ref=f1e30] [cursor=pointer]: Память 7
+        - paragraph [ref=f1e31]:
+          - text: "Слой:"
+          - strong [ref=f1e32]: Все
+      - region "Интерактивная карта мест" [ref=f1e33]:
+        - status [ref=f1e36]: Загружаем карту…
+        - paragraph [ref=f1e37]: "Показан слой: Все"
+      - region "Места · 13" [ref=f1e38]:
+        - group [ref=f1e39]:
+          - generic "Места · 13" [ref=f1e40] [cursor=pointer]
+          - list [ref=f1e41]:
+            - listitem [ref=f1e42]:
+              - link "Деревня Фили и место Военного совета" [ref=f1e43] [cursor=pointer]:
+                - /url: /places/fili-village
+            - listitem [ref=f1e44]:
+              - link "Кутузовская изба" [ref=f1e45] [cursor=pointer]:
+                - /url: /places/kutuzov-hut
+            - listitem [ref=f1e46]:
+              - link "Церковь Покрова в Филях" [ref=f1e47] [cursor=pointer]:
+                - /url: /places/intercession-church-fili
+            - listitem [ref=f1e48]:
+              - link "Усадьба Кунцево" [ref=f1e49] [cursor=pointer]:
+                - /url: /places/kuntsevo-estate
+            - listitem [ref=f1e50]:
+              - link "Поклонная гора" [ref=f1e51] [cursor=pointer]:
+                - /url: /places/poklonnaya-hill
+            - listitem [ref=f1e52]:
+              - link "Дорогомиловская застава" [ref=f1e53] [cursor=pointer]:
+                - /url: /places/dorogomilovskaya-gate
+            - listitem [ref=f1e54]:
+              - link "Дорогомиловское кладбище и братская могила" [ref=f1e55] [cursor=pointer]:
+                - /url: /places/dorogomilovskoe-cemetery
+            - listitem [ref=f1e56]:
+              - link "Обелиск в память воинов Бородинского сражения" [ref=f1e57] [cursor=pointer]:
+                - /url: /places/brotherhood-grave-obelisk
+            - listitem [ref=f1e58]:
+              - link "Памятный верстовой столб в Филях" [ref=f1e59] [cursor=pointer]:
+                - /url: /places/milepost-fili
+            - listitem [ref=f1e60]:
+              - link "Часовня Архангела Михаила" [ref=f1e61] [cursor=pointer]:
+                - /url: /places/archangel-michael-chapel
+            - listitem [ref=f1e62]:
+              - link "Музей-панорама «Бородинская битва»" [ref=f1e63] [cursor=pointer]:
+                - /url: /places/borodino-panorama-museum
+            - listitem [ref=f1e64]:
+              - link "Памятник М. И. Кутузову и участникам войны 1812 года" [ref=f1e65] [cursor=pointer]:
+                - /url: /places/kutuzov-monument
+            - listitem [ref=f1e66]:
+              - link "Триумфальная арка" [ref=f1e67] [cursor=pointer]:
+                - /url: /places/triumphal-arch
+  - contentinfo [ref=f1e68]:
+    - generic [ref=f1e69]:
+      - generic [ref=f1e70]:
+        - link "1812." [ref=f1e71] [cursor=pointer]:
+          - /url: /
+        - paragraph [ref=f1e72]: 1812. Запад Москвы
+        - text: Исторический справочник
+      - navigation "Навигация в подвале" [ref=f1e73]:
+        - link "Главная" [ref=f1e74] [cursor=pointer]:
+          - /url: /
+        - link "Словарь" [ref=f1e75] [cursor=pointer]:
+          - /url: /dictionary
+        - link "Хронология" [ref=f1e76] [cursor=pointer]:
+          - /url: /timeline
+        - link "Карта" [ref=f1e77] [cursor=pointer]:
+          - /url: /map
+        - link "О проекте" [ref=f1e78] [cursor=pointer]:
+          - /url: /about
+        - link "Источники" [ref=f1e79] [cursor=pointer]:
+          - /url: /sources
+      - generic [ref=f1e80]:
+        - generic [ref=f1e81]: Отечественная война 1812 года
+        - generic [ref=f1e82]: Русский / English

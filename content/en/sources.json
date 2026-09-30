@@ -16,6 +16,13 @@
     "accessedAt": "2026-09-25"
   },
   {
+    "id": "src-panorama-poklonnaya",
+    "title": "The Era of 1812 through the Eyes of an Actress of the French Troupe at the Moscow Theatre — ‘The French in Moscow’",
+    "type": "museum",
+    "publisher": "Battle of Borodino Panorama Museum",
+    "url": "https://www.1812panorama.ru/lemus/aktrisa4.html"
+  },
+  {
     "id": "src-panorama-hut",
     "title": "The Military Council Hut",
     "type": "museum",
@@ -465,5 +472,105 @@
     "year": 1912,
     "url": "https://commons.wikimedia.org/wiki/File:%D0%9D%D0%B0%D0%BF%D0%BE%D0%BB%D0%B5%D0%BE%D0%BD_%D0%BF%D0%BE%D0%BA%D0%B8%D0%B4%D0%B0%D0%B5%D1%82_%D0%B0%D1%80%D0%BC%D0%B8%D1%8E_%D0%B2_%D0%A1%D0%BC%D0%BE%D1%80%D0%B3%D0%BE%D0%BD%D0%B8_%28%D0%B3%D1%80%D0%B0%D0%B2%D1%8E%D1%80%D0%B0_%D0%9D.%D0%A1._%D0%A1%D0%B0%D0%BC%D0%BE%D0%BA%D0%B8%D1%88%D0%B0%29.jpg",
     "accessedAt": "2026-09-29"
+  },
+  {
+    "id": "src-media-place-kutuzov-hut-modern-2015",
+    "title": "Dmitry Markevich. Present-day Kutuzov Hut, 23 July 2015. CC BY-SA 4.0.",
+    "type": "media",
+    "author": "Dmitry Markevich",
+    "publisher": "Wikimedia Commons",
+    "year": 2015,
+    "url": "https://commons.wikimedia.org/wiki/File:Изба3.jpg",
+    "accessedAt": "2026-09-30"
+  },
+  {
+    "id": "src-media-place-intercession-church-fili-2019",
+    "title": "A.Savin. Church of the Intercession at Fili, 4 June 2019. Free Art License.",
+    "type": "media",
+    "author": "A.Savin",
+    "publisher": "Wikimedia Commons",
+    "year": 2019,
+    "url": "https://commons.wikimedia.org/wiki/File:Moscow_Fili_Intercession_Church_asv2019-06.jpg",
+    "accessedAt": "2026-09-30"
+  },
+  {
+    "id": "src-media-place-kuntsevo-estate-ca1910",
+    "title": "Unknown photographer. Kuntsevo Estate main house, circa 1910. PD-RusEmpire.",
+    "type": "media",
+    "author": "Unknown",
+    "publisher": "Wikimedia Commons",
+    "year": 1910,
+    "url": "https://commons.wikimedia.org/wiki/File:Kuntsevo_Estate.jpg",
+    "accessedAt": "2026-09-30"
+  },
+  {
+    "id": "src-media-place-brotherhood-grave-obelisk-2023",
+    "title": "Alexander Sigachev. Present granite obelisk beside Kutuzov Hut, 9 April 2023. CC BY-SA 4.0.",
+    "type": "media",
+    "author": "Александр Сигачёв",
+    "publisher": "Wikimedia Commons",
+    "year": 2023,
+    "url": "https://commons.wikimedia.org/wiki/File:Kutuzovskaya_Izba_obelisk_-_2023-04-09_-_p2.jpg",
+    "accessedAt": "2026-09-30"
+  },
+  {
+    "id": "src-media-place-archangel-michael-chapel-2008",
+    "title": "NVO. Chapel of the Archangel Michael beside Kutuzov Hut, 31 August 2008. CC BY-SA 3.0.",
+    "type": "media",
+    "author": "NVO",
+    "publisher": "Wikimedia Commons",
+    "year": 2008,
+    "url": "https://commons.wikimedia.org/wiki/File:Moscow,_Archangel_Michael_at_Kutuzov%27s_Hut_(1).jpg",
+    "accessedAt": "2026-09-30"
+  },
+  {
+    "id": "src-media-place-borodino-panorama-museum-2007",
+    "title": "A.Savin. Battle of Borodino Panorama Museum building, 13 May 2007. Free Art License.",
+    "type": "media",
+    "author": "A.Savin",
+    "publisher": "Wikimedia Commons",
+    "year": 2007,
+    "url": "https://commons.wikimedia.org/wiki/File:Borodino-panorama-museum.jpg",
+    "accessedAt": "2026-09-30"
+  },
+  {
+    "id": "src-media-place-kutuzov-monument-2016",
+    "title": "Gennady Grachev. Monument to M. I. Kutuzov on Kutuzovsky Prospekt, 3 June 2016. CC BY 2.0.",
+    "type": "media",
+    "author": "Gennady Grachev",
+    "publisher": "Wikimedia Commons",
+    "year": 2016,
+    "url": "https://commons.wikimedia.org/wiki/File:Moscow,_Kutuzovsky_Prospect,_Kutuzov_monument_(30576246874).jpg",
+    "accessedAt": "2026-09-30"
+  },
+  {
+    "id": "src-media-place-triumphal-arch-modern-2015",
+    "title": "Gennady Grachev. Recreated Triumphal Arch on Kutuzovsky Prospekt, 9 June 2015. CC BY 2.0.",
+    "type": "media",
+    "author": "Gennady Grachev",
+    "publisher": "Wikimedia Commons",
+    "year": 2015,
+    "url": "https://commons.wikimedia.org/wiki/File:Moscow,_Kutuzovsky_Prospect,_Triumphal_Arch_(18561501554).jpg",
+    "accessedAt": "2026-09-30"
+  },
+  {
+    "id": "src-media-place-triumphal-arch-1934",
+    "title": "Solomon Tules. Original Triumphal Gates at Tverskaya Zastava, 1934. PD-Russia.",
+    "type": "media",
+    "author": "Solomon Tules",
+    "publisher": "Wikimedia Commons",
+    "year": 1934,
+    "url": "https://commons.wikimedia.org/wiki/File:Triumphal_Arch_of_Moscow_1934.jpg",
+    "accessedAt": "2026-09-30"
+  },
+  {
+    "id": "src-media-place-milepost-fili-2023",
+    "title": "Alexander Sigachev. Memorial milepost beside Kutuzov Hut, 9 April 2023. CC BY-SA 4.0.",
+    "type": "media",
+    "author": "Александр Сигачёв",
+    "publisher": "Wikimedia Commons",
+    "year": 2023,
+    "url": "https://commons.wikimedia.org/wiki/File:Kutuzovskaya_Izba_milestone_-_2023-04-09_-_p4.jpg",
+    "accessedAt": "2026-09-30"
   }
 ]

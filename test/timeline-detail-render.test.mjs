@@ -102,6 +102,8 @@ for (const locale of ['ru', 'en']) {
           text(times.at(-1)[2]),
           escape(fullDate(end ?? start, locale)),
         )
+        if (name === 'timeline-detail__new-date')
+          assert.match(dates, /<span aria-hidden="true"[^>]*>·<\/span>/)
       }
       if (event.id === 'berezina') {
         assert.equal(

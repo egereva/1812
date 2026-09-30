@@ -127,9 +127,9 @@ useSeoMeta({
             }}</time></template
           ></span
         >
-        <span class="timeline-detail__calendar">{{
-          t('timeline.newStyle')
-        }}</span>
+        <span class="timeline-detail__calendar"
+          ><span aria-hidden="true">·</span> {{ t('timeline.newStyle') }}</span
+        >
       </p>
       <h1>{{ record.title }}</h1>
       <p class="timeline-detail__lead lead">{{ record.shortDescription }}</p>
@@ -258,10 +258,13 @@ useSeoMeta({
 .timeline-detail__new-date {
   display: flex;
   flex-wrap: wrap;
-  column-gap: var(--space-3);
+  column-gap: var(--space-2);
   margin-bottom: 0;
   color: var(--color-muted);
   font-size: var(--text-body-sm);
+}
+.timeline-detail__calendar {
+  white-space: nowrap;
 }
 .timeline-detail__hero h1 {
   max-width: 30ch;
@@ -290,7 +293,7 @@ useSeoMeta({
   grid-row: 1;
   min-width: 0;
   max-width: var(--container-text);
-  font-size: var(--text-body-lg);
+  font-size: calc(var(--text-body-lg) + 1px);
   line-height: 1.75;
 }
 .timeline-detail__prose p {
@@ -396,6 +399,9 @@ useSeoMeta({
   text-decoration-thickness: 1px;
 }
 @media (max-width: 56.25rem) {
+  .timeline-detail__prose {
+    font-size: var(--text-body-lg);
+  }
   .timeline-detail__article--illustrated {
     display: flex;
     flex-direction: column;
@@ -411,6 +417,14 @@ useSeoMeta({
   }
 }
 @media (max-width: 37.5rem) {
+  .timeline-detail__related li {
+    margin-top: var(--space-1);
+  }
+  .timeline-detail__related a {
+    display: inline-flex;
+    min-height: 2.75rem;
+    align-items: center;
+  }
   .timeline-detail {
     padding-block: var(--space-6) var(--space-12);
   }

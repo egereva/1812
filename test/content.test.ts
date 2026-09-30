@@ -108,7 +108,7 @@ test('loads both final production catalogs with expected entity counts', () => {
         catalog.timeline.length,
         catalog.sources.filter((source) => source.type !== 'media').length,
       ],
-      [13, 29, 20, 25],
+      [13, 29, 20, 26],
     )
     assert.ok(
       [
@@ -304,6 +304,133 @@ test('Place supports required status and precision and optional address', () => 
     )
     assert.ok(catalog.places.some((place) => place.locationNote !== undefined))
   }
+})
+
+test('Places media resolves to local originals with RU/EN parity and approved roles', () => {
+  const covers = {
+    'fili-village': '/images/timeline/fili-council-kivshenko-1882.jpg',
+    'kutuzov-hut': '/images/places/kutuzov-hut-modern-2015.jpg',
+    'intercession-church-fili':
+      '/images/places/intercession-church-fili-2019.jpg',
+    'kuntsevo-estate': '/images/places/kuntsevo-estate-ca1910.jpg',
+    'brotherhood-grave-obelisk':
+      '/images/places/brotherhood-grave-obelisk-2023.jpg',
+    'milepost-fili': '/images/places/milepost-fili-2023.jpg',
+    'archangel-michael-chapel':
+      '/images/places/archangel-michael-chapel-2008.jpg',
+    'borodino-panorama-museum':
+      '/images/places/borodino-panorama-museum-2007.jpg',
+    'kutuzov-monument': '/images/places/kutuzov-monument-2016.jpg',
+    'triumphal-arch': '/images/places/triumphal-arch-modern-2015.jpg',
+  }
+  const galleries = {
+    'kutuzov-hut': ['/images/dictionary/kutuzov-hut-savrasov-1884.jpg'],
+    'triumphal-arch': ['/images/places/triumphal-arch-1934.jpg'],
+  }
+  const noImage = [
+    'poklonnaya-hill',
+    'dorogomilovskaya-gate',
+    'dorogomilovskoe-cemetery',
+  ]
+  for (const locale of ['ru', 'en'] as const) {
+    const paths = new Set<string>()
+    for (const place of getPlaces(locale)) {
+      const images = [
+        ...(place.coverImage ? [place.coverImage] : []),
+        ...(place.gallery ?? []),
+        ...(place.beforeAfter ?? []).flatMap((pair) => [
+          pair.before,
+          pair.after,
+        ]),
+      ]
+      const counterpart = getPlaceById(locale === 'ru' ? 'en' : 'ru', place.id)!
+      const otherImages = [
+        ...(counterpart.coverImage ? [counterpart.coverImage] : []),
+        ...(counterpart.gallery ?? []),
+        ...(counterpart.beforeAfter ?? []).flatMap((pair) => [
+          pair.before,
+          pair.after,
+        ]),
+      ]
+      assert.deepEqual(
+        images.map(({ src, sourceId }) => [src, sourceId]),
+        otherImages.map(({ src, sourceId }) => [src, sourceId]),
+        place.id,
+      )
+      if (noImage.includes(place.id)) assert.equal(images.length, 0, place.id)
+      if (place.id in covers)
+        assert.equal(
+          place.coverImage?.src,
+          covers[place.id as keyof typeof covers],
+        )
+      if (place.id in galleries)
+        assert.deepEqual(
+          place.gallery?.map((image) => image.src),
+          galleries[place.id as keyof typeof galleries],
+        )
+      for (const image of images) {
+        assert.match(image.src, /^\/images\/[a-z]+\/[a-z0-9-]+\.jpg$/)
+        assert.ok(!paths.has(image.src), `Duplicate Place asset: ${image.src}`)
+        paths.add(image.src)
+        const path = `public${image.src}`
+        assert.ok(existsSync(path), path)
+        const binary = readFileSync(path)
+        assert.equal(binary[0], 0xff, path)
+        assert.equal(binary[1], 0xd8, path)
+        assert.equal(binary.at(-2), 0xff, path)
+        assert.equal(binary.at(-1), 0xd9, path)
+        for (const field of [
+          'alt',
+          'caption',
+          'description',
+          'credit',
+        ] as const)
+          assert.ok(image[field]?.trim(), `${locale}/${place.id}/${field}`)
+        assert.ok(image.sourceId)
+        const source = getSourceById(locale, image.sourceId)
+        assert.equal(source?.type, 'media')
+        assert.ok(
+          source?.url?.startsWith('https://commons.wikimedia.org/wiki/'),
+        )
+        assert.equal(
+          source?.url,
+          getSourceById(locale === 'ru' ? 'en' : 'ru', image.sourceId)?.url,
+        )
+      }
+    }
+    assert.equal(
+      getPlaces(locale).filter((place) => place.coverImage).length,
+      Object.keys(covers).length,
+    )
+    assert.equal(
+      getPlaces(locale).reduce(
+        (count, place) => count + (place.gallery?.length ?? 0),
+        0,
+      ),
+      2,
+    )
+    assert.equal(getPlaceById(locale, 'kutuzov-hut')?.beforeAfter, undefined)
+    assert.equal(getPlaceById(locale, 'triumphal-arch')?.beforeAfter, undefined)
+    assert.deepEqual(
+      getPlaces(locale)
+        .filter(
+          (place) =>
+            !place.coverImage &&
+            !place.gallery?.length &&
+            !place.beforeAfter?.length,
+        )
+        .map((place) => place.id)
+        .sort(),
+      [...noImage].sort(),
+    )
+    assert.equal(paths.size, 12)
+  }
+  assert.equal(
+    createHash('sha256')
+      .update(readFileSync('public/images/places/milepost-fili-2023.jpg'))
+      .digest('hex'),
+    'add10890fe106e12901647dce9f9e240d2e1a929f540ceda109009e332984c94',
+  )
 })
 
 test('Timeline enrichment preserves metadata and chronology with three paragraphs per event', () => {

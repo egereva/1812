@@ -86,11 +86,9 @@ package-lock.json
 
 ## Яндекс Карты
 
-Только клиентская загрузка API после монтирования `<ClientOnly>` с доступным HTML fallback: текстовый переход к странице места и пояснение при ошибке карты. Ключ берётся из `NUXT_PUBLIC_YANDEX_MAPS_API_KEY` (или эквивалентной public runtime config переменной). Поскольку ключ попадает в браузер, это **публичный клиентский ключ**; его ограничивают по разрешённым доменам в настройках Яндекса. Отсутствие ключа не должно ломать страницу.
+Stage 6.3.2A использует JavaScript API **3.0** напрямую и только на `/map` / `/en/map`. `app/pages/map.vue` SSR-рендерит контекст, слои, карточку по `?place={slug}` и индекс всех 13 Places; `InteractiveMap.client.vue` после гидратации создаёт `YMap` с базовым и marker layer. Один memoized loader в `yandexMapsLoader.client.ts` ждёт `ymaps3.ready`, обрабатывает ошибку/таймаут; при размонтировании экземпляр карты уничтожается. Клиентский ключ передаётся через `runtimeConfig.public.yandexMapsApiKey`, переопределяемый `NUXT_PUBLIC_YANDEX_MAPS_API_KEY`; для статической генерации переменная нужна во время сборки. Ключ публичен в браузере, поэтому должен быть ограничен HTTP Referer у провайдера.
 
-Версию API и условия использования проверить перед реализацией; планируем JS API 2.1, который документирует загрузку с `apikey`, `lang`, `Placemark`, кастомное изображение маркера и balloon. Внутри карты маркеры строятся из валидных координат Places; категории остаются полем данных для будущего фильтра. Содержимое balloon создаётся только из экранированных данных, а ссылки учитывают локаль и `baseURL`. На detail странице тот же компонент получает один Place. Исторический текст и SEO не зависят от загрузки карты.
-
-Основание: [загрузка API](https://yandex.com/dev/jsapi-v2-1/doc/en/v2-1/dg/concepts/load), [Placemark](https://www.yandex.com/dev/jsapi-v2-1/doc/en/v2-1/ref/reference/Placemark).
+Координаты Places остаются `{lat, lon}`, в API передаются как `[lon, lat]`. `mapPresentation.ts` выводит All/1812/Memory из `historicalStatus`, разрешает slug и вычисляет детерминированные группы пересечений в экранных пикселях. `YMapMarker` содержит HTML/CSS-маркер; локальный fan-out меняет только экранное положение, не production координаты. Выбор Place отражается в query без навигации страницы; Place detail ведёт на точный `?place=`. При отсутствии ключа, сети или JavaScript SSR-индекс оставляет доступными все 13 страниц мест. Event mode, Timeline/Dictionary интеграция и финальные индекс/легенда остаются вне этого pass. Основание: [подключение API 3.0](https://yandex.com/maps-api/docs/js-api/common/connection/javascript.html), [собственные маркеры](https://yandex.com/maps-api/docs/js-api/object/markers/index.html).
 
 ## Зависимости и проверки
 

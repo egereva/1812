@@ -5,6 +5,7 @@ const { locale, t } = useI18n()
 const localePath = useLocalePath()
 const switchLocalePath = useSwitchLocalePath()
 const route = useRoute()
+const isMapRoute = computed(() => /^\/(?:en\/)?map\/?$/.test(route.path))
 const menuOpen = ref(false)
 const menuButton = ref<HTMLButtonElement | null>(null)
 const nav = ref<HTMLElement | null>(null)
@@ -75,6 +76,7 @@ watch(
             v-for="code in ['ru', 'en'] as const"
             :key="code"
             :to="switchLocalePath(code)"
+            :external="isMapRoute && code !== locale"
             :lang="code"
             :aria-label="t(`language.${code}`)"
             :aria-current="locale === code ? 'true' : undefined"

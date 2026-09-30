@@ -11,7 +11,7 @@
     "lint": "nuxt prepare && eslint .",
     "format": "prettier --write app shared content/ru content/en test i18n nuxt.config.ts eslint.config.mjs tsconfig.json package.json",
     "format:check": "prettier --check app shared content/ru content/en test i18n nuxt.config.ts eslint.config.mjs tsconfig.json package.json",
-    "test": "node --experimental-strip-types --test --experimental-test-isolation=none test/content.test.ts test/hero.test.ts",
+    "test": "node --experimental-strip-types --test --experimental-test-isolation=none test/content.test.ts test/hero.test.ts test/map.test.ts",
     "test:homepage-render": "node --test --experimental-test-isolation=none test/homepage-render.test.mjs",
     "test:timeline-detail-render": "node --test --experimental-test-isolation=none test/timeline-detail-render.test.mjs",
     "postinstall": "nuxt prepare"

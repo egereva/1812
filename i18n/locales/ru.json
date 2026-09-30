@@ -22,6 +22,37 @@
   "dictionary": {
     "alphabet": "Алфавит"
   },
+  "map": {
+    "kicker": "Запад Москвы · 1812",
+    "intro": "13 мест: историческая география 1812 года и память о войне.",
+    "count": "{count} мест",
+    "layers": "Исторические слои",
+    "currentLayer": "Слой:",
+    "layer": { "all": "Все", "1812": "1812", "memory": "Память" },
+    "layerAnnouncement": "Показан слой: {layer}",
+    "loading": "Загружаем карту…",
+    "unavailable": "Карта сейчас недоступна. Все места доступны в списке ниже.",
+    "noScript": "Интерактивная карта требует JavaScript. Все места доступны в списке ниже.",
+    "placesIndex": "Места · {count}",
+    "canvas": "Интерактивная карта мест",
+    "readMore": "Подробнее",
+    "showOnMap": "Показать на карте",
+    "nearby": "Места рядом",
+    "overlapLabel": "Близкие места: {titles}. Открыть выбор",
+    "markerLabel": "{title}. {status}. {precision}",
+    "precision": {
+      "exact": "точное место",
+      "approximate": "примерное расположение"
+    },
+    "status": {
+      "event-site": "Место события",
+      "surviving-witness": "Сохранившийся свидетель",
+      "lost-site": "Утраченное место",
+      "reconstruction": "Реконструкция",
+      "memorial": "Памятник",
+      "museum": "Музей"
+    }
+  },
   "timeline": {
     "oldStyle": "По старому стилю",
     "newStyle": "по новому стилю",
