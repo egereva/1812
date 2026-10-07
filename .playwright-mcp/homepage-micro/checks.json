@@ -1,0 +1,57 @@
+[
+  {
+    "locale": "ru",
+    "width": 1440,
+    "mode": "actual API attempt",
+    "ready": false,
+    "attribution": "provider unavailable",
+    "hoverOutline": "none",
+    "focusOutline": "2px",
+    "placeUnderlines": "none",
+    "status": "PASS"
+  },
+  {
+    "locale": "ru",
+    "width": 390,
+    "mode": "actual API attempt",
+    "ready": false,
+    "attribution": "provider unavailable",
+    "hoverOutline": "none",
+    "focusOutline": "2px",
+    "placeUnderlines": "none",
+    "status": "PASS"
+  },
+  {
+    "locale": "ru",
+    "width": 1440,
+    "mode": "controlled provider fixture",
+    "ready": true,
+    "attribution": "fixture visible and independently clickable",
+    "hoverOutline": "none",
+    "focusOutline": "2px",
+    "placeUnderlines": "none",
+    "status": "PASS"
+  },
+  {
+    "locale": "ru",
+    "width": 390,
+    "mode": "controlled provider fixture",
+    "ready": true,
+    "attribution": "fixture visible and independently clickable",
+    "hoverOutline": "none",
+    "focusOutline": "2px",
+    "placeUnderlines": "none",
+    "status": "PASS"
+  },
+  {
+    "locale": "en",
+    "width": 1440,
+    "mode": "controlled provider fixture",
+    "ready": true,
+    "attribution": "fixture visible and independently clickable",
+    "hoverOutline": "none",
+    "focusOutline": "2px",
+    "placeUnderlines": "none",
+    "status": "PASS"
+  }
+]

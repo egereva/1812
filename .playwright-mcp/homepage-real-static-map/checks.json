@@ -1,0 +1,345 @@
+[
+  {
+    "locale": "ru",
+    "width": 1440,
+    "pageOverflow": false,
+    "section": {
+      "x": 0,
+      "y": 75.484375,
+      "width": 1440,
+      "height": 749.5625,
+      "bottom": 825.046875
+    },
+    "graphic": {
+      "x": 57.59375,
+      "y": 196.484375,
+      "width": 734.40625,
+      "height": 367.203125,
+      "bottom": 563.6875
+    },
+    "list": {
+      "x": 57.59375,
+      "y": 608.484375,
+      "width": 734.40625,
+      "height": 168.5625,
+      "bottom": 777.046875
+    },
+    "cta": {
+      "x": 892.796875,
+      "y": 580.6875,
+      "width": 164.609375,
+      "height": 44,
+      "bottom": 624.6875
+    },
+    "footer": {
+      "x": 0,
+      "y": 825.046875,
+      "width": 1440,
+      "height": 403.375,
+      "bottom": 1228.421875
+    },
+    "links": [
+      {
+        "href": "/map",
+        "height": 44,
+        "target": null
+      },
+      {
+        "href": "/places/fili-village",
+        "height": 55.1875,
+        "target": null
+      },
+      {
+        "href": "/places/kutuzov-hut",
+        "height": 55.1875,
+        "target": null
+      },
+      {
+        "href": "/places/intercession-church-fili",
+        "height": 55.1875,
+        "target": null
+      }
+    ],
+    "summary": "Схема расположения 13 памятных мест: 6 связаны с событиями 1812 года, 7 — с памятью о войне.",
+    "geometryTabStops": 0,
+    "svgBytes": 3953,
+    "externalRequests": [],
+    "consoleErrors": []
+  },
+  {
+    "locale": "ru",
+    "width": 768,
+    "pageOverflow": false,
+    "section": {
+      "x": 0,
+      "y": -45,
+      "width": 768,
+      "height": 989.59375,
+      "bottom": 944.59375
+    },
+    "graphic": {
+      "x": 30.71875,
+      "y": 354.9375,
+      "width": 706.5625,
+      "height": 353.28125,
+      "bottom": 708.21875
+    },
+    "list": {
+      "x": 30.71875,
+      "y": 753.015625,
+      "width": 706.5625,
+      "height": 143.578125,
+      "bottom": 896.59375
+    },
+    "cta": {
+      "x": 30.71875,
+      "y": 278.9375,
+      "width": 164.609375,
+      "height": 44,
+      "bottom": 322.9375
+    },
+    "footer": {
+      "x": 0,
+      "y": 944.59375,
+      "width": 768,
+      "height": 369.796875,
+      "bottom": 1314.390625
+    },
+    "links": [
+      {
+        "href": "/map",
+        "height": 44,
+        "target": null
+      },
+      {
+        "href": "/places/fili-village",
+        "height": 46.859375,
+        "target": null
+      },
+      {
+        "href": "/places/kutuzov-hut",
+        "height": 46.859375,
+        "target": null
+      },
+      {
+        "href": "/places/intercession-church-fili",
+        "height": 46.859375,
+        "target": null
+      }
+    ],
+    "summary": "Схема расположения 13 памятных мест: 6 связаны с событиями 1812 года, 7 — с памятью о войне.",
+    "geometryTabStops": 0,
+    "svgBytes": 3953,
+    "externalRequests": [],
+    "consoleErrors": []
+  },
+  {
+    "locale": "ru",
+    "width": 390,
+    "pageOverflow": false,
+    "section": {
+      "x": 0,
+      "y": 50.5,
+      "width": 390,
+      "height": 799.3125,
+      "bottom": 849.8125
+    },
+    "graphic": {
+      "x": 16,
+      "y": 434.4375,
+      "width": 358,
+      "height": 179,
+      "bottom": 613.4375
+    },
+    "list": {
+      "x": 16,
+      "y": 658.234375,
+      "width": 358,
+      "height": 143.578125,
+      "bottom": 801.8125
+    },
+    "cta": {
+      "x": 16,
+      "y": 358.4375,
+      "width": 164.609375,
+      "height": 44,
+      "bottom": 402.4375
+    },
+    "footer": {
+      "x": 0,
+      "y": 849.8125,
+      "width": 390,
+      "height": 544.96875,
+      "bottom": 1394.78125
+    },
+    "links": [
+      {
+        "href": "/map",
+        "height": 44,
+        "target": null
+      },
+      {
+        "href": "/places/fili-village",
+        "height": 46.859375,
+        "target": null
+      },
+      {
+        "href": "/places/kutuzov-hut",
+        "height": 46.859375,
+        "target": null
+      },
+      {
+        "href": "/places/intercession-church-fili",
+        "height": 46.859375,
+        "target": null
+      }
+    ],
+    "summary": "Схема расположения 13 памятных мест: 6 связаны с событиями 1812 года, 7 — с памятью о войне.",
+    "geometryTabStops": 0,
+    "svgBytes": 3953,
+    "externalRequests": [],
+    "consoleErrors": []
+  },
+  {
+    "locale": "ru",
+    "width": 320,
+    "pageOverflow": false,
+    "section": {
+      "x": 0,
+      "y": 31.578125,
+      "width": 320,
+      "height": 836.765625,
+      "bottom": 868.34375
+    },
+    "graphic": {
+      "x": 16,
+      "y": 444.3125,
+      "width": 288,
+      "height": 144,
+      "bottom": 588.3125
+    },
+    "list": {
+      "x": 16,
+      "y": 653.90625,
+      "width": 288,
+      "height": 166.4375,
+      "bottom": 820.34375
+    },
+    "cta": {
+      "x": 16,
+      "y": 368.3125,
+      "width": 164.609375,
+      "height": 44,
+      "bottom": 412.3125
+    },
+    "footer": {
+      "x": 0,
+      "y": 868.34375,
+      "width": 320,
+      "height": 565.765625,
+      "bottom": 1434.109375
+    },
+    "links": [
+      {
+        "href": "/map",
+        "height": 44,
+        "target": null
+      },
+      {
+        "href": "/places/fili-village",
+        "height": 69.71875,
+        "target": null
+      },
+      {
+        "href": "/places/kutuzov-hut",
+        "height": 46.859375,
+        "target": null
+      },
+      {
+        "href": "/places/intercession-church-fili",
+        "height": 46.859375,
+        "target": null
+      }
+    ],
+    "summary": "Схема расположения 13 памятных мест: 6 связаны с событиями 1812 года, 7 — с памятью о войне.",
+    "geometryTabStops": 0,
+    "svgBytes": 3953,
+    "externalRequests": [],
+    "consoleErrors": []
+  },
+  {
+    "locale": "en",
+    "width": 1440,
+    "pageOverflow": false,
+    "section": {
+      "x": 0,
+      "y": 75.484375,
+      "width": 1440,
+      "height": 749.5625,
+      "bottom": 825.046875
+    },
+    "graphic": {
+      "x": 57.59375,
+      "y": 196.484375,
+      "width": 734.40625,
+      "height": 367.203125,
+      "bottom": 563.6875
+    },
+    "list": {
+      "x": 57.59375,
+      "y": 608.484375,
+      "width": 734.40625,
+      "height": 168.5625,
+      "bottom": 777.046875
+    },
+    "cta": {
+      "x": 892.796875,
+      "y": 580.6875,
+      "width": 172.359375,
+      "height": 44,
+      "bottom": 624.6875
+    },
+    "footer": {
+      "x": 0,
+      "y": 825.046875,
+      "width": 1440,
+      "height": 403.375,
+      "bottom": 1228.421875
+    },
+    "links": [
+      {
+        "href": "/en/map",
+        "height": 44,
+        "target": null
+      },
+      {
+        "href": "/en/places/fili-village",
+        "height": 55.1875,
+        "target": null
+      },
+      {
+        "href": "/en/places/kutuzov-hut",
+        "height": 55.1875,
+        "target": null
+      },
+      {
+        "href": "/en/places/intercession-church-fili",
+        "height": 55.1875,
+        "target": null
+      }
+    ],
+    "summary": "Location diagram of 13 places: 6 associated with 1812 and 7 with the memory of the war.",
+    "geometryTabStops": 0,
+    "svgBytes": 3882,
+    "externalRequests": [],
+    "consoleErrors": []
+  },
+  {
+    "locale": "ru",
+    "noJavaScriptNavigation": "all four links passed in the same tab"
+  },
+  {
+    "locale": "en",
+    "noJavaScriptNavigation": "all four links passed in the same tab"
+  }
+]

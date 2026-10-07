@@ -1,0 +1,236 @@
+{
+  "bbox": {
+    "south": 55.7317,
+    "north": 55.75083,
+    "west": 37.46139,
+    "east": 37.5547
+  },
+  "phi0": 55.741265,
+  "lambda0": 37.508044999999996,
+  "widthMetres": 5840.753527797884,
+  "heightMetres": 2127.161884867939,
+  "scale": 0.09587803993693508,
+  "raw": [
+    {
+      "id": "fili-village",
+      "layer": "1812",
+      "x": 410.3525881470642,
+      "y": 176.68472532744775
+    },
+    {
+      "id": "kutuzov-hut",
+      "layer": "memory",
+      "x": 410.1125281320695,
+      "y": 176.4715020005874
+    },
+    {
+      "id": "intercession-church-fili",
+      "layer": "1812",
+      "x": 331.73293323332314,
+      "y": 58.025943925152816
+    },
+    {
+      "id": "kuntsevo-estate",
+      "layer": "1812",
+      "x": 40.00000000002126,
+      "y": 182.33514348943655
+    },
+    {
+      "id": "poklonnaya-hill",
+      "layer": "1812",
+      "x": 311.92798199553755,
+      "y": 261.97405607484717
+    },
+    {
+      "id": "dorogomilovskaya-gate",
+      "layer": "1812",
+      "x": 600.0000000000214,
+      "y": 102.0565609235206
+    },
+    {
+      "id": "dorogomilovskoe-cemetery",
+      "layer": "1812",
+      "x": 518.3795948987615,
+      "y": 131.9078266851066
+    },
+    {
+      "id": "brotherhood-grave-obelisk",
+      "layer": "memory",
+      "x": 408.5521380345188,
+      "y": 175.61860869307023
+    },
+    {
+      "id": "milepost-fili",
+      "layer": "memory",
+      "x": 410.1125281320695,
+      "y": 176.4715020005874
+    },
+    {
+      "id": "archangel-michael-chapel",
+      "layer": "memory",
+      "x": 413.41335333835286,
+      "y": 176.4715020005874
+    },
+    {
+      "id": "borodino-panorama-museum",
+      "layer": "memory",
+      "x": 409.57239309831016,
+      "y": 186.59961002679515
+    },
+    {
+      "id": "kutuzov-monument",
+      "layer": "memory",
+      "x": 413.95348837211225,
+      "y": 188.4120083052218
+    },
+    {
+      "id": "triumphal-arch",
+      "layer": "memory",
+      "x": 391.26781695426257,
+      "y": 208.13516604052433
+    }
+  ],
+  "displayed": [
+    {
+      "id": "archangel-michael-chapel",
+      "layer": "memory",
+      "x": 410.86700246492813,
+      "y": 159.53277976489957,
+      "anchorX": 413.41335333835286,
+      "anchorY": 176.4715020005874
+    },
+    {
+      "id": "borodino-panorama-museum",
+      "layer": "memory",
+      "x": 426.50363211428873,
+      "y": 167.0629837277249,
+      "anchorX": 409.57239309831016,
+      "anchorY": 186.59961002679515
+    },
+    {
+      "id": "brotherhood-grave-obelisk",
+      "layer": "memory",
+      "x": 430.3655607085646,
+      "y": 183.98319844402587,
+      "anchorX": 408.5521380345188,
+      "anchorY": 175.61860869307023
+    },
+    {
+      "id": "fili-village",
+      "layer": "1812",
+      "x": 419.5446772472793,
+      "y": 197.55215712294796,
+      "anchorX": 410.3525881470642,
+      "anchorY": 176.68472532744775
+    },
+    {
+      "id": "kutuzov-hut",
+      "layer": "memory",
+      "x": 402.18932768257696,
+      "y": 197.55215712294796,
+      "anchorX": 410.1125281320695,
+      "anchorY": 176.4715020005874
+    },
+    {
+      "id": "kutuzov-monument",
+      "layer": "memory",
+      "x": 391.36844422129167,
+      "y": 183.98319844402587,
+      "anchorX": 413.95348837211225,
+      "anchorY": 188.4120083052218
+    },
+    {
+      "id": "milepost-fili",
+      "layer": "memory",
+      "x": 395.23037281556753,
+      "y": 167.0629837277249,
+      "anchorX": 410.1125281320695,
+      "anchorY": 176.4715020005874
+    },
+    {
+      "id": "intercession-church-fili",
+      "layer": "1812",
+      "x": 331.73293323332314,
+      "y": 58.025943925152816,
+      "anchorX": 331.73293323332314,
+      "anchorY": 58.025943925152816
+    },
+    {
+      "id": "kuntsevo-estate",
+      "layer": "1812",
+      "x": 40.00000000002126,
+      "y": 182.33514348943655,
+      "anchorX": 40.00000000002126,
+      "anchorY": 182.33514348943655
+    },
+    {
+      "id": "poklonnaya-hill",
+      "layer": "1812",
+      "x": 311.92798199553755,
+      "y": 261.97405607484717,
+      "anchorX": 311.92798199553755,
+      "anchorY": 261.97405607484717
+    },
+    {
+      "id": "dorogomilovskaya-gate",
+      "layer": "1812",
+      "x": 600.0000000000214,
+      "y": 102.0565609235206,
+      "anchorX": 600.0000000000214,
+      "anchorY": 102.0565609235206
+    },
+    {
+      "id": "dorogomilovskoe-cemetery",
+      "layer": "1812",
+      "x": 518.3795948987615,
+      "y": 131.9078266851066,
+      "anchorX": 518.3795948987615,
+      "anchorY": 131.9078266851066
+    },
+    {
+      "id": "triumphal-arch",
+      "layer": "memory",
+      "x": 391.26781695426257,
+      "y": 208.13516604052433,
+      "anchorX": 391.26781695426257,
+      "anchorY": 208.13516604052433
+    }
+  ],
+  "groups": [
+    [
+      "fili-village",
+      "kutuzov-hut",
+      "brotherhood-grave-obelisk",
+      "milepost-fili",
+      "archangel-michael-chapel",
+      "borodino-panorama-museum",
+      "kutuzov-monument"
+    ],
+    [
+      "intercession-church-fili"
+    ],
+    [
+      "kuntsevo-estate"
+    ],
+    [
+      "poklonnaya-hill"
+    ],
+    [
+      "dorogomilovskaya-gate"
+    ],
+    [
+      "dorogomilovskoe-cemetery"
+    ],
+    [
+      "triumphal-arch"
+    ]
+  ],
+  "exactPositions": 12,
+  "maximumMercatorDifferenceViewboxUnits": 0.012499690928677865,
+  "minimumDisplayedCentreGapViewboxUnits": 15.207875405137534,
+  "cost": {
+    "proofSvgBytes": 2507,
+    "proofSvgPoints": 13,
+    "geographicAssetDownloads": 0
+  }
+}

@@ -572,5 +572,32 @@
     "year": 2023,
     "url": "https://commons.wikimedia.org/wiki/File:Kutuzovskaya_Izba_milestone_-_2023-04-09_-_p4.jpg",
     "accessedAt": "2026-09-30"
+  },
+  {
+    "id": "src-media-place-kuntsevo-estate-2015",
+    "title": "Andreykor. The main house of Kuntsevo Estate in its modern appearance. 14 June 2015. CC BY-SA 4.0.",
+    "type": "media",
+    "author": "Andreykor",
+    "publisher": "Wikimedia Commons",
+    "year": 2015,
+    "url": "https://commons.wikimedia.org/wiki/File:%D0%A4%D0%B8%D0%BB%D0%B8-%D0%9A%D1%83%D0%BD%D1%86%D0%B5%D0%B2%D0%BE._%D0%93%D0%BB%D0%B0%D0%B2%D0%BD%D1%8B%D0%B9_%D0%B4%D0%BE%D0%BC_01.JPG?utm_source=chatgpt.com"
+  },
+  {
+    "id": "src-media-place-borodino-panorama-1962",
+    "title": "V. Egorov and A. Konkov. The Battle of Borodino Panorama Museum building on 17 October 1962, the day before the museum opened. CC BY 4.0.",
+    "type": "media",
+    "author": "V. Egorov and A. Konkov",
+    "publisher": "Main Archive of Moscow / Mos.ru",
+    "year": 1962,
+    "url": "https://commons.wikimedia.org/wiki/File%3ABorodinskaya_panorama_in_October_1962_02.jpg?utm_source=chatgpt.com"
+  },
+  {
+    "id": "src-media-place-intercession-church-fili-1888",
+    "author": "Nikolay Naidenov",
+    "url": "https://commons.wikimedia.org/wiki/File:Church_of_the_Protection_of_the_Theotokos_in_Fili_00.jpg",
+    "title": "Church of the Intercession at Fili, 1888. Published in the Nikolai Naidenov album in 1891.",
+    "type": "media",
+    "publisher": "Wikimedia Commons",
+    "year": 1888
   }
 ]

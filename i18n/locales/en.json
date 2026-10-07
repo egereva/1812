@@ -20,7 +20,8 @@
     "en": "English version"
   },
   "dictionary": {
-    "alphabet": "Alphabet"
+    "alphabet": "Alphabet",
+    "relatedPlaces": "Related places"
   },
   "map": {
     "kicker": "Western Moscow · 1812",
@@ -28,12 +29,19 @@
     "count": "{count} places",
     "layers": "Historical layers",
     "currentLayer": "Layer:",
-    "layer": { "all": "All", "1812": "1812", "memory": "Memory" },
+    "eventScope": "Event places · {count}",
+    "leaveEvent": "All places",
+    "layer": {
+      "1812": "1812",
+      "all": "All",
+      "memory": "Memory"
+    },
     "layerAnnouncement": "Showing layer: {layer}",
     "loading": "Loading the map…",
     "unavailable": "The map is unavailable. All places remain accessible in the list below.",
     "noScript": "The interactive map requires JavaScript. All places are listed below.",
     "placesIndex": "Places · {count}",
+    "legend": "Legend",
     "canvas": "Interactive map of places",
     "readMore": "Read more",
     "showOnMap": "Show on map",
@@ -53,6 +61,22 @@
       "museum": "Museum"
     }
   },
+  "place": {
+    "comparison": {
+      "title": "Place through time",
+      "label": "Compare images of the place: {earlier} and {later}",
+      "value": "Divider position: {value}%",
+      "instructions": "Drag the divider or choose a point on the image. Left and Right arrows move the divider; Home moves to the left edge and End to the right."
+    },
+    "detail": {
+      "location": "Place and location",
+      "clarification": "Historical clarification",
+      "story": "History of the place",
+      "related": "Related materials",
+      "places": "Places",
+      "sources": "Historical sources"
+    }
+  },
   "timeline": {
     "oldStyle": "Old Style",
     "newStyle": "New Style",
@@ -61,6 +85,8 @@
       "back": "Full timeline",
       "related": "Related materials",
       "places": "Places",
+      "eventPlaces": "Event places",
+      "viewOnMap": "View on map",
       "sources": "Historical sources",
       "chronology": "Chronological navigation",
       "previous": "Previous event",
@@ -98,8 +124,11 @@
     },
     "map": {
       "kicker": "Places of memory",
-      "description": "Places in today’s Western Administrative Okrug of Moscow associated with the history of 1812.",
-      "cta": "Explore the map"
+      "description": "{count} places in western Moscow where the history of 1812 meets the memory of the war.",
+      "cta": "Explore the map",
+      "previewLink": "Open the interactive map of places of remembrance",
+      "summary": "Map of {total} places in western Moscow: {history} associated with 1812 and {memory} with the memory of the war.",
+      "fallback": "Map preview unavailable. Follow the link beside it to explore the full map."
     }
   },
   "sections": {

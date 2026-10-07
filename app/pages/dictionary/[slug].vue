@@ -19,10 +19,10 @@ const record = computed(() => {
   return entry
 })
 
-const sources = computed(
-  () =>
-    resolveRelatedContent(locale.value, 'dictionary', record.value.id).sources,
+const related = computed(() =>
+  resolveRelatedContent(locale.value, 'dictionary', record.value.id),
 )
+const sources = computed(() => related.value.sources)
 const imageSource = computed(() =>
   record.value.image?.sourceId
     ? getSourceById(locale.value, record.value.image.sourceId)
@@ -101,9 +101,11 @@ useSeoMeta({
             >
               ·
             </template>
-            <a v-if="imageCaption.sourceUrl" :href="imageCaption.sourceUrl">{{
-              imageCaption.sourceLabel
-            }}</a>
+            <WebsiteLink
+              v-if="imageCaption.sourceUrl"
+              :href="imageCaption.sourceUrl"
+              >{{ imageCaption.sourceLabel }}</WebsiteLink
+            >
             <template v-else>{{ imageCaption.sourceLabel }}</template>
           </span>
         </figcaption>
@@ -116,6 +118,21 @@ useSeoMeta({
     </div>
 
     <section
+      v-if="related.places.length"
+      class="dictionary-detail__places"
+      aria-labelledby="dictionary-places-title"
+    >
+      <h2 id="dictionary-places-title">{{ t('dictionary.relatedPlaces') }}</h2>
+      <ul>
+        <li v-for="place in related.places" :key="place.id">
+          <NuxtLink :to="localePath(`/places/${place.slug}`)">{{
+            place.title
+          }}</NuxtLink>
+        </li>
+      </ul>
+    </section>
+
+    <section
       v-if="sources.length"
       class="dictionary-detail__sources"
       aria-labelledby="dictionary-sources-title"
@@ -124,7 +141,9 @@ useSeoMeta({
       <ol>
         <li v-for="source in sources" :key="source.id">
           <h3>
-            <a v-if="source.url" :href="source.url">{{ source.title }}</a>
+            <WebsiteLink v-if="source.url" :href="source.url">{{
+              source.title
+            }}</WebsiteLink>
             <span v-else>{{ source.title }}</span>
           </h3>
           <p v-if="source.author || source.publisher || source.year">
@@ -255,6 +274,7 @@ useSeoMeta({
   color: inherit;
 }
 
+.dictionary-detail__places,
 .dictionary-detail__sources {
   display: grid;
   grid-template-columns: minmax(7rem, 11rem) minmax(0, 46rem);
@@ -264,6 +284,7 @@ useSeoMeta({
   padding-top: var(--space-8);
 }
 
+.dictionary-detail__places h2,
 .dictionary-detail__sources h2 {
   color: var(--color-muted);
   font-family: var(--font-body);
@@ -305,6 +326,29 @@ useSeoMeta({
   font-size: var(--text-body-sm);
 }
 
+.dictionary-detail__places {
+  margin-top: var(--space-12);
+  padding-top: var(--space-6);
+}
+
+.dictionary-detail__places ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dictionary-detail__places a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding-block: var(--space-2);
+  font-size: var(--text-body-sm);
+}
+
+.dictionary-detail__places + .dictionary-detail__sources {
+  margin-top: var(--space-12);
+}
+
 @media (max-width: 56.25rem) {
   .dictionary-detail__article--with-image {
     display: flex;
@@ -330,6 +374,7 @@ useSeoMeta({
     font-size: clamp(2.8rem, 12vw, 4rem);
   }
 
+  .dictionary-detail__places,
   .dictionary-detail__sources {
     display: block;
   }
@@ -346,6 +391,7 @@ useSeoMeta({
     margin-top: var(--space-16);
   }
 
+  .dictionary-detail__places h2,
   .dictionary-detail__sources h2 {
     margin-bottom: var(--space-6);
   }

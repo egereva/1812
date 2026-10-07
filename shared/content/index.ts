@@ -108,6 +108,15 @@ export const getTimelineEventById = (locale: unknown, id: Id) =>
 export const getTimelineEventBySlug = (locale: unknown, slug: Slug) =>
   bySlug(getCatalog(locale).timeline, slug)
 
+export function resolveTimelinePlaceContext(locale: unknown, value: unknown) {
+  if (typeof value !== 'string' || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(value))
+    return undefined
+  const event = getTimelineEventBySlug(locale, value)
+  if (!event) return undefined
+  const places = resolveRelatedContent(locale, 'timeline', event.id).places
+  return places.length ? { event, places } : undefined
+}
+
 export const getSources = (locale: unknown = 'ru') => getCatalog(locale).sources
 export const getSourceById = (locale: unknown, id: Id) =>
   byId(getSources(locale), id)
@@ -232,6 +241,25 @@ export function getCatalogProblems(
         problems.push(
           `${locale}/places: invalid locationPrecision for ${place.id}`,
         )
+      for (const pair of place.beforeAfter ?? []) {
+        if (
+          !pair.id?.trim() ||
+          !pair.beforeDate?.trim() ||
+          !pair.afterDate?.trim() ||
+          (pair.aspectRatio !== undefined &&
+            (!Number.isFinite(pair.aspectRatio) || pair.aspectRatio <= 0)) ||
+          ![pair.before, pair.after].every(
+            (image) =>
+              image?.src?.startsWith('/images/') &&
+              image.alt?.trim() &&
+              image.credit?.trim() &&
+              catalog.sources.some((source) => source.id === image.sourceId),
+          )
+        )
+          problems.push(
+            `${locale}/places: invalid image comparison for ${place.id}`,
+          )
+      }
     }
     for (const [name, items] of [
       ['places', catalog.places],
@@ -386,6 +414,22 @@ export function getCatalogProblems(
         'gallery',
         'beforeAfter',
       ])
+      const comparisonIdentity = (place: Place) =>
+        place.beforeAfter?.map((pair) => ({
+          id: pair.id,
+          before: [pair.before?.src, pair.before?.sourceId],
+          after: [pair.after?.src, pair.after?.sourceId],
+          aspectRatio: pair.aspectRatio,
+          beforePosition: pair.beforePosition,
+          afterPosition: pair.afterPosition,
+        }))
+      if (
+        JSON.stringify(comparisonIdentity(ruPlace)) !==
+        JSON.stringify(comparisonIdentity(enPlace))
+      )
+        problems.push(
+          `places: image comparison identity differs between ru/en for ${ruPlace.id}`,
+        )
     }
     for (const ruEntry of source.ru.dictionary) {
       const enEntry = source.en.dictionary.find(

@@ -1,0 +1,129 @@
+{
+  "lifecycle": {
+    "maps": 4,
+    "destroyed": 3,
+    "listenerAdded": 3,
+    "pointerAdded": 3,
+    "pointerRemoved": 3
+  },
+  "zoomSnapshots": [
+    [
+      {
+        "title": "Деревня Фили и место Военного совета",
+        "cls": "map-marker map-marker--1812 map-marker-group",
+        "offset": "--fan-x: -28px; --fan-y: 0px;"
+      },
+      {
+        "title": "Кутузовская изба",
+        "cls": "map-marker map-marker--memory map-marker-group",
+        "offset": "--fan-x: 28px; --fan-y: 0px;"
+      },
+      {
+        "title": "Церковь Покрова в Филях",
+        "cls": "map-marker map-marker--1812",
+        "offset": null
+      },
+      {
+        "title": "Усадьба Кунцево",
+        "cls": "map-marker map-marker--1812",
+        "offset": null
+      },
+      {
+        "title": "Поклонная гора",
+        "cls": "map-marker map-marker--1812",
+        "offset": null
+      },
+      {
+        "title": "Дорогомиловская застава",
+        "cls": "map-marker map-marker--1812",
+        "offset": null
+      },
+      {
+        "title": "Дорогомиловское кладбище и братская могила",
+        "cls": "map-marker map-marker--1812",
+        "offset": null
+      },
+      {
+        "title": "Триумфальная арка",
+        "cls": "map-marker map-marker--memory",
+        "offset": null
+      }
+    ],
+    [
+      {
+        "title": "Деревня Фили и место Военного совета",
+        "cls": "map-marker map-marker--1812 map-marker-group",
+        "offset": "--fan-x: -28px; --fan-y: 0px;"
+      },
+      {
+        "title": "Кутузовская изба",
+        "cls": "map-marker map-marker--memory map-marker-group",
+        "offset": "--fan-x: 28px; --fan-y: 0px;"
+      },
+      {
+        "title": "Церковь Покрова в Филях",
+        "cls": "map-marker map-marker--1812",
+        "offset": null
+      },
+      {
+        "title": "Усадьба Кунцево",
+        "cls": "map-marker map-marker--1812",
+        "offset": null
+      },
+      {
+        "title": "Дорогомиловская застава",
+        "cls": "map-marker map-marker--1812 map-marker-group",
+        "offset": "--fan-x: 0px; --fan-y: 0px;"
+      }
+    ],
+    [
+      {
+        "title": "Деревня Фили и место Военного совета",
+        "cls": "map-marker map-marker--1812 map-marker-group",
+        "offset": "--fan-x: -28px; --fan-y: 0px;"
+      },
+      {
+        "title": "Кутузовская изба",
+        "cls": "map-marker map-marker--memory map-marker-group",
+        "offset": "--fan-x: 28px; --fan-y: 0px;"
+      },
+      {
+        "title": "Церковь Покрова в Филях",
+        "cls": "map-marker map-marker--1812",
+        "offset": null
+      },
+      {
+        "title": "Усадьба Кунцево",
+        "cls": "map-marker map-marker--1812",
+        "offset": null
+      },
+      {
+        "title": "Поклонная гора",
+        "cls": "map-marker map-marker--1812",
+        "offset": null
+      },
+      {
+        "title": "Дорогомиловская застава",
+        "cls": "map-marker map-marker--1812",
+        "offset": null
+      },
+      {
+        "title": "Дорогомиловское кладбище и братская могила",
+        "cls": "map-marker map-marker--1812",
+        "offset": null
+      },
+      {
+        "title": "Триумфальная арка",
+        "cls": "map-marker map-marker--memory",
+        "offset": null
+      }
+    ]
+  ],
+  "hover": {
+    "width": "40.9531px",
+    "transform": "matrix(1.125, 0, 0, 1.125, 0, 0)",
+    "transition": "1e-05s"
+  },
+  "selected": "matrix(1.3125, 0, 0, 1.3125, 0, 0)",
+  "errors": []
+}

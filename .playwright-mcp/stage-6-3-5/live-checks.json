@@ -1,0 +1,47 @@
+{
+  "results": [
+    {
+      "locale": "ru",
+      "places": 13,
+      "layers": [
+        13,
+        6,
+        7
+      ],
+      "cards": 13,
+      "events": [
+        "council-fili",
+        "borodino"
+      ],
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "status": "PASS"
+    },
+    {
+      "locale": "en",
+      "places": 13,
+      "layers": [
+        13,
+        6,
+        7
+      ],
+      "cards": 13,
+      "events": [
+        "council-fili",
+        "borodino"
+      ],
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

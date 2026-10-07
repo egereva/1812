@@ -2,6 +2,8 @@ export interface MapLocation {
   center?: [number, number]
   zoom?: number
   bounds?: [[number, number], [number, number]]
+  duration?: number
+  easing?: 'ease-in-out'
 }
 
 export interface YMapInstance {
@@ -15,16 +17,27 @@ export interface YMaps3Api {
   ready: Promise<void>
   YMap: new (
     element: HTMLElement,
-    options: { location: MapLocation },
+    options: {
+      location: MapLocation
+      behaviors?: string[]
+      margin?: [number, number, number, number]
+      zoomRounding?: 'smooth' | 'auto' | 'snap'
+    },
   ) => YMapInstance
   YMapDefaultSchemeLayer: new () => unknown
   YMapDefaultFeaturesLayer: new () => unknown
   YMapMarker: new (
     options: { coordinates: [number, number]; zIndex?: number },
     element: HTMLElement,
-  ) => unknown
+  ) => { update(options: { zIndex: number }): void }
   YMapListener: new (options: {
-    onUpdate: (event: { location: { zoom: number } }) => void
+    onUpdate: (event: {
+      location: {
+        zoom: number
+        center?: readonly [number, number, ...number[]]
+      }
+      mapInAction?: boolean
+    }) => void
     onClick?: () => void
   }) => unknown
 }

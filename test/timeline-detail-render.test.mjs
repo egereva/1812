@@ -39,6 +39,7 @@ for (const locale of ['ru', 'en']) {
     (a, b) => a.sortDate.localeCompare(b.sortDate) || a.id.localeCompare(b.id),
   )
   const sources = readJson(`content/${locale}/sources.json`)
+  const places = readJson(`content/${locale}/places.json`)
   const prefix = locale === 'en' ? '/en' : ''
   assert.equal(events.length, 20)
   assert.equal(events[0].id, 'invasion-neman')
@@ -54,6 +55,33 @@ for (const locale of ['ru', 'en']) {
         .split('<article class="timeline-detail ')[1]
         ?.split('</article>')[0]
       assert.ok(detail, 'The detail article must be SSR rendered')
+      const hasPlaces = places.some(
+        (place) =>
+          event.relatedPlaceIds?.includes(place.id) ||
+          place.relatedTimelineIds?.includes(event.id),
+      )
+      const mapLinks = [...detail.matchAll(/href="([^"]*\?event=[^"]*)"/g)]
+      assert.deepEqual(
+        mapLinks.map((match) => match[1]),
+        hasPlaces ? [`${prefix}/map?event=${event.slug}`] : [],
+        'Only events with direct or reverse Place relations render a localized contextual CTA',
+      )
+      const mapAnchors = [...detail.matchAll(/<a\b([^>]+)>/g)].filter((match) =>
+        /\btimeline-detail__map-link\b/.test(match[1]),
+      )
+      assert.equal(mapAnchors.length, hasPlaces ? 1 : 0)
+      for (const [, attributes] of mapAnchors) {
+        assert.match(
+          attributes,
+          new RegExp(`href="${prefix}/map\\?event=${event.slug}"`),
+        )
+        const target = attributes.match(/\btarget="([^"]*)"/)?.[1]
+        assert.ok(
+          target === undefined || target === '_self',
+          'The internal Timeline to Map CTA must stay in the current tab',
+        )
+        assert.doesNotMatch(attributes, /[?&](?:amp;)?place=/)
+      }
       assert.equal((html.match(/<h1[\s>]/g) ?? []).length, 1)
       assert.ok(detail.includes(escape(event.title)))
       assert.ok(

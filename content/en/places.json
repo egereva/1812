@@ -114,7 +114,33 @@
       "description": "A documentary photograph taken in 2019; the church itself already stood here in 1812.",
       "credit": "A.Savin, Wikipedia · Free Art License",
       "sourceId": "src-media-place-intercession-church-fili-2019"
-    }
+    },
+    "beforeAfter": [
+      {
+        "id": "intercession-church-fili-1888-2019",
+        "before": {
+          "src": "/images/places/intercession-church-fili-1888.jpg",
+          "alt": "Church of the Intercession at Fili, 1888",
+          "caption": "Church of the Intercession at Fili, 1888. Published in the Nikolai Naidenov album in 1891.",
+          "credit": "Nikolay Naidenov · Public domain",
+          "sourceId": "src-media-place-intercession-church-fili-1888"
+        },
+        "after": {
+          "src": "/images/places/intercession-church-fili-2019.jpg",
+          "alt": "The Church of the Intercession at Fili in a modern photograph",
+          "caption": "A.Savin. Church of the Intercession at Fili, 2019. A modern view of the surviving church.",
+          "description": "A documentary photograph taken in 2019; the church itself already stood here in 1812.",
+          "credit": "A.Savin, Wikipedia · Free Art License",
+          "sourceId": "src-media-place-intercession-church-fili-2019"
+        },
+        "caption": "The Church of the Intercession in Fili in a photograph from 1888 and in 2019. Unlike reconstructed memorial sites, this comparison shows the surviving historic church at two different moments in its history.",
+        "beforeDate": "1888",
+        "afterDate": "2019",
+        "aspectRatio": 1.3333333333333333,
+        "beforePosition": "50% 20%",
+        "afterPosition": "50% 10%"
+      }
+    ]
   },
   {
     "id": "kuntsevo-estate",
@@ -147,7 +173,31 @@
       "description": "A historical photograph of the postwar house, not a view of the estate in 1812.",
       "credit": "Unknown photographer · Wikimedia Commons · Public domain / PD-RusEmpire",
       "sourceId": "src-media-place-kuntsevo-estate-ca1910"
-    }
+    },
+    "beforeAfter": [
+      {
+        "id": "kuntsevo-estate-1910-2015",
+        "before": {
+          "src": "/images/places/kuntsevo-estate-ca1910.jpg",
+          "alt": "The Kuntsevo Estate main house in a historical photograph from around 1910",
+          "caption": "Unknown photographer. Kuntsevo Estate main house, c. 1910, after the nineteenth-century rebuilding.",
+          "description": "A historical photograph of the postwar house, not a view of the estate in 1812.",
+          "credit": "Unknown photographer · Wikimedia Commons · Public domain / PD-RusEmpire",
+          "sourceId": "src-media-place-kuntsevo-estate-ca1910"
+        },
+        "after": {
+          "src": "/images/places/kuntsevo-estate-2015.jpg",
+          "alt": "The main house of Kuntsevo Estate in its modern appearance.",
+          "caption": "The main house of Kuntsevo Estate in its modern appearance.",
+          "credit": "Andreykor · Wikimedia Commons · CC BY-SA 4.0",
+          "sourceId": "src-media-place-kuntsevo-estate-2015"
+        },
+        "beforeDate": "c. 1910",
+        "afterDate": "2015",
+        "caption": "The historical photograph already shows the building restored after the events of 1812. The comparison illustrates the estate’s later history rather than its condition before and after the Patriotic War.",
+        "aspectRatio": 1.3333333333333333
+      }
+    ]
   },
   {
     "id": "poklonnaya-hill",
@@ -371,7 +421,31 @@
       "description": "A modern documentary photograph of the museum building, not a structure from 1812.",
       "credit": "A.Savin, Wikipedia · Free Art License",
       "sourceId": "src-media-place-borodino-panorama-museum-2007"
-    }
+    },
+    "beforeAfter": [
+      {
+        "id": "borodino-panorama-1962-2007",
+        "before": {
+          "src": "/images/places/borodino-panorama-1962.jpg",
+          "alt": "The Battle of Borodino Panorama Museum building on 17 October 1962, the day before the museum opened.",
+          "caption": "The Battle of Borodino Panorama Museum building on 17 October 1962, the day before the museum opened.",
+          "credit": "V. Egorov and A. Konkov · Main Archive of Moscow / Mos.ru · CC BY 4.0",
+          "sourceId": "src-media-place-borodino-panorama-1962"
+        },
+        "after": {
+          "src": "/images/places/borodino-panorama-museum-2007.jpg",
+          "alt": "The Battle of Borodino Panorama Museum building",
+          "caption": "A.Savin. Battle of Borodino Panorama Museum, 2007. The present building opened in 1962.",
+          "description": "A modern documentary photograph of the museum building, not a structure from 1812.",
+          "credit": "A.Savin, Wikipedia · Free Art License",
+          "sourceId": "src-media-place-borodino-panorama-museum-2007"
+        },
+        "beforeDate": "1962",
+        "afterDate": "2007",
+        "caption": "The archival photograph was taken on 17 October 1962, the day before the museum opened. The photographs were taken from different viewpoints, so the comparison shows changes in the building’s appearance rather than an exact alignment of two frames.",
+        "aspectRatio": 1.3333333333333333
+      }
+    ]
   },
   {
     "id": "kutuzov-monument",
@@ -450,6 +524,31 @@
         "description": "A historical photograph before the original gates were dismantled; the present arch was recreated elsewhere.",
         "credit": "Solomon Tules · Wikimedia Commons · Public domain / PD-Russia",
         "sourceId": "src-media-place-triumphal-arch-1934"
+      }
+    ],
+    "beforeAfter": [
+      {
+        "id": "triumphal-arch-1934-2015",
+        "before": {
+          "src": "/images/places/triumphal-arch-1934.jpg",
+          "alt": "The original Triumphal Gates at Tverskaya Zastava in a 1934 photograph",
+          "caption": "Solomon Tules. Triumphal Gates at Tverskaya Zastava, 1934. The original monument at its former location.",
+          "description": "A historical photograph before the original gates were dismantled; the present arch was recreated elsewhere.",
+          "credit": "Solomon Tules · Wikimedia Commons · Public domain / PD-Russia",
+          "sourceId": "src-media-place-triumphal-arch-1934"
+        },
+        "after": {
+          "src": "/images/places/triumphal-arch-modern-2015.jpg",
+          "alt": "The recreated Triumphal Arch on Kutuzovsky Prospekt",
+          "caption": "Gennady Grachev. Triumphal Arch, 2015. The recreated monument at its new location.",
+          "description": "A modern photograph of the arch recreated on Kutuzovsky Prospekt in the 1960s.",
+          "credit": "Gennady Grachev · Wikimedia Commons · CC BY 2.0",
+          "sourceId": "src-media-place-triumphal-arch-modern-2015"
+        },
+        "caption": "On the left is the original Triumphal Arch at Tverskaya Zastava shortly before its dismantling. On the right is the recreated monument on Kutuzovsky Prospekt. This comparison shows two incarnations of the same memorial rather than the same structure in an unchanged location.",
+        "beforeDate": "1934",
+        "afterDate": "2015",
+        "aspectRatio": 1.3333333333333333
       }
     ]
   }

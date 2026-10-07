@@ -182,14 +182,12 @@ onUnmounted(() => motionQuery?.removeEventListener('change', onMotionChange))
                 displayCaptions[slide.id][language].titleEnd
               }}</span></span
             >
-            <a
+            <WebsiteLink
               :href="slide.sourcePage"
               :tabindex="index === activeIndex ? 0 : -1"
-              target="_blank"
-              rel="noopener noreferrer"
             >
               {{ t('home.slider.source') }}
-            </a>
+            </WebsiteLink>
           </figcaption>
         </figure>
       </SwiperSlide>

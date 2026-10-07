@@ -1,0 +1,262 @@
+[
+  {
+    "locale": "ru",
+    "width": 1440,
+    "overflow": false,
+    "content": {
+      "x": 892.796875,
+      "y": 385.03125,
+      "width": 489.609375,
+      "height": 275.859375
+    },
+    "fragment": {
+      "x": 57.59375,
+      "y": 256.28125,
+      "width": 734.40625,
+      "height": 533.359375
+    },
+    "diagram": {
+      "x": 57.59375,
+      "y": 256.28125,
+      "width": 734.40625,
+      "height": 320
+    },
+    "names": [
+      {
+        "text": "Деревня Фили и место Военного совета",
+        "width": 734,
+        "box": 734
+      },
+      {
+        "text": "Кутузовская изба",
+        "width": 734,
+        "box": 734
+      },
+      {
+        "text": "Церковь Покрова в Филях",
+        "width": 734,
+        "box": 734
+      }
+    ],
+    "link": {
+      "x": 892.796875,
+      "y": 616.890625,
+      "width": 162,
+      "height": 44
+    },
+    "focus": {
+      "outline": "solid",
+      "width": "2px"
+    },
+    "yandexRequests": 0,
+    "pageErrors": []
+  },
+  {
+    "locale": "ru",
+    "width": 768,
+    "overflow": false,
+    "content": {
+      "x": 30.71875,
+      "y": 192.796875,
+      "width": 706.5625,
+      "height": 246.9375
+    },
+    "fragment": {
+      "x": 30.71875,
+      "y": 471.734375,
+      "width": 706.5625,
+      "height": 380.375
+    },
+    "diagram": {
+      "x": 30.71875,
+      "y": 471.734375,
+      "width": 706.5625,
+      "height": 192
+    },
+    "names": [
+      {
+        "text": "Деревня Фили и место Военного совета",
+        "width": 707,
+        "box": 707
+      },
+      {
+        "text": "Кутузовская изба",
+        "width": 707,
+        "box": 707
+      },
+      {
+        "text": "Церковь Покрова в Филях",
+        "width": 707,
+        "box": 707
+      }
+    ],
+    "link": {
+      "x": 30.71875,
+      "y": 395.734375,
+      "width": 162,
+      "height": 44
+    },
+    "focus": {
+      "outline": "solid",
+      "width": "2px"
+    },
+    "yandexRequests": 0,
+    "pageErrors": []
+  },
+  {
+    "locale": "ru",
+    "width": 390,
+    "overflow": false,
+    "content": {
+      "x": 16,
+      "y": 221.296875,
+      "width": 358,
+      "height": 246.9375
+    },
+    "fragment": {
+      "x": 16,
+      "y": 492.234375,
+      "width": 358,
+      "height": 348.375
+    },
+    "diagram": {
+      "x": 16,
+      "y": 492.234375,
+      "width": 358,
+      "height": 160
+    },
+    "names": [
+      {
+        "text": "Деревня Фили и место Военного совета",
+        "width": 358,
+        "box": 358
+      },
+      {
+        "text": "Кутузовская изба",
+        "width": 358,
+        "box": 358
+      },
+      {
+        "text": "Церковь Покрова в Филях",
+        "width": 358,
+        "box": 358
+      }
+    ],
+    "link": {
+      "x": 16,
+      "y": 424.234375,
+      "width": 162,
+      "height": 44
+    },
+    "focus": {
+      "outline": "solid",
+      "width": "2px"
+    },
+    "yandexRequests": 0,
+    "pageErrors": []
+  },
+  {
+    "locale": "ru",
+    "width": 320,
+    "overflow": false,
+    "content": {
+      "x": 16,
+      "y": 195.375,
+      "width": 288,
+      "height": 275.734375
+    },
+    "fragment": {
+      "x": 16,
+      "y": 495.109375,
+      "width": 288,
+      "height": 371.234375
+    },
+    "diagram": {
+      "x": 16,
+      "y": 495.109375,
+      "width": 288,
+      "height": 160
+    },
+    "names": [
+      {
+        "text": "Деревня Фили и место Военного совета",
+        "width": 288,
+        "box": 288
+      },
+      {
+        "text": "Кутузовская изба",
+        "width": 288,
+        "box": 288
+      },
+      {
+        "text": "Церковь Покрова в Филях",
+        "width": 288,
+        "box": 288
+      }
+    ],
+    "link": {
+      "x": 16,
+      "y": 427.109375,
+      "width": 162,
+      "height": 44
+    },
+    "focus": {
+      "outline": "solid",
+      "width": "2px"
+    },
+    "yandexRequests": 0,
+    "pageErrors": []
+  },
+  {
+    "locale": "en",
+    "width": 1440,
+    "overflow": false,
+    "content": {
+      "x": 892.796875,
+      "y": 3050.03125,
+      "width": 489.609375,
+      "height": 275.859375
+    },
+    "fragment": {
+      "x": 57.59375,
+      "y": 2921.28125,
+      "width": 734.40625,
+      "height": 533.359375
+    },
+    "diagram": {
+      "x": 57.59375,
+      "y": 2921.28125,
+      "width": 734.40625,
+      "height": 320
+    },
+    "names": [
+      {
+        "text": "Fili Village and the Site of the Military Council",
+        "width": 734,
+        "box": 734
+      },
+      {
+        "text": "Kutuzov Hut",
+        "width": 734,
+        "box": 734
+      },
+      {
+        "text": "Church of the Intercession at Fili",
+        "width": 734,
+        "box": 734
+      }
+    ],
+    "link": {
+      "x": 892.796875,
+      "y": 3281.890625,
+      "width": 169.75,
+      "height": 44
+    },
+    "focus": {
+      "outline": "solid",
+      "width": "2px"
+    },
+    "yandexRequests": 0,
+    "pageErrors": []
+  }
+]

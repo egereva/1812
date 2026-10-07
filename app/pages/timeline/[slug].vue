@@ -5,6 +5,7 @@ import {
   resolveRelatedContent,
 } from '#shared/content/index'
 import { formatTimelineDates } from '~/utils/timelineDates'
+import { mapEventUrl } from '~/data/mapContext'
 
 const route = useRoute()
 const { locale, t } = useI18n()
@@ -43,7 +44,7 @@ const related = computed(() =>
 const relatedGroups = computed(() =>
   [
     {
-      label: t('timeline.detail.places'),
+      label: t('timeline.detail.eventPlaces'),
       items: related.value.places,
       path: '/places',
     },
@@ -159,6 +160,13 @@ useSeoMeta({
       <div class="timeline-detail__related">
         <div v-for="group in relatedGroups" :key="group.path">
           <h3>{{ group.label }}</h3>
+          <NuxtLink
+            v-if="group.path === '/places'"
+            class="timeline-detail__map-link"
+            :to="mapEventUrl(localePath('/map'), record.slug)"
+            >{{ t('timeline.detail.viewOnMap') }}
+            <span aria-hidden="true">→</span></NuxtLink
+          >
           <ul>
             <li v-for="item in group.items" :key="item.id">
               <NuxtLink :to="localePath(`${group.path}/${item.slug}`)">{{
@@ -177,7 +185,9 @@ useSeoMeta({
       <h2 id="timeline-sources-title">{{ t('timeline.detail.sources') }}</h2>
       <ol>
         <li v-for="source in related.sources" :key="source.id">
-          <a v-if="source.url" :href="source.url">{{ source.title }}</a
+          <WebsiteLink v-if="source.url" :href="source.url">{{
+            source.title
+          }}</WebsiteLink
           ><span v-else>{{ source.title }}</span>
           <p v-if="source.author || source.publisher || source.year">
             {{
@@ -349,6 +359,13 @@ useSeoMeta({
   display: inline-block;
   padding-block: var(--space-2);
   text-decoration-thickness: 1px;
+}
+.timeline-detail__related .timeline-detail__map-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 44px;
+  margin-top: var(--space-2);
 }
 .timeline-detail__sources ol {
   max-width: 46rem;

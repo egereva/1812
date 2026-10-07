@@ -55,9 +55,9 @@ const imageSrc = computed(() => {
         <small v-if="caption.attribution || caption.sourceLabel">
           {{ caption.attribution
           }}<span v-if="caption.attribution && caption.sourceLabel"> · </span>
-          <a v-if="caption.sourceUrl" :href="caption.sourceUrl">{{
+          <WebsiteLink v-if="caption.sourceUrl" :href="caption.sourceUrl">{{
             caption.sourceLabel
-          }}</a>
+          }}</WebsiteLink>
           <template v-else>{{ caption.sourceLabel }}</template>
         </small>
       </figcaption>
@@ -163,7 +163,7 @@ const imageSrc = computed(() => {
   .map-place-card {
     top: auto;
     right: 0.75rem;
-    bottom: 0.75rem;
+    bottom: 2.75rem;
     left: 0.75rem;
     width: auto;
     max-height: min(48%, 27rem);

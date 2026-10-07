@@ -1,0 +1,112 @@
+[
+  {
+    "locale": "ru",
+    "width": 1440,
+    "touch": false,
+    "reduced": false,
+    "hoverRequests": 20,
+    "original": {
+      "center": [
+        37.508045,
+        55.741265
+      ],
+      "zoom": 11.65
+    },
+    "cleanup": {
+      "destroyed": true,
+      "removedListeners": 1
+    },
+    "scripts": 1,
+    "status": "PASS",
+    "mode": "controlled API stand-in"
+  },
+  {
+    "locale": "en",
+    "width": 1440,
+    "touch": false,
+    "reduced": false,
+    "hoverRequests": 20,
+    "original": {
+      "center": [
+        37.508045,
+        55.741265
+      ],
+      "zoom": 11.65
+    },
+    "cleanup": {
+      "destroyed": true,
+      "removedListeners": 1
+    },
+    "scripts": 1,
+    "status": "PASS",
+    "mode": "controlled API stand-in"
+  },
+  {
+    "locale": "ru",
+    "width": 390,
+    "touch": true,
+    "reduced": false,
+    "hoverRequests": 0,
+    "original": {
+      "center": [
+        37.508045,
+        55.741265
+      ],
+      "zoom": 11.65
+    },
+    "cleanup": {
+      "destroyed": true,
+      "removedListeners": 1
+    },
+    "scripts": 1,
+    "status": "PASS",
+    "mode": "controlled API stand-in"
+  },
+  {
+    "locale": "ru",
+    "width": 320,
+    "touch": true,
+    "reduced": false,
+    "hoverRequests": 0,
+    "original": {
+      "center": [
+        37.508045,
+        55.741265
+      ],
+      "zoom": 11.65
+    },
+    "cleanup": {
+      "destroyed": true,
+      "removedListeners": 1
+    },
+    "scripts": 1,
+    "status": "PASS",
+    "mode": "controlled API stand-in"
+  },
+  {
+    "locale": "ru",
+    "width": 1440,
+    "touch": false,
+    "reduced": true,
+    "hoverRequests": 0,
+    "original": {
+      "center": [
+        37.508045,
+        55.741265
+      ],
+      "zoom": 11.65
+    },
+    "cleanup": {
+      "destroyed": true,
+      "removedListeners": 1
+    },
+    "scripts": 1,
+    "status": "PASS",
+    "mode": "controlled API stand-in"
+  },
+  {
+    "mode": "actual provider attempt",
+    "ready": false,
+    "limitation": "Controlled API cases do not verify actual basemap/animation mechanics."
+  }
+]

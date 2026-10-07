@@ -2,6 +2,7 @@ import type PhotoSwipe from 'photoswipe'
 import type { MediaAsset } from '#shared/types/content'
 import { getSourceById } from '#shared/content/index'
 import { normalizeMediaCaption } from '~/utils/mediaCaption'
+import { externalLinkAttributes } from '~/utils/linkAttributes'
 
 const icon = (paths: string) =>
   `<svg aria-hidden="true" class="pswp__icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">${paths}</svg>`
@@ -9,6 +10,7 @@ const icon = (paths: string) =>
 export function useMuseumImageViewer() {
   const { locale, t } = useI18n()
   const config = useRuntimeConfig()
+  const siteUrl = useRequestURL()
   const loading = ref(false)
   const error = ref('')
   let viewer: PhotoSwipe | undefined
@@ -155,8 +157,13 @@ export function useMuseumImageViewer() {
             if (
               attribution instanceof HTMLAnchorElement &&
               presentation.sourceUrl
-            )
+            ) {
               attribution.href = presentation.sourceUrl
+              for (const [name, value] of Object.entries(
+                externalLinkAttributes(presentation.sourceUrl, siteUrl.href),
+              ))
+                attribution.setAttribute(name, value)
+            }
             attribution.textContent = presentation.sourceLabel
             paragraph.append(attribution)
           }

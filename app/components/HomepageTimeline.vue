@@ -230,10 +230,10 @@ function hideLeavingEvent(element: Element) {
               >
                 ·
               </template>
-              <a
+              <WebsiteLink
                 v-if="event.caption.sourceUrl"
                 :href="event.caption.sourceUrl"
-                >{{ event.caption.sourceLabel }}</a
+                >{{ event.caption.sourceLabel }}</WebsiteLink
               >
               <template v-else>{{ event.caption.sourceLabel }}</template>
             </p>

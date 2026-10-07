@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import type { Place } from '#shared/types/content'
 import {
+  collapsedGroupRepresentatives,
   groupOverlappingPlaces,
-  markerShape,
   statusLayer,
 } from '~/data/mapPresentation'
+import approvedMarkerSvg from '../../public/icons/1812-map-marker-filled.svg?raw'
 import {
   loadYandexMaps,
   type YMapInstance,
@@ -25,7 +26,7 @@ const root = ref<HTMLElement | null>(null)
 const { t } = useI18n()
 let api: YMaps3Api | undefined
 let map: YMapInstance | undefined
-let markerEntities: unknown[] = []
+let markerEntities: { entity: unknown; deactivate: () => void }[] = []
 let mapListener: unknown
 let zoom = 13
 let activeGroup: string | undefined
@@ -68,7 +69,11 @@ function focusPlace(place: Place) {
   })
 }
 
-function markerButton(place: Place, offset?: { x: number; y: number }) {
+function markerButton(
+  place: Place,
+  offset?: { x: number; y: number },
+  activate?: (event: MouseEvent) => void,
+) {
   const wrapper = document.createElement('div')
   wrapper.className = 'map-marker-position'
   if (offset) {
@@ -77,9 +82,7 @@ function markerButton(place: Place, offset?: { x: number; y: number }) {
   }
   const button = document.createElement('button')
   button.type = 'button'
-  button.className = `map-marker map-marker--${markerShape[place.historicalStatus]} map-marker--${statusLayer[place.historicalStatus]}`
-  if (place.locationPrecision === 'approximate')
-    button.classList.add('map-marker--approximate')
+  button.className = `map-marker map-marker--${statusLayer[place.historicalStatus]}`
   if (place.slug === props.selectedSlug) button.classList.add('is-selected')
   button.setAttribute(
     'aria-label',
@@ -90,13 +93,19 @@ function markerButton(place: Place, offset?: { x: number; y: number }) {
     }),
   )
   button.title = place.title
-  const glyph = document.createElement('span')
-  glyph.className = 'map-marker__glyph'
+  button.setAttribute('aria-pressed', String(place.slug === props.selectedSlug))
+  const glyph = new DOMParser().parseFromString(
+    approvedMarkerSvg,
+    'image/svg+xml',
+  ).documentElement
+  glyph.classList.add('map-marker__glyph')
   glyph.setAttribute('aria-hidden', 'true')
+  glyph.setAttribute('focusable', 'false')
   button.append(glyph)
   button.addEventListener('click', (event) => {
     event.stopPropagation()
-    emit('select', place.slug, event.detail === 0)
+    if (activate) activate(event)
+    else emit('select', place.slug, event.detail === 0)
   })
   button.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {
@@ -117,13 +126,37 @@ function addMarker(place: Place, element: HTMLElement, selected = false) {
     },
     element,
   )
+  const button = element.querySelector('button')!
+  const interactions = new AbortController()
+  const options = { signal: interactions.signal }
+  const setStacking = (active: boolean) =>
+    marker.update({ zIndex: selected ? 200 : active ? 150 : 100 })
+  button.addEventListener('pointerenter', () => setStacking(true), options)
+  button.addEventListener(
+    'pointerleave',
+    () => setStacking(button.matches(':focus-visible')),
+    options,
+  )
+  button.addEventListener('focus', () => setStacking(true), options)
+  button.addEventListener(
+    'blur',
+    () => setStacking(button.matches(':hover')),
+    options,
+  )
   map.addChild(marker)
-  markerEntities.push(marker)
+  markerEntities.push({
+    entity: marker,
+    deactivate: () => interactions.abort(),
+  })
 }
 
 function drawMarkers() {
   if (!map || !api) return
-  for (const entity of markerEntities) map.removeChild(entity)
+  for (const marker of markerEntities) {
+    // Detaching a focused button emits blur; do not update a detaching YMapMarker.
+    marker.deactivate()
+    map.removeChild(marker.entity)
+  }
   markerEntities = []
   const groups = groupOverlappingPlaces(props.places, zoom)
   const currentGroup = groups.find((group) => group[0]?.id === activeGroup)
@@ -139,37 +172,33 @@ function drawMarkers() {
     }
     if (group[0]!.id !== activeGroup) {
       const anchor = group[0]!
-      const wrapper = document.createElement('div')
-      wrapper.className = 'map-marker-position'
-      const button = document.createElement('button')
-      button.type = 'button'
-      button.className = 'map-marker-group'
-      button.setAttribute('aria-expanded', 'false')
-      button.setAttribute(
-        'aria-label',
-        t('map.overlapLabel', {
-          titles: group.map((place) => place.title).join(', '),
-        }),
-      )
-      button.textContent = '✣'
-      button.addEventListener('click', async (event) => {
-        event.stopPropagation()
-        activeGroup = anchor.id
-        groupMembers.value = group
-        drawMarkers()
-        if (event.detail === 0) {
-          await nextTick()
-          document
-            .querySelector<HTMLElement>('.map-member-chooser button')
-            ?.focus()
-        }
-      })
-      wrapper.append(button)
-      addMarker(
-        anchor,
-        wrapper,
-        group.some((place) => place.slug === props.selectedSlug),
-      )
+      for (const { layer, place, offset } of collapsedGroupRepresentatives(
+        group,
+        props.selectedSlug,
+      )) {
+        const wrapper = markerButton(place, offset, async (event) => {
+          activeGroup = anchor.id
+          groupMembers.value = group
+          drawMarkers()
+          if (event.detail === 0) {
+            await nextTick()
+            document
+              .querySelector<HTMLElement>('.map-member-chooser button')
+              ?.focus()
+          }
+        })
+        const button = wrapper.querySelector('button')!
+        button.classList.add('map-marker-group')
+        button.removeAttribute('aria-pressed')
+        button.setAttribute('aria-expanded', 'false')
+        button.setAttribute(
+          'aria-label',
+          `${t(`map.layer.${layer}`)}. ${t('map.overlapLabel', {
+            titles: group.map((member) => member.title).join(', '),
+          })}`,
+        )
+        addMarker(anchor, wrapper, place.slug === props.selectedSlug)
+      }
       continue
     }
     const radius = group.length > 4 ? 72 : 58
@@ -278,6 +307,7 @@ watch(
 onBeforeUnmount(() => {
   disposed = true
   root.value?.removeEventListener('pointerdown', onMapPointer)
+  for (const marker of markerEntities) marker.deactivate()
   map?.destroy()
   markerEntities = []
   map = undefined
@@ -286,7 +316,7 @@ onBeforeUnmount(() => {
 
 <template>
   <div ref="root" class="map-canvas" :aria-label="t('map.canvas')" />
-  <div v-if="groupMembers.length" class="map-member-chooser">
+  <div v-if="groupMembers.length && !selectedSlug" class="map-member-chooser">
     <p>{{ t('map.nearby') }}</p>
     <button
       v-for="place in groupMembers"
@@ -318,93 +348,82 @@ onBeforeUnmount(() => {
   height: 0;
   transform: translate(var(--fan-x, 0px), var(--fan-y, 0px));
 }
-.map-marker,
-.map-marker-group {
+.map-marker {
   position: absolute;
   display: grid;
-  width: 44px;
-  height: 44px;
+  width: 56px;
+  height: 64px;
   place-items: center;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -100%);
   border: 0;
   padding: 0;
   background: transparent;
   color: var(--color-ink);
   cursor: pointer;
 }
-.map-marker::before {
-  position: absolute;
-  width: 29px;
-  height: 29px;
-  border: 2px solid currentColor;
-  border-radius: 50%;
-  background: var(--color-surface);
-  content: '';
-  box-shadow: 0 1px 4px rgb(28 27 25 / 25%);
-}
 .map-marker__glyph {
-  position: relative;
-  z-index: 1;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: currentColor;
+  position: absolute;
+  bottom: 0;
+  /* The approved body occupies 50 of the 64 viewBox units: 32px visible. */
+  width: 40.96px;
+  height: auto;
+  overflow: visible;
+  pointer-events: none;
+  transform-origin: 50% 94%;
+  transition: transform 180ms ease;
+}
+.map-marker__glyph circle,
+.map-marker__glyph path {
+  transition:
+    fill 180ms ease,
+    stroke 180ms ease;
 }
 .map-marker--memory {
   color: var(--color-accent);
 }
-.map-marker--witness::before,
-.map-marker--reconstruction::before {
-  border-radius: 3px;
+.map-marker:hover .map-marker__glyph,
+.map-marker:focus-visible .map-marker__glyph {
+  transform: scale(1.125);
 }
-.map-marker--lost::before {
-  border-style: dashed;
+.map-marker:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 1px;
+  border-radius: 4px;
 }
-.map-marker--reconstruction .map-marker__glyph {
-  background: transparent;
-  border: 1.5px solid currentColor;
+.map-marker.is-selected .map-marker__glyph {
+  transform: scale(1.3125);
 }
-.map-marker--memorial::before {
-  width: 24px;
-  height: 24px;
-  border-radius: 2px;
-  transform: rotate(45deg);
+.map-marker.is-selected .map-marker__glyph circle {
+  fill: currentColor;
 }
-.map-marker--museum::before {
-  border-width: 4px;
+.map-marker.is-selected .map-marker__glyph path:nth-of-type(2) {
+  fill: #f4efe4;
+  stroke: #f4efe4;
 }
-.map-marker--approximate::after {
-  position: absolute;
-  width: 39px;
-  height: 39px;
-  border: 1px dotted currentColor;
-  border-radius: 50%;
-  content: '';
+.map-marker.is-selected .map-marker__glyph path:nth-of-type(3) {
+  stroke: #f4efe4;
 }
-.map-marker:hover::before,
-.map-marker:focus-visible::before {
-  border-width: 3px;
+.map-marker.is-selected .map-marker__glyph path:nth-of-type(4) {
+  stroke: currentColor;
 }
-.map-marker:focus-visible,
-.map-marker-group:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
-  border-radius: 50%;
-}
-.map-marker.is-selected {
-  border-radius: 50%;
-  box-shadow: inset 0 0 0 2px var(--color-accent);
-}
-.map-marker.is-selected::before {
-  border-width: 3px;
-}
-.map-marker-group {
-  border: 2px solid var(--color-accent);
-  border-radius: 50%;
-  background: var(--color-surface);
-  color: var(--color-accent);
-  box-shadow: 0 1px 5px rgb(28 27 25 / 25%);
-  font-size: 1.25rem;
+/* Yandex markers are recreated on selection; start the same SVG in its normal state. */
+@starting-style {
+  .map-marker.is-selected .map-marker__glyph {
+    transform: scale(1);
+  }
+  .map-marker.is-selected .map-marker__glyph circle {
+    fill: #f4efe4;
+  }
+  .map-marker.is-selected .map-marker__glyph path:nth-of-type(2) {
+    fill: currentColor;
+    stroke: currentColor;
+  }
+  .map-marker.is-selected .map-marker__glyph path:nth-of-type(3) {
+    stroke: currentColor;
+  }
+  .map-marker.is-selected .map-marker__glyph path:nth-of-type(4) {
+    stroke: #f4efe4;
+  }
 }
 .map-member-chooser {
   position: absolute;
@@ -446,7 +465,9 @@ onBeforeUnmount(() => {
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .map-marker-position {
+  .map-marker__glyph,
+  .map-marker__glyph circle,
+  .map-marker__glyph path {
     transition: none;
   }
 }

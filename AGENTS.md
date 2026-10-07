@@ -69,6 +69,14 @@ Preserve static generation and localized routing.
 
 ## Accessibility
 
+All external links open in a new tab with target="_blank" and
+rel="noopener noreferrer". Internal application links stay in the
+current tab. Determine external website navigation by comparing URL
+origins, using `app/utils/linkAttributes.ts`; render content/source URLs
+with `WebsiteLink`, and apply the same helper to application-created DOM
+anchors. Keep internal route navigation in NuxtLink. Do not alter
+third-party-owned Yandex Maps controls.
+
 Accessibility is a baseline requirement, not a later enhancement.
 
 Preserve:

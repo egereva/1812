@@ -23,7 +23,12 @@ const dictionary = computed(() =>
     ].includes(entry.id),
   ),
 )
-const places = computed(() => getPlaces(locale.value).slice(0, 3))
+const mapPlaces = computed(() => getPlaces(locale.value))
+const places = computed(() =>
+  ['fili-village', 'kutuzov-hut', 'intercession-church-fili'].flatMap((id) =>
+    mapPlaces.value.filter((place) => place.id === id),
+  ),
+)
 useHead(() => ({ title: site.value.siteTitle }))
 useSeoMeta({ description: () => site.value.siteDescription })
 </script>
@@ -90,26 +95,25 @@ useSeoMeta({ description: () => site.value.siteDescription })
     <HomepageTimeline />
 
     <section class="home-map page-container" aria-labelledby="map-title">
-      <div class="home-rule" aria-hidden="true">
-        <span>04 / 04</span>
-      </div>
+      <div class="home-rule" aria-hidden="true" />
       <div class="home-map__layout">
-        <div class="home-map__diagram" aria-hidden="true">
-          <span class="home-map__axis home-map__axis--one" />
-          <span class="home-map__axis home-map__axis--two" />
-          <span class="home-map__ring home-map__ring--one" />
-          <span class="home-map__ring home-map__ring--two" />
-        </div>
         <div class="home-map__content">
-          <p class="eyebrow">{{ t('home.map.kicker') }}</p>
+          <p class="eyebrow">{{ t('map.kicker') }}</p>
           <h2 id="map-title">{{ t('navigation.map') }}</h2>
-          <p>{{ t('home.map.description') }}</p>
-          <ul class="home-map__places">
-            <li v-for="place in places" :key="place.id">{{ place.title }}</li>
-          </ul>
+          <p>{{ t('home.map.description', { count: mapPlaces.length }) }}</p>
           <NuxtLink class="home-link" :to="localePath('/map')">
-            {{ t('home.map.cta') }} <span aria-hidden="true">↗</span>
+            {{ t('home.map.cta') }} <span aria-hidden="true">→</span>
           </NuxtLink>
+        </div>
+        <div class="home-map__fragment">
+          <HomepageMapPreview :places="mapPlaces" />
+          <ul class="home-map__places">
+            <li v-for="place in places" :key="place.id">
+              <NuxtLink :to="localePath(`/places/${place.slug}`)">{{
+                place.title
+              }}</NuxtLink>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
@@ -299,74 +303,45 @@ useSeoMeta({ description: () => site.value.siteDescription })
 .home-map__layout {
   display: grid;
   grid-template-columns: minmax(0, 3fr) minmax(18rem, 2fr);
+  grid-template-areas: 'fragment content';
   gap: clamp(2rem, 7vw, 8rem);
   align-items: center;
   padding-top: var(--space-12);
 }
-.home-map__diagram {
-  position: relative;
-  min-height: 31rem;
-  overflow: hidden;
-  border: var(--border-rule);
-  background-image:
-    linear-gradient(
-      to right,
-      transparent calc(100% - 1px),
-      var(--color-border) calc(100% - 1px)
-    ),
-    linear-gradient(
-      to bottom,
-      transparent calc(100% - 1px),
-      var(--color-border) calc(100% - 1px)
-    );
-  background-size: 3.5rem 3.5rem;
-  opacity: 0.8;
+.home-map__content {
+  grid-area: content;
+  min-width: 0;
 }
-.home-map__axis {
-  position: absolute;
-  width: 125%;
-  height: 1px;
-  background: var(--color-accent);
-  transform-origin: left center;
+.home-map__fragment {
+  grid-area: fragment;
+  min-width: 0;
 }
-.home-map__axis--one {
-  top: 75%;
-  left: -10%;
-  transform: rotate(-26deg);
-}
-.home-map__axis--two {
-  top: 18%;
-  left: 12%;
-  transform: rotate(42deg);
-}
-.home-map__ring {
-  position: absolute;
-  width: 9rem;
-  height: 9rem;
-  border: 1px solid var(--color-accent);
-  border-radius: 50%;
-}
-.home-map__ring--one {
-  top: 13%;
-  left: 57%;
-}
-.home-map__ring--two {
-  right: 57%;
-  bottom: 9%;
-  width: 5rem;
-  height: 5rem;
+.home-map {
+  min-height: 0;
+  padding-bottom: var(--space-12);
 }
 .home-map__places {
-  margin: var(--space-8) 0 0;
+  margin: var(--space-4) 0 0;
   padding: 0;
   list-style: none;
 }
 .home-map__places li {
   border-top: var(--border-rule);
-  padding-block: var(--space-3);
   font-family: var(--font-display);
-  font-size: clamp(1.1rem, 1.7vw, 1.5rem);
+  font-size: clamp(1rem, 1.4vw, 1.25rem);
   line-height: 1.3;
+}
+.home-map__places a {
+  display: flex;
+  min-height: 2.75rem;
+  align-items: center;
+  padding-block: var(--space-3);
+  color: var(--color-ink);
+  text-decoration: none;
+}
+.home-map__places a:hover,
+.home-map__places a:focus-visible {
+  color: var(--color-accent);
 }
 @media (max-width: 56.25rem) {
   .home-hero--with-media .home-hero__body::after {
@@ -382,11 +357,9 @@ useSeoMeta({ description: () => site.value.siteDescription })
     font-size: clamp(2.75rem, 6vw, 4rem);
   }
   .home-map__layout {
-    grid-template-columns: minmax(0, 1fr) minmax(15rem, 1fr);
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: 'content' 'fragment';
     gap: var(--space-8);
-  }
-  .home-map__diagram {
-    min-height: 26rem;
   }
 }
 @media (max-width: 37.5rem) {
@@ -426,20 +399,20 @@ useSeoMeta({ description: () => site.value.siteDescription })
   .home-map {
     padding-block: var(--space-12) var(--space-16);
   }
+  .home-map {
+    padding-bottom: var(--space-12);
+  }
   .home-dictionary__layout,
   .home-map__layout {
     grid-template-columns: 1fr;
     gap: var(--space-12);
     padding-top: var(--space-12);
   }
+  .home-map__layout {
+    gap: var(--space-8);
+  }
   .home-dictionary__alphabet {
     font-size: clamp(2.5rem, 12vw, 4rem);
-  }
-  .home-map__diagram {
-    min-height: 15rem;
-  }
-  .home-map__content {
-    grid-row: 1;
   }
 }
 </style>

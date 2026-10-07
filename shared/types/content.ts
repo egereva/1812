@@ -23,6 +23,11 @@ export interface BeforeAfterPair {
   before: MediaAsset
   after: MediaAsset
   caption?: string
+  beforeDate?: string
+  afterDate?: string
+  aspectRatio?: number
+  beforePosition?: string
+  afterPosition?: string
 }
 
 export interface Coordinates {

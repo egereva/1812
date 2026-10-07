@@ -33,9 +33,9 @@ const caption = computed(() =>
         }}<template v-if="caption.attribution && caption.sourceLabel">
           ·
         </template>
-        <a v-if="caption.sourceUrl" :href="caption.sourceUrl">{{
+        <WebsiteLink v-if="caption.sourceUrl" :href="caption.sourceUrl">{{
           caption.sourceLabel
-        }}</a
+        }}</WebsiteLink
         ><template v-else>{{ caption.sourceLabel }}</template>
       </span>
     </figcaption>

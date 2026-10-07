@@ -11,9 +11,13 @@
     "lint": "nuxt prepare && eslint .",
     "format": "prettier --write app shared content/ru content/en test i18n nuxt.config.ts eslint.config.mjs tsconfig.json package.json",
     "format:check": "prettier --check app shared content/ru content/en test i18n nuxt.config.ts eslint.config.mjs tsconfig.json package.json",
-    "test": "node --experimental-strip-types --test --experimental-test-isolation=none test/content.test.ts test/hero.test.ts test/map.test.ts",
+    "test": "node --experimental-strip-types --test --experimental-test-isolation=none test/content.test.ts test/hero.test.ts test/map.test.ts test/links.test.ts test/homepage-map.test.mjs",
     "test:homepage-render": "node --test --experimental-test-isolation=none test/homepage-render.test.mjs",
+    "test:links-render": "node --test --experimental-test-isolation=none test/links-render.test.mjs",
+    "test:places-detail-render": "node --experimental-strip-types --test --experimental-test-isolation=none test/places-detail-render.test.mjs",
     "test:timeline-detail-render": "node --test --experimental-test-isolation=none test/timeline-detail-render.test.mjs",
+    "test:map-index-render": "node --experimental-strip-types --test --experimental-test-isolation=none test/map-index-render.test.mjs",
+    "test:dictionary-places-render": "node --experimental-strip-types --test --experimental-test-isolation=none test/dictionary-places-render.test.mjs",
     "postinstall": "nuxt prepare"
   },
   "dependencies": {

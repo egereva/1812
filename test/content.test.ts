@@ -43,7 +43,115 @@ import {
 import type { ContentCatalog, TimelineEvent } from '../shared/types/content.ts'
 
 const ru = getCatalog('ru')
+
+test('Interactive Place comparison uses exactly four sourced bilingual pairs', () => {
+  const expected = [
+    'borodino-panorama-museum',
+    'intercession-church-fili',
+    'kuntsevo-estate',
+    'triumphal-arch',
+  ]
+  for (const locale of ['ru', 'en'] as const) {
+    const places = getPlaces(locale)
+    assert.deepEqual(
+      places
+        .filter((place) => place.beforeAfter?.length)
+        .map((place) => place.id)
+        .sort(),
+      expected,
+    )
+    assert.equal(places.filter((place) => !place.beforeAfter?.length).length, 9)
+    for (const place of places.filter((place) => place.beforeAfter?.length)) {
+      assert.equal(place.beforeAfter!.length, 1)
+      const pair = place.beforeAfter![0]!
+      const counterpart = getPlaceById(locale === 'ru' ? 'en' : 'ru', place.id)!
+        .beforeAfter![0]!
+      assert.equal(pair.id, counterpart.id)
+      assert.equal(pair.aspectRatio, counterpart.aspectRatio)
+      assert.equal(pair.beforePosition, counterpart.beforePosition)
+      assert.equal(pair.afterPosition, counterpart.afterPosition)
+      assert.deepEqual(
+        [pair.beforeDate, pair.afterDate],
+        place.id === 'kuntsevo-estate'
+          ? [locale === 'ru' ? 'около 1910' : 'c. 1910', '2015']
+          : place.id === 'intercession-church-fili'
+            ? ['1888', '2019']
+            : place.id === 'triumphal-arch'
+              ? ['1934', '2015']
+              : ['1962', '2007'],
+      )
+      assert.ok(pair.caption?.trim())
+      assert.deepEqual(
+        [pair.before.src, pair.after.src],
+        [counterpart.before.src, counterpart.after.src],
+      )
+      assert.deepEqual(
+        [pair.before.sourceId, pair.after.sourceId],
+        [counterpart.before.sourceId, counterpart.after.sourceId],
+      )
+      for (const image of [pair.before, pair.after]) {
+        assert.match(image.src, /^\/images\/[a-z]+\/[a-z0-9-]+\.jpg$/)
+        assert.ok(existsSync(`public${image.src}`))
+        assert.ok(image.alt.trim())
+        assert.ok(image.caption?.trim())
+        assert.ok(image.credit?.trim())
+        const source = getSourceById(locale, image.sourceId!)
+        assert.equal(source?.type, 'media')
+        if (
+          image.sourceId === 'src-media-place-intercession-church-fili-1888'
+        ) {
+          assert.equal(
+            source?.url,
+            'https://commons.wikimedia.org/wiki/File:Church_of_the_Protection_of_the_Theotokos_in_Fili_00.jpg',
+          )
+          assert.equal(
+            source?.author,
+            locale === 'ru' ? 'Николай Найдёнов' : 'Nikolay Naidenov',
+          )
+          assert.equal(
+            image.credit,
+            locale === 'ru'
+              ? 'Николай Найдёнов · Общественное достояние'
+              : 'Nikolay Naidenov · Public domain',
+          )
+          assert.equal(source?.publisher, 'Wikimedia Commons')
+          assert.equal(source?.year, 1888)
+        } else
+          assert.ok(
+            source?.url?.startsWith('https://commons.wikimedia.org/wiki/'),
+          )
+        assert.equal(
+          source?.url,
+          getSourceById(locale === 'ru' ? 'en' : 'ru', image.sourceId!)?.url,
+        )
+      }
+    }
+  }
+})
+
 const en = getCatalog('en')
+
+test('Comparison validation rejects broken media, missing dates and locale identity drift', () => {
+  const catalogs = structuredClone({
+    ru: getCatalog('ru'),
+    en: getCatalog('en'),
+  })
+  const pair = catalogs.ru.places.find(
+    (place) => place.id === 'kuntsevo-estate',
+  )!.beforeAfter![0]!
+  pair.after.sourceId = 'missing-source'
+  pair.beforeDate = ''
+  pair.aspectRatio = 0
+  const problems = getCatalogProblems(catalogs)
+  assert.ok(
+    problems.some((problem) => problem.includes('invalid image comparison')),
+  )
+  assert.ok(
+    problems.some((problem) =>
+      problem.includes('image comparison identity differs'),
+    ),
+  )
+})
 
 test('Homepage curation has six approved local artworks without changing the full Timeline', () => {
   const expected = [
@@ -338,19 +446,11 @@ test('Places media resolves to local originals with RU/EN parity and approved ro
       const images = [
         ...(place.coverImage ? [place.coverImage] : []),
         ...(place.gallery ?? []),
-        ...(place.beforeAfter ?? []).flatMap((pair) => [
-          pair.before,
-          pair.after,
-        ]),
       ]
       const counterpart = getPlaceById(locale === 'ru' ? 'en' : 'ru', place.id)!
       const otherImages = [
         ...(counterpart.coverImage ? [counterpart.coverImage] : []),
         ...(counterpart.gallery ?? []),
-        ...(counterpart.beforeAfter ?? []).flatMap((pair) => [
-          pair.before,
-          pair.after,
-        ]),
       ]
       assert.deepEqual(
         images.map(({ src, sourceId }) => [src, sourceId]),
@@ -410,7 +510,6 @@ test('Places media resolves to local originals with RU/EN parity and approved ro
       2,
     )
     assert.equal(getPlaceById(locale, 'kutuzov-hut')?.beforeAfter, undefined)
-    assert.equal(getPlaceById(locale, 'triumphal-arch')?.beforeAfter, undefined)
     assert.deepEqual(
       getPlaces(locale)
         .filter(

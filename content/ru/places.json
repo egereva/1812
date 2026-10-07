@@ -114,7 +114,33 @@
       "description": "Документальная фотография 2019 года; само здание существовало в 1812 году.",
       "credit": "A.Savin, Wikipedia · Free Art License",
       "sourceId": "src-media-place-intercession-church-fili-2019"
-    }
+    },
+    "beforeAfter": [
+      {
+        "id": "intercession-church-fili-1888-2019",
+        "before": {
+          "src": "/images/places/intercession-church-fili-1888.jpg",
+          "alt": "Церковь Покрова в Филях, 1888",
+          "caption": "Церковь Покрова в Филях, 1888. Опубликовано в альбоме Николая Найденова в 1891 году.",
+          "credit": "Николай Найдёнов · Общественное достояние",
+          "sourceId": "src-media-place-intercession-church-fili-1888"
+        },
+        "after": {
+          "src": "/images/places/intercession-church-fili-2019.jpg",
+          "alt": "Церковь Покрова в Филях на современной фотографии",
+          "caption": "A.Savin. Церковь Покрова в Филях, 2019. Современный снимок сохранившегося храма.",
+          "description": "Документальная фотография 2019 года; само здание существовало в 1812 году.",
+          "credit": "A.Savin, Wikipedia · Free Art License",
+          "sourceId": "src-media-place-intercession-church-fili-2019"
+        },
+        "caption": "Церковь Покрова в Филях на фотографии 1888 года и в 2019 году. В отличие от реконструированных мемориальных объектов, здесь сравнивается сохранившийся исторический храм в разные периоды его существования.",
+        "beforeDate": "1888",
+        "afterDate": "2019",
+        "aspectRatio": 1.3333333333333333,
+        "beforePosition": "50% 20%",
+        "afterPosition": "50% 10%"
+      }
+    ]
   },
   {
     "id": "kuntsevo-estate",
@@ -147,7 +173,31 @@
       "description": "Историческая фотография послевоенного дома; не вид усадьбы в 1812 году.",
       "credit": "Автор неизвестен · Wikimedia Commons · Общественное достояние / PD-RusEmpire",
       "sourceId": "src-media-place-kuntsevo-estate-ca1910"
-    }
+    },
+    "beforeAfter": [
+      {
+        "id": "kuntsevo-estate-1910-2015",
+        "before": {
+          "src": "/images/places/kuntsevo-estate-ca1910.jpg",
+          "alt": "Главный дом усадьбы Кунцево на исторической фотографии около 1910 года",
+          "caption": "Автор неизвестен. Главный дом усадьбы Кунцево, около 1910 года — после восстановления усадьбы в XIX веке.",
+          "description": "Историческая фотография послевоенного дома; не вид усадьбы в 1812 году.",
+          "credit": "Автор неизвестен · Wikimedia Commons · Общественное достояние / PD-RusEmpire",
+          "sourceId": "src-media-place-kuntsevo-estate-ca1910"
+        },
+        "after": {
+          "src": "/images/places/kuntsevo-estate-2015.jpg",
+          "alt": "Главный дом усадьбы Кунцево в современном виде.",
+          "caption": "Главный дом усадьбы Кунцево в современном виде.",
+          "credit": "Andreykor · Wikimedia Commons · CC BY-SA 4.0",
+          "sourceId": "src-media-place-kuntsevo-estate-2015"
+        },
+        "beforeDate": "около 1910",
+        "afterDate": "2015",
+        "caption": "Историческая фотография относится уже к зданию, восстановленному после событий 1812 года. Сравнение показывает дальнейшую историю усадьбы, а не состояние дома до и после Отечественной войны.",
+        "aspectRatio": 1.3333333333333333
+      }
+    ]
   },
   {
     "id": "poklonnaya-hill",
@@ -371,7 +421,31 @@
       "description": "Современная документальная фотография здания музея, не постройки эпохи 1812 года.",
       "credit": "A.Savin, Wikipedia · Free Art License",
       "sourceId": "src-media-place-borodino-panorama-museum-2007"
-    }
+    },
+    "beforeAfter": [
+      {
+        "id": "borodino-panorama-1962-2007",
+        "before": {
+          "src": "/images/places/borodino-panorama-1962.jpg",
+          "alt": "Здание Музея-панорамы «Бородинская битва» 17 октября 1962 года, накануне открытия музея.",
+          "caption": "Здание Музея-панорамы «Бородинская битва» 17 октября 1962 года, накануне открытия музея.",
+          "credit": "V. Egorov and A. Konkov · Главархив Москвы / Mos.ru · CC BY 4.0",
+          "sourceId": "src-media-place-borodino-panorama-1962"
+        },
+        "after": {
+          "src": "/images/places/borodino-panorama-museum-2007.jpg",
+          "alt": "Здание Музея-панорамы «Бородинская битва»",
+          "caption": "A.Savin. Музей-панорама «Бородинская битва», 2007. Современное здание открыто в 1962 году.",
+          "description": "Современная документальная фотография здания музея, не постройки эпохи 1812 года.",
+          "credit": "A.Savin, Wikipedia · Free Art License",
+          "sourceId": "src-media-place-borodino-panorama-museum-2007"
+        },
+        "beforeDate": "1962",
+        "afterDate": "2007",
+        "caption": "Архивная фотография сделана 17 октября 1962 года, накануне открытия музея. Ракурсы фотографий различаются, поэтому сравнение показывает изменение облика здания, а не точное совмещение двух кадров.",
+        "aspectRatio": 1.3333333333333333
+      }
+    ]
   },
   {
     "id": "kutuzov-monument",
@@ -450,6 +524,31 @@
         "description": "Историческая фотография первоначальных ворот до разборки; нынешняя арка воссоздана в другом месте.",
         "credit": "Соломон Тулес · Wikimedia Commons · Общественное достояние / PD-Russia",
         "sourceId": "src-media-place-triumphal-arch-1934"
+      }
+    ],
+    "beforeAfter": [
+      {
+        "id": "triumphal-arch-1934-2015",
+        "before": {
+          "src": "/images/places/triumphal-arch-1934.jpg",
+          "alt": "Подлинные Триумфальные ворота у Тверской заставы на фотографии 1934 года",
+          "caption": "Соломон Тулес. Триумфальные ворота у Тверской заставы, 1934. Подлинный памятник на прежнем месте.",
+          "description": "Историческая фотография первоначальных ворот до разборки; нынешняя арка воссоздана в другом месте.",
+          "credit": "Соломон Тулес · Wikimedia Commons · Общественное достояние / PD-Russia",
+          "sourceId": "src-media-place-triumphal-arch-1934"
+        },
+        "after": {
+          "src": "/images/places/triumphal-arch-modern-2015.jpg",
+          "alt": "Воссозданная Триумфальная арка на Кутузовском проспекте",
+          "caption": "Gennady Grachev. Триумфальная арка, 2015. Воссозданный памятник на новом месте.",
+          "description": "Современная фотография арки, воссозданной в 1960-е годы на Кутузовском проспекте.",
+          "credit": "Gennady Grachev · Wikimedia Commons · CC BY 2.0",
+          "sourceId": "src-media-place-triumphal-arch-modern-2015"
+        },
+        "caption": "Слева — первоначальная Триумфальная арка у Тверской заставы незадолго до её демонтажа. Справа — воссозданный памятник на Кутузовском проспекте. Это сравнение двух воплощений одного памятника, а не одного сооружения на неизменном месте.",
+        "beforeDate": "1934",
+        "afterDate": "2015",
+        "aspectRatio": 1.3333333333333333
       }
     ]
   }

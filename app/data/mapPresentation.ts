@@ -11,13 +11,25 @@ export const statusLayer: Record<HistoricalStatus, Exclude<MapLayer, 'all'>> = {
   museum: 'memory',
 }
 
-export const markerShape: Record<HistoricalStatus, string> = {
-  'event-site': 'event',
-  'surviving-witness': 'witness',
-  'lost-site': 'lost',
-  reconstruction: 'reconstruction',
-  memorial: 'memorial',
-  museum: 'museum',
+// A collapsed mixed group keeps one independently operable marker per layer.
+// Both use the group's geographic anchor; offsets are screen-space only.
+export function collapsedGroupRepresentatives(
+  group: readonly Place[],
+  selectedSlug?: string,
+) {
+  const layers = (['1812', 'memory'] as const)
+    .map((layer) => ({
+      layer,
+      places: group.filter(
+        (place) => statusLayer[place.historicalStatus] === layer,
+      ),
+    }))
+    .filter(({ places }) => places.length)
+  return layers.map(({ layer, places }, index) => ({
+    layer,
+    place: places.find((place) => place.slug === selectedSlug) ?? places[0]!,
+    offset: { x: layers.length === 2 ? (index === 0 ? -28 : 28) : 0, y: 0 },
+  }))
 }
 
 export function parseMapLayer(value: unknown): MapLayer {
