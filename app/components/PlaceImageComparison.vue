@@ -2,6 +2,7 @@
 import { getSourceById } from '#shared/content/index'
 import type { BeforeAfterPair } from '#shared/types/content'
 import { normalizeMediaCaption } from '~/utils/mediaCaption'
+import { imageDeliveryAttributes } from '~/utils/imageDelivery'
 
 const props = defineProps<{ pair: BeforeAfterPair }>()
 const { locale, t } = useI18n()
@@ -18,7 +19,11 @@ const media = computed(() =>
   ].map(({ image, date }) => ({
     image,
     date,
-    src: `${config.app.baseURL.replace(/\/$/, '')}${image.src}`,
+    delivery: imageDeliveryAttributes(
+      image.src,
+      config.app.baseURL,
+      '(max-width: 900px) calc(100vw - 2rem), (max-width: 1440px) calc(100vw - 6rem), 1326px',
+    ),
     // Both creators remain visible: no full caption is repeated below the frame.
     attribution: normalizeMediaCaption(
       { ...image, caption: undefined, description: undefined },
@@ -97,7 +102,8 @@ onBeforeUnmount(() => stopPointer())
         <!-- eslint-disable vue/html-self-closing -->
         <img
           class="place-comparison__image"
-          :src="media[1]!.src"
+          v-bind="media[1]!.delivery"
+          loading="eager"
           :alt="pair.after.alt"
           :style="{ objectPosition: pair.afterPosition ?? '50% 50%' }"
           :draggable="false"
@@ -114,7 +120,8 @@ onBeforeUnmount(() => stopPointer())
         <!-- eslint-disable vue/html-self-closing -->
         <img
           class="place-comparison__image place-comparison__earlier"
-          :src="media[0]!.src"
+          v-bind="media[0]!.delivery"
+          loading="eager"
           :alt="pair.before.alt"
           :style="{ objectPosition: pair.beforePosition ?? '50% 50%' }"
           :draggable="false"

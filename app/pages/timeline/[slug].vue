@@ -144,6 +144,7 @@ useSeoMeta({
         v-if="record.image"
         class="timeline-detail__media"
         :image="record.image"
+        image-loading="eager"
       />
       <div class="timeline-detail__prose">
         <p v-for="(paragraph, index) in record.content" :key="index">

@@ -1,5 +1,59 @@
 {
   "title": "1812. Western Moscow",
   "description": "An interactive guide to the War of 1812 and the places associated with it in today’s Western Administrative Okrug of Moscow.",
-  "contentStatus": "final-en-translated-from-audited-ru-2026-09-25"
+  "contentStatus": "final-en-translated-from-audited-ru-2026-09-25",
+  "about": {
+    "title": "About the project",
+    "description": "A school research and digital project about the War of 1812, places in western Moscow and historical memory. Materials, sources and how the website was created.",
+    "lead": "History feels closer when we can connect it with familiar places. This school research and digital project brings together materials about the War of 1812 and the geography of modern western Moscow.",
+    "sections": [
+      {
+        "id": "purpose",
+        "title": "Why this project exists",
+        "paragraphs": [
+          "1812. Western Moscow is an educational digital reference website. It helps readers explore the events of the Patriotic War of 1812, discover places associated with them and understand how the city preserves the memory of the war.",
+          "Historical research and the creation of the website share one purpose: to make verified materials clear and accessible for independent study."
+        ]
+      },
+      {
+        "id": "geography",
+        "title": "History on the map of modern Moscow",
+        "paragraphs": [
+          "Historical events are considered through the geography of today’s city. The focus is on Moscow’s present-day Western Administrative Okrug: places connected with 1812, museums and monuments that preserve historical memory.",
+          "A modern monument, a reconstructed building and a surviving historical site have different statuses. The guide preserves these distinctions and notes cases where a location can only be identified approximately."
+        ]
+      },
+      {
+        "id": "research",
+        "title": "Materials and source verification",
+        "paragraphs": [
+          "The work begins with selecting and checking historical materials. Information is organized into dictionary articles, timeline events and descriptions of places, with sources that readers can consult for further study.",
+          "Images carry captions and attribution. A later painting of wartime events is not presented as photographic evidence from 1812; a modern photograph shows how a place looks today. Historical caveats and limits of precision remain part of the text."
+        ]
+      },
+      {
+        "id": "digital",
+        "title": "From research to a digital guide",
+        "paragraphs": [
+          "After selecting the materials, the content was organized into structured records and the website was planned. The work used Visual Studio Code and the Codex AI development agent: tasks were formulated, and the resulting work was reviewed and checked.",
+          "The digital part of the project includes an interactive map built with Yandex Maps, bilingual materials and a presentation adapted to different screen sizes. Modern tools help create the guide; historical statements rest on verifiable sources."
+        ]
+      },
+      {
+        "id": "guide",
+        "title": "How to explore the website",
+        "paragraphs": [
+          "Start with the map to find a place, or with the timeline to follow the events of the war. The dictionary introduces people, concepts and events; links within the materials lead to related articles and places.",
+          "Place pages connect historical context with the modern city, while four Place in Time comparisons let readers examine images from different years. The Sources section offers a path to the materials on which the guide is based."
+        ]
+      }
+    ],
+    "exploreLabel": "Continue exploring",
+    "links": [
+      { "route": "/map", "label": "Map of places" },
+      { "route": "/timeline", "label": "Timeline" },
+      { "route": "/dictionary", "label": "Dictionary" },
+      { "route": "/sources", "label": "Sources" }
+    ]
+  }
 }

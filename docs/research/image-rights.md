@@ -26,7 +26,7 @@
 - Тип: `later-artistic-depiction`
 - Лицензия: Public domain / PD-Art
 - Source page: https://commons.wikimedia.org/wiki/File:Изба_совета_в_Филях.jpg
-- Target: `public/images/places/kutuzov-hut-savrasov-1884.jpg`
+- Target: `public/images/dictionary/kutuzov-hut-savrasov-1884.jpg` (production original reused by Places)
 - Подпись: Алексей Саврасов. «Изба совета в Филях», 1884. Художественное изображение; не фотография избы 1812 года.
 
 ## Церковь Покрова в Филях
@@ -35,7 +35,7 @@
 - Тип: `modern-documentary-photo`
 - Лицензия: CC BY-SA 3.0
 - Source page: https://commons.wikimedia.org/wiki/File:Церковь_Покрова_в_Филях.jpg
-- Target: `public/images/places/fili-church-modern-2012.jpg`
+- Former proposed target: `public/images/places/fili-church-modern-2012.jpg`; approved unused candidate, not delivered or referenced in production. The production Church image is `/images/places/intercession-church-fili-2019.jpg`, with its own attribution; the 2012 rights record is retained.
 - Подпись: Церковь Покрова Пресвятой Богородицы в Филях. Фото: Алексей Васин, 2012, CC BY-SA 3.0.
 
 ## Главный дом усадьбы Кунцево

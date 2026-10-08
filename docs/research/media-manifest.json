@@ -38,7 +38,7 @@
     },
     {
       "id": "kutuzov-hut-savrasov-1884",
-      "target": "public/images/places/kutuzov-hut-savrasov-1884.jpg",
+      "target": "public/images/dictionary/kutuzov-hut-savrasov-1884.jpg",
       "entities": ["place:kutuzov-hut", "place:fili-village"],
       "title": "Изба совета в Филях",
       "creator": "Алексей Саврасов",
@@ -54,6 +54,9 @@
     {
       "id": "fili-church-modern-2012",
       "target": "public/images/places/fili-church-modern-2012.jpg",
+      "usageStatus": "unused-candidate",
+      "deliveryStatus": "not-delivered",
+      "notes": "Archived approved candidate, not a production asset. Target is a former proposed path; no local binary is expected. Production Church cover and comparison use /images/places/intercession-church-fili-2019.jpg. Retain the candidate's verified creator, date, rights and source metadata.",
       "entities": ["place:intercession-church-fili"],
       "title": "Церковь Покрова в Филях",
       "creator": "Алексей Васин",

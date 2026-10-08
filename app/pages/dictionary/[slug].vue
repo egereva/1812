@@ -79,7 +79,7 @@ useSeoMeta({
       :class="{ 'dictionary-detail__article--with-image': record.image }"
     >
       <figure v-if="record.image" class="dictionary-detail__figure">
-        <MuseumImage :image="record.image" />
+        <MuseumImage :image="record.image" image-loading="eager" />
         <figcaption
           v-if="
             imageCaption &&
@@ -127,6 +127,23 @@ useSeoMeta({
         <li v-for="place in related.places" :key="place.id">
           <NuxtLink :to="localePath(`/places/${place.slug}`)">{{
             place.title
+          }}</NuxtLink>
+        </li>
+      </ul>
+    </section>
+
+    <section
+      v-if="related.timeline.length"
+      class="dictionary-detail__timeline"
+      aria-labelledby="dictionary-timeline-title"
+    >
+      <h2 id="dictionary-timeline-title">
+        {{ t('dictionary.relatedTimeline') }}
+      </h2>
+      <ul>
+        <li v-for="event in related.timeline" :key="event.id">
+          <NuxtLink :to="localePath(`/timeline/${event.slug}`)">{{
+            event.title
           }}</NuxtLink>
         </li>
       </ul>
@@ -275,6 +292,7 @@ useSeoMeta({
 }
 
 .dictionary-detail__places,
+.dictionary-detail__timeline,
 .dictionary-detail__sources {
   display: grid;
   grid-template-columns: minmax(7rem, 11rem) minmax(0, 46rem);
@@ -285,6 +303,7 @@ useSeoMeta({
 }
 
 .dictionary-detail__places h2,
+.dictionary-detail__timeline h2,
 .dictionary-detail__sources h2 {
   color: var(--color-muted);
   font-family: var(--font-body);
@@ -326,18 +345,21 @@ useSeoMeta({
   font-size: var(--text-body-sm);
 }
 
-.dictionary-detail__places {
+.dictionary-detail__places,
+.dictionary-detail__timeline {
   margin-top: var(--space-12);
   padding-top: var(--space-6);
 }
 
-.dictionary-detail__places ul {
+.dictionary-detail__places ul,
+.dictionary-detail__timeline ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.dictionary-detail__places a {
+.dictionary-detail__places a,
+.dictionary-detail__timeline a {
   display: inline-flex;
   align-items: center;
   min-height: 44px;
@@ -345,7 +367,8 @@ useSeoMeta({
   font-size: var(--text-body-sm);
 }
 
-.dictionary-detail__places + .dictionary-detail__sources {
+.dictionary-detail__places + .dictionary-detail__sources,
+.dictionary-detail__timeline + .dictionary-detail__sources {
   margin-top: var(--space-12);
 }
 
@@ -357,7 +380,7 @@ useSeoMeta({
   }
 
   .dictionary-detail__figure {
-    max-width: var(--container-text);
+    max-width: min(100%, var(--container-text));
   }
 }
 
@@ -375,6 +398,7 @@ useSeoMeta({
   }
 
   .dictionary-detail__places,
+  .dictionary-detail__timeline,
   .dictionary-detail__sources {
     display: block;
   }
@@ -392,6 +416,7 @@ useSeoMeta({
   }
 
   .dictionary-detail__places h2,
+  .dictionary-detail__timeline h2,
   .dictionary-detail__sources h2 {
     margin-bottom: var(--space-6);
   }

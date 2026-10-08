@@ -131,10 +131,12 @@ export interface SiteContent {
   hero: HeroSlide[]
   home: { dictionary: string[]; timeline: string[]; map: string[] }
   about: {
-    intro: string[]
-    history: string[]
-    geography: string[]
-    guide: string[]
+    title: string
+    description: string
+    lead: string
+    sections: { id: string; title: string; paragraphs: string[] }[]
+    exploreLabel: string
+    links: { route: string; label: string }[]
   }
 }
 

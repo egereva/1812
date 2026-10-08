@@ -108,6 +108,7 @@ useSeoMeta({
         v-if="record.coverImage"
         class="place-detail__cover"
         :image="record.coverImage"
+        image-loading="eager"
       />
     </header>
     <section
@@ -477,7 +478,7 @@ useSeoMeta({
     gap: var(--space-8);
   }
   .place-detail__cover {
-    max-width: 46rem;
+    max-width: min(100%, 46rem);
     --museum-image-max-height: 34rem;
   }
   .place-detail__narrative--illustrated h2 {

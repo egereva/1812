@@ -19,9 +19,22 @@
     "ru": "Русская версия",
     "en": "English version"
   },
+  "sources": {
+    "description": "Historical and research sources and image attribution for the 1812. Western Moscow digital guide.",
+    "summary": "{research} historical and research sources · {media} image records · {total} records in total",
+    "research": "Historical and research sources",
+    "media": "Images and media attribution",
+    "contents": "Source catalog sections",
+    "count": "Records: {count}",
+    "author": "Author",
+    "publisher": "Publisher / resource",
+    "year": "Year",
+    "accessed": "Accessed"
+  },
   "dictionary": {
     "alphabet": "Alphabet",
-    "relatedPlaces": "Related places"
+    "relatedPlaces": "Related places",
+    "relatedTimeline": "Related events"
   },
   "map": {
     "kicker": "Western Moscow · 1812",

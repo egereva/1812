@@ -3,7 +3,10 @@ import { getSourceById } from '#shared/content/index'
 import type { MediaAsset } from '#shared/types/content'
 import { normalizeMediaCaption } from '~/utils/mediaCaption'
 
-const props = defineProps<{ image: MediaAsset }>()
+const props = defineProps<{
+  image: MediaAsset
+  imageLoading?: 'lazy' | 'eager'
+}>()
 const { locale } = useI18n()
 const caption = computed(() =>
   normalizeMediaCaption(
@@ -19,7 +22,7 @@ const caption = computed(() =>
 </script>
 <template>
   <figure class="place-media">
-    <MuseumImage :image="image" />
+    <MuseumImage :image="image" :image-loading="imageLoading" />
     <figcaption>
       <span v-if="caption.caption">{{ caption.caption }}</span>
       <span

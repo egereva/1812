@@ -7,6 +7,7 @@ import 'swiper/css'
 import 'swiper/css/effect-fade'
 import 'swiper/css/pagination'
 import type { HeroLocale, HeroSlide } from '../data/heroSlides'
+import { imageDeliveryAttributes } from '~/utils/imageDelivery'
 
 const props = defineProps<{ slides: readonly HeroSlide[] }>()
 const { locale, t } = useI18n()
@@ -68,7 +69,12 @@ let motionQuery: MediaQueryList | undefined
 let reducedMotion = false
 
 function imageSrc(slide: HeroSlide) {
-  return `${config.app.baseURL.replace(/\/?$/, '/')}${slide.publicPath.slice(1)}`
+  const ratio = slide.width / slide.height
+  return imageDeliveryAttributes(
+    slide.publicPath,
+    config.app.baseURL,
+    `max(100vw, ${100 * ratio}svh, ${42 * ratio}rem)`,
+  )
 }
 
 function renderBullet(index: number, className: string) {
@@ -164,12 +170,13 @@ onUnmounted(() => motionQuery?.removeEventListener('change', onMotionChange))
         >
           <!-- eslint-disable vue/html-self-closing -->
           <img
-            :src="imageSrc(slide)"
+            v-bind="imageSrc(slide)"
             :alt="slide.alt[language]"
             :width="slide.width"
             :height="slide.height"
             draggable="false"
             :fetchpriority="index === 0 ? 'high' : 'auto'"
+            :loading="index === 0 ? 'eager' : 'lazy'"
           />
           <!-- eslint-enable vue/html-self-closing -->
           <figcaption class="hero-slider__caption">

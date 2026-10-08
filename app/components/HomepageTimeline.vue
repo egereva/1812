@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { imageDeliveryAttributes } from '~/utils/imageDelivery'
 import {
   getTimelineEvents,
   getDictionaryEntries,
@@ -206,7 +207,13 @@ function hideLeavingEvent(element: Element) {
             <!-- eslint-disable vue/html-self-closing -->
             <img
               v-if="event.artwork"
-              :src="`${config.app.baseURL.replace(/\/$/, '')}${event.artwork.src}`"
+              v-bind="
+                imageDeliveryAttributes(
+                  event.artwork.src,
+                  config.app.baseURL,
+                  'auto, 180px',
+                )
+              "
               :alt="event.artwork.alt"
               loading="lazy"
             />

@@ -2,6 +2,7 @@
 import type { Place } from '#shared/types/content'
 import { getSourceById } from '#shared/content/index'
 import { normalizeMediaCaption } from '~/utils/mediaCaption'
+import { imageDeliveryAttributes } from '~/utils/imageDelivery'
 
 const props = defineProps<{ place: Place; locale: 'ru' | 'en' }>()
 const emit = defineEmits<{ close: [] }>()
@@ -24,7 +25,9 @@ const caption = computed(() => {
 })
 const imageSrc = computed(() => {
   const src = props.place.coverImage?.src
-  return src ? `${config.app.baseURL.replace(/\/$/, '')}${src}` : undefined
+  return src
+    ? imageDeliveryAttributes(src, config.app.baseURL, 'auto, 360px')
+    : undefined
 })
 </script>
 
@@ -48,7 +51,7 @@ const imageSrc = computed(() => {
     </p>
     <figure v-if="place.coverImage && imageSrc" class="map-place-card__figure">
       <!-- eslint-disable vue/html-self-closing -->
-      <img :src="imageSrc" :alt="place.coverImage.alt" loading="lazy" />
+      <img v-bind="imageSrc" :alt="place.coverImage.alt" loading="lazy" />
       <!-- eslint-enable vue/html-self-closing -->
       <figcaption v-if="caption">
         <span v-if="caption.caption">{{ caption.caption }}</span>

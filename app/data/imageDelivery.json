@@ -1,0 +1,661 @@
+{
+  "/images/dictionary/alexander-i-dawe.jpg": {
+    "width": 1127,
+    "height": 1650,
+    "bytes": 1461420,
+    "sha256": "faa509004995015468e0ff3a159a88c6c304e8b9ccb27772ce240a516de75caa",
+    "variants": [
+      {
+        "src": "/images/delivery/dictionary-alexander-i-dawe-640.jpg",
+        "width": 640,
+        "height": 937,
+        "bytes": 96568
+      },
+      {
+        "src": "/images/delivery/dictionary-alexander-i-dawe-1127.jpg",
+        "width": 1127,
+        "height": 1650,
+        "bytes": 320022
+      }
+    ]
+  },
+  "/images/dictionary/bagration-dawe.jpg": {
+    "width": 3420,
+    "height": 4000,
+    "bytes": 8751131,
+    "sha256": "4df899d5b7c99953ec3e7f77319c360fa5bc77ff778d96ba4feb2c073d434df0",
+    "variants": [
+      {
+        "src": "/images/delivery/dictionary-bagration-dawe-640.jpg",
+        "width": 640,
+        "height": 749,
+        "bytes": 105358
+      },
+      {
+        "src": "/images/delivery/dictionary-bagration-dawe-1280.jpg",
+        "width": 1280,
+        "height": 1497,
+        "bytes": 420273
+      }
+    ]
+  },
+  "/images/dictionary/barclay-de-tolly-dawe.jpg": {
+    "width": 824,
+    "height": 1476,
+    "bytes": 173195,
+    "sha256": "84b42a81d8e41b7f45d0400068ccd3917b15169d70133ea4f865629d11203435",
+    "variants": []
+  },
+  "/images/dictionary/bennigsen-dawe.jpg": {
+    "width": 1656,
+    "height": 1920,
+    "bytes": 375968,
+    "sha256": "bec1288bf12627a0ad185bdb15ed44dc487d171cb7a341f98e58466dddfd8a39",
+    "variants": [
+      {
+        "src": "/images/delivery/dictionary-bennigsen-dawe-640.jpg",
+        "width": 640,
+        "height": 742,
+        "bytes": 105397
+      }
+    ]
+  },
+  "/images/dictionary/berezina-hess.jpg": {
+    "width": 800,
+    "height": 519,
+    "bytes": 150062,
+    "sha256": "71855117fcb7a7bf1ff46a27d5962e9217ff88dd5db62a207a320d9998484010",
+    "variants": []
+  },
+  "/images/dictionary/davydov-dawe.jpg": {
+    "width": 1658,
+    "height": 1920,
+    "bytes": 537512,
+    "sha256": "1f8a4520df46ebb26ce10a1988faf67161cd07b72172a3449d6e4c92da904b00",
+    "variants": [
+      {
+        "src": "/images/delivery/dictionary-davydov-dawe-640.jpg",
+        "width": 640,
+        "height": 741,
+        "bytes": 115824
+      }
+    ]
+  },
+  "/images/dictionary/grand-army-vernet-1812.jpg": {
+    "width": 908,
+    "height": 1044,
+    "bytes": 310273,
+    "sha256": "c75fbf05d7c7b7a7c97ca6276a03923102cd233a64a0fe15d0eafa58f92a97fa",
+    "variants": [
+      {
+        "src": "/images/delivery/dictionary-grand-army-vernet-1812-640.jpg",
+        "width": 640,
+        "height": 736,
+        "bytes": 106029
+      },
+      {
+        "src": "/images/delivery/dictionary-grand-army-vernet-1812-908.jpg",
+        "width": 908,
+        "height": 1044,
+        "bytes": 191544
+      }
+    ]
+  },
+  "/images/dictionary/kutuzov-basin.jpg": {
+    "width": 237,
+    "height": 388,
+    "bytes": 58213,
+    "sha256": "3662ed52a41ad2a5bc46dfa1861feeddbc73aa76a2216a4ac7bbfa746bb705f7",
+    "variants": []
+  },
+  "/images/dictionary/kutuzov-hut-savrasov-1884.jpg": {
+    "width": 1215,
+    "height": 747,
+    "bytes": 273723,
+    "sha256": "a942cf75d430e549a0ac95cf567b1ff05c576df8680974ca58d857ea9f6a1202",
+    "variants": []
+  },
+  "/images/dictionary/maloyaroslavets-samokish.jpg": {
+    "width": 1093,
+    "height": 785,
+    "bytes": 607967,
+    "sha256": "7cba1ac8f506cedbbcc0aacea02e22ed57a1a4004d9889837d372e4714fff2b1",
+    "variants": [
+      {
+        "src": "/images/delivery/dictionary-maloyaroslavets-samokish-640.jpg",
+        "width": 640,
+        "height": 460,
+        "bytes": 180606
+      }
+    ]
+  },
+  "/images/dictionary/moscow-fire-smirnov-1813.jpg": {
+    "width": 1369,
+    "height": 976,
+    "bytes": 157435,
+    "sha256": "12cc8a129c8b878f47123a4517e96a956c1752ccdf61059fca04236fa92ac449",
+    "variants": []
+  },
+  "/images/dictionary/napoleon-1812.jpg": {
+    "width": 569,
+    "height": 950,
+    "bytes": 158157,
+    "sha256": "cc4a1438daf6b6e1790102327b16e0c88ea434b79a307067da68c009585d865e",
+    "variants": []
+  },
+  "/images/dictionary/platov-orlowski-1812-13.jpg": {
+    "width": 768,
+    "height": 907,
+    "bytes": 139099,
+    "sha256": "8eb025d4cbd562188af90710ac21563bde7f6ebae1ccfe7e359ef9d51cf5fe32",
+    "variants": []
+  },
+  "/images/dictionary/raevsky-dawe.jpg": {
+    "width": 1288,
+    "height": 1474,
+    "bytes": 282584,
+    "sha256": "b56a3c30b2461a341e5878facf2250bdeb8e37fd3e8ec01c1e47c11eec5fdea2",
+    "variants": []
+  },
+  "/images/dictionary/roubaud-borodino-panorama-1912.jpg": {
+    "width": 3764,
+    "height": 340,
+    "bytes": 233226,
+    "sha256": "29c046e4928753b96ef64bda1c2cf6d0252c3d94dd38ffcc9811ddbaeb38e574",
+    "variants": []
+  },
+  "/images/dictionary/roubaud-photo.jpg": {
+    "width": 265,
+    "height": 265,
+    "bytes": 43563,
+    "sha256": "5bb3862351ca9fa76f668cc398a7232ac71da182ca0f9686fbdd65c4b407c90e",
+    "variants": []
+  },
+  "/images/dictionary/smolensk-langlois-1839.png": {
+    "width": 1926,
+    "height": 1336,
+    "bytes": 4067803,
+    "sha256": "94540e32b764ccecc9fc08f8d864cec6dca0b17fc68f74f896426c1b3c404af2",
+    "variants": [
+      {
+        "src": "/images/delivery/dictionary-smolensk-langlois-1839-640.jpg",
+        "width": 640,
+        "height": 444,
+        "bytes": 86257
+      },
+      {
+        "src": "/images/delivery/dictionary-smolensk-langlois-1839-1280.jpg",
+        "width": 1280,
+        "height": 888,
+        "bytes": 303683
+      }
+    ]
+  },
+  "/images/dictionary/tarutino-hess-1847.jpg": {
+    "width": 1920,
+    "height": 1267,
+    "bytes": 1302894,
+    "sha256": "409b19733a90bb54733c72b8871fe3cca149d5b6312cb0720fb8bf8849736937",
+    "variants": [
+      {
+        "src": "/images/delivery/dictionary-tarutino-hess-1847-640.jpg",
+        "width": 640,
+        "height": 422,
+        "bytes": 67853
+      },
+      {
+        "src": "/images/delivery/dictionary-tarutino-hess-1847-1280.jpg",
+        "width": 1280,
+        "height": 845,
+        "bytes": 281395
+      }
+    ]
+  },
+  "/images/places/archangel-michael-chapel-2008.jpg": {
+    "width": 1500,
+    "height": 1161,
+    "bytes": 501050,
+    "sha256": "9544900d28a1614a603f583ee34287eec6fdf8864589a65566301aeb00cb1ffd",
+    "variants": [
+      {
+        "src": "/images/delivery/places-archangel-michael-chapel-2008-640.jpg",
+        "width": 640,
+        "height": 495,
+        "bytes": 115916
+      }
+    ]
+  },
+  "/images/places/borodino-panorama-1962.jpg": {
+    "width": 1928,
+    "height": 1240,
+    "bytes": 305282,
+    "sha256": "ea6eb09b69cd98bc9c6904fa3861392c4dcacf5fa02f7de0feaabea272e76418",
+    "variants": [
+      {
+        "src": "/images/delivery/places-borodino-panorama-1962-640.jpg",
+        "width": 640,
+        "height": 412,
+        "bytes": 63095
+      },
+      {
+        "src": "/images/delivery/places-borodino-panorama-1962-1280.jpg",
+        "width": 1280,
+        "height": 823,
+        "bytes": 217375
+      }
+    ]
+  },
+  "/images/places/borodino-panorama-museum-2007.jpg": {
+    "width": 2048,
+    "height": 1536,
+    "bytes": 1187165,
+    "sha256": "8c220f9b87f7a5dcef0d5269d696dd786d15a14ca8ee6ebc052a42831d0c889d",
+    "variants": [
+      {
+        "src": "/images/delivery/places-borodino-panorama-museum-2007-640.jpg",
+        "width": 640,
+        "height": 480,
+        "bytes": 61677
+      },
+      {
+        "src": "/images/delivery/places-borodino-panorama-museum-2007-1280.jpg",
+        "width": 1280,
+        "height": 960,
+        "bytes": 211463
+      },
+      {
+        "src": "/images/delivery/places-borodino-panorama-museum-2007-1920.jpg",
+        "width": 1920,
+        "height": 1440,
+        "bytes": 425334
+      }
+    ]
+  },
+  "/images/places/brotherhood-grave-obelisk-2023.jpg": {
+    "width": 3368,
+    "height": 6000,
+    "bytes": 15751195,
+    "sha256": "1429a97ef5dbce0e9dff9919a3d6658a1eb0ec533ed840214199d4b695776164",
+    "variants": [
+      {
+        "src": "/images/delivery/places-brotherhood-grave-obelisk-2023-640.jpg",
+        "width": 640,
+        "height": 1140,
+        "bytes": 236962
+      },
+      {
+        "src": "/images/delivery/places-brotherhood-grave-obelisk-2023-1280.jpg",
+        "width": 1280,
+        "height": 2280,
+        "bytes": 880187
+      }
+    ]
+  },
+  "/images/places/intercession-church-fili-1888.jpg": {
+    "width": 1407,
+    "height": 1924,
+    "bytes": 478952,
+    "sha256": "fa8ed8e97656b5960eb4735f16df7120644d333ca16b0c02ef1baf81040db0d9",
+    "variants": [
+      {
+        "src": "/images/delivery/places-intercession-church-fili-1888-640.jpg",
+        "width": 640,
+        "height": 875,
+        "bytes": 112362
+      },
+      {
+        "src": "/images/delivery/places-intercession-church-fili-1888-1280.jpg",
+        "width": 1280,
+        "height": 1750,
+        "bytes": 337783
+      }
+    ]
+  },
+  "/images/places/intercession-church-fili-2019.jpg": {
+    "width": 4902,
+    "height": 4902,
+    "bytes": 11281988,
+    "sha256": "84f273e25b299938cef371dc846dd759facb8db7c8cc914d5e2f9db8ef6d650d",
+    "variants": [
+      {
+        "src": "/images/delivery/places-intercession-church-fili-2019-640.jpg",
+        "width": 640,
+        "height": 640,
+        "bytes": 103524
+      },
+      {
+        "src": "/images/delivery/places-intercession-church-fili-2019-1280.jpg",
+        "width": 1280,
+        "height": 1280,
+        "bytes": 399019
+      },
+      {
+        "src": "/images/delivery/places-intercession-church-fili-2019-1920.jpg",
+        "width": 1920,
+        "height": 1920,
+        "bytes": 890493
+      }
+    ]
+  },
+  "/images/places/kuntsevo-estate-2015.jpg": {
+    "width": 4320,
+    "height": 3240,
+    "bytes": 5356032,
+    "sha256": "2ade491cc54153fbe84fbc8454f4e862c69c9290b5e61b564a6fdf750ee5fe79",
+    "variants": [
+      {
+        "src": "/images/delivery/places-kuntsevo-estate-2015-640.jpg",
+        "width": 640,
+        "height": 480,
+        "bytes": 63963
+      },
+      {
+        "src": "/images/delivery/places-kuntsevo-estate-2015-1280.jpg",
+        "width": 1280,
+        "height": 960,
+        "bytes": 217416
+      },
+      {
+        "src": "/images/delivery/places-kuntsevo-estate-2015-1920.jpg",
+        "width": 1920,
+        "height": 1440,
+        "bytes": 443931
+      }
+    ]
+  },
+  "/images/places/kuntsevo-estate-ca1910.jpg": {
+    "width": 1280,
+    "height": 792,
+    "bytes": 320121,
+    "sha256": "388387b3d1b01fb941a79a49c9f44272aaed1fdc428b73dbef252b5cf17c9d2d",
+    "variants": [
+      {
+        "src": "/images/delivery/places-kuntsevo-estate-ca1910-640.jpg",
+        "width": 640,
+        "height": 396,
+        "bytes": 109614
+      }
+    ]
+  },
+  "/images/places/kutuzov-hut-modern-2015.jpg": {
+    "width": 1280,
+    "height": 960,
+    "bytes": 361394,
+    "sha256": "c2721a5d01055f025da4f1078b8ab3a7401b0224cccd079a7a5dd385d418a1a1",
+    "variants": [
+      {
+        "src": "/images/delivery/places-kutuzov-hut-modern-2015-640.jpg",
+        "width": 640,
+        "height": 480,
+        "bytes": 115844
+      }
+    ]
+  },
+  "/images/places/kutuzov-monument-2016.jpg": {
+    "width": 3264,
+    "height": 2178,
+    "bytes": 1232976,
+    "sha256": "b639f82a62354ee69adb78eb65c335cad9a1e3f2319909e10e10bf9f51a1c6fd",
+    "variants": [
+      {
+        "src": "/images/delivery/places-kutuzov-monument-2016-640.jpg",
+        "width": 640,
+        "height": 427,
+        "bytes": 77577
+      },
+      {
+        "src": "/images/delivery/places-kutuzov-monument-2016-1280.jpg",
+        "width": 1280,
+        "height": 854,
+        "bytes": 276219
+      }
+    ]
+  },
+  "/images/places/milepost-fili-2023.jpg": {
+    "width": 3368,
+    "height": 6000,
+    "bytes": 17553175,
+    "sha256": "add10890fe106e12901647dce9f9e240d2e1a929f540ceda109009e332984c94",
+    "variants": [
+      {
+        "src": "/images/delivery/places-milepost-fili-2023-640.jpg",
+        "width": 640,
+        "height": 1140,
+        "bytes": 305505
+      },
+      {
+        "src": "/images/delivery/places-milepost-fili-2023-1280.jpg",
+        "width": 1280,
+        "height": 2280,
+        "bytes": 1131657
+      }
+    ]
+  },
+  "/images/places/triumphal-arch-1934.jpg": {
+    "width": 900,
+    "height": 600,
+    "bytes": 71620,
+    "sha256": "03c13d2a85337fbe8329dfe62ded5eb2aa63541a02227a021b732be3842a16e3",
+    "variants": []
+  },
+  "/images/places/triumphal-arch-modern-2015.jpg": {
+    "width": 2302,
+    "height": 1536,
+    "bytes": 874378,
+    "sha256": "93b01a3388bfe075af2a8b5cfa44d02c3742bf2f79145dc237915d877d8e4b67",
+    "variants": [
+      {
+        "src": "/images/delivery/places-triumphal-arch-modern-2015-640.jpg",
+        "width": 640,
+        "height": 427,
+        "bytes": 66080
+      },
+      {
+        "src": "/images/delivery/places-triumphal-arch-modern-2015-1280.jpg",
+        "width": 1280,
+        "height": 854,
+        "bytes": 219200
+      },
+      {
+        "src": "/images/delivery/places-triumphal-arch-modern-2015-1920.jpg",
+        "width": 1920,
+        "height": 1281,
+        "bytes": 464566
+      }
+    ]
+  },
+  "/images/timeline/borodino-hess-1843.jpg": {
+    "width": 1919,
+    "height": 1210,
+    "bytes": 941434,
+    "sha256": "2931b27f3ce4950e65a1483ecaabfc263f79ea54701b8d31f07a5158e262f955",
+    "variants": [
+      {
+        "src": "/images/delivery/timeline-borodino-hess-1843-640.jpg",
+        "width": 640,
+        "height": 404,
+        "bytes": 67443
+      },
+      {
+        "src": "/images/delivery/timeline-borodino-hess-1843-1280.jpg",
+        "width": 1280,
+        "height": 807,
+        "bytes": 244031
+      },
+      {
+        "src": "/images/delivery/timeline-borodino-hess-1843-1919.jpg",
+        "width": 1919,
+        "height": 1210,
+        "bytes": 558125
+      }
+    ]
+  },
+  "/images/timeline/crossing-neman-clark-1816.jpg": {
+    "width": 978,
+    "height": 709,
+    "bytes": 198303,
+    "sha256": "556dd36adcb61ce9cec4c48900ab606c07e55f7079351b5d22a4234b20456894",
+    "variants": []
+  },
+  "/images/timeline/fili-council-kivshenko-1882.jpg": {
+    "width": 2048,
+    "height": 1105,
+    "bytes": 545322,
+    "sha256": "44439ede8566be1e4ee5cefcbaed21e2b155e96c1b80aa3e3fef7dd714a8138f",
+    "variants": [
+      {
+        "src": "/images/delivery/timeline-fili-council-kivshenko-1882-640.jpg",
+        "width": 640,
+        "height": 345,
+        "bytes": 59600
+      },
+      {
+        "src": "/images/delivery/timeline-fili-council-kivshenko-1882-1280.jpg",
+        "width": 1280,
+        "height": 691,
+        "bytes": 231855
+      }
+    ]
+  },
+  "/images/timeline/krasny-losmina-hess.jpg": {
+    "width": 1800,
+    "height": 1031,
+    "bytes": 336612,
+    "sha256": "2de06f0593841e3a5cd01967765b3211bc4476a4444b427c2797089f9fc92930",
+    "variants": [
+      {
+        "src": "/images/delivery/timeline-krasny-losmina-hess-640.jpg",
+        "width": 640,
+        "height": 367,
+        "bytes": 55016
+      },
+      {
+        "src": "/images/delivery/timeline-krasny-losmina-hess-1280.jpg",
+        "width": 1280,
+        "height": 733,
+        "bytes": 180993
+      }
+    ]
+  },
+  "/images/timeline/moscow-entry-basset-1812.jpg": {
+    "width": 3896,
+    "height": 3080,
+    "bytes": 2014395,
+    "sha256": "f498af4122d9d263e1dff552549915ebe657c54a9b77319da0f8fa34e9fcfd7c",
+    "variants": [
+      {
+        "src": "/images/delivery/timeline-moscow-entry-basset-1812-640.jpg",
+        "width": 640,
+        "height": 506,
+        "bytes": 92547
+      },
+      {
+        "src": "/images/delivery/timeline-moscow-entry-basset-1812-1280.jpg",
+        "width": 1280,
+        "height": 1012,
+        "bytes": 371959
+      }
+    ]
+  },
+  "/images/timeline/retreat-moscow-suchodolski-1853.jpg": {
+    "width": 2500,
+    "height": 1738,
+    "bytes": 808841,
+    "sha256": "808fbd3d2bec1bda001080dac397d5b1b260cd039554963b68a46c22a4bbf728",
+    "variants": [
+      {
+        "src": "/images/delivery/timeline-retreat-moscow-suchodolski-1853-640.jpg",
+        "width": 640,
+        "height": 445,
+        "bytes": 67078
+      },
+      {
+        "src": "/images/delivery/timeline-retreat-moscow-suchodolski-1853-1280.jpg",
+        "width": 1280,
+        "height": 890,
+        "bytes": 314445
+      }
+    ]
+  },
+  "/images/timeline/shevardino-redoubt-tuzanna-2020.jpg": {
+    "width": 2016,
+    "height": 1512,
+    "bytes": 765264,
+    "sha256": "e20d1a4b75d2e6a394a13dd119be37b72d06f93c39c2ed51925defd97b0fe8b5",
+    "variants": [
+      {
+        "src": "/images/delivery/timeline-shevardino-redoubt-tuzanna-2020-640.jpg",
+        "width": 640,
+        "height": 480,
+        "bytes": 80251
+      },
+      {
+        "src": "/images/delivery/timeline-shevardino-redoubt-tuzanna-2020-1280.jpg",
+        "width": 1280,
+        "height": 960,
+        "bytes": 279575
+      }
+    ]
+  },
+  "/images/timeline/smorgoni-samokish-1912.jpg": {
+    "width": 1110,
+    "height": 780,
+    "bytes": 497468,
+    "sha256": "86330ff34cd6358e2a3b8cfc3a63c5d28c8ddedb808e530e91438522e1f9a5e5",
+    "variants": [
+      {
+        "src": "/images/delivery/timeline-smorgoni-samokish-1912-640.jpg",
+        "width": 640,
+        "height": 450,
+        "bytes": 143603
+      }
+    ]
+  },
+  "/images/timeline/tarutino-maneuver-kaidor-2018.svg": {
+    "width": 873.41846,
+    "height": 1090.5559,
+    "bytes": 1064560,
+    "sha256": "9f74ce61ff14bf8dc7d68f972426da021e378429b69ac7106389fd4d895b75b6",
+    "variants": []
+  },
+  "/images/timeline/vilna-cui-attributed-1812.jpg": {
+    "width": 3123,
+    "height": 2178,
+    "bytes": 4620237,
+    "sha256": "5fab332de22f2f263118e50cfa7fe9597886fae6951c9589830c55742fffa7e7",
+    "variants": [
+      {
+        "src": "/images/delivery/timeline-vilna-cui-attributed-1812-640.jpg",
+        "width": 640,
+        "height": 446,
+        "bytes": 69865
+      },
+      {
+        "src": "/images/delivery/timeline-vilna-cui-attributed-1812-1280.jpg",
+        "width": 1280,
+        "height": 893,
+        "bytes": 289693
+      }
+    ]
+  },
+  "/images/timeline/vyazma-hess.jpg": {
+    "width": 1920,
+    "height": 1210,
+    "bytes": 613149,
+    "sha256": "073ce10d064cb03379284c4c2a61b18873a1dcae70439780519368c070779c72",
+    "variants": [
+      {
+        "src": "/images/delivery/timeline-vyazma-hess-640.jpg",
+        "width": 640,
+        "height": 403,
+        "bytes": 64763
+      },
+      {
+        "src": "/images/delivery/timeline-vyazma-hess-1280.jpg",
+        "width": 1280,
+        "height": 807,
+        "bytes": 228376
+      }
+    ]
+  }
+}

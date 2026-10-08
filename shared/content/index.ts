@@ -20,6 +20,7 @@ import type {
   RelatedContent,
   Slug,
   Source,
+  SiteContent,
   TimelineEvent,
 } from '../types/content.ts'
 
@@ -28,14 +29,18 @@ export const contentRelease = {
   en: 'production',
 } as const satisfies Record<Locale, 'production' | 'pending'>
 
-// Both final packages provide editorial site metadata; UI sections remain empty.
-function siteContent(site: { title: string; description: string }) {
+// Editorial page prose belongs to the localized site packages.
+function siteContent(site: {
+  title: string
+  description: string
+  about: SiteContent['about']
+}): SiteContent {
   return {
     siteTitle: site.title,
     siteDescription: site.description,
     hero: [],
     home: { dictionary: [], timeline: [], map: [] },
-    about: { intro: [], history: [], geography: [], guide: [] },
+    about: site.about,
   }
 }
 
@@ -118,6 +123,13 @@ export function resolveTimelinePlaceContext(locale: unknown, value: unknown) {
 }
 
 export const getSources = (locale: unknown = 'ru') => getCatalog(locale).sources
+export function getSourceGroups(locale: unknown = 'ru') {
+  const sources = getSources(locale)
+  return {
+    research: sources.filter((source) => source.type !== 'media'),
+    media: sources.filter((source) => source.type === 'media'),
+  }
+}
 export const getSourceById = (locale: unknown, id: Id) =>
   byId(getSources(locale), id)
 

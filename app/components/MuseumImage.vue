@@ -1,17 +1,27 @@
 <script setup lang="ts">
 import type { MediaAsset } from '#shared/types/content'
+import { imageDeliveryAttributes } from '~/utils/imageDelivery'
 
 const props = defineProps<{
   image: MediaAsset
   images?: MediaAsset[]
   index?: number
+  imageLoading?: 'lazy' | 'eager'
 }>()
 const { t } = useI18n()
 const config = useRuntimeConfig()
 const trigger = useTemplateRef<HTMLButtonElement>('trigger')
 const { open, loading, error } = useMuseumImageViewer()
-const src = computed(
-  () => `${config.app.baseURL.replace(/\/$/, '')}${props.image.src}`,
+const delivery = computed(() =>
+  imageDeliveryAttributes(props.image.src, config.app.baseURL),
+)
+const imageStyle = computed(() =>
+  delivery.value.width && delivery.value.height
+    ? {
+        '--museum-image-width': `${delivery.value.width}px`,
+        '--museum-image-ratio': delivery.value.width / delivery.value.height,
+      }
+    : undefined,
 )
 </script>
 
@@ -19,6 +29,7 @@ const src = computed(
   <button
     ref="trigger"
     class="museum-image"
+    :style="imageStyle"
     type="button"
     aria-haspopup="dialog"
     :aria-label="t('imageViewer.open', { title: image.alt })"
@@ -26,7 +37,7 @@ const src = computed(
     @click="open(images ?? [image], index ?? 0, trigger!)"
   >
     <!-- eslint-disable vue/html-self-closing -->
-    <img :src="src" :alt="image.alt" />
+    <img v-bind="delivery" :alt="image.alt" :loading="imageLoading ?? 'lazy'" />
     <!-- eslint-enable vue/html-self-closing -->
     <span class="museum-image__zoom" aria-hidden="true">
       <svg
@@ -47,7 +58,10 @@ const src = computed(
 .museum-image {
   position: relative;
   display: block;
-  width: fit-content;
+  width: min(
+    var(--museum-image-width, 100%),
+    calc(var(--museum-image-max-height, 28rem) * var(--museum-image-ratio, 1))
+  );
   max-width: 100%;
   border: 0;
   padding: 0;
@@ -57,7 +71,7 @@ const src = computed(
 
 .museum-image img {
   display: block;
-  width: auto;
+  width: 100%;
   max-width: 100%;
   height: auto;
   max-height: var(--museum-image-max-height, 28rem);

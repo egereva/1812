@@ -29,6 +29,9 @@ import {
   getPlaceBySlug,
   getPlaces,
   getSourceById,
+  getSourceGroups,
+  getSources,
+  getSiteContent,
   getTimelineEventById,
   getTimelineEventBySlug,
   getTimelineEvents,
@@ -43,6 +46,109 @@ import {
 import type { ContentCatalog, TimelineEvent } from '../shared/types/content.ts'
 
 const ru = getCatalog('ru')
+
+test('Dictionary Timeline relations preserve the approved coverage and chronological order', () => {
+  for (const locale of ['ru', 'en']) {
+    const entries = getDictionaryEntries(locale)
+    const groups = entries.map((entry) =>
+      resolveRelatedContent(locale, 'dictionary', entry.id),
+    )
+    assert.equal(groups.filter((group) => group.timeline.length).length, 14)
+    assert.equal(
+      groups.reduce((count, group) => count + group.timeline.length, 0),
+      38,
+    )
+    assert.equal(
+      groups.filter((group) => !group.timeline.length && !group.places.length)
+        .length,
+      11,
+    )
+    for (const group of groups) {
+      assert.deepEqual(group.timeline, sortTimelineEvents(group.timeline))
+      assert.equal(
+        new Set(group.timeline.map((event) => event.id)).size,
+        group.timeline.length,
+      )
+    }
+  }
+})
+
+test('Sources grouping preserves all 68 records, metadata, order and bilingual IDs', () => {
+  for (const locale of ['ru', 'en']) {
+    const sources = getSources(locale)
+    const groups = getSourceGroups(locale)
+    assert.equal(groups.research.length, 26)
+    assert.equal(groups.media.length, 42)
+    const grouped = [...groups.research, ...groups.media]
+    assert.equal(grouped.length, sources.length)
+    assert.equal(new Set(grouped.map((source) => source.id)).size, 68)
+    assert.deepEqual(
+      groups.research,
+      sources.filter((source) => source.type !== 'media'),
+    )
+    assert.deepEqual(
+      groups.media,
+      sources.filter((source) => source.type === 'media'),
+    )
+    for (const source of grouped) {
+      assert.equal(
+        source,
+        sources.find((record) => record.id === source.id),
+      )
+      assert.ok(source.title.trim())
+      assert.ok(source.url && new URL(source.url).protocol === 'https:')
+    }
+    const sharedPdf = sources.find(
+      (source) => source.id === 'src-mos-cemetery',
+    )!.url
+    assert.equal(grouped.filter((source) => source.url === sharedPdf).length, 2)
+  }
+  const ruGroups = getSourceGroups('ru')
+  const enGroups = getSourceGroups('en')
+  for (const group of ['research', 'media'] as const) {
+    assert.deepEqual(
+      ruGroups[group].map((source) => source.id),
+      enGroups[group].map((source) => source.id),
+    )
+    assert.deepEqual(
+      ruGroups[group].map((source) => source.url),
+      enGroups[group].map((source) => source.url),
+    )
+  }
+})
+
+test('About content has bilingual narrative and localized exploration parity', () => {
+  const ruAbout = getSiteContent('ru').about
+  const enAbout = getSiteContent('en').about
+  const sections = ['purpose', 'geography', 'research', 'digital', 'guide']
+  for (const about of [ruAbout, enAbout]) {
+    assert.deepEqual(
+      about.sections.map((section) => section.id),
+      sections,
+    )
+    assert.ok(
+      about.title.trim() && about.description.trim() && about.lead.trim(),
+    )
+    assert.ok(about.exploreLabel.trim())
+    for (const section of about.sections) {
+      assert.ok(section.title.trim())
+      assert.ok(section.paragraphs.length > 0)
+      assert.ok(section.paragraphs.every((paragraph) => paragraph.trim()))
+    }
+    assert.deepEqual(
+      about.links.map((link) => link.route),
+      ['/map', '/timeline', '/dictionary', '/sources'],
+    )
+    assert.ok(about.links.every((link) => link.label.trim()))
+    const digital = about.sections.find((section) => section.id === 'digital')!
+    assert.match(digital.paragraphs.join(' '), /Visual Studio Code/)
+    assert.match(digital.paragraphs.join(' '), /Codex/)
+  }
+  assert.deepEqual(
+    ruAbout.sections.map((section) => section.paragraphs.length),
+    enAbout.sections.map((section) => section.paragraphs.length),
+  )
+})
 
 test('Interactive Place comparison uses exactly four sourced bilingual pairs', () => {
   const expected = [
