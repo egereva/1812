@@ -5,8 +5,10 @@ const { locale } = useI18n()
 const localePath = useLocalePath()
 const about = computed(() => getSiteContent(locale.value).about)
 
-useHead(() => ({ title: `${about.value.title} — 1812` }))
-useSeoMeta({ description: () => about.value.description })
+usePageSeo(
+  () => `${about.value.title} — 1812`,
+  () => about.value.description,
+)
 </script>
 
 <template>

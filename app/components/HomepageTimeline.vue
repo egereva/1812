@@ -204,20 +204,24 @@ function hideLeavingEvent(element: Element) {
             :to="localePath(`/timeline/${event.slug}`)"
             @focus="revealStripItem"
           >
-            <!-- eslint-disable vue/html-self-closing -->
-            <img
+            <span
               v-if="event.artwork"
-              v-bind="
-                imageDeliveryAttributes(
-                  event.artwork.src,
-                  config.app.baseURL,
-                  'auto, 180px',
-                )
-              "
-              :alt="event.artwork.alt"
-              loading="lazy"
-            />
-            <!-- eslint-enable vue/html-self-closing -->
+              class="home-timeline__strip-media media-hover"
+            >
+              <!-- eslint-disable vue/html-self-closing -->
+              <img
+                v-bind="
+                  imageDeliveryAttributes(
+                    event.artwork.src,
+                    config.app.baseURL,
+                    'auto, 180px',
+                  )
+                "
+                :alt="event.artwork.alt"
+                loading="lazy"
+              />
+              <!-- eslint-enable vue/html-self-closing -->
+            </span>
             <time
               :datetime="event.dateOldStyle"
               :aria-label="
@@ -249,7 +253,9 @@ function hideLeavingEvent(element: Element) {
       </ol>
       <div class="home-timeline__bottom">
         <p>{{ t('home.timeline.oldStyle') }}</p>
-        <NuxtLink class="home-timeline__cta" :to="localePath('/timeline')"
+        <NuxtLink
+          class="home-timeline__cta editorial-link"
+          :to="localePath('/timeline')"
           >{{ t('home.timeline.cta') }}
           <span aria-hidden="true">↗</span></NuxtLink
         >
@@ -481,7 +487,11 @@ h3 span {
     color: inherit;
     text-decoration: none;
   }
-  .home-timeline__strip-link img {
+  .home-timeline__strip-media {
+    display: block;
+  }
+  .home-timeline__strip-media img {
+    display: block;
     width: 100%;
     aspect-ratio: 16 / 10;
     object-fit: contain;

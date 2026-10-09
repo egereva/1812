@@ -1,11 +1,10 @@
 <script setup lang="ts">
-const { locale } = useI18n()
 const route = useRoute()
 const isHomepage = computed(() =>
   ['/', '/en'].includes(route.path.replace(/\/$/, '') || '/'),
 )
 
-useHead(() => ({ htmlAttrs: { lang: locale.value === 'en' ? 'en' : 'ru' } }))
+useSiteSeo()
 </script>
 
 <template>

@@ -2,6 +2,7 @@ import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 import { pathToFileURL } from 'node:url'
 import test from 'node:test'
+import { detailSeoTitle } from '../shared/seo/config.ts'
 import { compileScript, parse } from '@vue/compiler-sfc'
 import { computed, createSSRApp, defineComponent, h, ref } from 'vue'
 import { renderToString } from '@vue/server-renderer'
@@ -128,6 +129,10 @@ for (const locale of ['ru', 'en']) {
         useSeoMeta: (value) => {
           description = value.description()
         },
+        usePageSeo: (getTitle, getDescription, section) => {
+          title = detailSeoTitle(getTitle(), section?.())
+          description = getDescription()
+        },
         createError: (value) => new Error(value.statusMessage),
       })
       const app = createSSRApp(page)
@@ -150,7 +155,13 @@ for (const locale of ['ru', 'en']) {
       assert.ok(detail, 'Place article is rendered on the server')
       assert.equal((detail.match(/<h1[\s>]/g) ?? []).length, 1)
       assert.ok(detail.includes(escape(place.title)))
-      assert.equal(title, place.seo?.title ?? place.title)
+      assert.equal(
+        title,
+        detailSeoTitle(
+          place.seo?.title ?? place.title,
+          messages.place.detail.places,
+        ),
+      )
       assert.equal(
         description,
         place.seo?.description ?? place.shortDescription,

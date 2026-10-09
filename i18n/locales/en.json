@@ -13,6 +13,8 @@
     "footer": "Footer navigation",
     "language": "Site language",
     "menu": "Menu",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
     "close": "Close"
   },
   "language": {
@@ -57,6 +59,8 @@
     "legend": "Legend",
     "canvas": "Interactive map of places",
     "readMore": "Read more",
+    "expandDetails": "Show details",
+    "collapseDetails": "Collapse",
     "showOnMap": "Show on map",
     "nearby": "Nearby places",
     "overlapLabel": "Nearby places: {titles}. Open choices",
@@ -122,7 +126,12 @@
       "label": "Homepage images",
       "previous": "Previous",
       "next": "Next",
-      "source": "Image source"
+      "source": "Image source",
+      "pause": "Pause slideshow",
+      "play": "Resume slideshow",
+      "playing": "Slideshow is playing",
+      "paused": "Slideshow is paused",
+      "reducedMotion": "Automatic playback is disabled by your reduced motion preference"
     },
     "dictionary": {
       "kicker": "Names and ideas",
@@ -152,6 +161,7 @@
     "timelineEvent": "Event"
   },
   "footer": {
+    "title": "Western Moscow",
     "description": "Historical guide",
     "edition": "The War of 1812",
     "languages": "Русский / English"

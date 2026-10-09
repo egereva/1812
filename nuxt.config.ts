@@ -1,5 +1,7 @@
 import { existsSync } from 'node:fs'
 import { resolve } from 'node:path'
+import { validateBaseURL, validateSiteOrigin } from './shared/seo/config'
+import { getPublicSeoRoutes } from './shared/seo/routes'
 import {
   getTimelineArtwork,
   timelineArtworkDictionaryIds,
@@ -10,10 +12,11 @@ import {
   getDictionaryEntries,
   getCatalogProblems,
   getDanglingRelations,
-  getDynamicPrerenderRoutes,
 } from './shared/content/index.ts'
 
 const contentProblems = getCatalogProblems()
+const siteOrigin = validateSiteOrigin(process.env.NUXT_PUBLIC_SITE_URL)
+const deploymentBaseURL = validateBaseURL(process.env.NUXT_APP_BASE_URL || '/')
 if (contentProblems.length)
   throw new Error(`Content errors:\n${contentProblems.join('\n')}`)
 for (const warning of getDanglingRelations())
@@ -26,10 +29,11 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/i18n', '@nuxt/eslint'],
   css: ['~/assets/css/main.css', '~/assets/css/museum-viewer.css'],
   app: {
-    baseURL: process.env.NUXT_APP_BASE_URL || '/',
+    baseURL: deploymentBaseURL,
   },
   runtimeConfig: {
     public: {
+      siteUrl: siteOrigin,
       yandexMapsApiKey: '',
       timelineMediaAvailableSrcs: [
         ...new Set(
@@ -63,6 +67,7 @@ export default defineNuxtConfig({
     },
   },
   i18n: {
+    baseUrl: siteOrigin,
     defaultLocale: 'ru',
     strategy: 'prefix_except_default',
     locales: [
@@ -73,7 +78,11 @@ export default defineNuxtConfig({
   },
   nitro: {
     prerender: {
-      routes: ['/', '/en/', ...getDynamicPrerenderRoutes()],
+      routes: [
+        ...getPublicSeoRoutes(),
+        '/robots.txt',
+        ...(siteOrigin ? ['/sitemap.xml'] : []),
+      ],
     },
   },
 })

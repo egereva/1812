@@ -130,6 +130,7 @@ export interface SiteContent {
   siteDescription: string
   hero: HeroSlide[]
   home: { dictionary: string[]; timeline: string[]; map: string[] }
+  homeIntroduction: { eyebrow: string; title: string; paragraphs: string[] }
   about: {
     title: string
     description: string

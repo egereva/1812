@@ -1,6 +1,6 @@
 # Stage 6.3.5 — Final Map QA and Stage 6.3 closure
 
-**Stage 6.3.5 — COMPLETE. Stage 6.3 — COMPLETE. Stage 6 remains IN PROGRESS. Stage 7 NOT STARTED.** QA performed on 2026-10-06 against the approved final implementation, using real Yandex API 3.0 in Chromium and the generated static output.
+**Status at the original 2026-10-06 audit: Stage 6.3.5 — COMPLETE. Stage 6.3 — COMPLETE. Stage 6 IN PROGRESS. Stage 7 NOT STARTED.** Current status: **Stage 6 - COMPLETE / ACCEPTED**, following [official closure and user-reported manual live-provider acceptance 7/7](stage6-final-corrective-pass.md#official-stage-6-closure---2026-10-08). The technical QA below remains the original evidence; it was not rerun for closure. QA performed on 2026-10-06 against the approved final implementation, using real Yandex API 3.0 in Chromium and the generated static output.
 
 ## Defect and fix
 

@@ -43,11 +43,11 @@ const imageCaption = computed(() =>
     : undefined,
 )
 
-useHead(() => ({ title: record.value.seo?.title ?? record.value.title }))
-useSeoMeta({
-  description: () =>
-    record.value.seo?.description ?? record.value.shortDescription,
-})
+usePageSeo(
+  () => record.value.seo?.title ?? record.value.title,
+  () => record.value.seo?.description ?? record.value.shortDescription,
+  () => t('navigation.dictionary'),
+)
 </script>
 
 <template>

@@ -39,7 +39,14 @@
   --border-rule: 1px solid var(--color-border);
   --radius-control: 0.25rem;
   --duration-short: 180ms;
+  --header-height: 5.75rem;
   --z-header: 20;
   --z-menu: 30;
   --z-skip: 40;
+}
+
+@media (max-width: 56.25rem) {
+  :root {
+    --header-height: 4.75rem;
+  }
 }

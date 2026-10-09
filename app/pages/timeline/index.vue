@@ -28,8 +28,10 @@ const events = computed(() =>
       : undefined,
   })),
 )
-useHead(() => ({ title: t('navigation.timeline') }))
-useSeoMeta({ description: () => t('home.timeline.description') })
+usePageSeo(
+  () => t('navigation.timeline'),
+  () => t('home.timeline.description'),
+)
 </script>
 
 <template>
@@ -116,6 +118,9 @@ useSeoMeta({ description: () => t('home.timeline.description') })
 </template>
 
 <style scoped>
+.timeline-event__text {
+  min-width: 0;
+}
 .sr-only {
   position: absolute;
   width: 1px;
@@ -126,6 +131,7 @@ useSeoMeta({ description: () => t('home.timeline.description') })
   white-space: nowrap;
 }
 .timeline-page {
+  overflow-wrap: anywhere;
   padding-block: var(--space-16) var(--space-24);
 }
 .timeline-page__intro {
@@ -355,7 +361,7 @@ useSeoMeta({ description: () => t('home.timeline.description') })
   margin-top: 0;
 }
 .timeline-event--wide .timeline-event__body {
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   padding-inline: 0;
 }
 .timeline-event--wide .timeline-event__text {
@@ -368,7 +374,7 @@ useSeoMeta({ description: () => t('home.timeline.description') })
   --artwork-muted: #d8ccd0;
 }
 .timeline-event--burgundy .timeline-event__body {
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   padding-block: clamp(3rem, 7vw, 7rem);
 }
 .timeline-event--graphite .timeline-event__body {
@@ -407,7 +413,7 @@ useSeoMeta({ description: () => t('home.timeline.description') })
     padding-left: var(--space-8);
   }
   .timeline-event--landmark .timeline-event__body {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: var(--space-8);
   }
   .timeline-event--landmark .timeline-event__title {

@@ -2,12 +2,21 @@
 import type { MediaAsset } from '#shared/types/content'
 import { imageDeliveryAttributes } from '~/utils/imageDelivery'
 
-const props = defineProps<{
-  image: MediaAsset
-  images?: MediaAsset[]
-  index?: number
-  imageLoading?: 'lazy' | 'eager'
-}>()
+const props = withDefaults(
+  defineProps<{
+    image: MediaAsset
+    images?: MediaAsset[]
+    index?: number
+    imageLoading?: 'lazy' | 'eager'
+    hoverZoom?: boolean
+  }>(),
+  {
+    hoverZoom: true,
+    images: undefined,
+    index: undefined,
+    imageLoading: undefined,
+  },
+)
 const { t } = useI18n()
 const config = useRuntimeConfig()
 const trigger = useTemplateRef<HTMLButtonElement>('trigger')
@@ -29,6 +38,7 @@ const imageStyle = computed(() =>
   <button
     ref="trigger"
     class="museum-image"
+    :class="{ 'media-hover': hoverZoom !== false }"
     :style="imageStyle"
     type="button"
     aria-haspopup="dialog"

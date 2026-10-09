@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { Place } from '#shared/types/content'
 import { statusLayer } from '~/data/mapPresentation'
+import { museumIvoryCustomization } from '~/data/homepageMapPalettes'
 import approvedMarkerSvg from '../../public/icons/1812-map-marker-filled.svg?raw'
 import {
   loadYandexMaps,
@@ -90,7 +91,11 @@ async function initialize() {
       },
     })
     map.addChild(cameraListener)
-    map.addChild(new api.YMapDefaultSchemeLayer())
+    map.addChild(
+      new api.YMapDefaultSchemeLayer({
+        customization: museumIvoryCustomization,
+      }),
+    )
     map.addChild(new api.YMapDefaultFeaturesLayer())
     for (const place of props.places) {
       const marker = document.createElement('div')

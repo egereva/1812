@@ -85,11 +85,11 @@ const chronologicalLinks = computed(() =>
   ),
 )
 
-useHead(() => ({ title: record.value.seo?.title ?? record.value.title }))
-useSeoMeta({
-  description: () =>
-    record.value.seo?.description ?? record.value.shortDescription,
-})
+usePageSeo(
+  () => record.value.seo?.title ?? record.value.title,
+  () => record.value.seo?.description ?? record.value.shortDescription,
+  () => t('navigation.timeline'),
+)
 </script>
 
 <template>
@@ -163,7 +163,7 @@ useSeoMeta({
           <h3>{{ group.label }}</h3>
           <NuxtLink
             v-if="group.path === '/places'"
-            class="timeline-detail__map-link"
+            class="timeline-detail__map-link editorial-link"
             :to="mapEventUrl(localePath('/map'), record.slug)"
             >{{ t('timeline.detail.viewOnMap') }}
             <span aria-hidden="true">→</span></NuxtLink

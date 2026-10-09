@@ -128,8 +128,10 @@ function onEscape(event: KeyboardEvent) {
   event.stopPropagation()
   closePlace()
 }
-useHead(() => ({ title: `${t('navigation.map')} — 1812` }))
-useSeoMeta({ description: () => t('map.intro') })
+usePageSeo(
+  () => `${t('navigation.map')} — 1812`,
+  () => t('map.intro'),
+)
 </script>
 
 <template>
@@ -267,7 +269,22 @@ useSeoMeta({ description: () => t('map.intro') })
 
 <style scoped>
 .map-page {
+  color-scheme: dark;
+  --color-bg: #24221f;
+  --color-surface: #2c2926;
+  --color-ink: #eee9df;
+  --color-muted: #bcb5aa;
+  --color-accent: #c58a99;
+  --color-accent-hover: #e0aab7;
+  --color-border: #514b45;
+  --border-rule: 1px solid var(--color-border);
+  --map-marker-medallion: #24221f;
+  --map-marker-history: #d6cebd;
+  --map-marker-memory: #bf8191;
+  --map-panel-shadow: none;
   padding: 1.2rem 0 3rem;
+  background: var(--color-bg);
+  color: var(--color-ink);
 }
 .map-page__heading {
   display: flex;
@@ -296,6 +313,8 @@ useSeoMeta({ description: () => t('map.intro') })
 }
 .map-page__toolbar {
   display: flex;
+  container-type: inline-size;
+  container-name: map-toolbar;
   align-items: center;
   margin-block: 0.9rem 0.65rem;
 }
@@ -331,6 +350,7 @@ useSeoMeta({ description: () => t('map.intro') })
 }
 .map-page__layers {
   display: flex;
+  flex-wrap: wrap;
   border-top: var(--border-rule);
   border-bottom: var(--border-rule);
 }
@@ -345,12 +365,19 @@ useSeoMeta({ description: () => t('map.intro') })
   padding: 0.4rem clamp(0.55rem, 1.7vw, 1.25rem);
   background: transparent;
   color: var(--color-muted);
+  max-width: 100%;
   white-space: nowrap;
 }
 .map-page__layers button[aria-pressed='true'] {
   border-bottom-color: var(--color-accent);
   color: var(--color-accent);
   font-weight: 700;
+}
+.map-page__layers button:hover {
+  color: var(--color-accent-hover);
+}
+.map-page__layers button:active {
+  background: var(--color-surface);
 }
 .map-page__layers button span {
   font-size: 0.8rem;
@@ -363,7 +390,7 @@ useSeoMeta({ description: () => t('map.intro') })
   height: clamp(31rem, calc(100svh - 14rem), 52rem);
   overflow: hidden;
   border: var(--border-rule);
-  background: #e5e1d8;
+  background: var(--color-bg);
 }
 .map-page__state {
   position: absolute;
@@ -372,11 +399,11 @@ useSeoMeta({ description: () => t('map.intro') })
   display: grid;
   place-items: center;
   padding: 2rem;
-  background: #e5e1d8;
+  background: var(--color-bg);
   text-align: center;
 }
 .map-page__state--error {
-  background: linear-gradient(135deg, #eeeae1, #dedbd2);
+  background: var(--color-bg);
 }
 .map-page__state p {
   max-width: 28rem;
@@ -449,6 +476,8 @@ useSeoMeta({ description: () => t('map.intro') })
   align-items: center;
   min-height: 44px;
   padding: 0.2rem 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }
 .map-page__legend {
   margin-top: 0.25rem;
@@ -477,10 +506,10 @@ useSeoMeta({ description: () => t('map.intro') })
 .map-page__color {
   width: 1rem;
   height: 0.5rem;
-  background: var(--color-ink);
+  background: var(--map-marker-history);
 }
 .map-page__color--memory {
-  background: var(--color-accent);
+  background: var(--map-marker-memory);
 }
 @media (max-width: 850px) {
   .map-page__frame {
@@ -525,7 +554,7 @@ useSeoMeta({ description: () => t('map.intro') })
     flex: 1;
   }
   .map-page__frame {
-    height: calc(100svh - 12rem);
+    height: calc(100svh - 12rem - var(--header-height));
     min-height: 25rem;
   }
   .map-page__index ol {
@@ -536,6 +565,13 @@ useSeoMeta({ description: () => t('map.intro') })
   }
   .map-page__fallback ol {
     columns: 1;
+  }
+}
+@container map-toolbar (width < 16rem) {
+  .map-page__layers button {
+    flex: 1 0 auto;
+    white-space: normal;
+    overflow-wrap: anywhere;
   }
 }
 </style>

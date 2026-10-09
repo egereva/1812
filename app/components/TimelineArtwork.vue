@@ -3,10 +3,14 @@ import { getSourceById } from '#shared/content/index'
 import type { MediaAsset } from '#shared/types/content'
 import { normalizeMediaCaption } from '~/utils/mediaCaption'
 
-const props = defineProps<{
-  image: MediaAsset
-  imageLoading?: 'lazy' | 'eager'
-}>()
+const props = withDefaults(
+  defineProps<{
+    image: MediaAsset
+    imageLoading?: 'lazy' | 'eager'
+    hoverZoom?: boolean
+  }>(),
+  { hoverZoom: true, imageLoading: undefined },
+)
 const { locale } = useI18n()
 const caption = computed(() =>
   normalizeMediaCaption(
@@ -23,7 +27,11 @@ const caption = computed(() =>
 
 <template>
   <figure class="timeline-artwork">
-    <MuseumImage :image="image" :image-loading="imageLoading" />
+    <MuseumImage
+      :image="image"
+      :image-loading="imageLoading"
+      :hover-zoom="hoverZoom"
+    />
     <figcaption>
       <span v-if="caption.caption" class="timeline-artwork__caption">{{
         caption.caption

@@ -98,6 +98,7 @@ async function render(locale, state, query = {}) {
     useRuntimeConfig: () => ({ public: {} }),
     useHead() {},
     useSeoMeta() {},
+    usePageSeo() {},
   })
   const app = createSSRApp(page)
   app.component('NuxtLink', link)

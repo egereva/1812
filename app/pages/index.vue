@@ -8,6 +8,8 @@ import { getReadyHeroSlides } from '../data/heroSlides'
 
 const { locale, t } = useI18n()
 const localePath = useLocalePath()
+const home = ref<HTMLElement | null>(null)
+useHomepageReveal(home)
 const readyHeroSlides = getReadyHeroSlides(
   useRuntimeConfig().public.heroMediaAvailableIds,
 )
@@ -29,12 +31,14 @@ const places = computed(() =>
     mapPlaces.value.filter((place) => place.id === id),
   ),
 )
-useHead(() => ({ title: site.value.siteTitle }))
-useSeoMeta({ description: () => site.value.siteDescription })
+usePageSeo(
+  () => site.value.siteTitle,
+  () => site.value.siteDescription,
+)
 </script>
 
 <template>
-  <div class="home">
+  <div ref="home" class="home">
     <section
       class="home-hero"
       :class="{ 'home-hero--with-media': readyHeroSlides.length === 3 }"
@@ -42,11 +46,13 @@ useSeoMeta({ description: () => site.value.siteDescription })
     >
       <div class="home-hero__body">
         <div class="home-hero__identity page-container">
-          <h1 id="home-title" :aria-label="site.siteTitle">
-            <span class="home-hero__year">1812.</span>
-            <span class="home-hero__title">{{ heroTitle }}</span>
-          </h1>
-          <p class="home-hero__description">{{ site.siteDescription }}</p>
+          <div class="home-hero__copy">
+            <h1 id="home-title" :aria-label="site.siteTitle">
+              <span class="home-hero__year">1812.</span>
+              <span class="home-hero__title">{{ heroTitle }}</span>
+            </h1>
+            <p class="home-hero__description">{{ site.siteDescription }}</p>
+          </div>
         </div>
         <HeroSlider
           v-if="readyHeroSlides.length === 3"
@@ -57,7 +63,27 @@ useSeoMeta({ description: () => site.value.siteDescription })
     </section>
 
     <section
+      class="home-introduction page-container"
+      data-reveal
+      aria-labelledby="home-introduction-title"
+    >
+      <header>
+        <p class="eyebrow">{{ site.homeIntroduction.eyebrow }}</p>
+        <h2 id="home-introduction-title">{{ site.homeIntroduction.title }}</h2>
+      </header>
+      <div class="home-introduction__prose">
+        <p
+          v-for="paragraph in site.homeIntroduction.paragraphs"
+          :key="paragraph"
+        >
+          {{ paragraph }}
+        </p>
+      </div>
+    </section>
+
+    <section
       class="home-dictionary page-container"
+      data-reveal
       aria-labelledby="dictionary-title"
     >
       <div class="home-dictionary__layout">
@@ -65,7 +91,10 @@ useSeoMeta({ description: () => site.value.siteDescription })
           <p class="eyebrow">{{ t('home.dictionary.kicker') }}</p>
           <h2 id="dictionary-title">{{ t('navigation.dictionary') }}</h2>
           <p>{{ t('home.dictionary.description') }}</p>
-          <NuxtLink class="home-link" :to="localePath('/dictionary')">
+          <NuxtLink
+            class="home-link editorial-link"
+            :to="localePath('/dictionary')"
+          >
             {{ t('home.dictionary.cta') }} <span aria-hidden="true">↗</span>
           </NuxtLink>
         </div>
@@ -92,17 +121,20 @@ useSeoMeta({ description: () => site.value.siteDescription })
       </div>
     </section>
 
-    <HomepageTimeline />
+    <HomepageTimeline data-reveal />
 
-    <section class="home-map page-container" aria-labelledby="map-title">
-      <div class="home-rule" aria-hidden="true" />
+    <section
+      class="home-map page-container"
+      data-reveal
+      aria-labelledby="map-title"
+    >
       <div class="home-map__layout">
         <div class="home-map__content">
           <p class="eyebrow">{{ t('map.kicker') }}</p>
           <h2 id="map-title">{{ t('navigation.map') }}</h2>
           <p>{{ t('home.map.description', { count: mapPlaces.length }) }}</p>
-          <NuxtLink class="home-link" :to="localePath('/map')">
-            {{ t('home.map.cta') }} <span aria-hidden="true">→</span>
+          <NuxtLink class="home-link editorial-link" :to="localePath('/map')">
+            {{ t('home.map.cta') }} <span aria-hidden="true">↗</span>
           </NuxtLink>
         </div>
         <div class="home-map__fragment">
@@ -124,21 +156,9 @@ useSeoMeta({ description: () => site.value.siteDescription })
 .home {
   overflow: hidden;
 }
-.home-rule {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-4);
-  border-top: var(--border-rule);
-  padding-top: var(--space-2);
-  color: var(--color-muted);
-  font-size: var(--text-caption);
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
 .home-hero {
   position: relative;
+  overflow: clip;
 }
 .home-hero__body {
   position: relative;
@@ -147,20 +167,34 @@ useSeoMeta({ description: () => site.value.siteDescription })
 .home-hero--with-media .home-hero__body {
   min-height: 0;
 }
-.home-hero--with-media .home-hero__body::after {
+.home-hero__copy {
+  position: relative;
+  isolation: isolate;
+  width: min(100%, clamp(30rem, 42vw, 64rem));
+}
+.home-hero--with-media .home-hero__copy::before {
   position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  width: min(65rem, 80vw);
-  height: 100%;
-  background: radial-gradient(
-    ellipse 50% 47% at 38% 49%,
-    rgb(243 240 232 / 68%),
-    rgb(243 240 232 / 56%) 40%,
-    rgb(243 240 232 / 30%) 70%,
-    transparent 100%
-  );
+  z-index: -1;
+  inset: calc(-1 * clamp(4rem, 6vw, 7rem)) calc(-1 * clamp(4rem, 8vw, 8rem));
+  background:
+    radial-gradient(
+      ellipse 80% 75% at 35% 35%,
+      rgb(243 240 232 / 68%) 0%,
+      rgb(243 240 232 / 56%) 40%,
+      rgb(243 240 232 / 30%) 70%,
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse 65% 30% at 35% 70%,
+      rgb(243 240 232 / 46%) 0%,
+      rgb(243 240 232 / 38%) 40%,
+      rgb(243 240 232 / 18%) 70%,
+      transparent 100%
+    );
+  mask-image:
+    linear-gradient(to right, transparent, #000 12%, #000 80%, transparent),
+    linear-gradient(to bottom, transparent, #000 12%, #000 90%, transparent);
+  mask-composite: intersect;
   content: '';
   pointer-events: none;
 }
@@ -172,7 +206,7 @@ useSeoMeta({ description: () => site.value.siteDescription })
 .home-hero h1 {
   display: grid;
   gap: var(--space-2);
-  max-width: 15ch;
+  max-width: 100%;
   margin-bottom: var(--space-8);
   font-family: var(--font-display);
   font-weight: 400;
@@ -180,17 +214,17 @@ useSeoMeta({ description: () => site.value.siteDescription })
 }
 .home-hero__year {
   color: var(--color-accent);
-  font-size: clamp(7rem, 13vw, 12rem);
+  font-size: clamp(7rem, min(12vw, 23svh), 15rem);
   line-height: 0.9;
 }
 .home-hero__title {
-  font-size: clamp(3rem, 5vw, 4.5rem);
+  font-size: clamp(3rem, min(4.2vw + 0.5rem, 11svh), 7rem);
   line-height: 1.08;
 }
 .home-hero__description {
-  max-width: 30rem;
+  max-width: max(30rem, 38ch);
   margin-bottom: 0;
-  font-size: clamp(1.125rem, 1.4vw, 1.375rem);
+  font-size: clamp(1.125rem, 0.8vw + 0.5rem, 1.875rem);
   line-height: 1.55;
 }
 .home-hero--with-media .home-hero__identity {
@@ -206,6 +240,28 @@ useSeoMeta({ description: () => site.value.siteDescription })
 .home-hero--with-media .home-hero__slider {
   position: relative;
   height: 100svh;
+}
+.home-introduction {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  gap: var(--grid-gap);
+  padding-block: var(--space-24) var(--space-12);
+}
+.home-introduction h2 {
+  max-width: 14ch;
+  margin-bottom: 0;
+  font-size: var(--text-h2);
+}
+.home-introduction__prose {
+  max-width: var(--container-text);
+  font-size: var(--text-body-lg);
+  line-height: 1.7;
+}
+.home-introduction__prose p {
+  margin-bottom: var(--space-6);
+}
+.home-introduction__prose p:last-child {
+  margin-bottom: 0;
 }
 .home-dictionary,
 .home-map {
@@ -306,7 +362,8 @@ useSeoMeta({ description: () => site.value.siteDescription })
   grid-template-areas: 'fragment content';
   gap: clamp(2rem, 7vw, 8rem);
   align-items: center;
-  padding-top: var(--space-12);
+  /* Preserve the approved spacing after removing this section's 1px rule and 8px padding. */
+  padding-top: calc(var(--space-12) + var(--space-2) + 1px);
 }
 .home-map__content {
   grid-area: content;
@@ -344,9 +401,6 @@ useSeoMeta({ description: () => site.value.siteDescription })
   color: var(--color-accent);
 }
 @media (max-width: 56.25rem) {
-  .home-hero--with-media .home-hero__body::after {
-    width: min(46rem, 90vw);
-  }
   .home-hero__identity {
     padding-top: calc(4.75rem + var(--space-12));
   }
@@ -363,16 +417,6 @@ useSeoMeta({ description: () => site.value.siteDescription })
   }
 }
 @media (max-width: 37.5rem) {
-  .home-hero--with-media .home-hero__body::after {
-    width: 100%;
-    background: radial-gradient(
-      ellipse 72% 37% at 36% 44%,
-      rgb(243 240 232 / 74%),
-      rgb(243 240 232 / 60%) 45%,
-      rgb(243 240 232 / 35%) 72%,
-      transparent 100%
-    );
-  }
   .home-hero__identity {
     padding-top: calc(4.75rem + var(--space-8));
   }
@@ -399,6 +443,11 @@ useSeoMeta({ description: () => site.value.siteDescription })
   .home-map {
     padding-block: var(--space-12) var(--space-16);
   }
+  .home-introduction {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-8);
+    padding-block: var(--space-12);
+  }
   .home-map {
     padding-bottom: var(--space-12);
   }
@@ -410,6 +459,7 @@ useSeoMeta({ description: () => site.value.siteDescription })
   }
   .home-map__layout {
     gap: var(--space-8);
+    padding-top: calc(var(--space-12) + var(--space-2) + 1px);
   }
   .home-dictionary__alphabet {
     font-size: clamp(2.5rem, 12vw, 4rem);

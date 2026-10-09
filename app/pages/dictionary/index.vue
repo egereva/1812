@@ -56,8 +56,10 @@ function goToLetter(event: MouseEvent, id: string) {
   window.history.replaceState(null, '', `#${id}`)
 }
 
-useHead(() => ({ title: t('navigation.dictionary') }))
-useSeoMeta({ description: () => t('home.dictionary.description') })
+usePageSeo(
+  () => t('navigation.dictionary'),
+  () => t('home.dictionary.description'),
+)
 </script>
 
 <template>

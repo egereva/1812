@@ -9,6 +9,7 @@ import ts from 'typescript'
 import { ref } from 'vue'
 import { getPlaces } from '../shared/content/index.ts'
 import { statusLayer } from '../app/data/mapPresentation.ts'
+import { museumIvoryCustomization } from '../app/data/homepageMapPalettes.ts'
 import { loadYandexMaps } from '../app/utils/yandexMapsLoader.client.ts'
 
 const preview = parse(
@@ -117,7 +118,13 @@ function harness({
   const events = []
   const markers = []
   const locations = []
-  const props = { places: catalog, locale: 'ru', apiKey: key, hovered: false }
+  const schemes = []
+  const props = {
+    places: catalog,
+    locale: 'ru',
+    apiKey: key,
+    hovered: false,
+  }
   let hoverWatcher, updateListener
   let removedListeners = 0
   let mounted, unmount, options, resolve, intersection
@@ -139,7 +146,11 @@ function harness({
         destroys++
       }
     },
-    YMapDefaultSchemeLayer: class {},
+    YMapDefaultSchemeLayer: class {
+      constructor(options) {
+        schemes.push(options)
+      }
+    },
     YMapDefaultFeaturesLayer: class {},
     YMapListener: class {
       constructor(options) {
@@ -160,6 +171,7 @@ function harness({
     'onBeforeUnmount',
     'loadYandexMaps',
     'statusLayer',
+    'museumIvoryCustomization',
     'approvedMarkerSvg',
     'document',
     'window',
@@ -186,6 +198,7 @@ function harness({
             })
           : Promise.resolve(api),
     statusLayer,
+    museumIvoryCustomization,
     '<svg></svg>',
     { createElement: () => ({ dataset: {}, setAttribute() {} }) },
     {
@@ -214,6 +227,7 @@ function harness({
     markers,
     events,
     locations,
+    schemes,
     hover: (value) => {
       props.hovered = value
       hoverWatcher()
@@ -242,6 +256,18 @@ const settle = async () => {
   await Promise.resolve()
   await Promise.resolve()
 }
+
+test('Homepage always passes approved Museum Ivory without changing markers or camera', async () => {
+  const h = harness()
+  h.mounted()
+  await settle()
+  assert.deepEqual(h.schemes, [{ customization: museumIvoryCustomization }])
+  assert.equal(h.markers.length, 13)
+  assert.deepEqual(h.options.behaviors, [])
+  assert.deepEqual(h.options.margin, [40, 32, 48, 32])
+  assert.deepEqual(h.locations, [])
+  h.unmount()
+})
 
 test('hover uses absolute +0.3 targets for 400ms and restores the first settled fitted camera', async () => {
   const h = harness()

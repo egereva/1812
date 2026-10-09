@@ -16,8 +16,10 @@ const counts = computed(() => ({
 }))
 const sourceHost = (url: string) => new URL(url).hostname
 
-useHead(() => ({ title: `${t('navigation.sources')} — 1812` }))
-useSeoMeta({ description: () => t('sources.description') })
+usePageSeo(
+  () => `${t('navigation.sources')} — 1812`,
+  () => t('sources.description'),
+)
 </script>
 
 <template>

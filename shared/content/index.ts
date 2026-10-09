@@ -33,6 +33,7 @@ export const contentRelease = {
 function siteContent(site: {
   title: string
   description: string
+  homeIntroduction: SiteContent['homeIntroduction']
   about: SiteContent['about']
 }): SiteContent {
   return {
@@ -40,6 +41,7 @@ function siteContent(site: {
     siteDescription: site.description,
     hero: [],
     home: { dictionary: [], timeline: [], map: [] },
+    homeIntroduction: site.homeIntroduction,
     about: site.about,
   }
 }

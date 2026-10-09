@@ -2,6 +2,15 @@
   "title": "1812. Western Moscow",
   "description": "An interactive guide to the War of 1812 and the places associated with it in today’s Western Administrative Okrug of Moscow.",
   "contentStatus": "final-en-translated-from-audited-ru-2026-09-25",
+  "homeIntroduction": {
+    "eyebrow": "Historical context",
+    "title": "1812: events and memory",
+    "paragraphs": [
+      "The Patriotic War of 1812 began with Napoleon’s Grande Armée invading the Russian Empire. The Battle of Borodino was one of its key events, but it did not result in the destruction of the Russian army.",
+      "At the Military Council at Fili, Kutuzov decided to abandon Moscow without another battle in order to preserve the army. After the Russian troops left the city, the Grande Armée entered Moscow. Napoleon later left Moscow, and the French forces began their retreat.",
+      "In modern western Moscow, historical sites, museums and monuments preserve the memory of these events. The guide connects the course of the war with the city’s geography, distinguishing surviving witnesses, reconstructed buildings and later places of remembrance."
+    ]
+  },
   "about": {
     "title": "About the project",
     "description": "A school research and digital project about the War of 1812, places in western Moscow and historical memory. Materials, sources and how the website was created.",

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { Place } from '#shared/types/content'
+import { museumGraphiteCustomization } from '~/data/mapPalettes'
 import {
   collapsedGroupRepresentatives,
   groupOverlappingPlaces,
@@ -238,8 +239,13 @@ onMounted(async () => {
     if (disposed || !root.value) return
     map = new api.YMap(root.value, {
       location: { center: [37.522, 55.741], zoom },
+      theme: 'dark',
     })
-    map.addChild(new api.YMapDefaultSchemeLayer())
+    map.addChild(
+      new api.YMapDefaultSchemeLayer({
+        customization: museumGraphiteCustomization,
+      }),
+    )
     map.addChild(new api.YMapDefaultFeaturesLayer())
     mapListener = new api.YMapListener({
       onUpdate: ({ location }) => {
@@ -358,7 +364,7 @@ onBeforeUnmount(() => {
   border: 0;
   padding: 0;
   background: transparent;
-  color: var(--color-ink);
+  color: var(--map-marker-history, var(--color-ink));
   cursor: pointer;
 }
 .map-marker__glyph {
@@ -379,7 +385,13 @@ onBeforeUnmount(() => {
     stroke 180ms ease;
 }
 .map-marker--memory {
-  color: var(--color-accent);
+  color: var(--map-marker-memory, var(--color-accent));
+}
+.map-marker__glyph circle {
+  fill: var(--map-marker-medallion, #f4efe4);
+}
+.map-marker__glyph path:nth-of-type(4) {
+  stroke: var(--map-marker-medallion, #f4efe4);
 }
 .map-marker:hover .map-marker__glyph,
 .map-marker:focus-visible .map-marker__glyph {
@@ -397,11 +409,11 @@ onBeforeUnmount(() => {
   fill: currentColor;
 }
 .map-marker.is-selected .map-marker__glyph path:nth-of-type(2) {
-  fill: #f4efe4;
-  stroke: #f4efe4;
+  fill: var(--map-marker-medallion, #f4efe4);
+  stroke: var(--map-marker-medallion, #f4efe4);
 }
 .map-marker.is-selected .map-marker__glyph path:nth-of-type(3) {
-  stroke: #f4efe4;
+  stroke: var(--map-marker-medallion, #f4efe4);
 }
 .map-marker.is-selected .map-marker__glyph path:nth-of-type(4) {
   stroke: currentColor;
@@ -412,7 +424,7 @@ onBeforeUnmount(() => {
     transform: scale(1);
   }
   .map-marker.is-selected .map-marker__glyph circle {
-    fill: #f4efe4;
+    fill: var(--map-marker-medallion, #f4efe4);
   }
   .map-marker.is-selected .map-marker__glyph path:nth-of-type(2) {
     fill: currentColor;
@@ -422,7 +434,7 @@ onBeforeUnmount(() => {
     stroke: currentColor;
   }
   .map-marker.is-selected .map-marker__glyph path:nth-of-type(4) {
-    stroke: #f4efe4;
+    stroke: var(--map-marker-medallion, #f4efe4);
   }
 }
 .map-member-chooser {
@@ -437,7 +449,7 @@ onBeforeUnmount(() => {
   border: var(--border-rule);
   padding: 0.75rem 1rem;
   background: var(--color-surface);
-  box-shadow: 0 2px 9px rgb(28 27 25 / 12%);
+  box-shadow: var(--map-panel-shadow, 0 2px 9px rgb(28 27 25 / 12%));
 }
 .map-member-chooser p {
   margin: 0 0 0.25rem;
@@ -450,7 +462,14 @@ onBeforeUnmount(() => {
   border-top: var(--border-rule);
   padding: 0.25rem 0;
   background: transparent;
+  color: var(--color-ink);
   text-align: left;
+}
+.map-member-chooser button:hover {
+  color: var(--color-accent-hover);
+}
+.map-member-chooser button:active {
+  background: var(--color-bg);
 }
 .map-member-chooser button[aria-current='true'] {
   color: var(--color-accent);

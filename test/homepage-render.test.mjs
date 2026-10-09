@@ -17,6 +17,39 @@ const expected = [
 ]
 
 for (const locale of ['ru', 'en']) {
+  test(`${locale} historical introduction is server rendered between Hero and existing sections`, () => {
+    const site = JSON.parse(readFileSync(`content/${locale}/site.json`, 'utf8'))
+    const html = readFileSync(
+      `.output/public/${locale === 'en' ? 'en/' : ''}index.html`,
+      'utf8',
+    )
+    const introduction = html
+      .split('class="home-introduction page-container"')[1]
+      ?.split('</section>')[0]
+    assert.ok(introduction)
+    const escape = (text) =>
+      text
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#39;')
+    for (const text of [
+      site.homeIntroduction.eyebrow,
+      site.homeIntroduction.title,
+      ...site.homeIntroduction.paragraphs,
+    ])
+      assert.ok(introduction.includes(escape(text)))
+    assert.equal((introduction.match(/<h2\b/g) ?? []).length, 1)
+    assert.equal((introduction.match(/<p\b/g) ?? []).length, 4)
+    assert.ok(
+      html.indexOf('home-hero__copy') < html.indexOf('home-introduction'),
+    )
+    assert.ok(
+      html.indexOf('home-introduction') < html.indexOf('home-dictionary'),
+    )
+    assert.doesNotMatch(introduction, /<img\b|<button\b|<a\b/)
+  })
   test(`${locale} Homepage Map invitation keeps localized navigation and a reserved real-map fallback`, () => {
     const html = readFileSync(
       `${process.env.HOMEPAGE_HTML_ROOT ?? '.output/public'}/${locale === 'en' ? 'en/' : ''}index.html`,

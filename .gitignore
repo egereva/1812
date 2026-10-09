@@ -11,6 +11,9 @@ coverage/
 *.tsbuildinfo
 .eslintcache
 
+# Local Playwright QA scripts, evidence and temporary SSR/build fixtures
+/.playwright-mcp/
+
 # Local configuration and credentials
 .env
 .env.*

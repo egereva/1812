@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 import test from 'node:test'
+import { detailSeoTitle } from '../shared/seo/config.ts'
 
 // Run after generate. Assert actual SSR output, rather than media/config presence.
 const readJson = (path) => JSON.parse(readFileSync(path, 'utf8'))
@@ -35,6 +36,7 @@ const fullDate = (value, locale) =>
   }).format(new Date(`${value}T00:00:00Z`))
 
 for (const locale of ['ru', 'en']) {
+  const messages = readJson(`i18n/locales/${locale}.json`)
   const events = readJson(`content/${locale}/timeline.json`).sort(
     (a, b) => a.sortDate.localeCompare(b.sortDate) || a.id.localeCompare(b.id),
   )
@@ -86,7 +88,7 @@ for (const locale of ['ru', 'en']) {
       assert.ok(detail.includes(escape(event.title)))
       assert.ok(
         html.includes(
-          `<title>${escape(event.seo?.title ?? event.title)}</title>`,
+          `<title>${escape(detailSeoTitle(event.seo?.title ?? event.title, messages.navigation.timeline))}</title>`,
         ),
       )
       assert.ok(

@@ -1,3 +1,5 @@
+import type { MapCustomizationRule } from '../data/mapPalettes'
+
 export interface MapLocation {
   center?: [number, number]
   zoom?: number
@@ -19,12 +21,15 @@ export interface YMaps3Api {
     element: HTMLElement,
     options: {
       location: MapLocation
+      theme?: 'light' | 'dark'
       behaviors?: string[]
       margin?: [number, number, number, number]
       zoomRounding?: 'smooth' | 'auto' | 'snap'
     },
   ) => YMapInstance
-  YMapDefaultSchemeLayer: new () => unknown
+  YMapDefaultSchemeLayer: new (options?: {
+    customization?: MapCustomizationRule[]
+  }) => unknown
   YMapDefaultFeaturesLayer: new () => unknown
   YMapMarker: new (
     options: { coordinates: [number, number]; zIndex?: number },

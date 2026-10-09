@@ -189,7 +189,7 @@ for (const locale of ['ru', 'en']) {
     const html = readPage(`${prefix}/about`)
     assert.ok(html.includes(`<title>${escape(about.title)} — 1812</title>`))
     assert.ok(html.includes(`content="${escape(about.description)}"`))
-    assert.ok(html.includes(`lang="${locale}"`))
+    assert.ok(html.includes(`lang="${locale === 'en' ? 'en-US' : 'ru-RU'}"`))
     assert.ok(html.includes(escape(about.lead)))
     for (const item of about.sections) {
       assert.ok(html.includes(`id="about-${item.id}"`))
@@ -209,7 +209,7 @@ for (const locale of ['ru', 'en']) {
       ),
     )
     assert.ok(html.includes(`content="${escape(labels.sources.description)}"`))
-    assert.ok(html.includes(`lang="${locale}"`))
+    assert.ok(html.includes(`lang="${locale === 'en' ? 'en-US' : 'ru-RU'}"`))
     for (const [id, media, count] of [
       ['research', false, 26],
       ['media', true, 42],

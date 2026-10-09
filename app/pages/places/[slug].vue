@@ -51,11 +51,11 @@ const relatedGroups = computed(() =>
     },
   ].filter((group) => group.items.length),
 )
-useHead(() => ({ title: record.value.seo?.title ?? record.value.title }))
-useSeoMeta({
-  description: () =>
-    record.value.seo?.description ?? record.value.shortDescription,
-})
+usePageSeo(
+  () => record.value.seo?.title ?? record.value.title,
+  () => record.value.seo?.description ?? record.value.shortDescription,
+  () => t('place.detail.places'),
+)
 </script>
 
 <template>
@@ -98,7 +98,7 @@ useSeoMeta({
           <p>{{ record.historicalNote }}</p>
         </aside>
         <NuxtLink
-          class="place-map-action"
+          class="place-map-action editorial-link"
           :to="mapPlaceUrl(localePath('/map'), record.slug)"
         >
           {{ t('map.showOnMap') }} <span aria-hidden="true">→</span>
