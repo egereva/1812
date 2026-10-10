@@ -181,11 +181,6 @@ usePageSeo(
   padding-block: var(--space-8) var(--space-24);
 }
 
-.dictionary-detail__back {
-  border-top: var(--border-rule);
-  padding-top: var(--space-4);
-}
-
 .dictionary-detail__back a {
   display: inline-flex;
   min-height: 2.75rem;
@@ -203,7 +198,7 @@ usePageSeo(
 }
 
 .dictionary-detail__composition {
-  padding-block: var(--space-16) var(--space-12);
+  padding-block: var(--space-8) var(--space-12);
 }
 
 .dictionary-detail__article {
@@ -233,7 +228,7 @@ usePageSeo(
 }
 
 .dictionary-detail__intro .eyebrow {
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--space-4);
 }
 
 .dictionary-detail__intro .eyebrow span {
@@ -251,7 +246,7 @@ usePageSeo(
 
 .dictionary-detail__description {
   max-width: 36rem;
-  margin-block: var(--space-8) 0;
+  margin-block: var(--space-6) 0;
   color: var(--color-muted);
 }
 
@@ -390,7 +385,11 @@ usePageSeo(
   }
 
   .dictionary-detail__composition {
-    padding-block: var(--space-12) var(--space-8);
+    padding-block: var(--space-6) var(--space-8);
+  }
+
+  .dictionary-detail__description {
+    margin-top: var(--space-4);
   }
 
   .dictionary-detail__intro h1 {

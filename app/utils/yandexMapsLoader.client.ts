@@ -12,6 +12,7 @@ export interface YMapInstance {
   addChild(child: unknown): YMapInstance
   removeChild(child: unknown): YMapInstance
   setLocation(location: MapLocation): void
+  update(options: { distributionPosition: 'top left' | 'bottom left' }): void
   destroy(): void
 }
 
@@ -25,6 +26,7 @@ export interface YMaps3Api {
       behaviors?: string[]
       margin?: [number, number, number, number]
       zoomRounding?: 'smooth' | 'auto' | 'snap'
+      distributionPosition?: 'top left' | 'bottom left'
     },
   ) => YMapInstance
   YMapDefaultSchemeLayer: new (options?: {

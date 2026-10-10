@@ -19,13 +19,14 @@ const render = new Function('Vue', code)(Vue)
 const group = getPlaces('ru').filter((place) =>
   ['kutuzov-hut', 'milepost-fili'].includes(place.id),
 )
-async function chooser(groupMembers, selectedSlug) {
+async function chooser(groupMembers, selectedSlug, compactControls = false) {
   return renderToString(
     Vue.createSSRApp({
       setup: () => ({
         root: null,
         groupMembers,
         selectedSlug,
+        compactControls,
         t: (key) => key,
         selectFromChooser() {},
         closeGroup() {},
@@ -53,4 +54,11 @@ test('clearing selection allows the active group chooser again', async () => {
 })
 test('no active group renders no chooser', async () => {
   assert.doesNotMatch(await chooser([], undefined), /map-member-chooser/)
+})
+
+test('a narrow canvas reserves the top distribution control row for an open chooser', async () => {
+  assert.match(
+    await chooser(group, undefined, true),
+    /class="map-member-chooser map-member-chooser--compact-controls"/,
+  )
 })

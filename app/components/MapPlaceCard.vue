@@ -152,7 +152,8 @@ const imageSrc = computed(() => {
   top: 1.25rem;
   right: 1.25rem;
   width: min(24rem, calc(100% - 2.5rem));
-  max-height: calc(100% - 2.5rem);
+  /* Keep the provider attribution row below tall desktop cards. */
+  max-height: calc(100% - 4rem);
   overflow-y: auto;
   border: var(--border-rule);
   padding: 1.2rem 1.35rem 1.35rem;
@@ -245,7 +246,7 @@ const imageSrc = computed(() => {
   .map-place-card {
     top: auto;
     right: 0.75rem;
-    bottom: 2.75rem;
+    bottom: 3.5rem;
     left: 0.75rem;
     width: auto;
     max-height: min(48%, 27rem);
@@ -265,7 +266,7 @@ const imageSrc = computed(() => {
     display: flex;
     flex-direction: column;
     bottom: 3.5rem;
-    max-height: calc(100% - 6rem);
+    max-height: calc(100% - 7rem);
     overflow: hidden;
     padding: 0.5rem 0.85rem;
     overflow-wrap: anywhere;
@@ -313,8 +314,8 @@ const imageSrc = computed(() => {
     -webkit-line-clamp: unset;
   }
   .map-place-card--expanded {
-    height: 75%;
-    max-height: 75%;
+    height: min(75%, calc(100% - 7rem));
+    max-height: min(75%, calc(100% - 7rem));
   }
   .map-place-card__actions {
     display: flex;

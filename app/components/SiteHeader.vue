@@ -1,15 +1,25 @@
 <script setup lang="ts">
+import { withBase } from 'ufo'
 import { siteNavigation } from '~/utils/navigation'
 
 const { locale, t } = useI18n()
 const localePath = useLocalePath()
 const switchLocalePath = useSwitchLocalePath()
+const { app } = useRuntimeConfig()
 const route = useRoute()
 const isYandexRoute = computed(() =>
   ['/', '/en', '/map', '/en/map'].includes(
     route.path.replace(/\/$/, '') || '/',
   ),
 )
+
+function localeSwitchTarget(code: 'ru' | 'en'): string {
+  const path = switchLocalePath(code)
+  // Full navigation bypasses the router, which normally adds app.baseURL.
+  return isYandexRoute.value && code !== locale.value
+    ? withBase(path, app.baseURL)
+    : path
+}
 const menuOpen = ref(false)
 const menuButton = ref<HTMLButtonElement | null>(null)
 const mobilePanel = ref<HTMLElement | null>(null)
@@ -183,7 +193,7 @@ watch(
           <NuxtLink
             v-for="code in ['ru', 'en'] as const"
             :key="code"
-            :to="switchLocalePath(code)"
+            :to="localeSwitchTarget(code)"
             :external="isYandexRoute && code !== locale"
             :no-prefetch="isYandexRoute && code !== locale"
             :lang="code"
@@ -243,7 +253,7 @@ watch(
             <NuxtLink
               v-for="code in ['ru', 'en'] as const"
               :key="code"
-              :to="switchLocalePath(code)"
+              :to="localeSwitchTarget(code)"
               :external="isYandexRoute && code !== locale"
               :no-prefetch="isYandexRoute && code !== locale"
               :lang="code"

@@ -32,7 +32,19 @@ let mapListener: unknown
 let zoom = 13
 let activeGroup: string | undefined
 let disposed = false
+let controlsResizeObserver: ResizeObserver | undefined
+const compactControls = ref(false)
 const groupMembers = ref<Place[]>([])
+
+function updateControlPosition(width: number) {
+  // SDK distribution and attribution cannot share a row in a narrow canvas.
+  const compact = width < 480
+  if (compact === compactControls.value) return
+  compactControls.value = compact
+  map?.update({
+    distributionPosition: compact ? 'top left' : 'bottom left',
+  })
+}
 
 function closeGroup() {
   if (!activeGroup) return
@@ -237,10 +249,16 @@ onMounted(async () => {
       props.locale === 'ru' ? 'ru_RU' : 'en_RU',
     )
     if (disposed || !root.value) return
+    updateControlPosition(root.value.clientWidth)
     map = new api.YMap(root.value, {
       location: { center: [37.522, 55.741], zoom },
       theme: 'dark',
+      distributionPosition: compactControls.value ? 'top left' : 'bottom left',
     })
+    controlsResizeObserver = new ResizeObserver(([entry]) => {
+      if (entry) updateControlPosition(entry.contentRect.width)
+    })
+    controlsResizeObserver.observe(root.value)
     map.addChild(
       new api.YMapDefaultSchemeLayer({
         customization: museumGraphiteCustomization,
@@ -312,6 +330,7 @@ watch(
 )
 onBeforeUnmount(() => {
   disposed = true
+  controlsResizeObserver?.disconnect()
   root.value?.removeEventListener('pointerdown', onMapPointer)
   for (const marker of markerEntities) marker.deactivate()
   map?.destroy()
@@ -322,7 +341,11 @@ onBeforeUnmount(() => {
 
 <template>
   <div ref="root" class="map-canvas" :aria-label="t('map.canvas')" />
-  <div v-if="groupMembers.length && !selectedSlug" class="map-member-chooser">
+  <div
+    v-if="groupMembers.length && !selectedSlug"
+    class="map-member-chooser"
+    :class="{ 'map-member-chooser--compact-controls': compactControls }"
+  >
     <p>{{ t('map.nearby') }}</p>
     <button
       v-for="place in groupMembers"
@@ -441,7 +464,7 @@ onBeforeUnmount(() => {
   position: absolute;
   z-index: 5;
   right: 1rem;
-  bottom: 1rem;
+  bottom: 3.5rem;
   display: grid;
   max-width: min(21rem, calc(100% - 2rem));
   max-height: 11rem;
@@ -482,6 +505,10 @@ onBeforeUnmount(() => {
     bottom: auto;
     max-width: min(19rem, calc(100% - 1rem));
   }
+}
+.map-member-chooser--compact-controls {
+  top: 3.5rem;
+  bottom: auto;
 }
 @media (prefers-reduced-motion: reduce) {
   .map-marker__glyph,

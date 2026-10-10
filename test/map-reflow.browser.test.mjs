@@ -53,6 +53,41 @@ for (const locale of ['ru', 'en'])
                 .map((e) => e.className || e.textContent),
             )
           assert.deepEqual(outside, [])
+          const collisions = await page.evaluate(() => {
+            const canvas = document.querySelector('.map-canvas')
+            // Read provider geometry only; never alter the SDK's DOM or CSS.
+            const provider = [
+              ...canvas.querySelectorAll('a'),
+              ...canvas.querySelectorAll('button:not(.map-marker)'),
+            ].filter((element) => {
+              const rect = element.getBoundingClientRect()
+              return rect.width > 0 && rect.height > 0
+            })
+            const panels = [
+              document.querySelector('.map-place-card'),
+              document.querySelector('.map-member-chooser'),
+            ].filter(Boolean)
+            const overlap = (left, right) => {
+              const a = left.getBoundingClientRect()
+              const b = right.getBoundingClientRect()
+              return (
+                Math.min(a.right, b.right) > Math.max(a.left, b.left) &&
+                Math.min(a.bottom, b.bottom) > Math.max(a.top, b.top)
+              )
+            }
+            return provider.some(
+              (element, index) =>
+                panels.some((panel) => overlap(element, panel)) ||
+                provider
+                  .slice(index + 1)
+                  .some((other) => overlap(element, other)),
+            )
+          })
+          assert.equal(
+            collisions,
+            false,
+            'Provider links and application panels must not overlap',
+          )
         }
         await fits()
         const layers = page.locator('.map-page__layers button')

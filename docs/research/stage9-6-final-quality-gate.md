@@ -1,8 +1,77 @@
 # Stage 9.6 — Final quality gate
 
-Дата: 2026-10-09. **STAGE 9.6 — AWAITING REVIEW.** Stage 9 IN PROGRESS.
+Обновлено: 2026-10-10. **STAGE 9.6 — READY FOR ACCEPTANCE.**
 
-## Вердикт
+## Stage 9.6.1 — итоговый вердикт
+
+**QA-01 устранён и проверен на реальном Yandex Maps JS API 3.0.** Других блокирующих дефектов в адресной проверке карты не осталось. Stage 9.6 готов к приёмке; весь Stage 9 не объявляется принятым автоматически. Stage 10, generation, deployment и push не выполнялись.
+
+Nuxt перезапущен с восстановленным локальным `.env` на Node **22.23.3**, npm **10.9.9**. `.env` игнорируется Git; ключ не выводился. Live QA выполнен на **http://localhost:3042**: с Referer `localhost` API отвечает HTTP 200; с `127.0.0.1` тот же ключ получает HTTP 403 / Invalid api key, а браузер — ERR_BLOCKED_BY_ORB. Это различие подтверждено адресными запросами, но настройки ограничения ключа в кабинете провайдера не инспектировались. Конфигурация ключа не менялась.
+
+### Root cause и финальное исправление
+
+Штатные distribution («Открыть Яндекс Карты») и attribution используют один нижний ряд: defaults `bottom left` и `bottom right`. При CSS viewport 320 px canvas имеет ширину 286 px, недостаточную для обоих элементов. Новое воспроизведение через официальный `map.update({ distributionPosition: 'bottom left' })` подтвердило конфликт: RU — пересечение кнопки со всей ссылкой условий **46.33 × 13.25 px** и логотипом **33.89 × 22 px**; EN — **33.28 × 13.25 px** и **25.89 × 22 px** соответственно. Затем положение восстановлено в `top left`. Это QA comparison прежнего SDK configuration, без checkout старого source и без модификации provider DOM.
+
+Фильтры, SVG-маркеры, chooser и MapPlaceCard принадлежат приложению; distribution, логотип, copyright и условия принадлежат SDK. Загружается удалённый `https://api-maps.yandex.ru/v3/`; patch SDK не закреплён в lockfile, Yandex npm dependency отсутствует.
+
+Официальные [YMapProps](https://yandex.com/maps-api/docs/js-api/ref/index.html#ymapprops) и [YMap.update](https://yandex.com/maps-api/docs/js-api/map/YMap.html#update) позволяют менять `distributionPosition`. Финальные изменённые файлы:
+
+- `app/components/InteractiveMap.client.vue`: при canvas <480 CSS px кнопка переносится в `top left`, при ≥480 остаётся штатное `bottom left`; ResizeObserver учитывает resizing/native zoom и отключается при unmount. Узкий chooser начинается ниже верхнего ряда (`top: 3.5rem`); desktop chooser оставляет `3.5rem` снизу для provider controls.
+- `app/utils/yandexMapsLoader.client.ts`: explicit types для используемых `distributionPosition` и `update`.
+- `app/components/MapPlaceCard.vue`: live QA обнаружил, что высокая desktop card закрывала нижнюю attribution, tablet card заходила на нижнюю кнопку, а expanded mobile card — на верхнюю. Desktop max-height оставляет attribution свободной; на ≤850 px нижний зазор составляет `3.5rem`, на ≤600 px высота compact/expanded panel ограничена резервом верхнего и нижнего рядов (`100% - 7rem`, expanded также ≤75%). Меняется только предел высоты; содержимое остаётся доступным через scroll.
+- `app/pages/map.vue`: mobile min-height теперь `min(25rem, calc(100svh - var(--header-height)))`. При коротком viewport 200% это позволяет разместить весь canvas под sticky header после revealSheet; обычная высота сохраняется.
+- `test/map-controls.test.mjs`: RU/EN actual SFC lifecycle с controlled SDK — initial placement, переход через 480 px, возврат в narrow, отсутствие лишних updates, cleanup.
+- `test/map-chooser-render.test.mjs`: actual template проверяет резерв верхнего ряда для narrow chooser.
+- `test/map-reflow.browser.test.mjs`: existing live browser regression дополнен read-only проверкой пересечений provider links/control и application panels.
+- Этот отчёт: актуальный вердикт и evidence.
+
+Provider DOM/CSS, logo, copyright и условия не изменены и не скрыты. `copyrightsPosition` остаётся штатным. Museum Graphite, SVG, контент, координаты, camera и map behaviors сохранены. Nuxt DevTools overlay скрыт **только в QA browser**, чтобы служебная панель не перекрывала provider links.
+
+### Native zoom и адресная матрица
+
+Отдельный persistent **headed Chromium** profile на macOS Apple Silicon/Retina; `viewport: null`, официальный QA-only extension с `chrome.tabs.setZoom/getZoom`. Root font **16px**, visualViewport.scale **1** во всех случаях. CSS zoom, root text resize и page-scale emulation не применялись для native QA. Touch UI проверен через CDP touch input, без подмены размеров viewport.
+
+| Native window width | Browser zoom | Actual CSS viewport | DPR | RU / EN     |
+| ------------------- | ------------ | ------------------- | --- | ----------- |
+| 500                 | 100%         | 500 × 862           | 2   | PASS / PASS |
+| 1440                | 100%         | 1440 × 862          | 2   | PASS / PASS |
+| 640                 | 200%         | **320 × 431**       | 4   | PASS / PASS |
+| 1440                | 200%         | 720 × 431           | 4   | PASS / PASS |
+
+**8/8 live scenarios PASS**, плюс повтор RU/EN CSS320 после финальной коррекции short-viewport min-height. При 100% минимальное native окно имеет ширину 500 px; CSS320 достоверно проверен при native 200%, а не объявлен физическим окном 320 px.
+
+В каждом сценарии: отсутствие карточки → фильтры через Enter и membership **13/6/7** → реальный wheel map zoom и drag camera → marker Enter → card → Escape с возвратом focus → touch open/close → overlap group chooser и Escape. На narrow — также touch compact/expanded. Проверены геометрия и доступность центров кнопки/условий/логотипа через elementFromPoint, отсутствие пересечений с application panels и отсутствие horizontal document overflow во всех сохранённых состояниях. После финального short-viewport fix дополнительно проверено отсутствие пересечения кнопки со sticky header. Copyright также виден на финальных снимках. Page errors в успешной матрице — **0**. SDK и реальные tile endpoints возвращают HTTP 200; подложка визуально осмотрена.
+
+[QA script](../../.playwright-mcp/stage9-6-1/live-qa.mjs), [8-case geometry/results](../../.playwright-mcp/stage9-6-1/live-results.json), [final CSS320 results](../../.playwright-mcp/stage9-6-1/live-results-captures.json), [live log](../../.playwright-mcp/stage9-6-1/live-qa.log), [final captures log](../../.playwright-mcp/stage9-6-1/captures.log). Старые снимки Stage 9.6 с другого компьютера не перенесены; исторические ссылки ниже сохранены. Новые evidence находятся локально в игнорируемой `.playwright-mcp/`.
+
+### Скриншоты до/после
+
+Native 200%, CSS320. Снимки получены прямым `Page.captureScreenshot`, без image editing: Playwright screenshot на сочетании Retina/native zoom обрезал кадр, поэтому для финального evidence использован native CDP capture.
+
+| Состояние                             | RU                                                                 | EN                                                                 |
+| ------------------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| До: прежнее bottom-left SDK placement | [PNG](../../.playwright-mcp/stage9-6-1/ru-narrow-200-before.png)   | [PNG](../../.playwright-mcp/stage9-6-1/en-narrow-200-before.png)   |
+| После: без карточки                   | [PNG](../../.playwright-mcp/stage9-6-1/ru-narrow-200-none.png)     | [PNG](../../.playwright-mcp/stage9-6-1/en-narrow-200-none.png)     |
+| После: compact card                   | [PNG](../../.playwright-mcp/stage9-6-1/ru-narrow-200-card.png)     | [PNG](../../.playwright-mcp/stage9-6-1/en-narrow-200-card.png)     |
+| После: expanded card                  | [PNG](../../.playwright-mcp/stage9-6-1/ru-narrow-200-expanded.png) | [PNG](../../.playwright-mcp/stage9-6-1/en-narrow-200-expanded.png) |
+| После: card закрыта                   | [PNG](../../.playwright-mcp/stage9-6-1/ru-narrow-200-closed.png)   | [PNG](../../.playwright-mcp/stage9-6-1/en-narrow-200-closed.png)   |
+| После: chooser                        | [PNG](../../.playwright-mcp/stage9-6-1/ru-narrow-200-chooser.png)  | [PNG](../../.playwright-mcp/stage9-6-1/en-narrow-200-chooser.png)  |
+| Desktop 100%: высокая card            | [PNG](../../.playwright-mcp/stage9-6-1/ru-desktop-100-card.png)    | [PNG](../../.playwright-mcp/stage9-6-1/en-desktop-100-card.png)    |
+
+### Focused checks и ограничения
+
+- **29/29** Map/index/chooser/control tests PASS; [log](../../.playwright-mcp/stage9-6-1/tests.log).
+- **4/4** existing browser reflow tests с regression assertions PASS; [log](../../.playwright-mcp/stage9-6-1/reflow-tests.log). Эти четыре tests используют **text resize 200%** и отдельно названы; они не являются доказательством native zoom.
+- `npm run typecheck` PASS на Node 22.23.3; [log](../../.playwright-mcp/stage9-6-1/typecheck.log). Scoped ESLint, Prettier изменённых файлов и `git diff --check` PASS.
+- Полный Stage 9, full regression, build/generate, deployment и push не выполнялись.
+
+Ограничения: Chromium automation, не Safari/Firefox, screen reader или физический телефон. При отдельных холодных загрузках внешний SDK не успевал загрузиться в существующий 12s timeout; штатный fallback работал, reload позволил продолжить. При resizing/zoom/pan зафиксированы отменённые `ERR_ABORTED` запросы тайлов; отсутствие всех сетевых cancellations не заявляется. Ограничения/API account settings не менялись, localhost/127.0.0.1 нельзя считать взаимозаменяемыми для этого ключа. Нужны реальные production origin/baseURL и новая release generation на Stage 10; эти ранее известные release условия не являются незакрытым QA-01. Изменения зависимостей или ключа не требовались.
+
+**STAGE 9.6 — READY FOR ACCEPTANCE.** Ниже сохранён исходный аудит 2026-10-09 для истории; его BLOCKED и Node 26 environment notes не являются текущим вердиктом.
+
+## Исходный аудит 2026-10-09 — историческая запись
+
+### Первоначальный вердикт
 
 **BLOCKED** — DOM/reflow и smoke проверки прошли, но визуальный native-zoom gate обнаружил **QA-01 (Medium)**: штатный Open Maps control перекрывает ссылку условий и часть логотипа Яндекса при CSS viewport 320 px. Необходима отдельная коррекция/проверка допустимого официального размещения элементов SDK; внутренний DOM/стили провайдера не изменены. До её закрытия нельзя заявить выполнение критерия «элементы управления не перекрываются».
 
@@ -123,8 +192,8 @@ Production change: **только `app/composables/useSiteSeo.ts`**, один fa
 
 ## Открытые условия перед публикацией
 
-**QA-01 остаётся открытым и блокирует gate.** Необходима адресная коррекция через допустимый официальный SDK/configuration подход с сохранением attribution и approved map appearance, затем проверка перекрытий/клавиатуры. CSS/DOM провайдера не изменены; область задачи не расширена.
+**На 2026-10-09 QA-01 оставался открытым и блокировал gate.** Необходима адресная коррекция через допустимый официальный SDK/configuration подход с сохранением attribution и approved map appearance, затем проверка перекрытий/клавиатуры. CSS/DOM провайдера не изменены; область задачи не расширена.
 
 Абсолютные production SEO URLs пока **не выпущены**, новые favicon tags пока **не перенесены в старый artifact**: нужны реальные deployment settings и новая generation. Поддерживаемая Node 22, host/root robots policy для project Pages, redirects/HTTP status/headers, actual configured static metadata и итоговый browser smoke остаются release условиями. Не выбран OG image; indexing/Search Console и screen-reader/cross-browser coverage не заявляются выполненными.
 
-**BLOCKED / STAGE 9.6 — AWAITING REVIEW.** Stage 10 не начат, весь Stage 9 не завершён.
+**Исторический статус 2026-10-09: BLOCKED / STAGE 9.6 — AWAITING REVIEW.** QA-01 закрыт адресным live QA 2026-10-10, см. текущий вердикт выше. Stage 10 не начат.

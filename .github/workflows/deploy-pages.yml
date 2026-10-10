@@ -1,0 +1,71 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+env:
+  NUXT_PUBLIC_SITE_URL: https://egereva.github.io
+  NUXT_APP_BASE_URL: /1812/
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.23.3'
+          cache: npm
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Install dependencies
+        run: npm ci
+      - name: Generate static site
+        env:
+          NUXT_PUBLIC_YANDEX_MAPS_API_KEY: ${{ secrets.NUXT_PUBLIC_YANDEX_MAPS_API_KEY || vars.NUXT_PUBLIC_YANDEX_MAPS_API_KEY }}
+        run: |
+          if [ -z "$NUXT_PUBLIC_YANDEX_MAPS_API_KEY" ]; then
+            echo "::error::Configure the NUXT_PUBLIC_YANDEX_MAPS_API_KEY repository secret or variable before deployment."
+            exit 1
+          fi
+          npm run generate
+      - name: Verify production metadata and assets
+        env:
+          SEO_TEST_ORIGIN: https://egereva.github.io
+          SEO_TEST_BASE_URL: /1812/
+        run: node --experimental-strip-types --test --experimental-test-isolation=none test/seo-render.test.mjs test/pages-deployment.test.mjs
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .output/public
+
+  deploy:
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

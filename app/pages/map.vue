@@ -555,7 +555,7 @@ usePageSeo(
   }
   .map-page__frame {
     height: calc(100svh - 12rem - var(--header-height));
-    min-height: 25rem;
+    min-height: min(25rem, calc(100svh - var(--header-height)));
   }
   .map-page__index ol {
     columns: 1;
