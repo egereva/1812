@@ -18,10 +18,22 @@ const emit = defineEmits<{ state: [state: 'ready' | 'missing' | 'error'] }>()
 const root = ref<HTMLElement | null>(null)
 let map: YMapInstance | undefined
 let observer: IntersectionObserver | undefined
+let controlsResizeObserver: ResizeObserver | undefined
+let compactControls = false
 let disposed = false
 let cameraListener: unknown
 let fittedCamera: { center: [number, number]; zoom: number } | undefined
 let hoverZoomed = false
+
+function updateControlPosition(width: number) {
+  // Match the full Map: separate distribution from attribution on narrow canvases.
+  const compact = width < 480
+  if (compact === compactControls) return
+  compactControls = compact
+  map?.update({
+    distributionPosition: compact ? 'top left' : 'bottom left',
+  })
+}
 
 function updateHoverCamera() {
   if (disposed || !map || !fittedCamera) return
@@ -43,6 +55,8 @@ function updateHoverCamera() {
 }
 
 function destroyMap() {
+  controlsResizeObserver?.disconnect()
+  controlsResizeObserver = undefined
   if (map && cameraListener) map.removeChild(cameraListener)
   map?.destroy()
   map = undefined
@@ -68,7 +82,9 @@ async function initialize() {
     if (disposed || !root.value || !props.places.length) return
     const lons = props.places.map((place) => place.coordinates.lon)
     const lats = props.places.map((place) => place.coordinates.lat)
+    updateControlPosition(root.value.clientWidth)
     map = new api.YMap(root.value, {
+      distributionPosition: compactControls ? 'top left' : 'bottom left',
       location: {
         bounds: [
           [Math.min(...lons), Math.min(...lats)],
@@ -79,6 +95,10 @@ async function initialize() {
       behaviors: [],
       zoomRounding: 'smooth',
     })
+    controlsResizeObserver = new ResizeObserver(([entry]) => {
+      if (entry) updateControlPosition(entry.contentRect.width)
+    })
+    controlsResizeObserver.observe(root.value)
     cameraListener = new api.YMapListener({
       onUpdate: ({ location, mapInAction }) => {
         if (disposed || fittedCamera || mapInAction || !location.center) return

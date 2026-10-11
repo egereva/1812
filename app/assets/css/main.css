@@ -585,7 +585,16 @@ h3 {
   .mobile-menu__link[aria-current='page'] {
     color: var(--color-menu-accent);
   }
-  .mobile-menu__link span {
+  .mobile-menu__link:focus {
+    outline: none;
+  }
+  .mobile-menu__link:focus-visible {
+    text-decoration: underline;
+    text-decoration-color: var(--color-menu-accent);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+  }
+  .mobile-menu__link .link-arrow {
     flex-shrink: 0;
     font-size: 0.65em;
   }

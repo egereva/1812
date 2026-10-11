@@ -368,6 +368,8 @@ onBeforeUnmount(() => {
 
 <style>
 .map-canvas {
+  /* Contain SDK control z-indices below the site header and mobile menu. */
+  isolation: isolate;
   position: absolute;
   inset: 0;
 }

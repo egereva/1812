@@ -2,6 +2,9 @@ import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 import test from 'node:test'
 
+const base = process.env.SEO_TEST_BASE_URL || '/'
+const localPath = (path) => base + path.slice(1)
+
 // Run after generate: inspect the actual SSR markup consumed by hydration,
 // independently of the config/resolver assertions in the content tests.
 const expected = [
@@ -114,14 +117,22 @@ for (const locale of ['ru', 'en']) {
       position = nextPosition
       assert.ok(
         examples.includes(
-          `href="${locale === 'en' ? '/en' : ''}/places/${place.slug}"`,
+          `href="${localPath(`${locale === 'en' ? '/en' : ''}/places/${place.slug}`)}"`,
         ),
       )
     }
     const anchors = section.match(/<a\b[^>]*>/g) ?? []
     assert.equal(anchors.length, 5)
-    assert.ok(anchors[0].includes(`href="${locale === 'en' ? '/en' : ''}/map"`))
-    assert.ok(anchors[1].includes(`href="${locale === 'en' ? '/en' : ''}/map"`))
+    assert.ok(
+      anchors[0].includes(
+        `href="${localPath(`${locale === 'en' ? '/en' : ''}/map`)}"`,
+      ),
+    )
+    assert.ok(
+      anchors[1].includes(
+        `href="${localPath(`${locale === 'en' ? '/en' : ''}/map`)}"`,
+      ),
+    )
     assert.ok(
       anchors[1].includes(`aria-label="${messages.home.map.previewLink}"`),
     )
@@ -145,9 +156,9 @@ for (const locale of ['ru', 'en']) {
     assert.match(active, /data-active-id="invasion-neman"/)
     assert.doesNotMatch(active, /home-timeline__composition--text/)
     assert.match(active, /class="home-timeline__art"/)
-    assert.match(
-      active,
-      /<img[^>]+src="\/images\/timeline\/crossing-neman-clark-1816\.jpg"/,
+    assert.equal(
+      active.match(/<img[^>]+src="([^"]+)"/)?.[1],
+      localPath(expected[0][1]),
     )
     assert.match(active, /<figcaption[\s>]/)
     assert.match(active, /1816/)
@@ -159,7 +170,10 @@ for (const locale of ['ru', 'en']) {
     assert.equal((strip.match(/<img\s/g) ?? []).length, 6)
     for (const [id, src] of expected) {
       const item = strip.split(`data-event-id="${id}"`)[1]?.split('</li>')[0]
-      assert.ok(item?.includes(`src="${src}"`), `${id} must render its artwork`)
+      assert.ok(
+        item?.includes(`src="${localPath(src)}"`),
+        `${id} must render its artwork`,
+      )
       assert.match(item, /<img[^>]+alt="[^"]+"/)
       readFileSync(`.output/public${src}`)
     }

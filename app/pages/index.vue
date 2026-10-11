@@ -95,7 +95,7 @@ usePageSeo(
             class="home-link editorial-link"
             :to="localePath('/dictionary')"
           >
-            {{ t('home.dictionary.cta') }} <span aria-hidden="true">↗</span>
+            {{ t('home.dictionary.cta') }} <LinkArrow />
           </NuxtLink>
         </div>
         <div class="home-dictionary__specimen">
@@ -134,7 +134,7 @@ usePageSeo(
           <h2 id="map-title">{{ t('navigation.map') }}</h2>
           <p>{{ t('home.map.description', { count: mapPlaces.length }) }}</p>
           <NuxtLink class="home-link editorial-link" :to="localePath('/map')">
-            {{ t('home.map.cta') }} <span aria-hidden="true">↗</span>
+            {{ t('home.map.cta') }} <LinkArrow />
           </NuxtLink>
         </div>
         <div class="home-map__fragment">
@@ -296,7 +296,7 @@ usePageSeo(
   font-weight: 700;
   text-decoration: none;
 }
-.home-link span {
+.home-link .link-arrow {
   font-size: 1.25rem;
   font-weight: 400;
 }

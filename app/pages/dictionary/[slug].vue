@@ -57,7 +57,7 @@ usePageSeo(
       :aria-label="t('navigation.dictionary')"
     >
       <NuxtLink :to="localePath('/dictionary')">
-        <span aria-hidden="true">←</span> {{ t('navigation.dictionary') }}
+        <LinkArrow direction="left" /> {{ t('navigation.dictionary') }}
       </NuxtLink>
     </nav>
 

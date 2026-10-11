@@ -184,9 +184,8 @@ function hideLeavingEvent(element: Element) {
               >
               <h3 :id="`home-timeline-title-${active.id}`">
                 <NuxtLink :to="localePath(`/timeline/${active.slug}`)"
-                  >{{ active.title }}
-                  <span aria-hidden="true">↗</span></NuxtLink
-                >
+                  >{{ active.title }} <LinkArrow
+                /></NuxtLink>
               </h3>
               <p>{{ active.shortDescription }}</p>
             </div>
@@ -230,7 +229,7 @@ function hideLeavingEvent(element: Element) {
               "
               >{{ shortDate(event.dateOldStyle) }}</time
             >
-            <h3>{{ event.previewTitle }} <span aria-hidden="true">↗</span></h3>
+            <h3>{{ event.previewTitle }} <LinkArrow /></h3>
           </NuxtLink>
           <div v-if="event.caption" class="home-timeline__strip-caption">
             <p>{{ event.caption.caption }}</p>
@@ -256,9 +255,8 @@ function hideLeavingEvent(element: Element) {
         <NuxtLink
           class="home-timeline__cta editorial-link"
           :to="localePath('/timeline')"
-          >{{ t('home.timeline.cta') }}
-          <span aria-hidden="true">↗</span></NuxtLink
-        >
+          >{{ t('home.timeline.cta') }} <LinkArrow
+        /></NuxtLink>
       </div>
     </div>
   </section>
@@ -388,7 +386,7 @@ h3 a {
 h3 a:hover {
   color: #e3c6c4;
 }
-h3 span {
+h3 .link-arrow {
   font-size: 0.5em;
 }
 .home-timeline__story p {

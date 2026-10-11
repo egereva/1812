@@ -96,7 +96,7 @@ usePageSeo(
   <article class="timeline-detail page-container">
     <nav class="timeline-detail__back" :aria-label="t('navigation.timeline')">
       <NuxtLink :to="localePath('/timeline')"
-        ><span aria-hidden="true">←</span>
+        ><LinkArrow direction="left" />
         {{ t('timeline.detail.back') }}</NuxtLink
       >
     </nav>
@@ -165,9 +165,8 @@ usePageSeo(
             v-if="group.path === '/places'"
             class="timeline-detail__map-link editorial-link"
             :to="mapEventUrl(localePath('/map'), record.slug)"
-            >{{ t('timeline.detail.viewOnMap') }}
-            <span aria-hidden="true">→</span></NuxtLink
-          >
+            >{{ t('timeline.detail.viewOnMap') }} <LinkArrow direction="right"
+          /></NuxtLink>
           <ul>
             <li v-for="item in group.items" :key="item.id">
               <NuxtLink :to="localePath(`${group.path}/${item.slug}`)">{{
@@ -212,13 +211,12 @@ usePageSeo(
         :rel="link.direction === 'previous' ? 'prev' : 'next'"
       >
         <span class="timeline-detail__direction"
-          ><span v-if="link.direction === 'previous'" aria-hidden="true"
-            >← </span
+          ><template v-if="link.direction === 'previous'"
+            ><LinkArrow direction="left" />{{ ' ' }}</template
           >{{ t(`timeline.detail.${link.direction}`)
-          }}<span v-if="link.direction === 'next'" aria-hidden="true">
-            →</span
-          ></span
-        >
+          }}<template v-if="link.direction === 'next'"
+            >{{ ' ' }}<LinkArrow direction="right" /></template
+        ></span>
         <span class="timeline-detail__neighbor-title">{{
           link.event.title
         }}</span>

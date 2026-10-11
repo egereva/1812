@@ -158,7 +158,7 @@ usePageSeo(
         :to="localePath('/map')"
         @click="leaveEventContext"
       >
-        {{ t('map.leaveEvent') }} <span aria-hidden="true">→</span>
+        {{ t('map.leaveEvent') }} <LinkArrow direction="right" />
       </NuxtLink>
     </div>
     <div v-else class="map-page__toolbar wide-container">

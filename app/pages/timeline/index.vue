@@ -96,11 +96,8 @@ usePageSeo(
               class="timeline-event__title"
             >
               <NuxtLink :to="localePath(`/timeline/${event.slug}`)"
-                >{{ event.title }}
-                <span class="timeline-event__arrow" aria-hidden="true"
-                  >↗</span
-                ></NuxtLink
-              >
+                >{{ event.title }} <LinkArrow class="timeline-event__arrow"
+              /></NuxtLink>
             </h2>
             <p class="timeline-event__description">
               {{ event.shortDescription }}

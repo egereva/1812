@@ -103,9 +103,7 @@ usePageSeo(
               >
                 <h3>{{ entry.title }}</h3>
                 <p>{{ entry.shortDescription }}</p>
-                <span class="dictionary-entry__arrow" aria-hidden="true"
-                  >↗</span
-                >
+                <LinkArrow class="dictionary-entry__arrow" />
               </NuxtLink>
             </li>
           </ol>

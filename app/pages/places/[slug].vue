@@ -101,7 +101,7 @@ usePageSeo(
           class="place-map-action editorial-link"
           :to="mapPlaceUrl(localePath('/map'), record.slug)"
         >
-          {{ t('map.showOnMap') }} <span aria-hidden="true">→</span>
+          {{ t('map.showOnMap') }} <LinkArrow direction="right" />
         </NuxtLink>
       </div>
       <PlaceMedia

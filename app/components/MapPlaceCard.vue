@@ -122,7 +122,7 @@ const imageSrc = computed(() => {
         class="map-place-card__link editorial-link"
         :to="localePath(`/places/${place.slug}`)"
       >
-        {{ t('map.readMore') }} <span aria-hidden="true">→</span>
+        {{ t('map.readMore') }} <LinkArrow direction="right" />
       </NuxtLink>
       <button
         type="button"

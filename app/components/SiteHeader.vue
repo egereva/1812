@@ -93,11 +93,11 @@ function isActive(path: string) {
   return current === target || current.startsWith(`${target}/`)
 }
 
-async function toggleMenu() {
+async function toggleMenu(event: MouseEvent) {
   menuOpen.value = !menuOpen.value
-  if (menuOpen.value) {
+  if (menuOpen.value && event.detail === 0) {
     await nextTick()
-    mobilePanel.value?.querySelector('a')?.focus({ preventScroll: true })
+    mobilePanel.value?.querySelector('a')?.focus()
   }
 }
 
@@ -240,7 +240,7 @@ watch(
             @click="menuOpen = false"
           >
             {{ t(item.label) }}
-            <span v-if="isActive(item.to)" aria-hidden="true">↗</span>
+            <LinkArrow v-if="isActive(item.to)" />
           </NuxtLink>
         </nav>
         <div class="mobile-menu__footer">

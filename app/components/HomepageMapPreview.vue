@@ -59,6 +59,7 @@ const counts = computed(() => ({
 
 <style scoped>
 .home-map-preview {
+  container-type: inline-size;
   position: relative;
   height: clamp(20rem, 26vw, 24rem);
   overflow: hidden;
@@ -89,6 +90,12 @@ const counts = computed(() => ({
 .home-map-preview__link--ready {
   /* Leave both bottom corners free for Yandex attribution and its links. */
   bottom: 56px;
+}
+@container (width < 480px) {
+  .home-map-preview__link--ready {
+    /* The SDK distribution button moves to the top in a narrow canvas. */
+    top: 56px;
+  }
 }
 .home-map-preview__link:focus-visible {
   outline: 2px solid var(--color-accent);

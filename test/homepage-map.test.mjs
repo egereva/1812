@@ -113,15 +113,18 @@ function harness({
   offscreen = false,
   finePointer = true,
   reducedMotion = false,
+  locale = 'ru',
+  width = 800,
 } = {}) {
-  const catalog = getPlaces('ru')
+  const catalog = getPlaces(locale)
   const events = []
   const markers = []
   const locations = []
   const schemes = []
+  const controlUpdates = []
   const props = {
     places: catalog,
-    locale: 'ru',
+    locale,
     apiKey: key,
     hovered: false,
   }
@@ -130,6 +133,7 @@ function harness({
   let mounted, unmount, options, resolve, intersection
   let disconnects = 0
   let destroys = 0
+  let resizeObserver
   const api = {
     YMap: class {
       constructor(_root, config) {
@@ -141,6 +145,9 @@ function harness({
       }
       setLocation(location) {
         locations.push(location)
+      }
+      update(config) {
+        controlUpdates.push(config.distributionPosition)
       }
       destroy() {
         destroys++
@@ -176,6 +183,7 @@ function harness({
     'document',
     'window',
     'IntersectionObserver',
+    'ResizeObserver',
     code,
   )(
     ref,
@@ -216,18 +224,36 @@ function harness({
         disconnects++
       }
     },
+    class {
+      constructor(callback) {
+        this.callback = callback
+        resizeObserver = this
+      }
+      observe(element) {
+        this.element = element
+      }
+      disconnect() {
+        this.disconnected = true
+      }
+    },
   )
   const setup = component.setup(props, {
     expose() {},
     emit: (...args) => events.push(args),
   })
-  setup.root.value = {}
+  setup.root.value = { clientWidth: width }
   return {
     catalog,
     markers,
     events,
     locations,
     schemes,
+    controlUpdates,
+    resize: (value) =>
+      resizeObserver.callback([{ contentRect: { width: value } }]),
+    get resizeObserver() {
+      return resizeObserver
+    },
     hover: (value) => {
       props.hovered = value
       hoverWatcher()
@@ -255,6 +281,32 @@ function harness({
 const settle = async () => {
   await Promise.resolve()
   await Promise.resolve()
+}
+
+for (const locale of ['ru', 'en']) {
+  test(`${locale}: preview SDK placement follows canvas width and observer cleans up`, async () => {
+    const h = harness({ locale, width: 286 })
+    h.mounted()
+    await settle()
+    assert.equal(h.options.distributionPosition, 'top left')
+    assert.equal(h.resizeObserver.element.clientWidth, 286)
+    h.resize(479)
+    assert.deepEqual(h.controlUpdates, [])
+    h.resize(480)
+    h.resize(800)
+    h.resize(357)
+    assert.deepEqual(h.controlUpdates, ['bottom left', 'top left'])
+    assert.equal(h.markers.length, 13)
+    h.unmount()
+    assert.equal(h.resizeObserver.disconnected, true)
+    assert.equal(h.destroys, 1)
+
+    const wide = harness({ locale, width: 800 })
+    wide.mounted()
+    await settle()
+    assert.equal(wide.options.distributionPosition, 'bottom left')
+    wide.unmount()
+  })
 }
 
 test('Homepage always passes approved Museum Ivory without changing markers or camera', async () => {
