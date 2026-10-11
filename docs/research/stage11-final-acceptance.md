@@ -3,7 +3,7 @@
 Дата: 2026-10-10. Проверяемый сайт: **https://egereva.github.io/1812/**.
 Deployment: `02cc29a7ab33a5dee9fbc70e09d236e42d169384`.
 
-**STAGE 11 — READY FOR ACCEPTANCE** (локальное рабочее дерево, 2026-10-11). QA11-01/02/03/04 исправлены и прошли final focused regression; актуальный вердикт и evidence — в разделе 10. Разделы 1–9 сохраняют историю production-проверки и предыдущие статусы. Публикация исправлений не выполнялась.
+**STAGE 11 — DEPLOYED / AWAITING FINAL ACCEPTANCE** (2026-10-11). QA11-01/02/03/04 исправлены, опубликованы и прошли production smoke QA; актуальный вердикт и evidence — в разделе 11. Разделы 1–10 сохраняют историю проверок и предыдущие статусы. Исправления: `fd92773b6d3f4eb1b6974544c69081751a471b94`.
 
 ## 1. Объём и evidence
 
@@ -220,3 +220,29 @@ Evidence локальное, игнорируемое, не включается
 Реальный **iPhone/Safari не тестировался**; ручная проверка на устройстве остаётся ограничением покрытия, не заявляется как PASS. Live SDK зависит от внешней сети; ранняя ready-state не означает, что уже загружены все tiles. Работоспособность fallback проверена существующими тестами. Исправленная production-версия ещё не опубликована и не проверена.
 
 **STAGE 11 — READY FOR ACCEPTANCE. Локальных блокеров QA11-01/02/03/04 не осталось.** Готово к приёмке и последующей публикации по отдельному разрешению пользователя. Commit, push, deployment и staging в этом проходе не выполнялись.
+
+## 11. Production deployment и smoke QA — 2026-10-11
+
+По разрешению пользователя выполнены commit и push в `origin/main`: `fd92773b6d3f4eb1b6974544c69081751a471b94` — `Fix Stage 11 mobile map attribution, menu layers, arrows and focus`. [GitHub Actions](https://github.com/egereva/1812/actions/runs/38131237310): **SUCCESS**, оба jobs `build` и `deploy` успешны; static generation, проверка production metadata/assets и публикация GitHub Pages прошли. `CONTENT_GUIDE.md` уже находился в GitHub в коммите `4a53b3d`; повторный commit для него не нужен. Исторический контент, зависимости и API-ключи не изменялись. `.env`, `.playwright-mcp/` и временные файлы не включены.
+
+Проверялся именно **https://egereva.github.io/1812/**, без localhost, request interception, подмены SDK/tiles и CSS zoom. Матрица: Home и `/map` × RU/EN × 320/390 CSS px × 100%/native 200% — **16/16 PASS**. Обычный проход выполнен в Chrome с mobile/touch emulation; native — в headed Chromium через browser API `chrome.tabs.setZoom(..., 2)` с подтверждением `getZoom() === 2`, фактической ширины 320/390, DPR 4, root font-size 16px и visualViewport.scale 1. Ширина физического окна 640/780 px. Production 768/1440 не повторялись; локальная матрица этих ширин сохранена в разделе 10.
+
+| Проверка                 | Production результат                                                                                                                                                                                                                                                           |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| QA11-01                  | **PASS**: preview logo, Terms, copyright и distribution button видимы; hit testing подтверждает доступность provider links/button. SDK button и application overlay не перекрывают атрибуцию. Preview link открывает локализованную полноценную карту с клавиатуры.            |
+| Полноценная `/map`       | **PASS**: live SDK/tiles, атрибуция без пересечений, marker открывает карточку/chooser после закрытия меню.                                                                                                                                                                    |
+| QA11-02                  | **PASS**: меню перекрывает SDK на обеих картах, фон inert. Диагностический hit test временно снимает inert только в браузере и проверяет слой меню над находящимися в viewport SDK targets; затем inert восстановлен. После закрытия карта доступна, экземпляр карты сохранён. |
+| QA11-03                  | **PASS**: Unicode-стрелок в rendered main нет, SVG декоративны (`aria-hidden`, `focusable="false"`), stroke `currentColor`. Снимки просмотрены.                                                                                                                                |
+| QA11-04                  | **PASS**: touch не фокусирует первый пункт и не показывает рамку. Keyboard Space показывает видимый `:focus-visible` с подчёркиванием, включая повторное открытие ранее прокрученного меню. Tab/Shift+Tab, обе границы focus trap, Escape и возврат фокуса работают.           |
+| Навигация меню           | **48/48 touch-переходов PASS**: все шесть пунктов × RU/EN × 320/390 × 100%/200%; правильный localized URL, меню закрывается, background inert снят.                                                                                                                            |
+| Overflow / Console / SDK | **PASS**: горизонтального overflow нет; final matrix без page errors и Console errors, SDK responses HTTP 200, ошибок загрузки SDK нет.                                                                                                                                        |
+
+Первый native probe остановился до UI assertions: per-tab zoom сбросился при полной навигации (640 CSS px вместо ожидаемых 320). QA-скрипт теперь назначает и проверяет native zoom после загрузки каждого документа. Следующий probe прошёл UI, но остановился на двух Console diagnostics `[NUXT_E7002]` (payload loading). В новом чистом профиле вся native matrix и все переходы прошли без этих diagnostics; причина ранних payload diagnostics не установлена, они сохранены в evidence и не считаются успешной проверкой. Код сайта для этих повторов не менялся. На одном раннем preview screenshot tiles ещё не отрисованы; последующие production screenshots подтверждают настоящую карту, SDK и атрибуцию. Загрузка внешних tiles асинхронна.
+
+Evidence локальное, игнорируемое, не публикуется в Git:
+
+- [Final smoke results](../../.playwright-mcp/stage11-production/smoke-results.json), [ordinary smoke log и остановившийся zoom probe](../../.playwright-mcp/stage11-production/smoke.log), [успешный native smoke log](../../.playwright-mcp/stage11-production/native-smoke-retry.log), [остановившийся payload probe](../../.playwright-mcp/stage11-production/stopped-native-results.json).
+- [Production RU 320 native 200% preview](../../.playwright-mcp/stage11-production/ru-home-320-native-200-provider.png), [EN 390 native 200% preview](../../.playwright-mcp/stage11-production/en-home-390-native-200-provider.png), [RU 320 keyboard focus после повторного открытия](../../.playwright-mcp/stage11-production/ru-home-320-native-200-reopened-focus.png), [EN 390 native 200% touch menu](../../.playwright-mcp/stage11-production/en-map-390-native-200-touch-menu.png).
+- [Actions run metadata](../../.playwright-mcp/stage11-production/actions-runs.json), [build/deploy jobs](../../.playwright-mcp/stage11-production/actions-jobs.json).
+
+**QA11-01/02/03/04 закрыты в production. BLOCKER и MAJOR не обнаружены. STAGE 11 — DEPLOYED / AWAITING FINAL ACCEPTANCE.** Реальный iPhone/Safari не тестировался и остаётся ограничением покрытия. EXT-01 (внешняя доступность исторических источников) не перепроверялся; полный аудит заново не запускался.
