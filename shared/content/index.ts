@@ -266,8 +266,9 @@ export function getCatalogProblems(
             (image) =>
               image?.src?.startsWith('/images/') &&
               image.alt?.trim() &&
-              image.credit?.trim() &&
-              catalog.sources.some((source) => source.id === image.sourceId),
+              (image.credit === undefined || image.credit.trim()) &&
+              (image.sourceId === undefined ||
+                catalog.sources.some((source) => source.id === image.sourceId)),
           )
         )
           problems.push(

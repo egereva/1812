@@ -93,7 +93,7 @@ for (const locale of ['ru', 'en']) {
     places.reduce((total, place) => total + place.content.length, 0),
     48,
   )
-  assert.equal(places.filter((place) => place.coverImage).length, 10)
+  assert.equal(places.filter((place) => place.coverImage).length, 12)
   assert.equal(
     places.reduce((total, place) => total + (place.gallery?.length ?? 0), 0),
     2,
@@ -309,11 +309,11 @@ for (const locale of ['ru', 'en']) {
         for (const image of [pair.before, pair.after]) {
           assert.ok(comparisonSection.includes(`alt="${escape(image.alt)}"`))
           const source = getSourceById(locale, image.sourceId)
-          if (source.url)
+          if (source?.url)
             assert.ok(
               comparisonSection.includes(`href="${escape(source.url)}"`),
             )
-          else
+          else if (source)
             assert.ok(
               comparisonSection.includes(
                 escape(source.publisher || source.title),

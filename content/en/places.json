@@ -77,13 +77,30 @@
       }
     ],
     "coverImage": {
-      "src": "/images/places/kutuzov-hut-modern-2015.jpg",
-      "alt": "The present-day Kutuzov Hut museum building",
-      "caption": "Dmitry Markevich. Kutuzov Hut, 2015. The present building is an 1887 reconstruction.",
-      "description": "A modern documentary photograph of the reconstructed hut, not the original building of 1812.",
-      "credit": "Dmitry Markevich · Wikimedia Commons · CC BY-SA 4.0",
-      "sourceId": "src-media-place-kutuzov-hut-modern-2015"
-    }
+      "src": "/images/places/kutuzov-hut-modern-2026.png",
+      "alt": "The present-day Kutuzov Hut museum building"
+    },
+    "beforeAfter": [
+      {
+        "id": "kutuzov-hut-1884-2026",
+        "before": {
+          "src": "/images/dictionary/kutuzov-hut-savrasov-1884.jpg",
+          "alt": "The hut at Fili in Alexei Savrasov's 1884 painting",
+          "caption": "Alexei Savrasov. Kutuzov's Hut at Fili, 1884. An artistic depiction of the historic hut before its 1887 reconstruction.",
+          "description": "A painting, not a documentary photograph or an image of today's museum building.",
+          "credit": "Alexei Savrasov · Leo Tolstoy State Museum · Public domain / PD-Art",
+          "sourceId": "src-media-kutuzov-hut-savrasov-1884"
+        },
+        "after": {
+          "src": "/images/places/kutuzov-hut-modern-2026.png",
+          "alt": "The present-day Kutuzov Hut museum building"
+        },
+        "caption": "On the left is the hut at Fili in Alexei Savrasov’s 1884 painting. On the right is the present-day Kutuzov Hut museum building in 2026. The comparison shows an artistic depiction of the historic hut and today's museum building.",
+        "beforeDate": "1884",
+        "afterDate": "2026",
+        "aspectRatio": 1.3333333333333333
+      }
+    ]
   },
   {
     "id": "intercession-church-fili",
@@ -226,7 +243,11 @@
     "relatedDictionaryIds": ["napoleon", "poklonnaya-hill", "smolensk-road"],
     "relatedTimelineIds": ["moscow-abandoned"],
     "locationNote": "The coordinate marks the modern historic area.",
-    "historicalNote": "The story of the “keys to Moscow” should be presented as a historical tradition."
+    "historicalNote": "The story of the “keys to Moscow” should be presented as a historical tradition.",
+    "coverImage": {
+      "src": "/images/places/poklonnaya-gora-modern-2026.png",
+      "alt": "Present-day view of Poklonnaya Hill"
+    }
   },
   {
     "id": "dorogomilovskaya-gate",
@@ -255,7 +276,12 @@
     "relatedPlaceIds": ["poklonnaya-hill", "dorogomilovskoe-cemetery"],
     "relatedDictionaryIds": ["dorogomilovo", "smolensk-road", "napoleon"],
     "relatedTimelineIds": ["moscow-abandoned"],
-    "locationNote": "The modern square does not fully coincide with the location of the historic gate."
+    "locationNote": "The modern square does not fully coincide with the location of the historic gate.",
+    "coverImage": {
+      "src": "/images/places/dorogomilovskaya-zastava-modern-2026.png",
+      "alt": "The site of the former Dorogomilovskaya Gate in present-day Moscow. 2026",
+      "caption": "The site of the former Dorogomilovskaya Gate in present-day Moscow. 2026"
+    }
   },
   {
     "id": "dorogomilovskoe-cemetery",
@@ -316,12 +342,9 @@
     "address": "38 Kutuzovsky Prospekt",
     "historicalNote": "The present granite obelisk was created in 1940 to replace the deteriorated 1849 memorial; they are not the same physical object.",
     "coverImage": {
-      "src": "/images/places/brotherhood-grave-obelisk-2023.jpg",
-      "alt": "The present granite obelisk beside Kutuzov Hut",
-      "caption": "Alexander Sigachev. Granite obelisk beside Kutuzov Hut, 2023. This monument was made in 1940 to replace the 1849 memorial.",
-      "description": "A modern photograph of the 1940 obelisk, not of the earlier 1849 memorial.",
-      "credit": "Alexander Sigachev · Wikimedia Commons · CC BY-SA 4.0",
-      "sourceId": "src-media-place-brotherhood-grave-obelisk-2023"
+      "src": "/images/places/borodino-soldiers-memorial-2026.jpeg",
+      "alt": "Monument at the mass grave of soldiers who died in the Battle of Borodino in 1812. Present-day view, 2026",
+      "caption": "Monument at the mass grave of soldiers who died in the Battle of Borodino in 1812. Present-day view, 2026"
     }
   },
   {
@@ -347,12 +370,9 @@
     "relatedTimelineIds": ["council-fili"],
     "address": "38 Kutuzovsky Prospekt, Building 2",
     "coverImage": {
-      "src": "/images/places/milepost-fili-2023.jpg",
-      "alt": "The memorial milepost beside Kutuzov Hut in a modern photograph",
-      "caption": "Alexander Sigachev. Memorial milepost at Fili, 2023. The marker was placed at the site of the Military Council hut in 1883.",
-      "description": "A modern documentary photograph of the memorial marker, not an image of the events of 1812.",
-      "credit": "Alexander Sigachev · Wikimedia Commons · CC BY-SA 4.0",
-      "sourceId": "src-media-place-milepost-fili-2023"
+      "src": "/images/places/fili-memorial-verst-post-2026.jpeg",
+      "alt": "Memorial milepost at Fili. Present-day view, 2026",
+      "caption": "Memorial milepost at Fili. Present-day view, 2026"
     }
   },
   {
@@ -378,12 +398,9 @@
     "relatedTimelineIds": [],
     "address": "Kutuzovsky Prospekt, by the Kutuzov Hut",
     "coverImage": {
-      "src": "/images/places/archangel-michael-chapel-2008.jpg",
-      "alt": "The Chapel of the Archangel Michael beside Kutuzov Hut",
-      "caption": "NVO. Chapel of the Archangel Michael, 2008. A memorial building consecrated in 1912.",
-      "description": "A modern documentary photograph of a chapel built a century after the events of 1812.",
-      "credit": "NVO · Wikimedia Commons · CC BY-SA 3.0",
-      "sourceId": "src-media-place-archangel-michael-chapel-2008"
+      "src": "/images/places/archangel-michael-chapel-2026.png",
+      "alt": "Chapel of the Archangel Michael. Present-day view, 2026",
+      "caption": "Chapel of the Archangel Michael. Present-day view, 2026"
     }
   },
   {
@@ -415,12 +432,9 @@
     "relatedTimelineIds": ["borodino"],
     "address": "38 Kutuzovsky Prospekt, Building 1",
     "coverImage": {
-      "src": "/images/places/borodino-panorama-museum-2007.jpg",
-      "alt": "The Battle of Borodino Panorama Museum building",
-      "caption": "A.Savin. Battle of Borodino Panorama Museum, 2007. The present building opened in 1962.",
-      "description": "A modern documentary photograph of the museum building, not a structure from 1812.",
-      "credit": "A.Savin, Wikipedia · Free Art License",
-      "sourceId": "src-media-place-borodino-panorama-museum-2007"
+      "src": "/images/places/borodino-panorama-museum-2026.jpeg",
+      "alt": "Battle of Borodino Panorama Museum. Present-day view of the museum building, 2026",
+      "caption": "Battle of Borodino Panorama Museum. Present-day view of the museum building, 2026"
     },
     "beforeAfter": [
       {
@@ -433,15 +447,12 @@
           "sourceId": "src-media-place-borodino-panorama-1962"
         },
         "after": {
-          "src": "/images/places/borodino-panorama-museum-2007.jpg",
-          "alt": "The Battle of Borodino Panorama Museum building",
-          "caption": "A.Savin. Battle of Borodino Panorama Museum, 2007. The present building opened in 1962.",
-          "description": "A modern documentary photograph of the museum building, not a structure from 1812.",
-          "credit": "A.Savin, Wikipedia · Free Art License",
-          "sourceId": "src-media-place-borodino-panorama-museum-2007"
+          "src": "/images/places/borodino-panorama-museum-2026.jpeg",
+          "alt": "Battle of Borodino Panorama Museum. Present-day view of the museum building, 2026",
+          "caption": "Battle of Borodino Panorama Museum. Present-day view of the museum building, 2026"
         },
         "beforeDate": "1962",
-        "afterDate": "2007",
+        "afterDate": "2026",
         "caption": "The archival photograph was taken on 17 October 1962, the day before the museum opened. The photographs were taken from different viewpoints, so the comparison shows changes in the building’s appearance rather than an exact alignment of two frames.",
         "aspectRatio": 1.3333333333333333
       }
@@ -477,12 +488,9 @@
     "relatedTimelineIds": ["borodino", "council-fili"],
     "address": "38 Kutuzovsky Prospekt",
     "coverImage": {
-      "src": "/images/places/kutuzov-monument-2016.jpg",
-      "alt": "Monument to Kutuzov and the participants in the War of 1812",
-      "caption": "Gennady Grachev. Monument to Kutuzov, 2016. The memorial was unveiled in 1973.",
-      "description": "A modern photograph of a twentieth-century memorial, not an object from 1812.",
-      "credit": "Gennady Grachev · Wikimedia Commons · CC BY 2.0",
-      "sourceId": "src-media-place-kutuzov-monument-2016"
+      "src": "/images/places/kutuzov-and-war-of-1812-monument-2026.jpeg",
+      "alt": "Monument to Mikhail Kutuzov and the participants in the Patriotic War of 1812. Present-day view, 2026",
+      "caption": "Monument to Mikhail Kutuzov and the participants in the Patriotic War of 1812. Present-day view, 2026"
     }
   },
   {
@@ -509,12 +517,10 @@
     "relatedTimelineIds": [],
     "address": "Victory Square, Kutuzovsky Prospekt",
     "coverImage": {
-      "src": "/images/places/triumphal-arch-modern-2015.jpg",
+      "src": "/images/places/triumphal-arch-modern-2026.png",
       "alt": "The recreated Triumphal Arch on Kutuzovsky Prospekt",
-      "caption": "Gennady Grachev. Triumphal Arch, 2015. The recreated monument at its new location.",
-      "description": "A modern photograph of the arch recreated on Kutuzovsky Prospekt in the 1960s.",
-      "credit": "Gennady Grachev · Wikimedia Commons · CC BY 2.0",
-      "sourceId": "src-media-place-triumphal-arch-modern-2015"
+      "caption": "Triumphal Arch. The recreated monument at its new location.",
+      "description": "A modern photograph of the arch recreated on Kutuzovsky Prospekt in the 1960s."
     },
     "gallery": [
       {
@@ -538,16 +544,14 @@
           "sourceId": "src-media-place-triumphal-arch-1934"
         },
         "after": {
-          "src": "/images/places/triumphal-arch-modern-2015.jpg",
+          "src": "/images/places/triumphal-arch-modern-2026.png",
           "alt": "The recreated Triumphal Arch on Kutuzovsky Prospekt",
-          "caption": "Gennady Grachev. Triumphal Arch, 2015. The recreated monument at its new location.",
-          "description": "A modern photograph of the arch recreated on Kutuzovsky Prospekt in the 1960s.",
-          "credit": "Gennady Grachev · Wikimedia Commons · CC BY 2.0",
-          "sourceId": "src-media-place-triumphal-arch-modern-2015"
+          "caption": "Triumphal Arch. The recreated monument at its new location.",
+          "description": "A modern photograph of the arch recreated on Kutuzovsky Prospekt in the 1960s."
         },
         "caption": "On the left is the original Triumphal Arch at Tverskaya Zastava shortly before its dismantling. On the right is the recreated monument on Kutuzovsky Prospekt. This comparison shows two incarnations of the same memorial rather than the same structure in an unchanged location.",
         "beforeDate": "1934",
-        "afterDate": "2015",
+        "afterDate": "2026",
         "aspectRatio": 1.3333333333333333
       }
     ]

@@ -77,13 +77,30 @@
       }
     ],
     "coverImage": {
-      "src": "/images/places/kutuzov-hut-modern-2015.jpg",
-      "alt": "Современное здание музея «Кутузовская изба»",
-      "caption": "Дмитрий Маркевич. Кутузовская изба, 2015. Нынешнее здание — реконструкция 1887 года.",
-      "description": "Современная документальная фотография реконструированной избы; не подлинное здание 1812 года.",
-      "credit": "Dmitry Markevich · Wikimedia Commons · CC BY-SA 4.0",
-      "sourceId": "src-media-place-kutuzov-hut-modern-2015"
-    }
+      "src": "/images/places/kutuzov-hut-modern-2026.png",
+      "alt": "Современное здание музея «Кутузовская изба»"
+    },
+    "beforeAfter": [
+      {
+        "id": "kutuzov-hut-1884-2026",
+        "before": {
+          "src": "/images/dictionary/kutuzov-hut-savrasov-1884.jpg",
+          "alt": "Изба в Филях на картине Алексея Саврасова 1884 года",
+          "caption": "Алексей Саврасов. «Кутузовская изба в Филях», 1884. Художественное изображение исторической избы до реконструкции 1887 года.",
+          "description": "Картина, не документальная фотография и не изображение нынешнего музейного здания.",
+          "credit": "Алексей Саврасов · Leo Tolstoy State Museum · Общественное достояние / PD-Art",
+          "sourceId": "src-media-kutuzov-hut-savrasov-1884"
+        },
+        "after": {
+          "src": "/images/places/kutuzov-hut-modern-2026.png",
+          "alt": "Современное здание музея «Кутузовская изба»"
+        },
+        "caption": "Слева — изба в Филях на картине Алексея Саврасова 1884 года. Справа — современное здание музея «Кутузовская изба» в 2026 году. Сравниваются художественное изображение исторической избы и нынешнее музейное здание.",
+        "beforeDate": "1884",
+        "afterDate": "2026",
+        "aspectRatio": 1.3333333333333333
+      }
+    ]
   },
   {
     "id": "intercession-church-fili",
@@ -226,7 +243,11 @@
     "relatedDictionaryIds": ["napoleon", "poklonnaya-hill", "smolensk-road"],
     "relatedTimelineIds": ["moscow-abandoned"],
     "locationNote": "Координата обозначает современную историческую местность.",
-    "historicalNote": "Сюжет о «ключах от Москвы» следует подавать как историческую традицию."
+    "historicalNote": "Сюжет о «ключах от Москвы» следует подавать как историческую традицию.",
+    "coverImage": {
+      "src": "/images/places/poklonnaya-gora-modern-2026.png",
+      "alt": "Поклонная гора, современный вид"
+    }
   },
   {
     "id": "dorogomilovskaya-gate",
@@ -255,7 +276,12 @@
     "relatedPlaceIds": ["poklonnaya-hill", "dorogomilovskoe-cemetery"],
     "relatedDictionaryIds": ["dorogomilovo", "smolensk-road", "napoleon"],
     "relatedTimelineIds": ["moscow-abandoned"],
-    "locationNote": "Современная площадь не полностью совпадает с положением исторической заставы."
+    "locationNote": "Современная площадь не полностью совпадает с положением исторической заставы.",
+    "coverImage": {
+      "src": "/images/places/dorogomilovskaya-zastava-modern-2026.png",
+      "alt": "Место бывшей Дорогомиловской заставы в современной Москве. 2026 год",
+      "caption": "Место бывшей Дорогомиловской заставы в современной Москве. 2026 год"
+    }
   },
   {
     "id": "dorogomilovskoe-cemetery",
@@ -316,12 +342,9 @@
     "address": "Кутузовский проспект, 38",
     "historicalNote": "Нынешний гранитный обелиск создан в 1940 году вместо обветшавшего памятника 1849 года; это не один и тот же физический объект.",
     "coverImage": {
-      "src": "/images/places/brotherhood-grave-obelisk-2023.jpg",
-      "alt": "Нынешний гранитный обелиск у Кутузовской избы",
-      "caption": "Александр Сигачёв. Гранитный обелиск у Кутузовской избы, 2023. Нынешний памятник создан в 1940 году взамен памятника 1849 года.",
-      "description": "Современная фотография обелиска 1940 года; не изображение прежнего памятника 1849 года.",
-      "credit": "Александр Сигачёв · Wikimedia Commons · CC BY-SA 4.0",
-      "sourceId": "src-media-place-brotherhood-grave-obelisk-2023"
+      "src": "/images/places/borodino-soldiers-memorial-2026.jpeg",
+      "alt": "Памятник на братской могиле воинов, погибших в Бородинском сражении 1812 года. Современный вид, 2026 год",
+      "caption": "Памятник на братской могиле воинов, погибших в Бородинском сражении 1812 года. Современный вид, 2026 год"
     }
   },
   {
@@ -347,12 +370,9 @@
     "relatedTimelineIds": ["council-fili"],
     "address": "Кутузовский проспект, 38, стр. 2",
     "coverImage": {
-      "src": "/images/places/milepost-fili-2023.jpg",
-      "alt": "Памятный верстовой столб у Кутузовской избы на современной фотографии",
-      "caption": "Александр Сигачёв. Памятный верстовой столб в Филях, 2023. Знак установлен на месте избы Военного совета в 1883 году.",
-      "description": "Современная документальная фотография памятного знака; не изображение событий 1812 года.",
-      "credit": "Александр Сигачёв · Wikimedia Commons · CC BY-SA 4.0",
-      "sourceId": "src-media-place-milepost-fili-2023"
+      "src": "/images/places/fili-memorial-verst-post-2026.jpeg",
+      "alt": "Памятный верстовой столб в Филях. Современный вид, 2026 год",
+      "caption": "Памятный верстовой столб в Филях. Современный вид, 2026 год"
     }
   },
   {
@@ -378,12 +398,9 @@
     "relatedTimelineIds": [],
     "address": "Кутузовский проспект, у Кутузовской избы",
     "coverImage": {
-      "src": "/images/places/archangel-michael-chapel-2008.jpg",
-      "alt": "Часовня Архангела Михаила у Кутузовской избы",
-      "caption": "NVO. Часовня Архангела Михаила, 2008. Мемориальная постройка, освящённая в 1912 году.",
-      "description": "Современная документальная фотография часовни; она построена спустя век после событий 1812 года.",
-      "credit": "NVO · Wikimedia Commons · CC BY-SA 3.0",
-      "sourceId": "src-media-place-archangel-michael-chapel-2008"
+      "src": "/images/places/archangel-michael-chapel-2026.png",
+      "alt": "Часовня Архангела Михаила. Современный вид, 2026 год",
+      "caption": "Часовня Архангела Михаила. Современный вид, 2026 год"
     }
   },
   {
@@ -415,12 +432,9 @@
     "relatedTimelineIds": ["borodino"],
     "address": "Кутузовский проспект, 38, стр. 1",
     "coverImage": {
-      "src": "/images/places/borodino-panorama-museum-2007.jpg",
-      "alt": "Здание Музея-панорамы «Бородинская битва»",
-      "caption": "A.Savin. Музей-панорама «Бородинская битва», 2007. Современное здание открыто в 1962 году.",
-      "description": "Современная документальная фотография здания музея, не постройки эпохи 1812 года.",
-      "credit": "A.Savin, Wikipedia · Free Art License",
-      "sourceId": "src-media-place-borodino-panorama-museum-2007"
+      "src": "/images/places/borodino-panorama-museum-2026.jpeg",
+      "alt": "Музей-панорама „Бородинская битва“. Современный вид здания музея, 2026 год",
+      "caption": "Музей-панорама „Бородинская битва“. Современный вид здания музея, 2026 год"
     },
     "beforeAfter": [
       {
@@ -433,15 +447,12 @@
           "sourceId": "src-media-place-borodino-panorama-1962"
         },
         "after": {
-          "src": "/images/places/borodino-panorama-museum-2007.jpg",
-          "alt": "Здание Музея-панорамы «Бородинская битва»",
-          "caption": "A.Savin. Музей-панорама «Бородинская битва», 2007. Современное здание открыто в 1962 году.",
-          "description": "Современная документальная фотография здания музея, не постройки эпохи 1812 года.",
-          "credit": "A.Savin, Wikipedia · Free Art License",
-          "sourceId": "src-media-place-borodino-panorama-museum-2007"
+          "src": "/images/places/borodino-panorama-museum-2026.jpeg",
+          "alt": "Музей-панорама „Бородинская битва“. Современный вид здания музея, 2026 год",
+          "caption": "Музей-панорама „Бородинская битва“. Современный вид здания музея, 2026 год"
         },
         "beforeDate": "1962",
-        "afterDate": "2007",
+        "afterDate": "2026",
         "caption": "Архивная фотография сделана 17 октября 1962 года, накануне открытия музея. Ракурсы фотографий различаются, поэтому сравнение показывает изменение облика здания, а не точное совмещение двух кадров.",
         "aspectRatio": 1.3333333333333333
       }
@@ -477,12 +488,9 @@
     "relatedTimelineIds": ["borodino", "council-fili"],
     "address": "Кутузовский проспект, 38",
     "coverImage": {
-      "src": "/images/places/kutuzov-monument-2016.jpg",
-      "alt": "Памятник М. И. Кутузову и участникам войны 1812 года",
-      "caption": "Gennady Grachev. Памятник М. И. Кутузову, 2016. Монумент открыт в 1973 году.",
-      "description": "Современная фотография мемориала XX века, не объекта эпохи 1812 года.",
-      "credit": "Gennady Grachev · Wikimedia Commons · CC BY 2.0",
-      "sourceId": "src-media-place-kutuzov-monument-2016"
+      "src": "/images/places/kutuzov-and-war-of-1812-monument-2026.jpeg",
+      "alt": "Памятник М. И. Кутузову и участникам Отечественной войны 1812 года. Современный вид, 2026 год",
+      "caption": "Памятник М. И. Кутузову и участникам Отечественной войны 1812 года. Современный вид, 2026 год"
     }
   },
   {
@@ -509,12 +517,10 @@
     "relatedTimelineIds": [],
     "address": "Площадь Победы, Кутузовский проспект",
     "coverImage": {
-      "src": "/images/places/triumphal-arch-modern-2015.jpg",
+      "src": "/images/places/triumphal-arch-modern-2026.png",
       "alt": "Воссозданная Триумфальная арка на Кутузовском проспекте",
-      "caption": "Gennady Grachev. Триумфальная арка, 2015. Воссозданный памятник на новом месте.",
-      "description": "Современная фотография арки, воссозданной в 1960-е годы на Кутузовском проспекте.",
-      "credit": "Gennady Grachev · Wikimedia Commons · CC BY 2.0",
-      "sourceId": "src-media-place-triumphal-arch-modern-2015"
+      "caption": "Триумфальная арка. Воссозданный памятник на новом месте.",
+      "description": "Современная фотография арки, воссозданной в 1960-е годы на Кутузовском проспекте."
     },
     "gallery": [
       {
@@ -538,16 +544,14 @@
           "sourceId": "src-media-place-triumphal-arch-1934"
         },
         "after": {
-          "src": "/images/places/triumphal-arch-modern-2015.jpg",
+          "src": "/images/places/triumphal-arch-modern-2026.png",
           "alt": "Воссозданная Триумфальная арка на Кутузовском проспекте",
-          "caption": "Gennady Grachev. Триумфальная арка, 2015. Воссозданный памятник на новом месте.",
-          "description": "Современная фотография арки, воссозданной в 1960-е годы на Кутузовском проспекте.",
-          "credit": "Gennady Grachev · Wikimedia Commons · CC BY 2.0",
-          "sourceId": "src-media-place-triumphal-arch-modern-2015"
+          "caption": "Триумфальная арка. Воссозданный памятник на новом месте.",
+          "description": "Современная фотография арки, воссозданной в 1960-е годы на Кутузовском проспекте."
         },
         "caption": "Слева — первоначальная Триумфальная арка у Тверской заставы незадолго до её демонтажа. Справа — воссозданный памятник на Кутузовском проспекте. Это сравнение двух воплощений одного памятника, а не одного сооружения на неизменном месте.",
         "beforeDate": "1934",
-        "afterDate": "2015",
+        "afterDate": "2026",
         "aspectRatio": 1.3333333333333333
       }
     ]

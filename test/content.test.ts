@@ -150,11 +150,12 @@ test('About content has bilingual narrative and localized exploration parity', (
   )
 })
 
-test('Interactive Place comparison uses exactly four sourced bilingual pairs', () => {
+test('Interactive Place comparison uses five bilingual pairs with available attribution', () => {
   const expected = [
     'borodino-panorama-museum',
     'intercession-church-fili',
     'kuntsevo-estate',
+    'kutuzov-hut',
     'triumphal-arch',
   ]
   for (const locale of ['ru', 'en'] as const) {
@@ -166,7 +167,7 @@ test('Interactive Place comparison uses exactly four sourced bilingual pairs', (
         .sort(),
       expected,
     )
-    assert.equal(places.filter((place) => !place.beforeAfter?.length).length, 9)
+    assert.equal(places.filter((place) => !place.beforeAfter?.length).length, 8)
     for (const place of places.filter((place) => place.beforeAfter?.length)) {
       assert.equal(place.beforeAfter!.length, 1)
       const pair = place.beforeAfter![0]!
@@ -183,8 +184,10 @@ test('Interactive Place comparison uses exactly four sourced bilingual pairs', (
           : place.id === 'intercession-church-fili'
             ? ['1888', '2019']
             : place.id === 'triumphal-arch'
-              ? ['1934', '2015']
-              : ['1962', '2007'],
+              ? ['1934', '2026']
+              : place.id === 'kutuzov-hut'
+                ? ['1884', '2026']
+                : ['1962', '2026'],
       )
       assert.ok(pair.caption?.trim())
       assert.deepEqual(
@@ -196,10 +199,34 @@ test('Interactive Place comparison uses exactly four sourced bilingual pairs', (
         [counterpart.before.sourceId, counterpart.after.sourceId],
       )
       for (const image of [pair.before, pair.after]) {
-        assert.match(image.src, /^\/images\/[a-z]+\/[a-z0-9-]+\.jpg$/)
+        assert.match(image.src, /^\/images\/[a-z]+\/[a-z0-9-]+\.(?:jpe?g|png)$/)
         assert.ok(existsSync(`public${image.src}`))
         assert.ok(image.alt.trim())
+        if (image.src === '/images/places/kutuzov-hut-modern-2026.png') {
+          assert.equal(image.caption, undefined)
+          assert.equal(image.credit, undefined)
+          assert.equal(image.sourceId, undefined)
+          continue
+        }
         assert.ok(image.caption?.trim())
+        if (image.src === '/images/places/borodino-panorama-museum-2026.jpeg') {
+          assert.ok(image.alt.trim())
+          assert.equal(
+            image.caption,
+            locale === 'ru'
+              ? 'Музей-панорама „Бородинская битва“. Современный вид здания музея, 2026 год'
+              : 'Battle of Borodino Panorama Museum. Present-day view of the museum building, 2026',
+          )
+          assert.equal(image.description, undefined)
+          assert.equal(image.credit, undefined)
+          assert.equal(image.sourceId, undefined)
+          continue
+        }
+        if (image.src === '/images/places/triumphal-arch-modern-2026.png') {
+          assert.equal(image.credit, undefined)
+          assert.equal(image.sourceId, undefined)
+          continue
+        }
         assert.ok(image.credit?.trim())
         const source = getSourceById(locale, image.sourceId!)
         assert.equal(source?.type, 'media')
@@ -523,29 +550,29 @@ test('Place supports required status and precision and optional address', () => 
 test('Places media resolves to local originals with RU/EN parity and approved roles', () => {
   const covers = {
     'fili-village': '/images/timeline/fili-council-kivshenko-1882.jpg',
-    'kutuzov-hut': '/images/places/kutuzov-hut-modern-2015.jpg',
+    'kutuzov-hut': '/images/places/kutuzov-hut-modern-2026.png',
     'intercession-church-fili':
       '/images/places/intercession-church-fili-2019.jpg',
     'kuntsevo-estate': '/images/places/kuntsevo-estate-ca1910.jpg',
     'brotherhood-grave-obelisk':
-      '/images/places/brotherhood-grave-obelisk-2023.jpg',
-    'milepost-fili': '/images/places/milepost-fili-2023.jpg',
+      '/images/places/borodino-soldiers-memorial-2026.jpeg',
+    'milepost-fili': '/images/places/fili-memorial-verst-post-2026.jpeg',
     'archangel-michael-chapel':
-      '/images/places/archangel-michael-chapel-2008.jpg',
+      '/images/places/archangel-michael-chapel-2026.png',
     'borodino-panorama-museum':
-      '/images/places/borodino-panorama-museum-2007.jpg',
-    'kutuzov-monument': '/images/places/kutuzov-monument-2016.jpg',
-    'triumphal-arch': '/images/places/triumphal-arch-modern-2015.jpg',
+      '/images/places/borodino-panorama-museum-2026.jpeg',
+    'kutuzov-monument':
+      '/images/places/kutuzov-and-war-of-1812-monument-2026.jpeg',
+    'triumphal-arch': '/images/places/triumphal-arch-modern-2026.png',
+    'poklonnaya-hill': '/images/places/poklonnaya-gora-modern-2026.png',
+    'dorogomilovskaya-gate':
+      '/images/places/dorogomilovskaya-zastava-modern-2026.png',
   }
   const galleries = {
     'kutuzov-hut': ['/images/dictionary/kutuzov-hut-savrasov-1884.jpg'],
     'triumphal-arch': ['/images/places/triumphal-arch-1934.jpg'],
   }
-  const noImage = [
-    'poklonnaya-hill',
-    'dorogomilovskaya-gate',
-    'dorogomilovskoe-cemetery',
-  ]
+  const noImage = ['dorogomilovskoe-cemetery']
   for (const locale of ['ru', 'en'] as const) {
     const paths = new Set<string>()
     for (const place of getPlaces(locale)) {
@@ -575,16 +602,127 @@ test('Places media resolves to local originals with RU/EN parity and approved ro
           galleries[place.id as keyof typeof galleries],
         )
       for (const image of images) {
-        assert.match(image.src, /^\/images\/[a-z]+\/[a-z0-9-]+\.jpg$/)
-        assert.ok(!paths.has(image.src), `Duplicate Place asset: ${image.src}`)
+        assert.match(image.src, /^\/images\/[a-z]+\/[a-z0-9-]+\.(?:jpe?g|png)$/)
+        assert.equal(
+          images.filter((asset) => asset.src === image.src).length,
+          1,
+        )
         paths.add(image.src)
         const path = `public${image.src}`
         assert.ok(existsSync(path), path)
         const binary = readFileSync(path)
-        assert.equal(binary[0], 0xff, path)
-        assert.equal(binary[1], 0xd8, path)
-        assert.equal(binary.at(-2), 0xff, path)
-        assert.equal(binary.at(-1), 0xd9, path)
+        if (image.src.endsWith('.png')) {
+          assert.equal(
+            binary.subarray(0, 8).toString('hex'),
+            '89504e470d0a1a0a',
+            path,
+          )
+        } else {
+          assert.equal(binary[0], 0xff, path)
+          assert.equal(binary[1], 0xd8, path)
+          assert.equal(binary.at(-2), 0xff, path)
+          assert.equal(binary.at(-1), 0xd9, path)
+        }
+        if (place.id === 'kutuzov-monument') {
+          assert.ok(image.alt.trim())
+          assert.equal(
+            image.caption,
+            locale === 'ru'
+              ? 'Памятник М. И. Кутузову и участникам Отечественной войны 1812 года. Современный вид, 2026 год'
+              : 'Monument to Mikhail Kutuzov and the participants in the Patriotic War of 1812. Present-day view, 2026',
+          )
+          assert.equal(image.description, undefined)
+          assert.equal(image.credit, undefined)
+          assert.equal(image.sourceId, undefined)
+          continue
+        }
+        if (
+          image.src === '/images/places/kutuzov-hut-modern-2026.png' ||
+          image.src === '/images/places/poklonnaya-gora-modern-2026.png'
+        ) {
+          assert.ok(image.alt.trim())
+          assert.equal(image.caption, undefined)
+          assert.equal(image.description, undefined)
+          assert.equal(image.credit, undefined)
+          assert.equal(image.sourceId, undefined)
+          continue
+        }
+        if (
+          image.src ===
+          '/images/places/dorogomilovskaya-zastava-modern-2026.png'
+        ) {
+          assert.ok(image.alt.trim())
+          assert.equal(
+            image.caption,
+            locale === 'ru'
+              ? 'Место бывшей Дорогомиловской заставы в современной Москве. 2026 год'
+              : 'The site of the former Dorogomilovskaya Gate in present-day Moscow. 2026',
+          )
+          assert.equal(image.credit, undefined)
+          assert.equal(image.sourceId, undefined)
+          continue
+        }
+        if (
+          image.src === '/images/places/borodino-soldiers-memorial-2026.jpeg'
+        ) {
+          assert.ok(image.alt.trim())
+          assert.equal(
+            image.caption,
+            locale === 'ru'
+              ? 'Памятник на братской могиле воинов, погибших в Бородинском сражении 1812 года. Современный вид, 2026 год'
+              : 'Monument at the mass grave of soldiers who died in the Battle of Borodino in 1812. Present-day view, 2026',
+          )
+          assert.equal(image.credit, undefined)
+          assert.equal(image.sourceId, undefined)
+          continue
+        }
+        if (image.src === '/images/places/fili-memorial-verst-post-2026.jpeg') {
+          assert.ok(image.alt.trim())
+          assert.equal(
+            image.caption,
+            locale === 'ru'
+              ? 'Памятный верстовой столб в Филях. Современный вид, 2026 год'
+              : 'Memorial milepost at Fili. Present-day view, 2026',
+          )
+          assert.equal(image.description, undefined)
+          assert.equal(image.credit, undefined)
+          assert.equal(image.sourceId, undefined)
+          continue
+        }
+        if (image.src === '/images/places/archangel-michael-chapel-2026.png') {
+          assert.ok(image.alt.trim())
+          assert.equal(
+            image.caption,
+            locale === 'ru'
+              ? 'Часовня Архангела Михаила. Современный вид, 2026 год'
+              : 'Chapel of the Archangel Michael. Present-day view, 2026',
+          )
+          assert.equal(image.description, undefined)
+          assert.equal(image.credit, undefined)
+          assert.equal(image.sourceId, undefined)
+          continue
+        }
+        if (image.src === '/images/places/borodino-panorama-museum-2026.jpeg') {
+          assert.ok(image.alt.trim())
+          assert.equal(
+            image.caption,
+            locale === 'ru'
+              ? 'Музей-панорама „Бородинская битва“. Современный вид здания музея, 2026 год'
+              : 'Battle of Borodino Panorama Museum. Present-day view of the museum building, 2026',
+          )
+          assert.equal(image.description, undefined)
+          assert.equal(image.credit, undefined)
+          assert.equal(image.sourceId, undefined)
+          continue
+        }
+        if (image.src === '/images/places/triumphal-arch-modern-2026.png') {
+          assert.ok(image.alt.trim())
+          assert.ok(image.caption?.trim())
+          assert.ok(image.description?.trim())
+          assert.equal(image.credit, undefined)
+          assert.equal(image.sourceId, undefined)
+          continue
+        }
         for (const field of [
           'alt',
           'caption',
@@ -615,7 +753,9 @@ test('Places media resolves to local originals with RU/EN parity and approved ro
       ),
       2,
     )
-    assert.equal(getPlaceById(locale, 'kutuzov-hut')?.beforeAfter, undefined)
+    const hut = getPlaceById(locale, 'kutuzov-hut')!
+    assert.deepEqual(hut.beforeAfter?.[0]?.before, hut.gallery?.[0])
+    assert.deepEqual(hut.beforeAfter?.[0]?.after, hut.coverImage)
     assert.deepEqual(
       getPlaces(locale)
         .filter(
@@ -628,13 +768,15 @@ test('Places media resolves to local originals with RU/EN parity and approved ro
         .sort(),
       [...noImage].sort(),
     )
-    assert.equal(paths.size, 12)
+    assert.equal(paths.size, 14)
   }
   assert.equal(
     createHash('sha256')
-      .update(readFileSync('public/images/places/milepost-fili-2023.jpg'))
+      .update(
+        readFileSync('public/images/places/fili-memorial-verst-post-2026.jpeg'),
+      )
       .digest('hex'),
-    'add10890fe106e12901647dce9f9e240d2e1a929f540ceda109009e332984c94',
+    '654adf5d8540fe9183df250801cb40ba3a67447cf7676c90804ad193b9b2dc5e',
   )
 })
 

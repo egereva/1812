@@ -8,7 +8,7 @@ import {
 } from '../app/utils/imageDelivery.ts'
 
 test('delivery catalog preserves approved originals and provides bounded, smaller local variants', () => {
-  assert.equal(Object.keys(imageDeliveryCatalog).length, 42)
+  assert.equal(Object.keys(imageDeliveryCatalog).length, 51)
   let count = 0
   for (const [src, image] of Object.entries(imageDeliveryCatalog)) {
     const original = readFileSync(`public${src}`)

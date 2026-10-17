@@ -657,5 +657,68 @@
         "bytes": 228376
       }
     ]
+  },
+  "/images/places/kutuzov-hut-modern-2026.png": {
+    "width": 1600,
+    "height": 983,
+    "bytes": 3675367,
+    "sha256": "9602f21c7265af1c0cb96f22754292491c79ce0734d99054e4cd4edcc4d4c63e",
+    "variants": []
+  },
+  "/images/places/poklonnaya-gora-modern-2026.png": {
+    "width": 1536,
+    "height": 1024,
+    "bytes": 2562058,
+    "sha256": "38ff826d8b79c0d0307a9ddb157b2d381d5211f6cf6b34e8f52b4b894f518a94",
+    "variants": []
+  },
+  "/images/places/dorogomilovskaya-zastava-modern-2026.png": {
+    "width": 1600,
+    "height": 983,
+    "bytes": 3158266,
+    "sha256": "6312817a52b4f7358848d86513fdce6b02571d64806f33c0bd724ece70cdb71c",
+    "variants": []
+  },
+  "/images/places/borodino-soldiers-memorial-2026.jpeg": {
+    "width": 960,
+    "height": 1280,
+    "bytes": 377548,
+    "sha256": "e913063ec6adfa1f6b324f0565956bbc4f9e9cb03ebd950af306b3151ef6491f",
+    "variants": []
+  },
+  "/images/places/fili-memorial-verst-post-2026.jpeg": {
+    "width": 1280,
+    "height": 960,
+    "bytes": 420533,
+    "sha256": "654adf5d8540fe9183df250801cb40ba3a67447cf7676c90804ad193b9b2dc5e",
+    "variants": []
+  },
+  "/images/places/archangel-michael-chapel-2026.png": {
+    "width": 1448,
+    "height": 1086,
+    "bytes": 3922861,
+    "sha256": "4c69bd945d9e53200a259ff209ba17d3f507ac5923de40bc3feb351505e3d725",
+    "variants": []
+  },
+  "/images/places/borodino-panorama-museum-2026.jpeg": {
+    "width": 1280,
+    "height": 960,
+    "bytes": 162928,
+    "sha256": "874f6aec2aba9745fc8a16b3012f09cbcc445ea8306cdd3a6f5bcde6f80416e8",
+    "variants": []
+  },
+  "/images/places/kutuzov-and-war-of-1812-monument-2026.jpeg": {
+    "width": 960,
+    "height": 1280,
+    "bytes": 157007,
+    "sha256": "688deb6de32b011c71e48b9488a3ba0cb32d1b85d975dcaad9717d740c971707",
+    "variants": []
+  },
+  "/images/places/triumphal-arch-modern-2026.png": {
+    "width": 1536,
+    "height": 1024,
+    "bytes": 2638893,
+    "sha256": "bc0ba52f74e5a1bdb81a692476d028d53d856b0789c0bdf02dc7318384d5ecc8",
+    "variants": []
   }
 }
