@@ -720,5 +720,19 @@
     "bytes": 2638893,
     "sha256": "bc0ba52f74e5a1bdb81a692476d028d53d856b0789c0bdf02dc7318384d5ecc8",
     "variants": []
+  },
+  "/images/dictionary/Dohkturov.webp": {
+    "width": 981,
+    "height": 1124,
+    "bytes": 145248,
+    "sha256": "3368defe06b101e7b5abc7c1fedf012f3d940deae433e98c01854b303c485f04",
+    "variants": []
+  },
+  "/images/dictionary/Ermolov.webp": {
+    "width": 1441,
+    "height": 1063,
+    "bytes": 197256,
+    "sha256": "82eee3c9d1b2a15f5285b7aa2eeeb695c9e8329cae03003536687939c87a2c9c",
+    "variants": []
   }
 }

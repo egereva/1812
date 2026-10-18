@@ -4,8 +4,10 @@ import test from 'node:test'
 import {
   getDictionaryEntries,
   getPlaces,
+  getSourceById,
   resolveRelatedContent,
 } from '../shared/content/index.ts'
+import { imageDeliveryCatalog } from '../app/utils/imageDelivery.ts'
 
 const escape = (value) =>
   String(value).replace(
@@ -22,7 +24,7 @@ for (const locale of ['ru', 'en']) {
   const resolved = entries.map(
     (entry) => resolveRelatedContent(locale, 'dictionary', entry.id).places,
   )
-  assert.equal(resolved.filter((group) => group.length).length, 17)
+  assert.equal(resolved.filter((group) => group.length).length, 19)
   assert.equal(resolved.filter((group) => !group.length).length, 12)
   assert.equal(Math.max(...resolved.map((group) => group.length)), 6)
   for (const entry of entries) {
@@ -91,6 +93,40 @@ for (const locale of ['ru', 'en']) {
         /<script[^>]*src="[^"]*(?:api-maps\.yandex|maps-api\.yandex)/,
       )
     })
+    if (['dokhturov', 'ermolov'].includes(entry.id)) {
+      test(`${locale} generated Dictionary image and attribution: ${entry.id}`, () => {
+        const html = readFileSync(
+          `.output/public${prefix}/dictionary/${entry.slug}/index.html`,
+          'utf8',
+        )
+        const figure = html.match(/<figure\b[^>]*>([\s\S]*?)<\/figure>/)?.[1]
+        assert.ok(figure)
+        const image = figure.match(/<img\b[^>]*>/)?.[0]
+        assert.ok(image)
+        const delivery = imageDeliveryCatalog[entry.image.src]
+        assert.ok(delivery)
+        assert.ok(image.includes(`src="${entry.image.src}"`))
+        assert.ok(image.includes(`width="${delivery.width}"`))
+        assert.ok(image.includes(`height="${delivery.height}"`))
+        assert.ok(image.includes(`alt="${escape(entry.image.alt)}"`))
+        assert.ok(figure.includes(escape(entry.image.caption)))
+        const source = getSourceById(locale, entry.image.sourceId)
+        assert.equal(source?.type, 'media')
+        const anchors = [...figure.matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a>/g)]
+        assert.equal(anchors.length, 1)
+        assert.ok(anchors[0][1].includes(`href="${escape(source.url)}"`))
+        assert.match(anchors[0][1], /target="_blank"/)
+        assert.match(anchors[0][1], /rel="noopener noreferrer"/)
+        assert.equal(
+          anchors[0][2].replace(/<!--[\s\S]*?-->/g, ''),
+          escape(source.publisher),
+        )
+        assert.ok(
+          !figure.replace(/<[^>]*>/g, '').includes(source.url),
+          'Source URL is a link rather than raw caption text',
+        )
+      })
+    }
   }
   test(`${locale} generated Map no-JS index keeps all 13 localized routes`, () => {
     const html = readFileSync(`.output/public${prefix}/map/index.html`, 'utf8')

@@ -139,7 +139,7 @@ test('robots and sitemap exactly match deployment configuration', async () => {
       urls,
       getPublicSeoRoutes().map((r) => publicSeoUrl(r, origin, base)),
     )
-    assert.equal(new Set(urls).size, 136)
+    assert.equal(new Set(urls).size, 140)
   } else {
     assert.doesNotMatch(robots, /Sitemap:|localhost|example/)
     assert.throws(() => readFileSync('.output/public/sitemap.xml'))

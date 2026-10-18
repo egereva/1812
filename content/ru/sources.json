@@ -599,5 +599,23 @@
     "type": "media",
     "publisher": "Wikimedia Commons",
     "year": 1888
+  },
+  {
+    "id": "src-media-dict-dokhturov-dawe",
+    "title": "Джордж Доу и мастерская. Портрет Дмитрия Сергеевича Дохтурова. Не позднее 1825 года.",
+    "type": "media",
+    "author": "Джордж Доу и мастерская",
+    "publisher": "Государственный Эрмитаж",
+    "url": "https://www.hermitagemuseum.org/digital-collection/39079",
+    "accessedAt": "2026-10-18"
+  },
+  {
+    "id": "src-media-dict-ermolov-safonov",
+    "title": "А. Сафонов. Контратака Алексея Ермолова на захваченную батарею Раевского. Хромолитография, начало XX века.",
+    "type": "media",
+    "author": "А. Сафонов",
+    "publisher": "Нескучный сад",
+    "url": "https://1812.nsad.ru/195",
+    "accessedAt": "2026-10-18"
   }
 ]

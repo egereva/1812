@@ -599,5 +599,23 @@
     "type": "media",
     "publisher": "Wikimedia Commons",
     "year": 1888
+  },
+  {
+    "id": "src-media-dict-dokhturov-dawe",
+    "title": "George Dawe and workshop. Portrait of Dmitry Dokhturov. No later than 1825.",
+    "type": "media",
+    "author": "George Dawe and workshop",
+    "publisher": "State Hermitage Museum",
+    "url": "https://www.hermitagemuseum.org/digital-collection/39079",
+    "accessedAt": "2026-10-18"
+  },
+  {
+    "id": "src-media-dict-ermolov-safonov",
+    "title": "A. Safonov. Alexey Yermolov’s counterattack against the captured Raevsky Battery. Chromolithograph, early 20th century.",
+    "type": "media",
+    "author": "A. Safonov",
+    "publisher": "Neskuchny Sad",
+    "url": "https://1812.nsad.ru/195",
+    "accessedAt": "2026-10-18"
   }
 ]

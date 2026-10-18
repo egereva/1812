@@ -212,7 +212,7 @@ for (const locale of ['ru', 'en']) {
     assert.ok(html.includes(`lang="${locale === 'en' ? 'en-US' : 'ru-RU'}"`))
     for (const [id, media, count] of [
       ['research', false, 26],
-      ['media', true, 42],
+      ['media', true, 44],
     ]) {
       const block = section(html, `${id}-title`)
       assert.ok(block)

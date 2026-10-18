@@ -9,12 +9,47 @@
     "no-image-yet is intentional and should render without a placeholder."
   ],
   "summary": {
-    "dictionaryEntries": 29,
-    "approvedNew": 15,
+    "dictionaryEntries": 31,
+    "approvedNew": 17,
     "reuseApproved": 8,
     "noImageYet": 6
   },
   "entries": [
+    {
+      "dictionaryId": "dokhturov",
+      "status": "approved-new",
+      "assetId": "dict-dokhturov-dawe",
+      "targetPath": "/images/dictionary/Dohkturov.webp",
+      "type": "portrait",
+      "author": "George Dawe and workshop",
+      "date": "no later than 1825",
+      "sourcePage": "https://www.hermitagemuseum.org/digital-collection/39079",
+      "sourceId": "src-media-dict-dokhturov-dawe",
+      "institution": "State Hermitage Museum / Military Gallery",
+      "captionRu": "Портрет Дмитрия Сергеевича Дохтурова. Джордж Доу и мастерская, не позднее 1825 года.",
+      "captionEn": "Portrait of Dmitry Dokhturov. George Dawe and workshop, no later than 1825.",
+      "altRu": "Портрет Дмитрия Сергеевича Дохтурова.",
+      "altEn": "Portrait of Dmitry Sergeyevich Dokhturov.",
+      "noteRu": "Локальный файл предоставлен редактором. Лицензия цифровой репродукции на указанной странице источника не подтверждена; лицензионное обозначение не добавлено.",
+      "noteEn": "Local file supplied by the editor. A licence for the digital reproduction has not been verified on the linked source page; no licence is asserted."
+    },
+    {
+      "dictionaryId": "ermolov",
+      "status": "approved-new",
+      "assetId": "dict-ermolov-safonov",
+      "targetPath": "/images/dictionary/Ermolov.webp",
+      "type": "later-artistic-depiction",
+      "author": "A. Safonov",
+      "date": "early 20th century",
+      "sourcePage": "https://1812.nsad.ru/195",
+      "sourceId": "src-media-dict-ermolov-safonov",
+      "captionRu": "Контратака Алексея Ермолова на захваченную батарею Раевского.",
+      "captionEn": "Alexey Yermolov’s counterattack against the captured Raevsky Battery.",
+      "altRu": "Контратака Ермолова на батарею Раевского во время Бородинского сражения.",
+      "altEn": "Yermolov’s counterattack at the Raevsky Battery during the Battle of Borodino.",
+      "noteRu": "Локальный файл предоставлен редактором. Лицензия цифровой репродукции на указанной странице источника не подтверждена; лицензионное обозначение не добавлено.",
+      "noteEn": "Local file supplied by the editor. A licence for the digital reproduction has not been verified on the linked source page; no licence is asserted."
+    },
     {
       "dictionaryId": "alexander-i",
       "status": "approved-new",

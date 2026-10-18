@@ -681,5 +681,70 @@
       "credit": "Петер фон Гесс · Public domain / PD-Art",
       "sourceId": "src-media-borodino-hess-1843"
     }
+  },
+  {
+    "id": "dokhturov",
+    "slug": "dokhturov",
+    "letter": "D",
+    "title": "Dmitry Dokhturov",
+    "shortDescription": "Russian general of infantry who took part in the Patriotic War of 1812 and the Military Council at Fili.",
+    "content": [
+      "During the Patriotic War of 1812, Dmitry Sergeyevich Dokhturov commanded the 6th Infantry Corps of Mikhail Barclay de Tolly’s 1st Western Army.",
+      "In August 1812, Dokhturov directed the defence of Smolensk. Despite being ill, he commanded the troops resisting French attacks and, when ordered to withdraw, led them out of the city in an orderly manner.",
+      "At the Battle of Borodino, Dokhturov initially commanded troops in the centre of the Russian position. After Pyotr Bagration was severely wounded, he assumed command of the troops of the 2nd Western Army on the left flank and directed their defence.",
+      "At the Military Council at Fili on 1 (13) September 1812, Dokhturov supported the proposal to fight another battle near Moscow. After Commander-in-Chief Mikhail Kutuzov decided to abandon the city, Dokhturov continued to serve with the army in the field.",
+      "In October 1812, Dokhturov’s troops fought at Maloyaroslavets and held back the enemy until reinforcements arrived, including Nikolay Raevsky’s corps. The battle halted Napoleon’s attempt to continue southwards. For his distinction at Maloyaroslavets, Dokhturov was awarded the Order of St George, 2nd Class."
+    ],
+    "category": "person",
+    "relatedPlaceIds": ["fili-village", "kutuzov-hut"],
+    "relatedDictionaryIds": [
+      "bagration",
+      "barclay-de-tolly",
+      "kutuzov",
+      "maloyaroslavets",
+      "military-council-fili",
+      "raevsky",
+      "smolensk-battle"
+    ],
+    "relatedTimelineIds": ["borodino", "council-fili"],
+    "sourceIds": ["src-bre-war"],
+    "image": {
+      "src": "/images/dictionary/Dohkturov.webp",
+      "alt": "Portrait of Dmitry Sergeyevich Dokhturov.",
+      "caption": "Portrait of Dmitry Dokhturov. George Dawe and workshop, no later than 1825.",
+      "credit": "George Dawe and workshop · Military Gallery of the Winter Palace",
+      "sourceId": "src-media-dict-dokhturov-dawe"
+    }
+  },
+  {
+    "id": "ermolov",
+    "slug": "ermolov",
+    "letter": "A",
+    "title": "Alexey Yermolov",
+    "shortDescription": "Russian military commander who took part in the Battle of Borodino and the Military Council at Fili.",
+    "content": [
+      "At the beginning of the Patriotic War of 1812, Alexey Petrovich Yermolov served as chief of staff of the 1st Western Army under Mikhail Barclay de Tolly. He took part in military operations near Smolensk and at Borodino.",
+      "During the Battle of Borodino on 26 August (7 September) 1812, Yermolov organized and led a Russian counterattack against the Raevsky Battery after it had been captured by French troops. The battery was retaken. Yermolov suffered a contusion. For his distinction at Borodino, he received the Order of St Anne, 1st Class.",
+      "At the Military Council at Fili on 1 (13) September 1812, Yermolov opposed abandoning Moscow without a fight and proposed an attack on the French army. Mikhail Kutuzov, however, decided to abandon Moscow in order to preserve the Russian army.",
+      "After the Battle of Borodino, Yermolov performed the duties of chief of staff of the combined 1st and 2nd Western Armies. He took part in the battles of Maloyaroslavets, Vyazma and Krasny. In late 1812, he was appointed to oversee artillery in the armies in the field and subsequently participated in the Russian army’s campaigns abroad."
+    ],
+    "category": "person",
+    "relatedPlaceIds": ["fili-village", "kutuzov-hut"],
+    "relatedDictionaryIds": [
+      "barclay-de-tolly",
+      "borodino-battle",
+      "kutuzov",
+      "military-council-fili",
+      "raevsky"
+    ],
+    "relatedTimelineIds": ["borodino", "council-fili"],
+    "sourceIds": ["src-bre-war"],
+    "image": {
+      "src": "/images/dictionary/Ermolov.webp",
+      "alt": "Yermolov’s counterattack at the Raevsky Battery during the Battle of Borodino.",
+      "caption": "Alexey Yermolov’s counterattack against the captured Raevsky Battery.",
+      "credit": "A. Safonov · Chromolithograph, early 20th century",
+      "sourceId": "src-media-dict-ermolov-safonov"
+    }
   }
 ]

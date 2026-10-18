@@ -47,16 +47,37 @@ import type { ContentCatalog, TimelineEvent } from '../shared/types/content.ts'
 
 const ru = getCatalog('ru')
 
+const newDictionaryMedia = [
+  {
+    dictionaryId: 'dokhturov',
+    sourceId: 'src-media-dict-dokhturov-dawe',
+    src: '/images/dictionary/Dohkturov.webp',
+    url: 'https://www.hermitagemuseum.org/digital-collection/39079',
+    type: 'portrait',
+    author: { ru: 'Джордж Доу и мастерская', en: 'George Dawe and workshop' },
+    publisher: { ru: 'Государственный Эрмитаж', en: 'State Hermitage Museum' },
+  },
+  {
+    dictionaryId: 'ermolov',
+    sourceId: 'src-media-dict-ermolov-safonov',
+    src: '/images/dictionary/Ermolov.webp',
+    url: 'https://1812.nsad.ru/195',
+    type: 'later-artistic-depiction',
+    author: { ru: 'А. Сафонов', en: 'A. Safonov' },
+    publisher: { ru: 'Нескучный сад', en: 'Neskuchny Sad' },
+  },
+] as const
+
 test('Dictionary Timeline relations preserve the approved coverage and chronological order', () => {
   for (const locale of ['ru', 'en']) {
     const entries = getDictionaryEntries(locale)
     const groups = entries.map((entry) =>
       resolveRelatedContent(locale, 'dictionary', entry.id),
     )
-    assert.equal(groups.filter((group) => group.timeline.length).length, 14)
+    assert.equal(groups.filter((group) => group.timeline.length).length, 16)
     assert.equal(
       groups.reduce((count, group) => count + group.timeline.length, 0),
-      38,
+      42,
     )
     assert.equal(
       groups.filter((group) => !group.timeline.length && !group.places.length)
@@ -73,15 +94,15 @@ test('Dictionary Timeline relations preserve the approved coverage and chronolog
   }
 })
 
-test('Sources grouping preserves all 68 records, metadata, order and bilingual IDs', () => {
+test('Sources grouping preserves all 70 records, metadata, order and bilingual IDs', () => {
   for (const locale of ['ru', 'en']) {
     const sources = getSources(locale)
     const groups = getSourceGroups(locale)
     assert.equal(groups.research.length, 26)
-    assert.equal(groups.media.length, 42)
+    assert.equal(groups.media.length, 44)
     const grouped = [...groups.research, ...groups.media]
     assert.equal(grouped.length, sources.length)
-    assert.equal(new Set(grouped.map((source) => source.id)).size, 68)
+    assert.equal(new Set(grouped.map((source) => source.id)).size, 70)
     assert.deepEqual(
       groups.research,
       sources.filter((source) => source.type !== 'media'),
@@ -349,7 +370,7 @@ test('loads both final production catalogs with expected entity counts', () => {
         catalog.timeline.length,
         catalog.sources.filter((source) => source.type !== 'media').length,
       ],
-      [13, 29, 20, 26],
+      [13, 31, 20, 26],
     )
     assert.ok(
       [
@@ -374,11 +395,11 @@ test('dictionary localization preserves paragraphs and verified media identity',
   ) as { entries: { dictionaryId: string; status: string }[] }
   assert.equal(
     ru.dictionary.reduce((count, entry) => count + entry.content.length, 0),
-    95,
+    104,
   )
   assert.equal(
     en.dictionary.reduce((count, entry) => count + entry.content.length, 0),
-    95,
+    104,
   )
   for (const entry of ru.dictionary) {
     const translated = getDictionaryEntryById('en', entry.id)!
@@ -414,7 +435,97 @@ test('dictionary localization preserves paragraphs and verified media identity',
     )
     for (const locale of ['ru', 'en'] as const) {
       const source = getSourceById(locale, entry.image.sourceId!)
-      assert.ok(source?.url?.startsWith('https://commons.wikimedia.org/wiki/'))
+      const addition = newDictionaryMedia.find(
+        (item) => item.dictionaryId === entry.id,
+      )
+      if (addition) assert.equal(source?.url, addition.url)
+      else
+        assert.ok(
+          source?.url?.startsWith('https://commons.wikimedia.org/wiki/'),
+        )
+    }
+  }
+})
+
+test('new Dictionary images have bilingual source attribution and consistent editorial manifests', () => {
+  for (const locale of ['ru', 'en'] as const) {
+    for (const expected of newDictionaryMedia) {
+      const entry = getDictionaryEntryById(locale, expected.dictionaryId)!
+      assert.equal(entry.image?.src, expected.src)
+      assert.equal(entry.image.sourceId, expected.sourceId)
+      assert.doesNotMatch(entry.image.credit!, /https?:\/\//)
+      const source = getSourceById(locale, expected.sourceId)!
+      assert.equal(source.type, 'media')
+      assert.equal(source.url, expected.url)
+      assert.equal(source.author, expected.author[locale])
+      assert.equal(source.publisher, expected.publisher[locale])
+      assert.equal(source.year, undefined)
+      assert.equal(source.accessedAt, '2026-10-18')
+    }
+  }
+  for (const filename of [
+    'dictionary-media-manifest.json',
+    'dictionary-media-manifest.parity.json',
+  ]) {
+    const manifest = JSON.parse(
+      readFileSync(`docs/research/${filename}`, 'utf8'),
+    ) as {
+      summary: {
+        dictionaryEntries: number
+        approvedNew: number
+        reuseApproved: number
+        noImageYet: number
+      }
+      entries: {
+        dictionaryId: string
+        status: string
+        targetPath: string
+        type: string
+        sourceId: string
+        sourcePage: string
+        captionRu: string
+        captionEn: string
+        altRu: string
+        altEn: string
+        license?: string
+      }[]
+    }
+    assert.equal(manifest.summary.dictionaryEntries, 31)
+    assert.equal(manifest.entries.length, 31)
+    assert.equal(
+      new Set(manifest.entries.map((item) => item.dictionaryId)).size,
+      31,
+    )
+    for (const [key, status] of [
+      ['approvedNew', 'approved-new'],
+      ['reuseApproved', 'reuse-approved'],
+      ['noImageYet', 'no-image-yet'],
+    ] as const)
+      assert.equal(
+        manifest.summary[key],
+        manifest.entries.filter((item) => item.status === status).length,
+      )
+    for (const expected of newDictionaryMedia) {
+      const item = manifest.entries.find(
+        (entry) => entry.dictionaryId === expected.dictionaryId,
+      )!
+      assert.equal(item.status, 'approved-new')
+      assert.equal(item.targetPath, expected.src)
+      assert.equal(item.type, expected.type)
+      assert.equal(item.sourceId, expected.sourceId)
+      assert.equal(item.sourcePage, expected.url)
+      assert.equal(item.license, undefined)
+      for (const [locale, caption, alt] of [
+        ['ru', item.captionRu, item.altRu],
+        ['en', item.captionEn, item.altEn],
+      ] as const) {
+        const image = getDictionaryEntryById(
+          locale,
+          expected.dictionaryId,
+        )!.image!
+        assert.equal(caption, image.caption)
+        assert.equal(alt, image.alt)
+      }
     }
   }
 })
@@ -1036,9 +1147,9 @@ test('both production locales generate detail routes from catalog data', () => {
     })
     .sort()
   assert.deepEqual(routes, expected)
-  assert.equal(routes.filter((route) => !route.startsWith('/en/')).length, 62)
-  assert.equal(routes.filter((route) => route.startsWith('/en/')).length, 62)
-  assert.equal(routes.length, 124)
+  assert.equal(routes.filter((route) => !route.startsWith('/en/')).length, 64)
+  assert.equal(routes.filter((route) => route.startsWith('/en/')).length, 64)
+  assert.equal(routes.length, 128)
 })
 
 test('strict RU/EN parity covers IDs, slugs, sources and structural history', () => {
@@ -1099,9 +1210,18 @@ test('media captions preserve localized captions and remove repeated authors in 
       // The photo's unknown photographer is distinct from its depicted subject.
       assert.equal(
         presentation.attribution,
-        (entry.id === 'roubaud' ? credit : credit.slice(1)).join(' · '),
+        (['roubaud', 'ermolov'].includes(entry.id)
+          ? credit
+          : credit.slice(1)
+        ).join(' · '),
       )
-      assert.equal(presentation.sourceLabel, 'Wikimedia Commons')
+      const addition = newDictionaryMedia.find(
+        (item) => item.dictionaryId === entry.id,
+      )
+      assert.equal(
+        presentation.sourceLabel,
+        addition ? addition.publisher[locale] : 'Wikimedia Commons',
+      )
       assert.equal(presentation.sourceUrl, source?.url)
       assert.equal(JSON.stringify(asset), before)
     }

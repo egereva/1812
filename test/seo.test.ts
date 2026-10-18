@@ -39,9 +39,9 @@ test('deployment base path is validated without changing route architecture', ()
   for (const value of ['1812', '/1812', '//host/', '/../', '/repo/?x=1'])
     assert.throws(() => validateBaseURL(value))
 })
-test('public inventory has all 136 unique reciprocal routes', () => {
+test('public inventory has all 140 unique reciprocal routes', () => {
   const routes = getPublicSeoRoutes()
-  assert.equal(routes.length, 136)
+  assert.equal(routes.length, 140)
   assert.equal(new Set(routes).size, routes.length)
   for (const route of routes) {
     assert.doesNotMatch(route, /[?#]|\/\//)
@@ -89,7 +89,7 @@ test('sitemap exactly matches canonical inventory at root and project subpath', 
         publicSeoUrl(route, fixtureOrigin, base),
       ),
     )
-    assert.equal(new Set(urls).size, 136)
+    assert.equal(new Set(urls).size, 140)
   }
   assert.throws(() => createSitemap('', '/'))
 })

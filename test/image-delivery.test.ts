@@ -8,7 +8,7 @@ import {
 } from '../app/utils/imageDelivery.ts'
 
 test('delivery catalog preserves approved originals and provides bounded, smaller local variants', () => {
-  assert.equal(Object.keys(imageDeliveryCatalog).length, 51)
+  assert.equal(Object.keys(imageDeliveryCatalog).length, 53)
   let count = 0
   for (const [src, image] of Object.entries(imageDeliveryCatalog)) {
     const original = readFileSync(`public${src}`)
@@ -33,6 +33,30 @@ test('delivery catalog preserves approved originals and provides bounded, smalle
     }
   }
   assert.equal(count, 56)
+})
+
+test('new Dictionary WebP dimensions match the actual binaries and localized delivery attributes', () => {
+  for (const [src, width, height] of [
+    ['/images/dictionary/Ermolov.webp', 1441, 1063],
+    ['/images/dictionary/Dohkturov.webp', 981, 1124],
+  ] as const) {
+    const original = readFileSync(`public${src}`)
+    assert.equal(original.toString('ascii', 0, 4), 'RIFF')
+    assert.equal(original.toString('ascii', 8, 16), 'WEBPVP8 ')
+    assert.equal(original.subarray(23, 26).toString('hex'), '9d012a')
+    assert.equal(original.readUInt16LE(26) & 0x3fff, width)
+    assert.equal(original.readUInt16LE(28) & 0x3fff, height)
+    assert.equal(imageDeliveryCatalog[src]!.width, width)
+    assert.equal(imageDeliveryCatalog[src]!.height, height)
+    assert.deepEqual(imageDeliveryCatalog[src]!.variants, [])
+    for (const base of ['/', '/1812/']) {
+      const delivery = imageDeliveryAttributes(src, base)
+      assert.equal(delivery.src, base.replace(/\/$/, '') + src)
+      assert.equal(delivery.width, width)
+      assert.equal(delivery.height, height)
+      assert.equal(delivery.srcset, undefined)
+    }
+  }
 })
 
 test('responsive attributes preserve original fallback and static hosting base paths', () => {
